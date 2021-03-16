@@ -1,0 +1,520 @@
+.inputDataBox {
+  width: 55%;
+  margin: auto;
+  overflow: hidden;
+}
+.inputDataBox h3 {
+  margin-top: 20px;
+  color: #3c738d;
+}
+label {
+  color: #5da0bf;
+}
+.leftInfo,
+.rightInfo {
+  width: 50%;
+  float: left;
+  margin-top: 30px;
+}
+.mainHeader h3 {
+  margin: 30px 0 -20px 70px;
+  color: black;
+}
+.rightInfo h3 {
+  margin-left: 60px;
+}
+
+.inputBox {
+  width: 90%;
+  padding-left: 60px;
+}
+
+.inputHeader p {
+  width: 300px;
+  margin: 0;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  color: #7a7a7a;
+}
+.inputBoxImg {
+  width: 50%;
+  height: 80px;
+}
+.inputValue input,
+select {
+  border-radius: 3px;
+  border: 1px solid #ccc;
+  padding: 8px 10px;
+  color: #9a9a9a;
+  width: 300px;
+  margin: 0;
+  outline: none;
+}
+.inputValue input:focus {
+  border: 1px solid #4883ff;
+}
+.inputValue ::placeholder {
+  color: #afb4b6;
+}
+.inputBoxImg input {
+  padding-left: 62px;
+  margin-top: 40px;
+  border-radius: 3px;
+  color: #5da0bf;
+  outline: none;
+}
+#checkBox input {
+  max-width: 40px;
+}
+.submitButton {
+  width: 20%;
+  margin: auto;
+}
+.submitButton button {
+  width: 300px;
+  padding: 8px 20px;
+  margin: 30px 0 40px 0;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  background-color: #4883ff;
+}
+.submitButton button:hover {
+  /* background-color: #518aa5; */
+  outline: none;
+}
+
+.submitButton button:focus {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  outline: none;
+}
+
+/* for confirm page */
+.confirmBox {
+  width: 100%;
+  overflow: hidden;
+}
+.arresteeConfirmInfo,
+.InformerConfirmInfo {
+  width: 50%;
+  float: left;
+  font-size: 20;
+  padding: 10px;
+}
+.InformerConfirmInfo h3 {
+  padding: 10px 10px 10px 0;
+}
+.arresteeConfirmInfo h3 {
+  margin-left: 130px;
+  padding: 10px 10px 10px 0;
+}
+.leftConfirmInfo {
+  width: 80%;
+  float: right;
+  margin: 4px;
+}
+.rightConfirmInfo {
+  width: 80%;
+  float: left;
+  margin: 4px;
+}
+.confirmHeaders {
+  float: left;
+  width: 230px;
+}
+.confirmValues {
+  float: left;
+}
+.confirmValues img {
+  width: 100px;
+  height: 100px;
+}
+.confirmButton button,
+.deleteButton button {
+  float: left;
+  width: 250px;
+  padding: 12px 20px;
+  margin: 20px;
+  border: 0;
+  border-radius: 3px;
+}
+.confirmButton button {
+  color: white;
+  background-color: #518aa5;
+}
+.deleteButton button {
+  color: white;
+  background-color: rgb(185, 68, 68);
+}
+.confirmButton button:hover {
+  background-color: #3c738d;
+  outline: none;
+}
+.deleteButton button:hover {
+  background-color: rgb(146, 45, 45);
+  outline: none;
+}
+
+/* for profile page */
+.profileBody {
+  width: 100%;
+  overflow: hidden;
+}
+.profilePicture,
+.profileDetail {
+  width: 50%;
+  float: left;
+  overflow: hidden;
+}
+
+.profileDetail h3 {
+  margin: 15px 0 20px 0;
+}
+.profilePicture img {
+  float: right;
+  width: 420px;
+  height: auto;
+  margin: 53px;
+}
+.profilePicture img:hover {
+  box-shadow: 0 0 20px 5px rgba(39, 40, 41, 0.5);
+}
+.profileDetailBox {
+  margin: 24px 0 24px 0;
+}
+.profileHeaders {
+  width: 30%;
+  float: left;
+}
+.profileValues {
+  width: 70%;
+  overflow: hidden;
+}
+.profileValues span {
+  padding: 10px 20px;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  background-color: #af5c1d;
+}
+.editButton button {
+  width: 300px;
+  padding: 12px 20px;
+  margin: 30px 0 0 0;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  background-color: #5da0bf;
+}
+.editButton button:hover {
+  background-color: #518aa5;
+  outline: none;
+}
+
+/* for about us page */
+
+.aboutBody {
+  width: 100%;
+}
+.aboutPart {
+  margin: 30px;
+}
+.contactUs {
+  overflow: hidden;
+  margin: auto;
+  width: 500px;
+  background-color: rgb(168, 164, 164);
+  border-radius: 7px;
+  padding: 20px;
+}
+.contactUsQuestions {
+  width: 30%;
+  float: left;
+}
+.contactUsAnswers {
+  width: 65%;
+  overflow: hidden;
+}
+.contactUsHeaders {
+  margin: 20px 0 20px 0;
+}
+.contactUsValues input,
+textarea {
+  width: 100%;
+  outline: none;
+  border: 0;
+  border-radius: 5px;
+  padding: 12px 10px;
+  margin: 10px 0 10px 0;
+  text-indent: 3px;
+}
+.contactUsValues textarea {
+  height: 200px;
+  resize: none;
+}
+.contactUsSubmit {
+  width: 100%;
+}
+.contactUsSubmit button {
+  float: right;
+  margin: 0 24px 0 0;
+  padding: 12px 20px;
+  width: 65%;
+  border: 0;
+  border-radius: 3px;
+  color: white;
+  background-color: #5da0bf;
+}
+.contactUsSubmit button:hover {
+  background-color: #518aa5;
+  outline: none;
+}
+
+.contactUsValues input:focus {
+  border: 1px solid #5da0bf;
+}
+.contactUsValues ::placeholder {
+  color: #afb4b6;
+}
+
+.inputContainer {
+  background-color: #f4f4f4;
+}
+
+@media only screen and (max-width: 1024px) and (min-width: 641px) {
+  .inputDataBox {
+    width: 83%;
+    margin: auto;
+  }
+  .inputDataBox h3 {
+    margin: 70px 0 0 0;
+  }
+  .rightInfo h3 {
+    margin: 10px;
+  }
+  .inputBox {
+    width: 90%;
+    margin: 10px;
+  }
+  .inputBox,
+  .inputBoxImg {
+    float: none;
+    padding-left: 0;
+  }
+  .inputValue input,
+  select {
+    width: 100%;
+  }
+  .inputBoxi {
+    margin-right: 0;
+  }
+  .inputBoxImg input {
+    padding-left: 20px;
+    margin-top: 40px;
+  }
+  .submitButton {
+    width: 100%;
+    text-align: center;
+  }
+  .submitButton button {
+    padding: 12px 20px;
+    margin: 30px 0 0 0;
+  }
+
+  /* for profile page */
+
+  .profilePicture {
+    margin-top: 40px;
+    width: 100%;
+    float: none;
+  }
+  .profileDetail {
+    width: 100%;
+    float: none;
+  }
+  .profileDetail h3 {
+    margin: 15px 0 20px 130px;
+    font-size: 300%;
+  }
+  .profilePicture img {
+    float: none;
+    width: 80%;
+    height: auto;
+    margin: 0 0 0 100px;
+  }
+  .profileDetailBox {
+    margin: 24px 0 24px 100px;
+  }
+  .profileDetailBox span {
+    font-size: 170%;
+  }
+  .profileHeaders {
+    width: 50%;
+    float: left;
+  }
+  .profileValues {
+    width: 50%;
+  }
+}
+
+@media only screen and (max-width: 640px) and (min-width: 321px) {
+  .inputDataBox {
+    width: 100%;
+    margin: 0;
+  }
+  .inputDataBox h3 {
+    margin: 10px;
+  }
+  .rightInfo h3 {
+    margin: 10px;
+  }
+  .leftInfo,
+  .rightInfo {
+    width: 100%;
+    float: none;
+    margin-top: 30px;
+  }
+  .inputBox {
+    width: 100%;
+  }
+  .inputBox,
+  .inputBoxImg {
+    padding-left: 0;
+  }
+  .inputValue input,
+  select {
+    width: 100%;
+  }
+  .inputBoxImg input {
+    padding-left: 20px;
+    margin-top: 40px;
+  }
+  .submitButton {
+    width: 100%;
+    text-align: center;
+  }
+  .submitButton button {
+    padding: 12px 20px;
+    margin: 30px 0 0 0;
+  }
+  /* for profile page */
+
+  .profilePicture {
+    width: 100%;
+    float: none;
+  }
+  .profileDetail {
+    width: 100%;
+    float: none;
+  }
+  .profileDetail h3 {
+    margin: 15px 0 20px 10px;
+    font-size: 30px;
+  }
+  .profilePicture img {
+    float: none;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .profileDetailBox {
+    margin: 5px;
+  }
+  .profileDetailBox span {
+    font-size: 13px;
+  }
+  .profileHeaders {
+    width: 50%;
+    float: left;
+  }
+  .profileValues {
+    width: 50%;
+  }
+  /* for about */
+  .contactUs {
+    border-radius: 0;
+  }
+}
+@media only screen and (max-width: 320px) {
+  .rightInfo h3 {
+    margin: 10px;
+  }
+  .inputDataBox {
+    width: 100%;
+    margin: 0;
+  }
+  .leftInfo,
+  .rightInfo {
+    width: 100%;
+    float: none;
+    margin-top: 30px;
+  }
+  .inputBox {
+    width: 95%;
+    margin: 10px;
+  }
+  .inputBox,
+  .inputBoxImg {
+    float: none;
+    padding-left: 0;
+  }
+  .inputValue input,
+  select {
+    width: 100%;
+  }
+  .inputBoxi {
+    margin-right: 0;
+  }
+  .inputBoxImg input {
+    padding-left: 20px;
+    margin-top: 40px;
+  }
+  .submitButton {
+    width: 100%;
+    text-align: center;
+  }
+  .submitButton button {
+    padding: 12px 20px;
+    margin: 30px 0 0 0;
+  }
+  /* for profile page */
+
+  .profilePicture {
+    width: 100%;
+    float: none;
+  }
+  .profileDetail {
+    width: 100%;
+    float: none;
+  }
+  .profileDetail h3 {
+    margin: 15px 0 20px 10px;
+    font-size: 30px;
+  }
+  .profilePicture img {
+    float: none;
+    width: 100%;
+    height: auto;
+    margin: 0;
+    padding: 0;
+  }
+  .profileDetailBox {
+    margin: 5px;
+  }
+  .profileDetailBox span {
+    font-size: 13px;
+  }
+  .profileHeaders {
+    width: 50%;
+    float: left;
+  }
+  .profileValues {
+    width: 50%;
+  }
+  /* for about */
+  .contactUs {
+    border-radius: 0;
+  }
+}

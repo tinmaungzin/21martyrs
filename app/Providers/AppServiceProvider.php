@@ -2,6 +2,9 @@
 
 namespace App\Providers;
 
+use App\Http\Views\Composers\AuthStaffComposer;
+use App\Http\Views\Composers\RouteComposer;
+use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
 
 class AppServiceProvider extends ServiceProvider
@@ -23,6 +26,22 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        $this->sidebarRoute();
+
+//        $this->sidebarAuthstaff();
+    }
+
+    public function sidebarRoute(): array
+    {
+        return View::composer(
+            'layout.adminpanel.sidebar', RouteComposer::class
+        );
+    }
+
+    public function sidebarAuthstaff(): array
+    {
+        return View::composer(
+            'layout.adminpanel.sidebar', AuthStaffComposer::class
+        );
     }
 }
