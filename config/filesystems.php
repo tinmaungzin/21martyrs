@@ -51,7 +51,7 @@ return [
             'url' => env('AWS_URL'),
             'endpoint' => env('AWS_ENDPOINT'),
         ],
-        'do-s3' => [
+        'do_s3' => [
             'driver' => 's3',
             'key' => env('DO_ACCESS_KEY_ID'),
             'secret' => env('DO_SECRET_ACCESS_KEY'),

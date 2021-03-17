@@ -3,8 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Str;
 
-use App\Utility\S3Image;
+use App\Utility\ImageModule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 Route::name('test.')->group(function () {
 
@@ -14,8 +15,8 @@ Route::name('test.')->group(function () {
 
     Route::post('/upload', function (Request $request) {
         $path =  Str::uuid() . '-' . $request->file('image')->getClientOriginalName();
-        $uploadedUrl = S3Image::uploadFromRequest('image', $path);
-        dd($uploadedUrl);
+        $uploadedPath = ImageModule::uploadFromRequest('image', $path);
+        // dd(ImageModule::urlFromPath($uploadedPath));
         return view('test');
     })->name('upload');
 });
