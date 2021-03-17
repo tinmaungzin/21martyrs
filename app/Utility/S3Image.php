@@ -2,15 +2,15 @@
 
 namespace App\Utility;
 
-use Illuminate\Http\Request;
-use PhpParser\Node\Expr\Cast\String_;
+
 
 class S3Image
 {
 
-
-    public static function uploadFromRequest(String $fileName, String $path)
+    public static function uploadFromRequest(String $imageKey, String $name)
     {
-        return request()->file($fileName)->storePublicly('/' . . '/' . $path);
+        $DO_BASE_FOLDER = env('DO_BASE_FOLDER', 'development');
+
+        return request()->file($imageKey)->storePubliclyAs('/' . $DO_BASE_FOLDER, $name, 'do-s3');
     }
 }
