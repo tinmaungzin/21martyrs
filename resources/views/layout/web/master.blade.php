@@ -25,7 +25,7 @@
     <link rel="stylesheet" href="{{asset('web/css/templatemo-style.css')}} " />
     <link rel="stylesheet" href="{{asset('web/css/style.css')}} ">
 
-
+    @laravelPWA
     <link
         href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900"
         rel="stylesheet"
