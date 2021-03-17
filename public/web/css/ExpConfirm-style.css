@@ -1,0 +1,55 @@
+img {
+  max-width: 100%;
+  height: auto;
+}
+.ExpBody {
+  background-color: #f4f4f4;
+  padding-bottom: 50px;
+}
+
+.ExpText {
+  font-size: 17px;
+  color: black;
+}
+
+.BodyText p {
+  line-height: 40px;
+  text-align: justify;
+  text-indent: 50px;
+}
+.buttonArea {
+  display: flex;
+  justify-content: center;
+  margin-top: 50px;
+}
+
+/* .buttonArea a {
+  color: white;
+  text-decoration: none;
+  width: 20%;
+} */
+.editButton {
+  background-color: #839170;
+  color: white;
+  margin-right: 50px;
+  width: 20%;
+  border: none;
+  outline: none;
+}
+
+.submitButton {
+  background-color: #4883ff;
+  color: white;
+  width: 20%;
+  border: none;
+  outline: none;
+}
+
+.buttonArea button:focus {
+  outline: 0;
+  border: 0;
+}
+
+.buttonArea a:hover {
+  color: white;
+}

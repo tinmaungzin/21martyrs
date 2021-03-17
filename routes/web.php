@@ -13,10 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
 
-Route::get('/test-view', function () {
-    return view('test');
-})->name('test');
+Route::resource('admins',\App\Http\Controllers\AdminController::class);
+
+Route::get('/',[\App\Http\Controllers\HomeController::class,'index'])->name('index');
+Route::get('/about',[\App\Http\Controllers\HomeController::class,'about_us'])->name('about');
+Route::get('inform/dead',[\App\Http\Controllers\InformController::class,'dead_form'])->name('form.dead');
+Route::get('inform/detained',[\App\Http\Controllers\InformController::class,'detained_form'])->name('form.detained');
