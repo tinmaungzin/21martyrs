@@ -1,6 +1,4 @@
 {
-  "short_name": "21martyrsMM",
-  "name": "21 Myanmar martyrs",
   "icons": [
     {
       "src": "images/pwa-icons/windows10/Square71x71Logo.scale-400.png",
@@ -374,11 +372,5 @@
       "src": "images/pwa-icons/firefox/firefox-general-16-16.png",
       "sizes": "16x16"
     }
-  ],
-  "start_url": "/",
-  "background_color": "#ffffff",
-  "display": "standalone",
-  "scope": "/",
-  "theme_color": "#ffffff",
-  "description": "In memories of fallen heroes in Myanmar 21st revolution."
+  ]
 }
