@@ -1,32 +1,27 @@
-
 @extends('layout.web.master')
 
 @section('title', 'Home')
 
 @section('content')
 
-<!-- Image Search -->
+    <!-- Image Search -->
     <section class="banner" id="top">
         <div class="container">
             <div class="row">
                 <div class="col-md-5 col-md-offset-1">
                     <div class="banner-caption">
                         <div class="line-dec"></div>
-                        <h2>About Us</h2>
-                        <span
-                        >Suspendisse eu lorem massa. Integer sit amet posuere
-                    tellus.</span
-                        >
+                        <h2>{{ __('ui.about_us') }}</h2>
+                        <span>{{ __('ui.about_us_long') }}</span>
                         <div class="blue-button">
-                            <a class="scrollTo" data-scrollTo="popular" href="about.html"
-                            >Discover More</a
-                            >
+                            <a class="scrollTo" data-scrollTo="popular" href="about.html">{{ __('ui.discover_more') }}</a>
                         </div>
                     </div>
                 </div>
                 <div class="col-md-4 col-md-offset-1">
                     <div class="StaticBox">
-                        <h3 class="boxTitle">As of Mar 03,2021</h3>
+                        <h3 class="boxTitle">
+                            {{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h3>
                         <div class="whiteBox">
                             <div class="rightText">
                                 <h3>77</h3>
@@ -63,26 +58,14 @@
                                 <div class="row">
                                     <div class="col-md-3 first-item">
                                         <fieldset>
-                                            <input
-                                                name="name"
-                                                type="text"
-                                                class="form-control"
-                                                id="name"
-                                                placeholder="Your name..."
-                                                required=""
-                                            />
+                                            <input name="name" type="text" class="form-control" id="name"
+                                                placeholder="Your name..." required="" />
                                         </fieldset>
                                     </div>
                                     <div class="col-md-3 second-item">
                                         <fieldset>
-                                            <input
-                                                name="location"
-                                                type="text"
-                                                class="form-control"
-                                                id="location"
-                                                placeholder="Type location..."
-                                                required=""
-                                            />
+                                            <input name="location" type="text" class="form-control" id="location"
+                                                placeholder="Type location..." required="" />
                                         </fieldset>
                                     </div>
                                     <div class="col-md-3 third-item">
@@ -132,7 +115,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="featured-item">
                         <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_1.jpg')}} " alt="" />
+                            <img src="{{ asset('web/img/featured_item_1.jpg') }} " alt="" />
                         </div>
                         <div class="down-content">
                             <h4>Samson</h4>
@@ -148,7 +131,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="featured-item">
                         <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_2.jpg')}} " alt="" />
+                            <img src="{{ asset('web/img/featured_item_2.jpg') }} " alt="" />
                         </div>
                         <div class="down-content">
                             <h4>Samson</h4>
@@ -164,7 +147,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="featured-item">
                         <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />
+                            <img src="{{ asset('web/img/featured_item_3.jpg') }} " alt="" />
                         </div>
                         <div class="down-content">
                             <h4>Samson</h4>
@@ -180,7 +163,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="featured-item">
                         <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />
+                            <img src="{{ asset('web/img/featured_item_3.jpg') }} " alt="" />
                         </div>
                         <div class="down-content">
                             <h4>Samson</h4>
@@ -198,7 +181,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="featured-item">
                         <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_1.jpg')}} " alt="" />
+                            <img src="{{ asset('web/img/featured_item_1.jpg') }} " alt="" />
                         </div>
                         <div class="down-content">
                             <h4>Samson</h4>
@@ -214,7 +197,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="featured-item">
                         <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_2.jpg')}} " alt="" />
+                            <img src="{{ asset('web/img/featured_item_2.jpg') }} " alt="" />
                         </div>
                         <div class="down-content">
                             <h4>Samson</h4>
@@ -230,7 +213,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="featured-item">
                         <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />
+                            <img src="{{ asset('web/img/featured_item_3.jpg') }} " alt="" />
                         </div>
                         <div class="down-content">
                             <h4>Samson</h4>
@@ -246,7 +229,7 @@
                 <div class="col-md-3 col-sm-6 col-xs-12">
                     <div class="featured-item">
                         <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />
+                            <img src="{{ asset('web/img/featured_item_3.jpg') }} " alt="" />
                         </div>
                         <div class="down-content">
                             <h4>Samson</h4>
@@ -262,6 +245,6 @@
             </div>
         </div>
     </section>
-<!-- Card Container -->
+    <!-- Card Container -->
 
 @endsection

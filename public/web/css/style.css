@@ -280,6 +280,13 @@ textarea {
 
 .inputContainer {
   background-color: #f4f4f4;
+  padding: 0 2rem;
+}
+
+.locale-icon {
+  height: 24px;
+  width: 36px;
+  display: inline-block;
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
