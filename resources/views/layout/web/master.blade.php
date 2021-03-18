@@ -3,6 +3,8 @@
 <head>
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+    <meta name="csrf-token" content="{{ csrf_token() }}"/>
+
     <title>21 Martyrs | @yield('title')</title>
 
     <link
@@ -14,9 +16,14 @@
     <meta name="description" content="" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
 
+
+
     <link rel="stylesheet" href="{{ asset('web/css/bootstrap.css') }}">
+{{--    <link rel="stylesheet" href=" {{ asset('css/selectboot.css') }} ">--}}
 
     <link rel="stylesheet" href=" {{asset('web/css/bootstrap-theme.min.css')}} " />
+
+
     <link rel="stylesheet" href=" {{asset('web/css/fontAwesome.css')}} " />
     <link rel="stylesheet" href="{{asset('web/css/hero-slider.css')}} " />
     <link rel="stylesheet" href="{{asset('web/css/owl-carousel.css')}}" />
@@ -25,11 +32,26 @@
     <link rel="stylesheet" href="{{asset('web/css/templatemo-style.css')}} " />
     <link rel="stylesheet" href="{{asset('web/css/style.css')}} ">
 
+{{--    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">--}}
+{{--    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css">--}}
+{{--    <link rel="stylesheet" type="text/css" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css">--}}
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
+
+    {{--    <script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script>--}}
+
+
+
+
+
 
     <link
         href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900"
         rel="stylesheet"
     />
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+    <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
 
     <script src="{{asset('web/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js')}} "></script>
     <!--
@@ -176,20 +198,39 @@
     </p>
 </div>
 
-<script
-    src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"
-    type="text/javascript"
-></script>
-<script>
+
+
+
+
+
+{{--<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script>--}}
+
+<script type="text/javascript">
     window.jQuery ||
     document.write(
         '<script src="web/js/vendor/jquery-1.11.2.min.js"><\/script>'
     );
+
+
+    // $(document).ready(function (){
+    //     $('select').selectpicker();
+    //
+    //     $('.selectpicker').selectpicker('refresh');
+    // });
+    $(document).ready(function() {
+        $('.selectpicker').selectpicker({
+            style: 'btn-default',
+            size: false
+        });
+    });
 </script>
+
+
 
 <script src="{{asset('web/js/vendor/bootstrap.min.js')}} "></script>
 
 <script src="{{asset('web/js/datepicker.js')}} "></script>
+
 <script src="{{asset('web/js/plugins.js')}} "></script>
 <script src="{{asset('web/js/main.js')}} "></script>
 </body>

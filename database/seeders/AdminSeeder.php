@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -18,6 +19,7 @@ class AdminSeeder extends Seeder
             'name' => 'Ko Admin',
             'email' => 'admin@gmail.com',
             'password' => bcrypt('password'),
+            'created_at' => Carbon::now(),
         ]);
     }
 }

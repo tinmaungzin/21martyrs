@@ -11,6 +11,11 @@ use Illuminate\Support\Facades\Session;
 class AdminController extends Controller
 {
 
+//    public function __construct()
+//    {
+//        $this->middleware('admin');
+//    }
+
     public function index()
     {
         $admins = Admin::orderBy('id','desc')->paginate(10);
