@@ -7,33 +7,33 @@
     <div class="inputContainer">
         <div class="inputDataBox">
             <div class="mainHeader">
-                <h3>Arrestee's Info</h3>
+                <h3>{{ __('ui.arrestee_info') }}</h3>
             </div>
             <div class="leftInfo">
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Name</p>
+                        <p>{{ __('ui.name') }}</p>
                     </div>
                     <div class="inputValue">
-                        <input type="text" placeholder="someone" name="name" autofocus />
+                        <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name" autofocus />
                     </div>
                 </div>
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Age</p>
+                        <p>{{ __('ui.age') }}</p>
                     </div>
                     <div class="inputValue">
-                        <input type="number" id="age" name="age" min="10" max="99" />
+                        <input type="number" id="age" name="age" min="1" max="99" />
                     </div>
                 </div>
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Gender</p>
+                        <p>{{ __('ui.gender') }}</p>
                     </div>
                     <div class="inputValue">
                         <select id="gender" name="gender">
-                            <option value="male">Male</option>
-                            <option value="female">Female</option>
+                            <option value="male">{{ __('ui.male') }}</option>
+                            <option value="female">{{ __('ui.female') }}</option>
                         </select>
                     </div>
                 </div>
@@ -97,20 +97,16 @@
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Association</p>
+                        <p>{{ __('ui.association') }}</p>
                     </div>
                     <div class="inputValue">
-                        <input
-                            type="text"
-                            placeholder="University/Organization/Department .etc"
-                            name="association"
-                        />
+                        <input type="text" placeholder="University/Organization/Department .etc" name="association" />
                     </div>
                 </div>
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Arrested Date</p>
+                        <p>{{ __('ui.arrested_date') }}</p>
                     </div>
                     <div class="inputValue">
                         <input type="date" id="arrested_date" name="arrested_date" />
@@ -119,17 +115,17 @@
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Reason of being arrested</p>
+                        <p>{{ __('ui.arrested_reason') }}</p>
                     </div>
                     <div class="inputValue">
                         <select id="township" name="township">
-                            <option value="protesting">Protester</option>
-                            <option value="political">Bystander</option>
-                            <option value="noreason">Others</option>
+                            <option value="protesting">{{ __('ui.protestor') }}</option>
+                            <option value="political">{{ __('ui.bystander') }}</option>
+                            <option value="noreason">{{ __('ui.others') }}</option>
                         </select>
                     </div>
                     <div class="inputValue" style="display: none">
-                        <input type="text" placeholder="please specify" name="name" />
+                        <input type="text" placeholder="{{ __('ui.please_specify') }}" name="name" />
                     </div>
                 </div>
             </div>
@@ -137,52 +133,54 @@
             <div class="rightInfo">
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Prison</p>
+                        <p>{{ __('ui.prison') }}</p>
                     </div>
                     <div class="inputValue">
-                        <input type="text" placeholder="If sent to prison" name="name" />
+                        <input type="text" placeholder="{{ __('ui.prison_placeholder') }}" name="name" />
+                    </div>
+                </div>
+
+                <div class="inputBox">
+                    <div class="inputHeader">
+                        <p>{{ __('ui.arrestee_pic') }}</p>
                     </div>
                 </div>
                 <div class="inputBoxImg">
+
                     <input type="file" id="myFile" name="filename" />
                 </div>
 
-                <h3>Informer's Info</h3>
+                <h3>{{ __('ui.informer_info') }}</h3>
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Name</p>
+                        <p>{{ __('ui.name') }}</p>
                     </div>
                     <div class="inputValue">
-                        <input type="text" placeholder="someone" name="name" />
+                        <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name" />
                     </div>
                 </div>
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Relationship with arrestee</p>
+                        <p>{{ __('ui.relationship_with_arrestee') }}</p>
                     </div>
                     <div class="inputValue">
-                        <input type="text" placeholder="someone" name="name" />
+                        <input type="text" placeholder="{{ __('ui.relationship_placeholder') }}" name="name" />
                     </div>
                 </div>
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>Informer's contact no</p>
+                        <p>{{ __('ui.informer_phone') }}</p>
                     </div>
                     <div class="inputValue">
-                        <input
-                            type="number"
-                            id="age"
-                            placeholder="09xxxxxxxxx"
-                            name="age"
-                        />
+                        <input type="number" id="age" placeholder="09xxxxxxxxx" name="age" />
                     </div>
                 </div>
             </div>
         </div>
         <div class="submitButton">
-            <button type="submit">Submit</button>
+            <button type="submit">{{ __('ui.submit') }}</button>
         </div>
     </div>
 

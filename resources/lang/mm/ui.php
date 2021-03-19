@@ -1,5 +1,41 @@
 <?php
 
 return [
-    'home' => 'Eain',
+    'home' => 'Home',
+    'about_us' => 'About us',
+    'experience_sharing' => 'Experience Sharing',
+    'inform_us' => 'Inform Us',
+    'detained' => 'Detained',
+    'dead' => 'Dead',
+    'about_us_long' => 'Suspendisse eu lorem massa. Integer sit amet posuere tellus.',
+    'discover_more' => 'Discover More',
+    'as_of_date' => "As of :date",
+    'lang' => 'Lang',
+    "footer_long_text" => "Mauris sit amet quam congue, pulvinar urna et, congue diam.
+    Suspendisse eu lorem massa. Integer sit amet posuere tellus, id
+    efficitur leo. In hac habitasse platea dictumst.",
+    "contact_information" => "Contact Information",
+    "gunshot" => 'gunshot',
+    "assault" => "Assault",
+    "detained_civilians" => "Detained Civilians",
+    "latest_arrested_civilians" => "Latest Arrested Civilians",
+    "browse_all" => "Browse All",
+    "arrestee_info" => "Arrestee Information",
+    "name" => "Name",
+    "name_placeholder" => "Someone",
+    "age" => "Age",
+    "gender" => "Gender",
+    "male" => "Male",
+    "female" => "Female",
+    "association" => "Association",
+    "arrested_date" => 'Arrested Date',
+    "arrested_reason" => "Reason of being arrested",
+    "protestor" => "Protester",
+    "others" => "Others",
+    "bystander" => "Bystander",
+    "others_placeholder" => "Please specify",
+    "prison" => "Prison",
+    "prison_placeholder" => "If sent to prison",
+    "arrestee_pic" => "Please upload arrestee picture",
+    "informer_info" => "Informer's Info"
 ];

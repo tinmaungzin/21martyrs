@@ -41,9 +41,9 @@
                 {{-- <div class="row"> --}}
                 {{-- <div class="col-md-12"> --}}
                 <button id="primary-nav-button" style="right: 0;" type="button">Menu</button>
-                <a href="index.html">
+                <a href="{{ route('index') }}">
                     <div class="logo">
-                        <img src="{{ asset('web/img/logo.png') }} " alt="Venue Logo" />
+                        <img src="{{ asset('images/icon.png') }} " alt="Venue Logo" />
                     </div>
                 </a>
                 <nav id="primary-nav" class="dropdown cf">
@@ -68,11 +68,10 @@
                             <ul class="sub-menu">
                                 @foreach ($constants::LOCALE_MAP as $locale => $arr)
                                     <li>
-
                                         <a href="#" class="change-locale" data-value={{ $locale }}>
+                                            {{ $arr['text'] }} &nbsp;
                                             <img class="locale-icon" src="{{ asset($arr['pic']) }}" />
-                                            {{-- &nbsp; --}}
-                                            {{ $arr['text'] }}</a>
+                                        </a>
                                     </li>
                                 @endforeach
                             </ul>
@@ -98,12 +97,11 @@
                 <div class="col-md-5">
                     <div class="about-veno">
                         <div class="logo">
-                            <img src="{{ asset('web/img/footer_logo.png') }} " alt="Venue Logo" />
+                            <img style="height: 100px;width: 100%;object-fit:contain;" src="
+                                {{ asset('images/icon.png') }} " alt=" Venue Logo" />
                         </div>
                         <p>
-                            Mauris sit amet quam congue, pulvinar urna et, congue diam.
-                            Suspendisse eu lorem massa. Integer sit amet posuere tellus, id
-                            efficitur leo. In hac habitasse platea dictumst.
+                            {{ __('ui.footer_long_text') }}
                         </p>
                         <ul class="social-icons">
                             <li>
@@ -166,7 +164,7 @@
                 <div class="col-md-3">
                     <div class="contact-info">
                         <div class="footer-heading">
-                            <h4>Contact Information</h4>
+                            <h4>{{ __('ui.contact_information') }}</h4>
                         </div>
                         <p>
                             Praesent iaculis gravida elementum. Proin fermentum neque

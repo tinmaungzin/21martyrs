@@ -25,14 +25,14 @@
                         <div class="whiteBox">
                             <div class="rightText">
                                 <h3>77</h3>
-                                <p>Dead</p>
+                                <p>{{ __('ui.dead') }}</p>
                                 <div class="subRightText">
                                     <h3>60</h3>
                                     <h3>70</h3>
                                 </div>
                                 <div class="subRightText">
-                                    <p>Gunshot</p>
-                                    <p>Assault</p>
+                                    <p>{{ __('ui.gunshot') }}</p>
+                                    <p>{{ __('ui.assault') }}</p>
                                 </div>
                             </div>
                             <div class="leftText">
@@ -103,13 +103,13 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading">
-                        <h2>Detained Civilians</h2>
-                        <span>Latest Arrested Civilians</span>
+                        <h2>{{ __('ui.detained_civilians') }}</h2>
+                        <span>{{ __('ui.latest_arrested_civilians') }}</span>
                     </div>
                 </div>
             </div>
             <p class="browse"><a href="./ListPage.html">
-                    Browse All
+                    {{ __('ui.browse_all') }}
                 </a></p>
             <div class="row">
                 <div class="col-md-3 col-sm-6 col-xs-12">
