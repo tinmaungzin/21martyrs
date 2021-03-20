@@ -29,7 +29,7 @@
                         </div>
                         <div class="inputValue">
                             <input type="number" id="age" name="age" min="10" max="99"
-                                placeholder="{{ __('ui.age_placholder') }}" />
+                                placeholder="{{ __('ui.age_placeholder') }}" />
                             <span class="text-danger">{{ $errors->first('age') }}</span>
 
                         </div>
@@ -54,11 +54,11 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>ဖမ်းဆီးခံရသူနေထိုင်ရာ ပြည်နယ်/တိုင်းဒေသကြီး</p>
+                            <p>{{ __('ui.arresstee_state') }}</p>
                         </div>
                         <div class="inputValue">
                             <select id="state" name="state_id" title="State">
-                                <option value="" disabled selected>Choose State</option>
+                                <option value="" disabled selected>{{ __('ui.choose_state') }}</option>
                                 @foreach ($states as $state)
                                     <option value="{{ $state->id }}">{{ $state->name }}</option>
                                 @endforeach
@@ -70,11 +70,11 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>ဖမ်းဆီးခံရသူနေထိုင်ရာ မြို့</p>
+                            <p>{{ __('ui.arrestee_city') }}</p>
                         </div>
                         <div class="inputValue">
                             <select id="city" name="city_id">
-                                <option value="" selected disabled>Choose City</option>
+                                <option value="" selected disabled>{{ __('ui.choose_city') }}</option>
                             </select>
                             <span class="text-danger">{{ $errors->first('city_id') }}</span>
 
@@ -83,18 +83,21 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>ဖမ်းဆီးခံရသူ၏ အလုပ်အကိုင်</p>
+                            <p>
+                                {{ __('ui.arrestee_occupation') }}
+                            </p>
+                            {{-- <p>ဖမ်းဆီးခံရသူ၏ အလုပ်အကိုင်</p> --}}
                         </div>
                         <div class="inputValue">
                             <select id="occupation" name="occupation">
-                                <option value="" selected disabled>Choose Occupation</option>
-                                <option value="Student">Student</option>
-                                <option value="CDM Staff">CDM staff</option>
-                                <option value="Government Official">Government official</option>
-                                <option value="Political Party Member">Political party member</option>
-                                <option value="Journalist">Journalist</option>
-                                <option value="Civilian">Civilian</option>
-                                <option value="Other">Other</option>
+                                <option value="" selected disabled>{{ __('ui.choose_occupation') }}</option>
+                                <option value="Student">{{ __('ui.student') }}</option>
+                                <option value="CDM Staff">{{ __('ui.cdm_staff') }}</option>
+                                <option value="Government Official">{{ __('ui.government_offical') }}</option>
+                                <option value="Political Party Member">{{ __('ui.political_party_member') }}</option>
+                                <option value="Journalist">{{ __('ui.journalist') }}</option>
+                                <option value="Civilian">{{ __('ui.civilian') }}</option>
+                                <option value="Other">{{ __('ui.other') }}</option>
                             </select>
                             <span class="text-danger">{{ $errors->first('occupation') }}</span>
 
@@ -133,8 +136,8 @@
                         </div>
                         <div class="inputValue">
                             <select id="township" name="reason_of_arrest">
-                                <option value="" selected disabled>{{ __('ui.choose_reason_arrest') }}</option>
-                                option value="protesting">{{ __('ui.protestor') }}</option>
+                                <option value="" selected disabled>{{ __('ui.choose_reason_of_arrest') }}</option>
+                                <option value="protesting">{{ __('ui.protestor') }}</option>
                                 <option value="political">{{ __('ui.bystander') }}</option>
                                 <option value="noreason">{{ __('ui.others') }}</option>
                             </select>
@@ -162,10 +165,10 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.comment') }}</p>
+                            <p>{{ __('ui.arrestee_comment') }}</p>
                         </div>
                         <div class="inputValue">
-                            <textarea type="text" rows="6" placeholder="ပြောလိုသည်များကို ဒီနေရာမှာ ရေးခဲ့နိုင်ပါတယ်။"
+                            <textarea type="text" rows="6" placeholder="{{ __('ui.arrestee_comment_placeholder') }}"
                                 name="comment" autocomplete="off"></textarea>
                             <span class="text-danger">{{ $errors->first('comment') }}</span>
 
@@ -175,7 +178,6 @@
                     <div class="inputBoxImg">
                         <input type="file" id="myFile" name="photo" />
                         <span class="text-danger">{{ $errors->first('photo') }}</span>
-
                     </div>
 
 
@@ -253,8 +255,8 @@
                             cities = data.cities;
                             cities.forEach(function(city) {
                                 $('#city').append(`
-                                            <option value="${ city.id }">${city.name}</option>
-                                    `)
+                                                                <option value="${ city.id }">${city.name}</option>
+                                                        `)
                             });
                         }
                     });

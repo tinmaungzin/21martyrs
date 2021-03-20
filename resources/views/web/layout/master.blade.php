@@ -253,10 +253,10 @@
 
 
     <script src="{{ asset('web/js/vendor/bootstrap.min.js') }} "></script>
-
+    <script src="https://cdn.jsdelivr.net/npm/js-cookie@2/src/js.cookie.min.js"></script>
     <script src="{{ asset('web/js/datepicker.js') }} "></script>
-
     <script src="{{ asset('web/js/plugins.js') }} "></script>
+    <script src="{{ asset('web/js/util.js') }}"></script>
     <script src="{{ asset('web/js/main.js') }} "></script>
 </body>
 

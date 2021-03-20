@@ -1,9 +1,5 @@
-<<<<<<< HEAD
-@extends('layout.web.master')
-=======
 
 @extends('web.layout.master')
->>>>>>> backend
 
 @section('title', 'Home')
 

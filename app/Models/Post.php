@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected array $guarded = [];
+    // protected array $guarded = [];
 
 
     public function state()
@@ -23,8 +23,8 @@ class Post extends Model
         return $this->belongsTo(City::class);
     }
 
-//    public function getProfileUrlAttribute($value)
-//    {
-//        return ImageModule::urlFromPath($value);
-//    }
+    //    public function getProfileUrlAttribute($value)
+    //    {
+    //        return ImageModule::urlFromPath($value);
+    //    }
 }
