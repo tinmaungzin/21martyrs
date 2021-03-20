@@ -256,8 +256,8 @@
                             cities = data.cities;
                             cities.forEach(function(city) {
                                 $('#city').append(`
-                                                                    <option value="${ city.id }">${city.name}</option>
-                                                            `)
+                                                                                    <option value="${ city.id }">${city.name}</option>
+                                                                            `)
                             });
                         }
                     });

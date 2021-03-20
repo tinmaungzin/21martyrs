@@ -24,33 +24,32 @@ class InformController extends Controller
     {
         $states = State::all();
         $cities = City::all();
-        return view('web.inform.detained',compact('states','cities'));
+        return view('web.inform.detained', compact('states', 'cities'));
     }
 
     public function edit_detained_form(Post $post)
     {
         $states = State::all();
         $cities = City::all();
-        return view('web.inform.edit_detained',compact('post','states','cities'));
+        return view('web.inform.edit_detained', compact('post', 'states', 'cities'));
     }
 
     public function store_edit_detained(EditDetainedRequest $request, Post $post)
     {
         $data = $request->except('photo');
-//        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-//        $data['profile_url'] = ImageModule::uploadFromRequest('photo',$path);
+        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+        $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         $data['status'] = 'detained';
         $data['post_id'] = $post->id;
         $data['publishing_status'] = 'None';
         //TODO add user id
-        DB::transaction(function() use($data)
-        {
+        DB::transaction(function () use ($data) {
             $pendingPost = PendingPost::create($data);
-//            Image::create($this->getImageData($pendingPost));
+            //            Image::create($this->getImageData($pendingPost));
         });
 
 
-        Session::flash('msg','Data sent successfully!');
+        Session::flash('msg', 'Data sent successfully!');
         return redirect(route('index'));
     }
 
@@ -67,56 +66,55 @@ class InformController extends Controller
     {
         $data = $request->except('photo');
         $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-        $data['profile_url'] = ImageModule::uploadFromRequest('photo',$path);
+        $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         $data['status'] = 'detained';
         $data['publishing_status'] = 'None';
         //TODO add user id
 
-        DB::transaction(function() use($data)
-        {
+        DB::transaction(function () use ($data) {
             $pendingPost = PendingPost::create($data);
-//            Image::create($this->getImageData($pendingPost));
+            //            Image::create($this->getImageData($pendingPost));
         });
 
 
 
-        Session::flash('msg','Data sent successfully!');
+        Session::flash('msg', 'Data sent successfully!');
         return redirect(route('index'));
     }
 
     public function getCities(Request $request)
     {
         $state_id = $request->state_id;
-        $cities = City::where('state_id',$state_id)->get();
-        return response()->json(array('success' => true,'cities'=> $cities) , 200);
+        $cities = City::where('state_id', $state_id)->get();
+        return response()->json(array('success' => true, 'cities' => $cities), 200);
     }
 
     public function dead_form()
     {
         $states = State::all();
         $cities = City::all();
-        return view('web.inform.dead',compact('states','cities'));
+        return view('web.inform.dead', compact('states', 'cities'));
     }
 
 
     public function store_dead(DeadRequest $request)
     {
         $data = $request->except('photo');
-//        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-//        $data['profile_url'] = ImageModule::uploadFromRequest('photo',$path);
+        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+        $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+        dd($data['profile_url']);
         $data['status'] = 'dead';
         $data['publishing_status'] = 'None';
         //TODO add user id
 
-        DB::transaction(function() use($data)
-        {
+        DB::transaction(function () use ($data) {
             $pendingPost = PendingPost::create($data);
-//            Image::create($this->getImageData($pendingPost));
+            //            Image::create($this->getImageData($pendingPost));
         });
 
 
 
-        Session::flash('msg','Data sent successfully!');
+        Session::flash('msg', 'Data sent successfully!');
         return redirect(route('index'));
     }
 
@@ -124,27 +122,26 @@ class InformController extends Controller
     {
         $states = State::all();
         $cities = City::all();
-        return view('web.inform.edit_dead',compact('post','states','cities'));
+        return view('web.inform.edit_dead', compact('post', 'states', 'cities'));
     }
 
 
     public function store_edit_dead(EditDeadRequest $request, Post $post)
     {
         $data = $request->except('photo');
-//        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-//        $data['profile_url'] = ImageModule::uploadFromRequest('photo',$path);
+        //        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+        //        $data['profile_url'] = ImageModule::uploadFromRequest('photo',$path);
         $data['status'] = 'dead';
         $data['post_id'] = $post->id;
         $data['publishing_status'] = 'None';
         //TODO add user id
-        DB::transaction(function() use($data)
-        {
+        DB::transaction(function () use ($data) {
             $pendingPost = PendingPost::create($data);
-//            Image::create($this->getImageData($pendingPost));
+            //            Image::create($this->getImageData($pendingPost));
         });
 
 
-        Session::flash('msg','Data sent successfully!');
+        Session::flash('msg', 'Data sent successfully!');
         return redirect(route('index'));
     }
 }
