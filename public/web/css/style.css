@@ -223,11 +223,16 @@ select {
 .contactUs {
   overflow: hidden;
   margin: auto;
-  width: 500px;
+  max-width: 500px;
   background-color: rgb(168, 164, 164);
   border-radius: 7px;
   padding: 20px;
 }
+
+.contact-us-title {
+
+}
+
 .contactUsQuestions {
   width: 30%;
   float: left;
@@ -282,8 +287,6 @@ textarea {
   background-color: #f4f4f4;
   padding: 0 2rem;
 }
-
-
 
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
   .inputDataBox {

@@ -12,7 +12,7 @@
                     <div class="banner-caption">
                         <div class="line-dec"></div>
                         <h2>{{ __('ui.about_us') }}</h2>
-                        <span>{{ __('ui.about_us_long') }}</span>
+                        <span style="font-size: 18px">{{ __('ui.about_us_long') }}</span>
                         <div class="blue-button">
                             <a class="scrollTo" data-scrollTo="popular" href="about.html">{{ __('ui.discover_more') }}</a>
                         </div>
