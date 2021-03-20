@@ -5,6 +5,7 @@
 @section('content')
 
     <div class="inputContainer">
+        
         <div class="inputDataBox">
             <div class="mainHeader">
                 <h3>{{ __('ui.arrestee_info') }}</h3>
