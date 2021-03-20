@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected array $guarded = [];
+    protected $guarded = [];
 
 
     public function state()
@@ -21,6 +21,11 @@ class Post extends Model
     public function city()
     {
         return $this->belongsTo(City::class);
+    }
+
+    public function images()
+    {
+        return $this->hasMany(Image::class);
     }
 
 //    public function getProfileUrlAttribute($value)

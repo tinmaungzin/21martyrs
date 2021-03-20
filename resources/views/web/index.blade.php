@@ -59,43 +59,62 @@
                 <div>
                     <div>
                         <div class="submit-form">
-                            <form id="form-submit" action="" method="get">
+                            <form id="form-submit" action="{{route('search')}}" method="post">
+                                @csrf
                                 <div class="row">
+{{--                                    <div class="col-md-3 first-item">--}}
+{{--                                        <fieldset>--}}
+{{--                                            <input--}}
+{{--                                                name="name"--}}
+{{--                                                type="text"--}}
+{{--                                                class="form-control"--}}
+{{--                                                id="name"--}}
+{{--                                                placeholder="Your name..."--}}
+{{--                                                required=""--}}
+{{--                                            />--}}
+{{--                                        </fieldset>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-3 second-item">--}}
+{{--                                        <fieldset>--}}
+{{--                                            <input--}}
+{{--                                                name="location"--}}
+{{--                                                type="text"--}}
+{{--                                                class="form-control"--}}
+{{--                                                id="location"--}}
+{{--                                                placeholder="Type location..."--}}
+{{--                                                required=""--}}
+{{--                                            />--}}
+{{--                                        </fieldset>--}}
+{{--                                    </div>--}}
                                     <div class="col-md-3 first-item">
                                         <fieldset>
-                                            <input
-                                                name="name"
-                                                type="text"
-                                                class="form-control"
-                                                id="name"
-                                                placeholder="Your name..."
-                                                required=""
-                                            />
+                                            <select  name="state_id">
+                                                <option value="" selected disabled>Select State and Region</option>
+                                                @foreach($states as $state)
+                                                <option value="{{$state->id}}">{{$state->name}}</option>
+                                                    @endforeach
+
+                                            </select>
                                         </fieldset>
                                     </div>
                                     <div class="col-md-3 second-item">
                                         <fieldset>
-                                            <input
-                                                name="location"
-                                                type="text"
-                                                class="form-control"
-                                                id="location"
-                                                placeholder="Type location..."
-                                                required=""
-                                            />
+                                            <select name="status">
+                                                <option value="" selected disabled>Select Status</option>
+                                                <option value="detained">Detained</option>
+                                                <option value="dead">Dead</option>
+
+                                            </select>
                                         </fieldset>
                                     </div>
                                     <div class="col-md-3 third-item">
                                         <fieldset>
-                                            <select required name="category" onchange="this.form">
-                                                <option value="">Select category...</option>
-                                                <option value="Shops">Shops</option>
-                                                <option value="Hotels">Hotels</option>
-                                                <option value="Restaurants">Restaurants</option>
-                                                <option value="Events">Events</option>
-                                                <option value="Meetings">Meetings</option>
-                                                <option value="Fitness">Fitness</option>
-                                                <option value="Cafes">Cafes</option>
+                                            <select name="gender">
+                                                <option value="" selected disabled>Select Gender</option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                                <option value="Other">Other</option>
+
                                             </select>
                                         </fieldset>
                                     </div>
@@ -122,6 +141,8 @@
                     <div class="section-heading">
                         <h2>Detained Civilians</h2>
                         <span>Latest Arrested Civilians</span>
+                        <h4>Applied Filters -</h4>
+                        <p>State and Region</p>
                     </div>
                 </div>
             </div>
@@ -253,7 +274,11 @@
 {{--                </div>--}}
 {{--            </div>--}}
         </div>
+        @include('web.layout.pagination', ['paginator' => $posts])
+
     </section>
+
+
 <!-- Card Container -->
 
 @endsection

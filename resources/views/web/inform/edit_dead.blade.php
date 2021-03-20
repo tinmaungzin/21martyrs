@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form action="{{route('store.edit.detained',['post' => $post->id])}}" method="post" enctype="multipart/form-data">>
+    <form action="{{route('store.edit.dead',['post' => $post->id])}}" method="post" enctype="multipart/form-data">>
         @csrf
         <div class="inputContainer">
         <div class="inputDataBox">
@@ -134,13 +134,13 @@
                         <p>ဖမ်းဆီးခံရသည့် အကြောင်းအရင်း</p>
                     </div>
                     <div class="inputValue">
-                        <select id="township" name="reason_of_arrest">
-                            <option value="" selected disabled>Choose Reason Of Arrest</option>
-                            <option @if($post->reason_of_arrest == 'Protest') selected @endif  value="Protest">Protester</option>
-                            <option @if($post->reason_of_arrest == 'Bystand') selected @endif value="Bystand">Bystander</option>
-                            <option @if($post->reason_of_arrest == 'Other') selected @endif value="Other">Others</option>
+                        <select id="township" name="reason_of_dead">
+                            <option value="" disabled>Choose Reason Of Dead</option>
+                            <option @if($post->reason_of_dead == 'Gunshot') selected @endif  value="Gunshot">Gunshot</option>
+                            <option @if($post->reason_of_dead == 'Beaten') selected @endif value="Beaten">Beaten</option>
+                            <option @if($post->reason_of_dead == 'Other') selected @endif value="Other">Others</option>
                         </select>
-                        <span class="text-danger">{{$errors->first('reason_of_arrest')}}</span>
+                        <span class="text-danger">{{$errors->first('reason_of_dead')}}</span>
 
                     </div>
 
@@ -148,17 +148,17 @@
             </div>
 
             <div class="rightInfo">
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>ဖမ်းဆီးခံရသူအား ချုပ်နှောင်ထားသည့် အကျဥ်းထောင်</p>
-                        <p>(မသိပါက အလွတ်ထားခဲ့ပါ)</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="text" value="{{$post->prison}}" placeholder="ဥပမာ... အင်းစိန်အကျဥ်းထောင်" name="prison" autocomplete="off" />
-                        <span class="text-danger">{{$errors->first('prison')}}</span>
+{{--                <div class="inputBox">--}}
+{{--                    <div class="inputHeader">--}}
+{{--                        <p>ဖမ်းဆီးခံရသူအား ချုပ်နှောင်ထားသည့် အကျဥ်းထောင်</p>--}}
+{{--                        <p>(မသိပါက အလွတ်ထားခဲ့ပါ)</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="inputValue">--}}
+{{--                        <input type="text" value="{{$post->prison}}" placeholder="ဥပမာ... အင်းစိန်အကျဥ်းထောင်" name="prison" autocomplete="off" />--}}
+{{--                        <span class="text-danger">{{$errors->first('prison')}}</span>--}}
 
-                    </div>
-                </div>
+{{--                    </div>--}}
+{{--                </div>--}}
 
                 <div class="inputBox">
                     <div class="inputHeader">
@@ -298,8 +298,6 @@
                 });
         }
         $(document).ready(function() {
-
-
 
             fetchCitiesOnLoad();
 

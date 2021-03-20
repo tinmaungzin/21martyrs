@@ -50,10 +50,21 @@ Route::prefix('admin')->group(function () {
 
 Route::get('/',[HomeController::class,'index'])->name('index');
 Route::get('/about',[HomeController::class,'about_us'])->name('about');
+Route::post('/search',[HomeController::class,'search'])->name('search');
+
 Route::get('/profile/{post}',[HomeController::class,'profile'])->name('profile');
-Route::get('inform/dead',[InformController::class,'dead_form'])->name('form.dead');
+
+
 Route::get('inform/detained',[InformController::class,'detained_form'])->name('form.detained');
-Route::get('inform/edit_detained/{post}',[InformController::class,'edit_detained_form'])->name('form.edit.detained');
 Route::post('inform/detained',[InformController::class,'store_detained'])->name('store.detained');
+Route::get('inform/edit_detained/{post}',[InformController::class,'edit_detained_form'])->name('form.edit.detained');
 Route::post('inform/edit_detained/{post}',[InformController::class,'store_edit_detained'])->name('store.edit.detained');
+
+
+Route::get('inform/dead',[InformController::class,'dead_form'])->name('form.dead');
+Route::post('inform/dead',[InformController::class,'store_dead'])->name('store.dead');
+Route::get('inform/edit_dead/{post}',[InformController::class,'edit_dead_form'])->name('form.edit.dead');
+Route::post('inform/edit_dead/{post}',[InformController::class,'store_edit_dead'])->name('store.edit.dead');
+
+
 Route::post('/fetchCities',[InformController::class,'getCities'])->name('fetch.cities');
