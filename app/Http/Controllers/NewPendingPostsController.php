@@ -7,6 +7,7 @@ use App\Models\PendingPost;
 use App\Models\Post;
 use App\Utility\ImageModule;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class NewPendingPostsController extends Controller
@@ -29,6 +30,7 @@ class NewPendingPostsController extends Controller
         $data['name'] = $pendingPost->name;
         $data['comment'] = $pendingPost->comment;
         $data['age'] = $pendingPost->age;
+        $data['status'] = $pendingPost->status;
         $data['profile_url'] = $pendingPost->profile_url;
         $data['gender'] = $pendingPost->gender;
         $data['occupation'] = $pendingPost->occupation;
@@ -44,13 +46,28 @@ class NewPendingPostsController extends Controller
         return $data;
     }
 
+    public function getImageData($post)
+    {
+        $image_data['url'] = $post->profile_url;
+        $image_data['post_id'] = $post->id;
+        $image_data['post_type'] = 'Post';
+
+        return $image_data;
+    }
+
     public function handle_new_pending_post(Request $request, PendingPost $pendingPost)
     {
         if($request->is_confirm)
         {
             $pendingPost->publishing_status = 'Confirmed';
             $pendingPost->save();
-            Post::create($this->getPostData($pendingPost));
+            DB::transaction(function() use($pendingPost)
+            {
+                $post = Post::create($this->getPostData($pendingPost));
+//                Image::create($this->getImageData($post));
+            });
+
+
             Session::flash('msg','Post published successfully!');
         }
         else

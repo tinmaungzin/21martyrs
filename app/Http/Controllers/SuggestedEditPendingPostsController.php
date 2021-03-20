@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use App\Models\PendingPost;
 use App\Models\Post;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 
 class SuggestedEditPendingPostsController extends Controller
@@ -48,8 +49,13 @@ class SuggestedEditPendingPostsController extends Controller
         {
             $pendingPost->publishing_status = 'Confirmed';
             $pendingPost->save();
-            $post = Post::FindOrFail($pendingPost->post_id);
-            $post->update($this->getPostData($pendingPost));
+            DB::transaction(function() use($pendingPost)
+            {
+                $post = Post::FindOrFail($pendingPost->post_id);
+                $post->update($this->getPostData($pendingPost));
+//                $post->image->url = $post->profile_url;
+//                $post->image->save();
+            });
             Session::flash('msg','Post updated successfully!');
         }
         else

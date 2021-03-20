@@ -38,7 +38,7 @@
                 </div>
                 <div class="leftConfirmInfo">
                     <div class="confirmHeaders">
-                        <span>Arrested Date</span>
+                        <span> Date</span>
                     </div>
                     <div class="confirmValues">
                         <span>:</span>
@@ -63,6 +63,8 @@
                         <span>{{$pendingPost->organization_name}}</span>
                     </div>
                 </div>
+
+                @if($post->status == 'detained')
                 <div class="leftConfirmInfo">
                     <div class="confirmHeaders">
                         <span>Reason of being arrested</span>
@@ -72,6 +74,21 @@
                         <span>{{$pendingPost->reason_of_arrest}}</span>
                     </div>
                 </div>
+                @endif
+
+                @if($post->status == 'dead')
+                    <div class="leftConfirmInfo">
+                        <div class="confirmHeaders">
+                            <span>Reason of being dead</span>
+                        </div>
+                        <div class="confirmValues">
+                            <span>:</span>
+                            <span>{{$pendingPost->reason_of_dead}}</span>
+                        </div>
+                    </div>
+                @endif
+
+                @if(isset($post->prison))
                 <div class="leftConfirmInfo">
                     <div class="confirmHeaders">
                         <span>Prison</span>
@@ -81,6 +98,7 @@
                         <span>{{$pendingPost->prison}}</span>
                     </div>
                 </div>
+                @endif
                 <div class="leftConfirmInfo">
                     <div class="confirmHeaders">
                         <span>Status</span>
@@ -88,15 +106,6 @@
                     <div class="confirmValues">
                         <span>:</span>
                         <span>{{$pendingPost->status}}</span>
-                    </div>
-                </div>
-                <div class="leftConfirmInfo">
-                    <div class="confirmHeaders">
-                        <span>Released Date</span>
-                    </div>
-                    <div class="confirmValues">
-                        <span>:</span>
-                        <span>-</span>
                     </div>
                 </div>
                 <div class="leftConfirmInfo">

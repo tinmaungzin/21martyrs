@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class EditDetainedRequest extends FormRequest
+class DeadRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -32,14 +32,14 @@ class EditDetainedRequest extends FormRequest
             'occupation' => 'required',
             'organization_name' => 'required',
             'detained_date' => 'required',
-            'reason_of_arrest' => 'required',
+            'reason_of_dead' => 'required',
+            'photo' => 'required',
             'informant_name' => 'required',
             'informant_association_with_victim' => 'required',
             'informant_phone' => 'required'
 
         ];
     }
-
     public function attributes()
     {
         return [

@@ -54,6 +54,7 @@
                         <span>{{$post->occupation}}</span>
                     </div>
                 </div>
+                @if($post->status == 'detained')
                 <div class="profileDetailBox">
                     <div class="profileHeaders">
                         <span>Reason of being arrested</span>
@@ -62,7 +63,19 @@
                         <span>{{$post->reason_of_arrest}}</span>
                     </div>
                 </div>
+                    @endif
+                @if($post->status == 'dead')
+                    <div class="profileDetailBox">
+                        <div class="profileHeaders">
+                            <span>Reason of being Dead</span>
+                        </div>
+                        <div class="profileValues">
+                            <span>{{$post->reason_of_dead}}</span>
+                        </div>
+                    </div>
+                    @endif
 
+                @if(isset($post->prison))
                 <div class="profileDetailBox">
                     <div class="profileHeaders">
                         <span>Prison</span>
@@ -71,6 +84,7 @@
                         <span>{{$post->prison}}</span>
                     </div>
                 </div>
+                @endif
                 <div class="profileDetailBox">
                     <div class="profileHeaders">
                         <span>Status</span>
@@ -81,9 +95,16 @@
                 </div>
 
                 <div class="editButton">
+                    @if($post->status == 'detained')
                     <a href="{{route('form.edit.detained',['post'=> $post->id])}}">
                         <button>Edit</button>
                     </a>
+                        @endif
+                        @if($post->status == 'dead')
+                            <a href="{{route('form.edit.dead',['post'=> $post->id])}}">
+                                <button>Edit</button>
+                            </a>
+                        @endif
                 </div>
             </div>
         </div>

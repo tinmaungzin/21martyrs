@@ -10,6 +10,8 @@ class Image extends Model
 {
     use HasFactory;
 
+    protected $guarded = [];
+
     public function getUrlAttribute($url)
     {
         return ImageModule::urlFromPath($url);

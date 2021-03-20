@@ -23,8 +23,13 @@ class Post extends Model
         return $this->belongsTo(City::class);
     }
 
-    //    public function getProfileUrlAttribute($value)
-    //    {
-    //        return ImageModule::urlFromPath($value);
-    //    }
+    public function images()
+    {
+        return $this->hasMany(Image::class);
+    }
+
+//    public function getProfileUrlAttribute($value)
+//    {
+//        return ImageModule::urlFromPath($value);
+//    }
 }
