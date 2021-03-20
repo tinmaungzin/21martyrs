@@ -19,6 +19,7 @@
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name"
                                 autocomplete="off" />
+                            <br />
                             <span class="text-danger">{{ $errors->first('name') }}</span>
 
                         </div>
@@ -255,8 +256,8 @@
                             cities = data.cities;
                             cities.forEach(function(city) {
                                 $('#city').append(`
-                                                                <option value="${ city.id }">${city.name}</option>
-                                                        `)
+                                                                    <option value="${ city.id }">${city.name}</option>
+                                                            `)
                             });
                         }
                     });
