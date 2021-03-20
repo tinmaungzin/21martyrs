@@ -40,7 +40,7 @@
 
 <body style="background-color: #eff1f5">
     <div id="app" class="overall-container">
-        @include('layout.adminpanel.sidebar')
+        @include('admin.layout.sidebar')
         @yield('content')
     </div>
 

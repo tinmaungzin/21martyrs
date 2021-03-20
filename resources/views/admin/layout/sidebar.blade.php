@@ -22,7 +22,7 @@
 
      <div class="sidebar">
         <div class="inner-sidebar" id="inner">
-            <a href="/admins"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
+            <a href="{{route('admins.index')}}"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
                     'admins.index',
                     'admins.create',
@@ -31,20 +31,16 @@
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Admin
             </a>
 
-            <a href="#"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
+            <a href="{{route('list.new_pending_posts')}}"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
-                    'admins.index',
-                    'admins.create',
-                    'admins.edit'
+                    'list.new_pending_posts',
                     ]) ? 'active-link': ''}}">
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> New Pending Posts
             </a>
 
-            <a href="#"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
+            <a href="{{route('list.suggested_edit_pending_posts')}}"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
-                    'admins.index',
-                    'admins.create',
-                    'admins.edit'
+                    'list.suggested_edit_pending_posts'
                     ]) ? 'active-link': ''}}">
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Edit Pending Posts
             </a>
@@ -56,6 +52,13 @@
                     'admins.edit'
                     ]) ? 'active-link': ''}}">
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Published Posts
+            </a>
+
+            <a href="{{route('list.rejected_pending_posts')}}"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
+            {{ in_array($route, [
+                    'list.rejected_pending_posts',
+                    ]) ? 'active-link': ''}}">
+                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Rejected Posts
             </a>
 
 

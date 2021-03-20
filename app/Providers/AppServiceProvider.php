@@ -40,8 +40,7 @@ class AppServiceProvider extends ServiceProvider
     public function sidebarRoute(): array
     {
         return View::composer(
-            'layout.adminpanel.sidebar',
-            RouteComposer::class
+            'admin.layout.sidebar', RouteComposer::class
         );
     }
 

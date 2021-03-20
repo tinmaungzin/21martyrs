@@ -1,6 +1,6 @@
-@extends('layout.web.master')
+@extends('web.layout.master')
 
-@section('title', 'Detained Info')
+@section('title', 'Dead Info')
 
 @section('content')
 

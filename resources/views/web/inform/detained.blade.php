@@ -1,188 +1,267 @@
-@extends('layout.web.master')
+@extends('web.layout.master')
 
 @section('title', 'Detained Info')
 
 @section('content')
 
-    <div class="inputContainer">
-        
-        <div class="inputDataBox">
-            <div class="mainHeader">
-                <h3>{{ __('ui.arrestee_info') }}</h3>
+    <form action="{{ route('store.detained') }}" method="post" enctype="multipart/form-data">>
+        @csrf
+        <div class="inputContainer">
+            <div class="inputDataBox">
+                <div class="mainHeader">
+                    <h3>{{ __('ui.arrestee_info') }}</h3>
+                </div>
+                <div class="leftInfo">
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.name') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name"
+                                autocomplete="off" />
+                            <span class="text-danger">{{ $errors->first('name') }}</span>
+
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.age') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="number" id="age" name="age" min="10" max="99"
+                                placeholder="{{ __('ui.age_placholder') }}" />
+                            <span class="text-danger">{{ $errors->first('age') }}</span>
+
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.gender') }}</p>
+                        </div>
+
+                        <div class="inputValue">
+                            <select id="gender" name="gender">
+                                <option value="" selected disabled>{{ __('ui.choose_gender') }}</option>
+                                <option value="male">{{ __('ui.male') }}</option>
+                                <option value="female">{{ __('ui.female') }}</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="text-danger">{{ $errors->first('gender') }}</span>
+
+
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>ဖမ်းဆီးခံရသူနေထိုင်ရာ ပြည်နယ်/တိုင်းဒေသကြီး</p>
+                        </div>
+                        <div class="inputValue">
+                            <select id="state" name="state_id" title="State">
+                                <option value="" disabled selected>Choose State</option>
+                                @foreach ($states as $state)
+                                    <option value="{{ $state->id }}">{{ $state->name }}</option>
+                                @endforeach
+                            </select>
+                            <span class="text-danger">{{ $errors->first('state_id') }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>ဖမ်းဆီးခံရသူနေထိုင်ရာ မြို့</p>
+                        </div>
+                        <div class="inputValue">
+                            <select id="city" name="city_id">
+                                <option value="" selected disabled>Choose City</option>
+                            </select>
+                            <span class="text-danger">{{ $errors->first('city_id') }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>ဖမ်းဆီးခံရသူ၏ အလုပ်အကိုင်</p>
+                        </div>
+                        <div class="inputValue">
+                            <select id="occupation" name="occupation">
+                                <option value="" selected disabled>Choose Occupation</option>
+                                <option value="Student">Student</option>
+                                <option value="CDM Staff">CDM staff</option>
+                                <option value="Government Official">Government official</option>
+                                <option value="Political Party Member">Political party member</option>
+                                <option value="Journalist">Journalist</option>
+                                <option value="Civilian">Civilian</option>
+                                <option value="Other">Other</option>
+                            </select>
+                            <span class="text-danger">{{ $errors->first('occupation') }}</span>
+
+                        </div>
+                        {{-- <div class="inputValue" style="display: none"> --}}
+                        {{-- <input type="text" placeholder="please specify" name="name" /> --}}
+                        {{-- </div> --}}
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.association') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="text" placeholder="{{ __('ui.arresstee_assoication_placholder') }}"
+                                name="organization_name" />
+                            <span class="text-danger">{{ $errors->first('organization_name') }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.arrested_date') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="date" id="arrested_date" name="detained_date" />
+                            <span class="text-danger">{{ $errors->first('detained_date') }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.arrested_reason') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <select id="township" name="reason_of_arrest">
+                                <option value="" selected disabled>{{ __('ui.choose_reason_arrest') }}</option>
+                                option value="protesting">{{ __('ui.protestor') }}</option>
+                                <option value="political">{{ __('ui.bystander') }}</option>
+                                <option value="noreason">{{ __('ui.others') }}</option>
+                            </select>
+                            <span class="text-danger">{{ $errors->first('reason_of_arrest') }}</span>
+
+                        </div>
+                        <div class="inputValue" style="display: none">
+                            <input type="text" placeholder="{{ __('ui.please_specify') }}" name="name" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="rightInfo">
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.prison') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="text" placeholder="{{ __('ui.prison_placeholder') }}" name="prison"
+                                autocomplete="off" />
+                            <span class="text-danger">{{ $errors->first('prison') }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.comment') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <textarea type="text" rows="6" placeholder="ပြောလိုသည်များကို ဒီနေရာမှာ ရေးခဲ့နိုင်ပါတယ်။"
+                                name="comment" autocomplete="off"></textarea>
+                            <span class="text-danger">{{ $errors->first('comment') }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="inputBoxImg">
+                        <input type="file" id="myFile" name="photo" />
+                        <span class="text-danger">{{ $errors->first('photo') }}</span>
+
+                    </div>
+
+
+
+                    <h3>{{ __('ui.informer_info') }}</h3>
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.informer_name') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="informant_name"
+                                autocomplete="off" />
+                            <span class="text-danger">{{ $errors->first('informant_name') }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.relationship_with_arrestee') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="text" placeholder="{{ __('ui.relationship_placeholder') }}"
+                                name="informant_association_with_victim" autocomplete="off" />
+                            <span class="text-danger">{{ $errors->first('informant_association_with_victim') }}</span>
+
+                        </div>
+                    </div>
+
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('ui.informer_phone') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="number" id="age" placeholder="{{ __('ui.phone_placholder') }}"
+                                name="informant_phone" />
+                            <span class="text-danger">{{ $errors->first('informant_phone') }}</span>
+
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="leftInfo">
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.name') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name" autofocus />
-                    </div>
-                </div>
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.age') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="number" id="age" name="age" min="1" max="99" />
-                    </div>
-                </div>
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.gender') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <select id="gender" name="gender">
-                            <option value="male">{{ __('ui.male') }}</option>
-                            <option value="female">{{ __('ui.female') }}</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>Region</p>
-                    </div>
-                    <div class="inputValue">
-                        <select id="township" name="township">
-                            <option value="ygn">Yangon</option>
-                            <option value="mdy">Mandalay</option>
-                            <option value="sgg">Sagaing</option>
-                            <option value="mgy">Magway</option>
-                            <option value="bgo">Bago</option>
-                            <option value="tnt">Tanintharyi</option>
-                            <option value="ayw">Ayeyarwady</option>
-                            <option value="kac">Kachin</option>
-                            <option value="kay">Kayah</option>
-                            <option value="kia">Kayin</option>
-                            <option value="chn">Chin</option>
-                            <option value="mon">Mon</option>
-                            <option value="rki">Rakhine</option>
-                            <option value="shn">Shan</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>Township</p>
-                    </div>
-                    <div class="inputValue">
-                        <select id="township" name="township">
-                            <option value="ygn">Sanchaung</option>
-                            <option value="mdy">Kyinyintine</option>
-                            <option value="mdy">Kamanyut</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>Occupation</p>
-                    </div>
-                    <div class="inputValue">
-                        <select id="occupation" name="occupation">
-                            <option value="stu">Student</option>
-                            <option value="cdm">CDM staff</option>
-                            <option value="gov">Govement official</option>
-                            <option value="ppm">Political party member</option>
-                            <option value="jnl">Journalist</option>
-                            <option value="civ">Civilian</option>
-                            <option value="oth">Other</option>
-                        </select>
-                    </div>
-                    <div class="inputValue" style="display: none">
-                        <input type="text" placeholder="please specify" name="name" />
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.association') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="text" placeholder="University/Organization/Department .etc" name="association" />
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.arrested_date') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="date" id="arrested_date" name="arrested_date" />
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.arrested_reason') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <select id="township" name="township">
-                            <option value="protesting">{{ __('ui.protestor') }}</option>
-                            <option value="political">{{ __('ui.bystander') }}</option>
-                            <option value="noreason">{{ __('ui.others') }}</option>
-                        </select>
-                    </div>
-                    <div class="inputValue" style="display: none">
-                        <input type="text" placeholder="{{ __('ui.please_specify') }}" name="name" />
-                    </div>
-                </div>
-            </div>
-
-            <div class="rightInfo">
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.prison') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="text" placeholder="{{ __('ui.prison_placeholder') }}" name="name" />
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.arrestee_pic') }}</p>
-                    </div>
-                </div>
-                <div class="inputBoxImg">
-
-                    <input type="file" id="myFile" name="filename" />
-                </div>
-
-                <h3>{{ __('ui.informer_info') }}</h3>
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.name') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name" />
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.relationship_with_arrestee') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="text" placeholder="{{ __('ui.relationship_placeholder') }}" name="name" />
-                    </div>
-                </div>
-
-                <div class="inputBox">
-                    <div class="inputHeader">
-                        <p>{{ __('ui.informer_phone') }}</p>
-                    </div>
-                    <div class="inputValue">
-                        <input type="number" id="age" placeholder="09xxxxxxxxx" name="age" />
-                    </div>
-                </div>
+            <div class="submitButton">
+                <button type="submit">{{ __('ui.submit') }}</button>
             </div>
         </div>
-        <div class="submitButton">
-            <button type="submit">{{ __('ui.submit') }}</button>
-        </div>
-    </div>
+    </form>
+
+
+    <script>
+        $(document).ready(function() {
+
+            function ajaxHeaders() {
+                return $.ajaxSetup({
+                    headers: {
+                        "Content-Type": "application/json",
+                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                    }
+                });
+            }
+
+
+            $('#state').change(function() {
+                $('#city').empty();
+
+                let data = {
+                    state_id: $('#state').val()
+                };
+                let cities;
+                ajaxHeaders();
+
+                $.post('/fetchCities', JSON.stringify(data))
+                    .done(function(data) {
+                        if (data.success) {
+                            cities = data.cities;
+                            cities.forEach(function(city) {
+                                $('#city').append(`
+                                            <option value="${ city.id }">${city.name}</option>
+                                    `)
+                            });
+                        }
+                    });
+            });
+
+        });
+
+    </script>
 
 @endsection

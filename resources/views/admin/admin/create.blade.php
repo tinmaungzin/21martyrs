@@ -1,4 +1,4 @@
-@extends('layout.adminpanel.master')
+@extends('admin.layout.master')
 @section('title', 'Add New Admin')
 @section('content')
     <div class="main-container">
