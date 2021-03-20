@@ -19,7 +19,7 @@ class CreatePostsTable extends Migration
             $table->string('comment')->nullable();
             $table->double('age');
             $table->string('profile_url')->nullable();
-            $table->enum('gender',['male','female','others']);
+            $table->enum('gender',['Male','Female','Other']);
             $table->enum('occupation',['Student','CDM staff','Government Official','Political Party Member','Journalist','Civilian','Other']);
             $table->string('organization_name');
             $table->foreignId('city_id')->constrained()->onDelete('cascade');

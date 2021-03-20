@@ -1,4 +1,4 @@
-@extends('layout.web.master')
+@extends('web.layout.master')
 
 @section('title', 'About Us')
 

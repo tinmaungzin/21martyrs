@@ -19,13 +19,13 @@ class AdminController extends Controller
     public function index()
     {
         $admins = Admin::orderBy('id','desc')->paginate(10);
-        return view('AdminPanel.index',compact('admins'));
+        return view('admin.admin.index',compact('admins'));
     }
 
 
     public function create()
     {
-        return view('AdminPanel.create');
+        return view('admin.admin.create');
     }
 
 
@@ -47,7 +47,7 @@ class AdminController extends Controller
 
     public function edit(Admin $admin)
     {
-        return view('AdminPanel.edit',compact('admin'));
+        return view('admin.admin.edit',compact('admin'));
     }
 
 

@@ -34,6 +34,8 @@ class CreatePendingPostsTable extends Migration
             $table->foreignId('post_id')->nullable()->constrained()->onDelete('cascade');
             $table->foreignId('user_id')->nullable()->constrained()->onDelete('cascade');
             $table->string('informant_association_with_victim');
+            $table->enum('publishing_status',['Confirmed','Rejected','None'])->nullable();
+
             $table->timestamps();
         });
     }

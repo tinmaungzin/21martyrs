@@ -1,5 +1,5 @@
 
-@extends('layout.web.master')
+@extends('web.layout.master')
 
 @section('title', 'Home')
 
@@ -129,137 +129,129 @@
                     Browse All
                 </a></p>
             <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_1.jpg')}} " alt="" />
+
+                @foreach($posts as $post)
+                    <a href="{{route('profile',['post'=>$post->id])}}">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="featured-item">
+                                <div class="thumb">
+                                    <img src="{{$post->image}} " alt="" />
+                                </div>
+                                <div class="down-content">
+                                    <h4>{{$post->name}}</h4>
+                                    <p>
+                                        {{$post->age}}
+                                    </p>
+                                    <p>
+                                        {{$post->state->name}}
+                                    </p>
+                                </div>
+                            </div>
                         </div>
-                        <div class="down-content">
-                            <h4>Samson</h4>
-                            <p>
-                                24
-                            </p>
-                            <p>
-                                Yangon
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_2.jpg')}} " alt="" />
-                        </div>
-                        <div class="down-content">
-                            <h4>Samson</h4>
-                            <p>
-                                24
-                            </p>
-                            <p>
-                                Yangon
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />
-                        </div>
-                        <div class="down-content">
-                            <h4>Samson</h4>
-                            <p>
-                                24
-                            </p>
-                            <p>
-                                Yangon
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />
-                        </div>
-                        <div class="down-content">
-                            <h4>Samson</h4>
-                            <p>
-                                24
-                            </p>
-                            <p>
-                                Yangon
-                            </p>
-                        </div>
-                    </div>
-                </div>
+
+                    </a>
+                @endforeach
+{{--                <div class="col-md-3 col-sm-6 col-xs-12">--}}
+{{--                    <div class="featured-item">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="{{asset('web/img/featured_item_2.jpg')}} " alt="" />--}}
+{{--                        </div>--}}
+{{--                        <div class="down-content">--}}
+{{--                            <h4>Samson</h4>--}}
+{{--                            <p>--}}
+{{--                                24--}}
+{{--                            </p>--}}
+{{--                            <p>--}}
+{{--                                Yangon--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 col-sm-6 col-xs-12">--}}
+{{--                    <div class="featured-item">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />--}}
+{{--                        </div>--}}
+{{--                        <div class="down-content">--}}
+{{--                            <h4>Samson</h4>--}}
+{{--                            <p>--}}
+{{--                                24--}}
+{{--                            </p>--}}
+{{--                            <p>--}}
+{{--                                Yangon--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+
+
             </div>
-            <div class="row">
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_1.jpg')}} " alt="" />
-                        </div>
-                        <div class="down-content">
-                            <h4>Samson</h4>
-                            <p>
-                                24
-                            </p>
-                            <p>
-                                Yangon
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_2.jpg')}} " alt="" />
-                        </div>
-                        <div class="down-content">
-                            <h4>Samson</h4>
-                            <p>
-                                24
-                            </p>
-                            <p>
-                                Yangon
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />
-                        </div>
-                        <div class="down-content">
-                            <h4>Samson</h4>
-                            <p>
-                                24
-                            </p>
-                            <p>
-                                Yangon
-                            </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                        <div class="thumb">
-                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />
-                        </div>
-                        <div class="down-content">
-                            <h4>Samson</h4>
-                            <p>
-                                24
-                            </p>
-                            <p>
-                                Yangon
-                            </p>
-                        </div>
-                    </div>
-                </div>
-            </div>
+{{--            <div class="row">--}}
+{{--                <div class="col-md-3 col-sm-6 col-xs-12">--}}
+{{--                    <div class="featured-item">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="{{asset('web/img/featured_item_1.jpg')}} " alt="" />--}}
+{{--                        </div>--}}
+{{--                        <div class="down-content">--}}
+{{--                            <h4>Samson</h4>--}}
+{{--                            <p>--}}
+{{--                                24--}}
+{{--                            </p>--}}
+{{--                            <p>--}}
+{{--                                Yangon--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 col-sm-6 col-xs-12">--}}
+{{--                    <div class="featured-item">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="{{asset('web/img/featured_item_2.jpg')}} " alt="" />--}}
+{{--                        </div>--}}
+{{--                        <div class="down-content">--}}
+{{--                            <h4>Samson</h4>--}}
+{{--                            <p>--}}
+{{--                                24--}}
+{{--                            </p>--}}
+{{--                            <p>--}}
+{{--                                Yangon--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 col-sm-6 col-xs-12">--}}
+{{--                    <div class="featured-item">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />--}}
+{{--                        </div>--}}
+{{--                        <div class="down-content">--}}
+{{--                            <h4>Samson</h4>--}}
+{{--                            <p>--}}
+{{--                                24--}}
+{{--                            </p>--}}
+{{--                            <p>--}}
+{{--                                Yangon--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--                <div class="col-md-3 col-sm-6 col-xs-12">--}}
+{{--                    <div class="featured-item">--}}
+{{--                        <div class="thumb">--}}
+{{--                            <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" />--}}
+{{--                        </div>--}}
+{{--                        <div class="down-content">--}}
+{{--                            <h4>Samson</h4>--}}
+{{--                            <p>--}}
+{{--                                24--}}
+{{--                            </p>--}}
+{{--                            <p>--}}
+{{--                                Yangon--}}
+{{--                            </p>--}}
+{{--                        </div>--}}
+{{--                    </div>--}}
+{{--                </div>--}}
+{{--            </div>--}}
         </div>
     </section>
 <!-- Card Container -->

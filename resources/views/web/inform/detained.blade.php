@@ -1,10 +1,10 @@
-@extends('layout.web.master')
+@extends('web.layout.master')
 
 @section('title', 'Detained Info')
 
 @section('content')
 
-    <form action="{{route('store.detained')}}" method="post">
+    <form action="{{route('store.detained')}}" method="post" enctype="multipart/form-data">>
         @csrf
         <div class="inputContainer">
         <div class="inputDataBox">
@@ -42,7 +42,7 @@
                             <option value="" selected disabled>Choose Gender</option>
                             <option value="Male">Male</option>
                             <option value="Female">Female</option>
-                            <option value="Other">Others</option>
+                            <option value="Other">Other</option>
                         </select>
                         <span class="text-danger">{{$errors->first('gender')}}</span>
 

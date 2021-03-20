@@ -17,3 +17,6 @@ yarn-error.log
 
 # Editor config
 .idea/
+
+# Deployment credentials
+config/deploy.php
