@@ -108,7 +108,6 @@
     </div>
     <!-- Header -->
 
-
     @yield('content')
 
 
