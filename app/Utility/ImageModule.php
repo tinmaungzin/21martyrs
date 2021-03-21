@@ -12,6 +12,7 @@ class ImageModule
     {
         $DO_BASE_FOLDER = env('DO_BASE_FOLDER', 'development');
 
+        $DEFAULT_DISK = config('filesystems.default');
         var_dump(
             'FILESYSTEM_DISK',
             config('filesystems.default'),
@@ -25,7 +26,10 @@ class ImageModule
             env("DO_BUCKET")
         );
 
-        return request()->file($imageKey)->storePubliclyAs('/' . $DO_BASE_FOLDER, $name, config('filesystems.default'));
+        // return request()->file($imageKey)->storePubliclyAs('/' . $DO_BASE_FOLDER, $name, config('filesystems.default'));
+        $path = Storage::disk($DEFAULT_DISK)->putFileAs($DO_BASE_FOLDER, request()->file($imageKey), $name);
+        Storage::disk($DEFAULT_DISK)->setVisibility($path, 'public');
+        return $path;
     }
 
     public static function urlFromPath(String $path)
