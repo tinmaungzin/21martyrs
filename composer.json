@@ -19,6 +19,7 @@
         "silviolleite/laravelpwa": "~2.0.3"
     },
     "require-dev": {
+        "amirami/localizator": "^0.4.0@alpha",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",

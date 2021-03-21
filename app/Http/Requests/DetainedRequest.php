@@ -23,6 +23,7 @@ class DetainedRequest extends FormRequest
      */
     public function rules()
     {
+
         return [
             'name' => 'required',
             'age' => 'required',

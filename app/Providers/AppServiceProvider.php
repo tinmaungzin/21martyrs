@@ -4,6 +4,8 @@ namespace App\Providers;
 
 use App\Http\Views\Composers\AuthStaffComposer;
 use App\Http\Views\Composers\RouteComposer;
+use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\URL;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
@@ -31,6 +33,11 @@ class AppServiceProvider extends ServiceProvider
     {
         $this->sidebarRoute();
 
+        if (!App::environment('local')) {
+            URL::forceScheme('https');
+        }
+
+        //        $this->sidebarAuthstaff();
         if (!Collection::hasMacro('paginate')) {
 
             Collection::macro('paginate',
@@ -55,7 +62,8 @@ class AppServiceProvider extends ServiceProvider
     public function sidebarAuthstaff(): array
     {
         return View::composer(
-            'layout.adminpanel.sidebar', AuthStaffComposer::class
+            'layout.adminpanel.sidebar',
+            AuthStaffComposer::class
         );
     }
 
