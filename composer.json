@@ -17,11 +17,11 @@
         "laravel/tinker": "^2.5",
         "league/flysystem-aws-s3-v3": "^1.0",
         "lorisleiva/laravel-deployer": "^0.3.5",
-        "silviolleite/laravelpwa": "~2.0.3"
+        "silviolleite/laravelpwa": "~2.0.3",
+        "barryvdh/laravel-ide-helper": "^2.9"
     },
     "require-dev": {
         "amirami/localizator": "^0.4.0@alpha",
-        "barryvdh/laravel-ide-helper": "^2.9",
         "facade/ignition": "^2.5",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
