@@ -15,8 +15,8 @@ class HomeController extends Controller
     {
         $states = State::all();
         $stat = Stat::all()->last();
-        $posts= Post::orderBy('id','desc')->paginate(12);
-        return view('web.index',compact('posts','states','stat'));
+        $posts = Post::orderBy('id', 'desc')->paginate(12);
+        return view('web.index', compact('posts', 'states', 'states', 'stat'));
     }
 
     public function about_us()
@@ -26,7 +26,7 @@ class HomeController extends Controller
 
     public function profile(Post $post)
     {
-        return view('web.profile',compact('post'));
+        return view('web.profile', compact('post'));
     }
 
     public function search(Request $request)
@@ -34,26 +34,26 @@ class HomeController extends Controller
         $query = Post::query();
         $filters = array();
 
-        if(isset($request->state_id)) {
+        if (isset($request->state_id)) {
             $query->where('state_id', $request->state_id);
             $filters += ['State and Region' => State::FindOrFail($request->state_id)->name];
         }
-        if(isset($request->gender)) {
+        if (isset($request->gender)) {
             $query->where('gender', $request->gender);
             $filters += ['Gender' => $request->gender];
 
         }
-        if(isset($request->status)) {
+        if (isset($request->status)) {
             $query->where('status', $request->status);
             $filters += ['Status' => $request->status];
 
         }
 
 
-        $posts = $query->orderBy('id','desc')->paginate(12);
+        $posts = $query->orderBy('id', 'desc')->paginate(12);
         $states = State::all();
 
-        return view('web.index',compact('posts','states','filters'));
+        return view('web.index', compact('posts', 'states', 'filters'));
 
     }
 }

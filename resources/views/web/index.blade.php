@@ -1,4 +1,3 @@
-
 @extends('web.layout.master')
 
 @section('title', 'Home')
@@ -15,7 +14,8 @@
                         <h2>{{ __('ui.about_us') }}</h2>
                         <span style="font-size: 18px">{{ __('ui.about_us_long') }}</span>
                         <div class="blue-button">
-                            <a class="scrollTo" data-scrollTo="popular" href="about.html">{{ __('ui.discover_more') }}</a>
+                            <a class="scrollTo" data-scrollTo="popular"
+                               href="about.html">{{ __('ui.discover_more') }}</a>
                         </div>
                     </div>
                 </div>
@@ -25,11 +25,11 @@
                             {{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h3>
                         <div class="whiteBox">
                             <div class="rightText">
-                                <h2 class="text-danger count">{{$stat->today_dead}}</h2>
+                                <h2 class="text-danger count">{{is_null($stat) ? 0: $stat->today_dead}}</h2>
                                 <p>{{ __('ui.today_dead') }}</p>
                                 <div class="subRightText">
-                                    <h3 class="count">{{$stat->today_hurt}}</h3>
-                                    <h3 class="count">{{$stat->today_detained}}</h3>
+                                    <h3 class="count">{{is_null($stat)?  0: $stat->today_hurt}}</h3>
+                                    <h3 class="count">{{is_null($stat) ? 0: $stat->today_detained}}</h3>
                                 </div>
                                 <div class="subRightText">
                                     <p>{{ __('ui.today_hurt') }}</p>
@@ -37,11 +37,11 @@
                                 </div>
                             </div>
                             <div class="leftText">
-                                <h2 class="text-danger count">{{$stat->total_dead}}</h2>
+                                <h2 class="text-danger count">{{is_null($stat) ? 0: $stat->total_dead}}</h2>
                                 <p>{{ __('ui.total_dead') }}</p>
                                 <div class="subLeftText">
-                                    <h3 class="count">{{$stat->total_hurt}}</h3>
-                                    <h3 class="count">{{$stat->total_detained}}</h3>
+                                    <h3 class="count">{{is_null($stat) ? 0:$stat->total_hurt}}</h3>
+                                    <h3 class="count">{{is_null($stat) ? 0: $stat->total_detained}}</h3>
                                 </div>
                                 <div class="subRightText">
                                     <p>{{ __('ui.total_hurt') }}</p>
@@ -85,7 +85,8 @@
                                     <div class="col-md-3 first-item">
                                         <fieldset>
                                             <select name="state_id">
-                                                <option value="" selected disabled>{{ __('ui.select_state_and_region') }}
+                                                <option value="" selected
+                                                        disabled>{{ __('ui.select_state_and_region') }}
                                                 </option>
                                                 @foreach ($states as $state)
                                                     <option value="{{ $state->id }}">{{ $state->name }}</option>
@@ -137,45 +138,45 @@
                 <div class="col-md-12">
                     <div class="section-heading">
                         <h2>{{ __('ui.detained_civilians') }}</h2>
-{{--                        <span>Latest Arrested Civilians</span>--}}
+                        {{--                        <span>Latest Arrested Civilians</span>--}}
                         @if(isset($filters))
-                        <h5>Applied Filters</h5>
-                        @foreach($filters as $filter)
-                        <h6>{{array_search($filter, $filters)}} : {{$filter}} </h6>
+                            <h5>Applied Filters</h5>
+                            @foreach($filters as $filter)
+                                <h6>{{array_search($filter, $filters)}} : {{$filter}} </h6>
                             @endforeach
-                            @endif
+                        @endif
                     </div>
                 </div>
             </div>
             @if(isset($filters))
-            <p class="browse">
-                <a href="{{route('index')}}">
-                    {{ __('ui.browse_all') }}
-                </a>
-            </p>
+                <p class="browse">
+                    <a href="{{route('index')}}">
+                        {{ __('ui.browse_all') }}
+                    </a>
+                </p>
             @endif
             <div class="row">
                 @if (count($posts) < 1)
                     @include('components.empty')
                 @else
                     @foreach ($posts as $post) <a
-                    href="{{ route('profile', ['post' => $post->id]) }}">
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                    <div class="featured-item">
-                    <div class="thumb">
-                    <img src="{{ $post->image }} " alt="" />
-                    </div>
-                    <div class="down-content">
-                    <h4>{{ $post->name }}</h4>
-                    <p>
-                    {{ $post->age }}
-                    </p>
-                    <p>
-                    {{ $post->state->name }}
-                    </p>
-                    </div>
-                    </div>
-                    </div>
+                        href="{{ route('profile', ['post' => $post->id]) }}">
+                        <div class="col-md-3 col-sm-6 col-xs-12">
+                            <div class="featured-item">
+                                <div class="thumb">
+                                    <img src="{{ $post->image }} " alt=""/>
+                                </div>
+                                <div class="down-content">
+                                    <h4>{{ $post->name }}</h4>
+                                    <p>
+                                        {{ $post->age }}
+                                    </p>
+                                    <p>
+                                        {{ $post->state->name }}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
 
                     </a> @endforeach
                 @endif
@@ -287,11 +288,10 @@
 
 
     <script>
-        $(document).ready(function()
-        {
+        $(document).ready(function () {
             $('.count').each(function () {
                 let $this = $(this);
-                $({ Counter: 0 }).animate({ Counter: $this.text() }, {
+                $({Counter: 0}).animate({Counter: $this.text()}, {
                     duration: 1000,
                     easing: 'swing',
                     step: function () {
