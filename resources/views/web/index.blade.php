@@ -24,27 +24,27 @@
                             {{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h3>
                         <div class="whiteBox">
                             <div class="rightText">
-                                <h3>77</h3>
-                                <p>{{ __('ui.dead') }}</p>
+                                <h2 class="text-danger count">{{$stat->today_dead}}</h2>
+                                <p>{{ __('ui.today_dead') }}</p>
                                 <div class="subRightText">
-                                    <h3>60</h3>
-                                    <h3>70</h3>
+                                    <h3 class="count">{{$stat->today_hurt}}</h3>
+                                    <h3 class="count">{{$stat->today_detained}}</h3>
                                 </div>
                                 <div class="subRightText">
-                                    <p>{{ __('ui.gunshot') }}</p>
-                                    <p>{{ __('ui.assault') }}</p>
+                                    <p>{{ __('ui.today_hurt') }}</p>
+                                    <p>{{ __('ui.today_detained') }}</p>
                                 </div>
                             </div>
                             <div class="leftText">
-                                <h3>77</h3>
-                                <p>Dead</p>
+                                <h2 class="text-danger count">{{$stat->total_dead}}</h2>
+                                <p>{{ __('ui.total_dead') }}</p>
                                 <div class="subLeftText">
-                                    <h3>60</h3>
-                                    <h3>70</h3>
+                                    <h3 class="count">{{$stat->total_hurt}}</h3>
+                                    <h3 class="count">{{$stat->total_detained}}</h3>
                                 </div>
                                 <div class="subRightText">
-                                    <p>Arrested</p>
-                                    <p>Released</p>
+                                    <p>{{ __('ui.total_hurt') }}</p>
+                                    <p>{{ __('ui.total_detained') }}</p>
                                 </div>
                             </div>
 
@@ -135,17 +135,24 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading">
-                        <h2>Detained Civilians</h2>
-                        <span>Latest Arrested Civilians</span>
-                        <h4>Applied Filters</h4>
-
-                        <p>State and Region</p>
+                        <h2>Detained/Dead Civilians</h2>
+{{--                        <span>Latest Arrested Civilians</span>--}}
+                        @if(isset($filters))
+                        <h5>Applied Filters</h5>
+                        @foreach($filters as $filter)
+                        <h6>{{array_search($filter, $filters)}} : {{$filter}} </h6>
+                            @endforeach
+                            @endif
                     </div>
                 </div>
             </div>
-            <p class="browse"><a href="./ListPage.html">
+            @if(isset($filters))
+            <p class="browse">
+                <a href="{{route('index')}}">
                     {{ __('ui.browse_all') }}
-                </a></p>
+                </a>
+            </p>
+            @endif
             <div class="row">
 
                 @foreach ($posts as $post)
@@ -274,6 +281,23 @@
         @include('web.layout.pagination', ['paginator' => $posts])
 
     </section>
+
+
+    <script>
+        $(document).ready(function()
+        {
+            $('.count').each(function () {
+                let $this = $(this);
+                $({ Counter: 0 }).animate({ Counter: $this.text() }, {
+                    duration: 1000,
+                    easing: 'swing',
+                    step: function () {
+                        $this.text(Math.ceil(this.Counter));
+                    }
+                });
+            });
+        })
+    </script>
 
 
     <!-- Card Container -->

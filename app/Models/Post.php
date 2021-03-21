@@ -32,4 +32,20 @@ class Post extends Model
 //    {
 //        return ImageModule::urlFromPath($value);
 //    }
+
+
+    public function scopeState($query,$state_id)
+    {
+        return $query->where('state_id', '=', $state_id);
+    }
+
+    public function scopeStatus($query,$status)
+    {
+        return $query->where('state_id', '=', $status);
+    }
+
+    public function scopeGender($query,$gender)
+    {
+        return $query->where('state_id', '=', $gender);
+    }
 }
