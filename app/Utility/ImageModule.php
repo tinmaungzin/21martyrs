@@ -12,7 +12,7 @@ class ImageModule
     {
         $DO_BASE_FOLDER = env('DO_BASE_FOLDER', 'development');
 
-        // var_dump('FILESYSTEM_DISK', config('filesystems.default'));
+        var_dump('FILESYSTEM_DISK', config('filesystems.default'), "base folder", $DO_BASE_FOLDER, $name);
 
         return request()->file($imageKey)->storePubliclyAs('/' . $DO_BASE_FOLDER, $name, config('filesystems.default'));
     }
