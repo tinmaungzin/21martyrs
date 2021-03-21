@@ -178,7 +178,7 @@ return [
         /*
          * Development package
          */
-        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
+//        Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider::class
     ],
 
     /*
