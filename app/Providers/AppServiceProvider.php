@@ -1,16 +1,21 @@
-<?php
+<?php /** @noinspection PhpUnusedParameterInspection */
 
 namespace App\Providers;
 
 use App\Http\Views\Composers\AuthStaffComposer;
 use App\Http\Views\Composers\RouteComposer;
+
+use Aws\S3\S3Client;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Pagination\LengthAwarePaginator;
 use Illuminate\Pagination\Paginator;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\View;
 use Illuminate\Support\ServiceProvider;
+use League\Flysystem\AwsS3v3\AwsS3Adapter;
+use League\Flysystem\Filesystem;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -48,6 +53,12 @@ class AppServiceProvider extends ServiceProvider
                         ->withPath('');
                 });
         }
+//        // Registiering Digitalocean space filesystem
+//        Storage::extend('do-space',function ($app,$config): Filesystem {
+////            dd('config from extends', $config);
+//            $do_client = new DOS3Client($config);
+//            return new FileSystem($do_client->adaptor);
+//        });
 
 //        $this->sidebarAuthstaff();
     }

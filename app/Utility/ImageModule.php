@@ -19,6 +19,7 @@ class ImageModule
             "base folder",
             $DO_BASE_FOLDER,
             $name,
+            "DO information: \n",
             env("DO_ACCESS_KEY_ID"),
             env("DO_ENDPOINT"),
             env("DO_DEFAULT_REGION"),
