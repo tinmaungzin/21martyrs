@@ -37,7 +37,7 @@ class InformController extends Controller
     public function store_edit_detained(EditDetainedRequest $request, Post $post)
     {
         $data = $request->except('photo');
-        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+        $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
         $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         $data['status'] = 'detained';
         $data['post_id'] = $post->id;
@@ -65,9 +65,10 @@ class InformController extends Controller
     public function store_detained(DetainedRequest $request)
     {
         $data = $request->except('photo');
-        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+        $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
         $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         $data['status'] = 'detained';
+        $data['gender'] = ucfirst($data['gender']);
         $data['publishing_status'] = 'None';
         //TODO add user id
 
@@ -75,7 +76,6 @@ class InformController extends Controller
             $pendingPost = PendingPost::create($data);
             //            Image::create($this->getImageData($pendingPost));
         });
-
 
 
         Session::flash('msg', 'Data sent successfully!');
@@ -100,7 +100,7 @@ class InformController extends Controller
     public function store_dead(DeadRequest $request)
     {
         $data = $request->except('photo');
-        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+        $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
         $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         dd($data['profile_url']);
         $data['status'] = 'dead';
@@ -111,7 +111,6 @@ class InformController extends Controller
             $pendingPost = PendingPost::create($data);
             //            Image::create($this->getImageData($pendingPost));
         });
-
 
 
         Session::flash('msg', 'Data sent successfully!');

@@ -47,7 +47,6 @@ class DetainedRequest extends FormRequest
         return [
             'state_id' => 'state',
             'city_id' => 'city'
-
         ];
     }
 }

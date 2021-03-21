@@ -19,7 +19,7 @@
                         </div>
                         <div class="inputValue">
                             <input type="text" id="name" placeholder="{{ __('ui.name_placeholder') }}" name="name"
-                                autocomplete="off" />
+                                   autocomplete="off"/>
 
                             <span class="text-danger">{{ $errors->first('name') }}</span>
 
@@ -33,7 +33,7 @@
                         </div>
                         <div class="inputValue">
                             <input type="number" id="age" name="age" min="10" max="99"
-                                placeholder="{{ __('ui.age_placeholder') }}" />
+                                   placeholder="{{ __('ui.age_placeholder') }}"/>
                             <span class="text-danger">{{ $errors->first('age') }}</span>
 
                         </div>
@@ -46,8 +46,8 @@
                         <div class="inputValue">
                             <select id="gender" name="gender">
                                 <option value="" selected disabled>{{ __('ui.choose_gender') }}</option>
-                                <option value="male">{{ __('ui.male') }}</option>
-                                <option value="female">{{ __('ui.female') }}</option>
+                                <option value="Male">{{ __('ui.male') }}</option>
+                                <option value="Female">{{ __('ui.female') }}</option>
                                 <option value="Other">Other</option>
                             </select>
                             <span class="text-danger">{{ $errors->first('gender') }}</span>
@@ -105,9 +105,9 @@
                             <span class="text-danger">{{ $errors->first('occupation') }}</span>
 
                         </div>
-{{--                         <div class="inputValue" style="display: none">--}}
-{{--                         <input type="text" placeholder="please specify" name="name" />--}}
-{{--                         </div> --}}
+                        {{--                         <div class="inputValue" style="display: none">--}}
+                        {{--                         <input type="text" placeholder="please specify" name="name" />--}}
+                        {{--                         </div> --}}
                     </div>
 
                     <div class="inputBox">
@@ -116,7 +116,7 @@
                         </div>
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.arresstee_assoication_placholder') }}"
-                                name="organization_name" />
+                                   name="organization_name"/>
                             <span class="text-danger">{{ $errors->first('organization_name') }}</span>
 
                         </div>
@@ -127,7 +127,7 @@
                             <p>{{ __('ui.arrested_date') }}</p>
                         </div>
                         <div class="inputValue">
-                            <input type="date" id="arrested_date" name="detained_date" />
+                            <input type="date" id="arrested_date" name="detained_date"/>
                             <span class="text-danger">{{ $errors->first('detained_date') }}</span>
 
                         </div>
@@ -140,16 +140,16 @@
                         <div class="inputValue">
                             <select id="township" name="reason_of_arrest">
                                 <option value="" selected disabled>{{ __('ui.choose_reason_of_arrest') }}</option>
-                                <option value="protesting">{{ __('ui.protestor') }}</option>
-                                <option value="political">{{ __('ui.bystander') }}</option>
-                                <option value="noreason">{{ __('ui.others') }}</option>
+                                <option value="Protest">{{ __('ui.protestor') }}</option>
+                                <option value="Bystand">{{ __('ui.bystander') }}</option>
+                                <option value="Other">{{ __('ui.others') }}</option>
                             </select>
                             <span class="text-danger">{{ $errors->first('reason_of_arrest') }}</span>
 
                         </div>
-{{--                        <div class="inputValue" style="display: none">--}}
-{{--                            <input type="text" placeholder="{{ __('ui.please_specify') }}" name="name" />--}}
-{{--                        </div>--}}
+                        {{--                        <div class="inputValue" style="display: none">--}}
+                        {{--                            <input type="text" placeholder="{{ __('ui.please_specify') }}" name="name" />--}}
+                        {{--                        </div>--}}
                     </div>
                 </div>
 
@@ -160,7 +160,7 @@
                         </div>
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.prison_placeholder') }}" name="prison"
-                                autocomplete="off" />
+                                   autocomplete="off"/>
                             <span class="text-danger">{{ $errors->first('prison') }}</span>
 
                         </div>
@@ -172,17 +172,16 @@
                         </div>
                         <div class="inputValue">
                             <textarea type="text" rows="6" placeholder="{{ __('ui.arrestee_comment_placeholder') }}"
-                                name="comment" autocomplete="off"></textarea>
+                                      name="comment" autocomplete="off"></textarea>
                             <span class="text-danger">{{ $errors->first('comment') }}</span>
 
                         </div>
                     </div>
 
                     <div class="inputBoxImg">
-                        <input type="file" id="myFile" name="photo" />
+                        <input type="file" id="myFile" name="photo"/>
                         <span class="text-danger">{{ $errors->first('photo') }}</span>
                     </div>
-
 
 
                     <h3>{{ __('ui.informer_info') }}</h3>
@@ -192,7 +191,7 @@
                         </div>
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="informant_name"
-                                autocomplete="off" />
+                                   autocomplete="off"/>
                             <span class="text-danger">{{ $errors->first('informant_name') }}</span>
 
                         </div>
@@ -204,7 +203,7 @@
                         </div>
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.relationship_placeholder') }}"
-                                name="informant_association_with_victim" autocomplete="off" />
+                                   name="informant_association_with_victim" autocomplete="off"/>
                             <span class="text-danger">{{ $errors->first('informant_association_with_victim') }}</span>
 
                         </div>
@@ -216,7 +215,7 @@
                         </div>
                         <div class="inputValue">
                             <input type="number" id="age" placeholder="{{ __('ui.phone_placholder') }}"
-                                name="informant_phone" />
+                                   name="informant_phone"/>
                             <span class="text-danger">{{ $errors->first('informant_phone') }}</span>
 
                         </div>
@@ -231,7 +230,7 @@
 
 
     <script>
-        $(document).ready(function() {
+        $(document).ready(function () {
 
             function ajaxHeaders() {
                 return $.ajaxSetup({
@@ -243,7 +242,7 @@
             }
 
 
-            $('#state').change(function() {
+            $('#state').change(function () {
                 $('#city').empty();
 
                 let data = {
@@ -253,12 +252,12 @@
                 ajaxHeaders();
 
                 $.post('/fetchCities', JSON.stringify(data))
-                    .done(function(data) {
+                    .done(function (data) {
                         if (data.success) {
                             cities = data.cities;
-                            cities.forEach(function(city) {
+                            cities.forEach(function (city) {
                                 $('#city').append(`
-                                                                                    <option value="${ city.id }">${city.name}</option>
+                                                                                    <option value="${city.id}">${city.name}</option>
                                                                             `)
                             });
                         }
