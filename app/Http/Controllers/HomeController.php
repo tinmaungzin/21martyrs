@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Post;
+use App\Models\Stat;
 use App\Models\State;
 use App\Utility\ImageModule;
 use Illuminate\Http\Request;
@@ -13,9 +14,9 @@ class HomeController extends Controller
     public function index()
     {
         $states = State::all();
-
+        $stat = Stat::all()->last();
         $posts= Post::orderBy('id','desc')->paginate(12);
-        return view('web.index',compact('posts','states'));
+        return view('web.index',compact('posts','states','stat'));
     }
 
     public function about_us()
@@ -30,32 +31,29 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        $posts = Post::where('state_id',$request->state_id)
-            ->orderBy('id','desc')->paginate(12);
-//        $posts = new Collection();
-//        if( isset($request->state_id))
-//        {
-//            $state = Post::where('state_id',$request->state_id)->get();
-//            $posts = $posts->merge($state);
-//
-//        }
-//        if( isset($request->status))
-//        {
-//            $status = Post::where('status',$request->status)->get();
-//            $posts = $posts->merge($status);
-//
-//        }
-//        if( isset($request->gender))
-//        {
-//            $gender = Post::where('gender',$request->gender)->get();
-//            $posts = $posts->merge($gender);
-//        }
-//
-//
-        $states = State::all();
-//        $posts = $posts->paginate(12);
+        $query = Post::query();
+        $filters = array();
 
-        return view('web.index',compact('posts','states'));
+        if(isset($request->state_id)) {
+            $query->where('state_id', $request->state_id);
+            $filters += ['State and Region' => State::FindOrFail($request->state_id)->name];
+        }
+        if(isset($request->gender)) {
+            $query->where('gender', $request->gender);
+            $filters += ['Gender' => $request->gender];
+
+        }
+        if(isset($request->status)) {
+            $query->where('status', $request->status);
+            $filters += ['Status' => $request->status];
+
+        }
+
+
+        $posts = $query->orderBy('id','desc')->paginate(12);
+        $states = State::all();
+
+        return view('web.index',compact('posts','states','filters'));
 
     }
 }

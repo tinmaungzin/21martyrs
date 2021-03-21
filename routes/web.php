@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\StatController;
 use App\Http\Controllers\InformController;
 use App\Http\Controllers\NewPendingPostsController;
 use App\Http\Controllers\RejectedPendingPostsController;
@@ -30,6 +31,7 @@ Route::prefix('admin')->group(function () {
     Route::middleware('admin')->group(function(){
 
         Route::resource('admins',AdminController::class);
+        Route::resource('stats',StatController::class);
 
         Route::get('new_pending_posts',[NewPendingPostsController::class,'new_pending_posts'])->name('list.new_pending_posts');
         Route::get('new_pending_posts/{pendingPost}/confirm',[NewPendingPostsController::class,'new_pending_post_confirm_form'])->name('form.confirm.new_pending_post');
