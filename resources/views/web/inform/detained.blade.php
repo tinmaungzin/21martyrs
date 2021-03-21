@@ -4,7 +4,7 @@
 
 @section('content')
 
-    <form action="{{ route('store.detained') }}" method="post" enctype="multipart/form-data">>
+    <form action="{{ route('store.detained') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="inputContainer">
             <div class="inputDataBox">
@@ -12,18 +12,21 @@
                     <h3>{{ __('ui.arrestee_info') }}</h3>
                 </div>
                 <div class="leftInfo">
+
                     <div class="inputBox">
                         <div class="inputHeader">
                             <p>{{ __('ui.name') }}</p>
                         </div>
                         <div class="inputValue">
-                            <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name"
+                            <input type="text" id="name" placeholder="{{ __('ui.name_placeholder') }}" name="name"
                                 autocomplete="off" />
-                            <br />
+
                             <span class="text-danger">{{ $errors->first('name') }}</span>
 
                         </div>
                     </div>
+
+
                     <div class="inputBox">
                         <div class="inputHeader">
                             <p>{{ __('ui.age') }}</p>
@@ -87,7 +90,6 @@
                             <p>
                                 {{ __('ui.arrestee_occupation') }}
                             </p>
-                            {{-- <p>ဖမ်းဆီးခံရသူ၏ အလုပ်အကိုင်</p> --}}
                         </div>
                         <div class="inputValue">
                             <select id="occupation" name="occupation">
@@ -103,9 +105,9 @@
                             <span class="text-danger">{{ $errors->first('occupation') }}</span>
 
                         </div>
-                        {{-- <div class="inputValue" style="display: none"> --}}
-                        {{-- <input type="text" placeholder="please specify" name="name" /> --}}
-                        {{-- </div> --}}
+{{--                         <div class="inputValue" style="display: none">--}}
+{{--                         <input type="text" placeholder="please specify" name="name" />--}}
+{{--                         </div> --}}
                     </div>
 
                     <div class="inputBox">
@@ -145,9 +147,9 @@
                             <span class="text-danger">{{ $errors->first('reason_of_arrest') }}</span>
 
                         </div>
-                        <div class="inputValue" style="display: none">
-                            <input type="text" placeholder="{{ __('ui.please_specify') }}" name="name" />
-                        </div>
+{{--                        <div class="inputValue" style="display: none">--}}
+{{--                            <input type="text" placeholder="{{ __('ui.please_specify') }}" name="name" />--}}
+{{--                        </div>--}}
                     </div>
                 </div>
 
@@ -268,3 +270,7 @@
     </script>
 
 @endsection
+
+
+
+

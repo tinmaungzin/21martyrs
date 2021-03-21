@@ -1,10 +1,10 @@
 @extends('web.layout.master')
 
-@section('title', 'Detained Info')
+@section('title', 'Dead Info')
 
 @section('content')
 
-    <form action="{{ route('store.dead') }}" method="post" enctype="multipart/form-data">>
+    <form action="{{ route('store.dead') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="inputContainer">
             <div class="inputDataBox">
