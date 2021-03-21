@@ -1,6 +1,7 @@
 <?php
 
 return [
+    '404_title' => 'Page not found',
     'about_us' => 'About us',
     'about_us_long' => 'We are an independent group of Gen-Z collecting the information of the fallens and detainees with the aim to commemorate our martyrs of Myanmar Spring Revolution 2021. We would like to invite you to help us provide the updates within your community as much as you can.',
     'about_us_paragraph' => 'The website is established with the aim to commemorate the martyrs who have been killed, and who have been unlawfully detained by the military and police during Myanmar Spring Revolution 2021 that have emerged after the military seized the democratically elected governement on Feb 1, 2021.
@@ -39,6 +40,7 @@ return [
     'assault' => 'Assault',
     'association' => 'Association',
     'association_placeholder' => 'Association placeholder',
+    'back_to_home' => 'Back to home',
     'beaten' => 'Beaten',
     'browse_all' => 'Browse All',
     'bystander' => 'Bystander',
@@ -97,6 +99,7 @@ return [
     'other' => 'Other',
     'others' => 'Others',
     'others_placeholder' => 'Please specify',
+    'page_not_found' => 'Page not found',
     'phone_placholder' => 'For eg. 091234567',
     'please_specify' => 'Please specify',
     'political_party_member' => 'Political Party Member',
