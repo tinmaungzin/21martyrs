@@ -30,28 +30,30 @@ class HomeController extends Controller
 
     public function search(Request $request)
     {
-        $posts = new Collection();
-        if( isset($request->state_id))
-        {
-            $state = Post::where('state_id',$request->state_id)->get();
-            $posts = $posts->merge($state);
-
-        }
-        if( isset($request->status))
-        {
-            $status = Post::where('status',$request->status)->get();
-            $posts = $posts->merge($status);
-
-        }
-        if( isset($request->gender))
-        {
-            $gender = Post::where('gender',$request->gender)->get();
-            $posts = $posts->merge($gender);
-        }
-
-
+        $posts = Post::where('state_id',$request->state_id)
+            ->orderBy('id','desc')->paginate(12);
+//        $posts = new Collection();
+//        if( isset($request->state_id))
+//        {
+//            $state = Post::where('state_id',$request->state_id)->get();
+//            $posts = $posts->merge($state);
+//
+//        }
+//        if( isset($request->status))
+//        {
+//            $status = Post::where('status',$request->status)->get();
+//            $posts = $posts->merge($status);
+//
+//        }
+//        if( isset($request->gender))
+//        {
+//            $gender = Post::where('gender',$request->gender)->get();
+//            $posts = $posts->merge($gender);
+//        }
+//
+//
         $states = State::all();
-        $posts = $posts->paginate(12);
+//        $posts = $posts->paginate(12);
 
         return view('web.index',compact('posts','states'));
 

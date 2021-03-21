@@ -1,3 +1,4 @@
+
 @extends('web.layout.master')
 
 @section('title', 'Home')
@@ -25,7 +26,7 @@
                         <div class="whiteBox">
                             <div class="rightText">
                                 <h3>77</h3>
-                                <p>{{ __('ui.dead') }}</p>
+                                <p>Dead</p>
                                 <div class="subRightText">
                                     <h3>60</h3>
                                     <h3>70</h3>
@@ -54,33 +55,33 @@
                 <div>
                     <div>
                         <div class="submit-form">
-                            <form id="form-submit" action="{{ route('search') }}" method="post">
+                            <form id="form-submit" action="{{route('search')}}" method="post">
                                 @csrf
                                 <div class="row">
-                                    {{-- <div class="col-md-3 first-item"> --}}
-                                    {{-- <fieldset> --}}
-                                    {{-- <input --}}
-                                    {{-- name="name" --}}
-                                    {{-- type="text" --}}
-                                    {{-- class="form-control" --}}
-                                    {{-- id="name" --}}
-                                    {{-- placeholder="Your name..." --}}
-                                    {{-- required="" --}}
-                                    {{-- /> --}}
-                                    {{-- </fieldset> --}}
-                                    {{-- </div> --}}
-                                    {{-- <div class="col-md-3 second-item"> --}}
-                                    {{-- <fieldset> --}}
-                                    {{-- <input --}}
-                                    {{-- name="location" --}}
-                                    {{-- type="text" --}}
-                                    {{-- class="form-control" --}}
-                                    {{-- id="location" --}}
-                                    {{-- placeholder="Type location..." --}}
-                                    {{-- required="" --}}
-                                    {{-- /> --}}
-                                    {{-- </fieldset> --}}
-                                    {{-- </div> --}}
+{{--                                    <div class="col-md-3 first-item">--}}
+{{--                                        <fieldset>--}}
+{{--                                            <input--}}
+{{--                                                name="name"--}}
+{{--                                                type="text"--}}
+{{--                                                class="form-control"--}}
+{{--                                                id="name"--}}
+{{--                                                placeholder="Your name..."--}}
+{{--                                                required=""--}}
+{{--                                            />--}}
+{{--                                        </fieldset>--}}
+{{--                                    </div>--}}
+{{--                                    <div class="col-md-3 second-item">--}}
+{{--                                        <fieldset>--}}
+{{--                                            <input--}}
+{{--                                                name="location"--}}
+{{--                                                type="text"--}}
+{{--                                                class="form-control"--}}
+{{--                                                id="location"--}}
+{{--                                                placeholder="Type location..."--}}
+{{--                                                required=""--}}
+{{--                                            />--}}
+{{--                                        </fieldset>--}}
+{{--                                    </div>--}}
                                     <div class="col-md-3 first-item">
                                         <fieldset>
                                             <select name="state_id">
@@ -117,7 +118,7 @@
                                     <div class="col-md-3">
                                         <fieldset>
                                             <button type="submit" id="form-submit" class="btn">
-                                                {{ __('ui.search_now') }}
+                                                Search Now
                                             </button>
                                         </fieldset>
                                     </div>
