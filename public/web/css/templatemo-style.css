@@ -359,7 +359,7 @@ section.banner {
   display: flex;
   justify-content: flex-end;
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--normal-font-size);
   cursor: pointer;
   margin-right: -10px;
 }
@@ -644,7 +644,7 @@ figure.effect-sadie:hover p {
   transform: translate3d(0, 0, 0);
 } */
 
-/* 
+/*
 
 section.our-services .service-item {
   text-align: center;
@@ -807,7 +807,7 @@ a.active:after {
   border-radius: 50%;
 } */
 
-/* 
+/*
 section.pricing-tables .table-item {
   text-align: center;
   background-color: #eeeeee;
@@ -864,7 +864,7 @@ section.pricing-tables .table-item ul li a:hover {
   margin-top: 60px;
   margin-bottom: 30px;
 } */
-/* 
+/*
 .wrapper {
   text-align: center;
 } */
@@ -1050,7 +1050,7 @@ Modal Content
   100% {
     top: 0;
     opacity: 1;
-  }  
+  }
 }
 
 @keyframes totop-out {
@@ -1061,5 +1061,5 @@ Modal Content
   100% {
     top: -100%;
     opacity: 0;
-  }  
+  }
 } */

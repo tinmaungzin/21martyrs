@@ -84,7 +84,8 @@
                                     <div class="col-md-3 first-item">
                                         <fieldset>
                                             <select name="state_id">
-                                                <option value="" selected disabled>Select State and Region</option>
+                                                <option value="" selected disabled>{{ __('ui.select_state_and_region') }}
+                                                </option>
                                                 @foreach ($states as $state)
                                                     <option value="{{ $state->id }}">{{ $state->name }}</option>
                                                 @endforeach
@@ -95,9 +96,9 @@
                                     <div class="col-md-3 second-item">
                                         <fieldset>
                                             <select name="status">
-                                                <option value="" selected disabled>Select Status</option>
-                                                <option value="detained">Detained</option>
-                                                <option value="dead">Dead</option>
+                                                <option value="" selected disabled>{{ __('ui.select_status') }}</option>
+                                                <option value="detained">{{ __('ui.detained') }}</option>
+                                                <option value="dead">{{ __('ui.dead') }}</option>
 
                                             </select>
                                         </fieldset>
@@ -105,10 +106,10 @@
                                     <div class="col-md-3 third-item">
                                         <fieldset>
                                             <select name="gender">
-                                                <option value="" selected disabled>Select Gender</option>
-                                                <option value="Male">Male</option>
-                                                <option value="Female">Female</option>
-                                                <option value="Other">Other</option>
+                                                <option value="" selected disabled>{{ __('ui.choose_gender') }}</option>
+                                                <option value="Male">{{ __('ui.male') }}</option>
+                                                <option value="Female">{{ __('ui.female') }}</option>
+                                                <option value="Other">{{ __('ui.other') }}</option>
 
                                             </select>
                                         </fieldset>
@@ -116,7 +117,7 @@
                                     <div class="col-md-3">
                                         <fieldset>
                                             <button type="submit" id="form-submit" class="btn">
-                                                Search Now
+                                                {{ __('ui.search_now') }}
                                             </button>
                                         </fieldset>
                                     </div>
@@ -145,28 +146,30 @@
                     {{ __('ui.browse_all') }}
                 </a></p>
             <div class="row">
+                @if (count($posts) < 1)
+                    @include('components.empty')
+                @else
+                    @foreach ($posts as $post) <a
+                    href="{{ route('profile', ['post' => $post->id]) }}">
+                    <div class="col-md-3 col-sm-6 col-xs-12">
+                    <div class="featured-item">
+                    <div class="thumb">
+                    <img src="{{ $post->image }} " alt="" />
+                    </div>
+                    <div class="down-content">
+                    <h4>{{ $post->name }}</h4>
+                    <p>
+                    {{ $post->age }}
+                    </p>
+                    <p>
+                    {{ $post->state->name }}
+                    </p>
+                    </div>
+                    </div>
+                    </div>
 
-                @foreach ($posts as $post)
-                    <a href="{{ route('profile', ['post' => $post->id]) }}">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="featured-item">
-                                <div class="thumb">
-                                    <img src="{{ $post->image }} " alt="" />
-                                </div>
-                                <div class="down-content">
-                                    <h4>{{ $post->name }}</h4>
-                                    <p>
-                                        {{ $post->age }}
-                                    </p>
-                                    <p>
-                                        {{ $post->state->name }}
-                                    </p>
-                                </div>
-                            </div>
-                        </div>
-
-                    </a>
-                @endforeach
+                    </a> @endforeach
+                @endif
                 {{-- <div class="col-md-3 col-sm-6 col-xs-12"> --}}
                 {{-- <div class="featured-item"> --}}
                 {{-- <div class="thumb"> --}}

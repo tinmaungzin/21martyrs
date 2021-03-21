@@ -230,7 +230,6 @@ select {
 }
 
 .contact-us-title {
-
 }
 
 .contactUsQuestions {
@@ -523,4 +522,8 @@ textarea {
   .contactUs {
     border-radius: 0;
   }
+}
+
+.empty-data p {
+  font-size: var(--normal-font-size) !important;
 }
