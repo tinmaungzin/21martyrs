@@ -89,7 +89,7 @@
                                     <div class="col-md-3 first-item">
                                         <fieldset>
                                             <select  name="state_id">
-                                                <option value="" selected disabled>Select State and Region</option>
+                                                <option value="None" selected disabled>Select State and Region</option>
                                                 @foreach($states as $state)
                                                 <option value="{{$state->id}}">{{$state->name}}</option>
                                                     @endforeach
@@ -100,7 +100,7 @@
                                     <div class="col-md-3 second-item">
                                         <fieldset>
                                             <select name="status">
-                                                <option value="" selected disabled>Select Status</option>
+                                                <option value="None" selected disabled>Select Status</option>
                                                 <option value="detained">Detained</option>
                                                 <option value="dead">Dead</option>
 
@@ -110,7 +110,7 @@
                                     <div class="col-md-3 third-item">
                                         <fieldset>
                                             <select name="gender">
-                                                <option value="" selected disabled>Select Gender</option>
+                                                <option value="None" selected disabled>Select Gender</option>
                                                 <option value="Male">Male</option>
                                                 <option value="Female">Female</option>
                                                 <option value="Other">Other</option>
@@ -141,7 +141,7 @@
                     <div class="section-heading">
                         <h2>Detained Civilians</h2>
                         <span>Latest Arrested Civilians</span>
-                        <h4>Applied Filters -</h4>
+                        <h4>Applied Filters</h4>
                         <p>State and Region</p>
                     </div>
                 </div>
