@@ -8,7 +8,7 @@ use Illuminate\Support\Facades\Storage;
 class ImageModule
 {
 
-    public static function uploadFromRequest(String $imageKey, String $name)
+    public static function uploadFromRequest(string $imageKey, string $name)
     {
         $DO_BASE_FOLDER = env('DO_BASE_FOLDER', 'development');
 
@@ -27,13 +27,13 @@ class ImageModule
             env("DO_BUCKET")
         );
 
-        // return request()->file($imageKey)->storePubliclyAs('/' . $DO_BASE_FOLDER, $name, config('filesystems.default'));
-        $path = Storage::disk($DEFAULT_DISK)->putFileAs($DO_BASE_FOLDER, request()->file($imageKey), $name);
-        Storage::disk($DEFAULT_DISK)->setVisibility($path, 'public');
-        return $path;
+        return request()->file($imageKey)->storePubliclyAs('/' . $DO_BASE_FOLDER, $name, config('filesystems.default'));
+//        $path = Storage::disk($DEFAULT_DISK)->putFileAs($DO_BASE_FOLDER, request()->file($imageKey), $name);
+//        Storage::disk($DEFAULT_DISK)->setVisibility($path, 'public');
+//        return $path;
     }
 
-    public static function urlFromPath(String $path)
+    public static function urlFromPath(string $path)
     {
 
         return Storage::disk(config('filesystems.default'))->url($path);
