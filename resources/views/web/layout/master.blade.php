@@ -28,13 +28,12 @@
     <link rel="stylesheet" href="{{ asset('web/css/headerFooter-style.css') }} " />
     <link rel="stylesheet" href="{{ asset('web/css/templatemo-style.css') }} " />
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }} ">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
     {{-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> --}}
     {{-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css"> --}}
     {{-- <link rel="stylesheet" type="text/css" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css"> --}}
 
-    <link rel="stylesheet"
-        href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
     {{-- <script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script> --}}
 
@@ -74,7 +73,7 @@
                     <ul class="dropdown menu">
                         <li class="active"><a href="{{ route('index') }}">{{ __('ui.home') }}</a></li>
                         <li class="active"><a href="{{ route('about') }}">{{ __('ui.about_us') }}</a></li>
-                        <li class="active"><a href="ExpSharing.html">{{ __('ui.experience_sharing') }}</a>
+                        <li class="active"><a href="{{route('list.experiences')}}">{{ __('ui.experience_sharing') }}</a>
                         </li>
                         <li>
                             <a href="#">{{ __('ui.inform_us') }}</a>
@@ -228,25 +227,17 @@
 
 
     {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script> --}}
-
     <script type="text/javascript">
         window.jQuery ||
             document.write(
                 '<script src="web/js/vendor/jquery-1.11.2.min.js"><\/script>'
             );
-
-
-        // $(document).ready(function (){
-        //     $('select').selectpicker();
-        //
-        //     $('.selectpicker').selectpicker('refresh');
+        // $(document).ready(function() {
+        //     $('.selectpicker').selectpicker({
+        //         style: 'btn-default',
+        //         size: false
+        //     });
         // });
-        $(document).ready(function() {
-            $('.selectpicker').selectpicker({
-                style: 'btn-default',
-                size: false
-            });
-        });
 
     </script>
 

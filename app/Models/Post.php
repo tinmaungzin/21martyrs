@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory;
 
-    // protected array $guarded = [];
+     protected array $guarded = [];
 
 
     public function state()

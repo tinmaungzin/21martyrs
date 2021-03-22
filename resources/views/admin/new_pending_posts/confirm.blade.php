@@ -63,7 +63,7 @@
                         <span>{{$pendingPost->organization_name}}</span>
                     </div>
                 </div>
-                @if($post->status == 'detained')
+                @if($pendingPost->status == 'detained')
                 <div class="leftConfirmInfo">
                     <div class="confirmHeaders">
                         <span>Reason of being arrested</span>
@@ -74,7 +74,7 @@
                     </div>
                 </div>
                 @endif
-                @if($post->status == 'dead')
+                @if($pendingPost->status == 'dead')
                     <div class="leftConfirmInfo">
                         <div class="confirmHeaders">
                             <span>Reason of being dead</span>
@@ -86,7 +86,7 @@
                     </div>
                 @endif
 
-                @if(isset($post->prison))
+                @if(isset($pendingPost->prison))
                 <div class="leftConfirmInfo">
                     <div class="confirmHeaders">
                         <span>Prison</span>

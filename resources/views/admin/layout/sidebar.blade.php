@@ -28,7 +28,15 @@
                     'admins.create',
                     'admins.edit'
                     ]) ? 'active-link': ''}}">
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Admin
+                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Admins
+            </a>
+            <a href="{{route('articles.index')}}"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
+            {{ in_array($route, [
+                    'articles.index',
+                    'articles.create',
+                    'articles.edit'
+                    ]) ? 'active-link': ''}}">
+                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Articles
             </a>
 
             <a href="{{route('list.new_pending_posts')}}"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
@@ -45,11 +53,9 @@
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Edit Pending Posts
             </a>
 
-            <a href="#"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
+            <a href="{{route('list.published_posts')}}"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
-                    'admins.index',
-                    'admins.create',
-                    'admins.edit'
+                    'list.published_posts',
                     ]) ? 'active-link': ''}}">
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Published Posts
             </a>
@@ -64,6 +70,7 @@
             <a href="{{route('stats.index')}}"  style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
                     'stats.index',
+                    'stats.create',
                     ]) ? 'active-link': ''}}">
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Statistic
             </a>

@@ -4,8 +4,10 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\StatController;
+use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\InformController;
 use App\Http\Controllers\NewPendingPostsController;
+use App\Http\Controllers\PublishedPostsController;
 use App\Http\Controllers\RejectedPendingPostsController;
 use App\Http\Controllers\SuggestedEditPendingPostsController;
 use App\Http\Controllers\HomeController;
@@ -32,10 +34,14 @@ Route::prefix('admin')->group(function () {
 
         Route::resource('admins',AdminController::class);
         Route::resource('stats',StatController::class);
+        Route::resource('articles',ArticleController::class);
 
         Route::get('new_pending_posts',[NewPendingPostsController::class,'new_pending_posts'])->name('list.new_pending_posts');
         Route::get('new_pending_posts/{pendingPost}/confirm',[NewPendingPostsController::class,'new_pending_post_confirm_form'])->name('form.confirm.new_pending_post');
         Route::post('new_pending_posts/{pendingPost}/confirm',[NewPendingPostsController::class,'handle_new_pending_post'])->name('handle.new_pending_post');
+
+
+        Route::get('published_posts',[PublishedPostsController::class,'published_posts'])->name('list.published_posts');
 
         Route::get('rejected_pending_posts',[ RejectedPendingPostsController::class,'rejected_pending_posts'])->name('list.rejected_pending_posts');
         Route::get('rejected_pending_posts/{pendingPost}/confirm',[RejectedPendingPostsController::class,'rejected_pending_post_confirm_form'])->name('form.confirm.rejected_pending_post');
@@ -53,6 +59,8 @@ Route::prefix('admin')->group(function () {
 Route::get('/',[HomeController::class,'index'])->name('index');
 Route::get('/about',[HomeController::class,'about_us'])->name('about');
 Route::post('/search',[HomeController::class,'search'])->name('search');
+Route::get('/experiences',[HomeController::class,'articles'])->name('list.experiences');
+Route::get('/article/{article}',[HomeController::class,'show_article'])->name('show.experience');
 
 Route::get('/profile/{post}',[HomeController::class,'profile'])->name('profile');
 

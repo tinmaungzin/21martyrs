@@ -19,6 +19,6 @@ class CheckAdmin
     {
         if(Auth::guard('admin')->check()) return $next($request);
 
-        return abort(403,'You have to login or change account to access the page.');
+        return redirect(route('admin.login_form'));
     }
 }

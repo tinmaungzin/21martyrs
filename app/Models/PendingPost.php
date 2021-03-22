@@ -10,7 +10,7 @@ class PendingPost extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+    protected array $guarded = [];
 
     public function images()
     {
@@ -40,8 +40,8 @@ class PendingPost extends Model
 
 
 
-//    public function getProfileUrlAttribute($value)
-//    {
-//        return ImageModule::urlFromPath($value);
-//    }
+    public function getProfileUrlAttribute($value)
+    {
+        return ImageModule::urlFromPath($value);
+    }
 }

@@ -37,8 +37,11 @@ class InformController extends Controller
     public function store_edit_detained(EditDetainedRequest $request, Post $post)
     {
         $data = $request->except('photo');
-        $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-        $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+        if($request->has('photo'))
+        {
+            $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+            $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+        }
         $data['status'] = 'detained';
         $data['post_id'] = $post->id;
         $data['publishing_status'] = 'None';
@@ -49,7 +52,7 @@ class InformController extends Controller
         });
 
 
-        Session::flash('msg', 'Data sent successfully!');
+        Session::flash('msg', 'Data sent successfully! Thank You.');
         return redirect(route('index'));
     }
 
@@ -78,7 +81,7 @@ class InformController extends Controller
         });
 
 
-        Session::flash('msg', 'Data sent successfully!');
+        Session::flash('msg', 'Data sent successfully! Thank You');
         return redirect(route('index'));
     }
 
@@ -102,7 +105,6 @@ class InformController extends Controller
         $data = $request->except('photo');
         $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
         $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
-        dd($data['profile_url']);
         $data['status'] = 'dead';
         $data['publishing_status'] = 'None';
         //TODO add user id
@@ -113,7 +115,7 @@ class InformController extends Controller
         });
 
 
-        Session::flash('msg', 'Data sent successfully!');
+        Session::flash('msg', 'Data sent successfully! Thank You.');
         return redirect(route('index'));
     }
 
@@ -128,8 +130,12 @@ class InformController extends Controller
     public function store_edit_dead(EditDeadRequest $request, Post $post)
     {
         $data = $request->except('photo');
-        //        $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-        //        $data['profile_url'] = ImageModule::uploadFromRequest('photo',$path);
+        if($request->has('photo'))
+        {
+            $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+            $data['profile_url'] = ImageModule::uploadFromRequest('photo',$path);
+        }
+
         $data['status'] = 'dead';
         $data['post_id'] = $post->id;
         $data['publishing_status'] = 'None';
@@ -140,7 +146,7 @@ class InformController extends Controller
         });
 
 
-        Session::flash('msg', 'Data sent successfully!');
+        Session::flash('msg', 'Data sent successfully! Thank You.');
         return redirect(route('index'));
     }
 }

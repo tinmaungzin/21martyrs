@@ -16,19 +16,12 @@
     <link rel="stylesheet" href=" {{ asset('css/yearpicker.css') }} ">
     <link rel="stylesheet" href=" {{ asset('css/timepicki.css') }} ">
     <link rel="stylesheet" href=" {{ asset('css/MonthPicker.min.css') }} ">
+    @yield('style')
 
-    <script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script>
+
     <script src=" {{ asset('js/jquery.js') }} "></script>
     <script src=" {{ asset('js/jquery-ui.min.js') }} "></script>
-    <script src=" {{ asset('js/bootstrap.js') }} "></script>
-    <script src=" {{ asset('js/bs.js') }} "></script>
-    <script src=" {{ asset('js/MonthPicker.min.js') }} "></script>
-    <script src=" {{ asset('js/datepicker.min.js') }} "></script>
-    <script src=" {{ asset('js/yearpicker.js') }} "></script>
-    <script src=" {{ asset('js/vue.js') }} "></script>
-    <script src=" {{ asset('js/sorting.js') }} "></script>
     <script src=" {{ asset('js/jquery.autosize.js') }} "></script>
-
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     <script defer src="{{ asset('js/app.js') }}"></script>
@@ -45,6 +38,18 @@
     </div>
 
 
+
+    @yield('script')
+
+
+    <script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script>
+    <script src=" {{ asset('js/bootstrap.js') }} "></script>
+    <script src=" {{ asset('js/bs.js') }} "></script>
+    <script src=" {{ asset('js/MonthPicker.min.js') }} "></script>
+    <script src=" {{ asset('js/datepicker.min.js') }} "></script>
+    <script src=" {{ asset('js/yearpicker.js') }} "></script>
+    <script src=" {{ asset('js/vue.js') }} "></script>
+    <script src=" {{ asset('js/sorting.js') }} "></script>
 
     <script type="application/javascript">
         $(document).ready(function (){

@@ -1,6 +1,6 @@
 @extends('admin.layout.master')
 
-@section('title', ' Rejected Pending Posts')
+@section('title', ' Published Posts')
 
 
 @section('content')
@@ -8,7 +8,7 @@
     <div class="main-container">
         <header class="header pl-2">
             <nav>
-                <a href="#" class="a-clear text-dark fm-roboto fs17">Rejected Pending Posts</a>
+                <a href="#" class="a-clear text-dark fm-roboto fs17">Published Posts</a>
 
             </nav>
         </header>
@@ -62,15 +62,15 @@
 
                             <td class="padding-table-row w89px">
                                 <button type="button" class="btn-clear " title="Edit" id="edit-button">
-                                    <a class="a-clear text-dark" href="{{route('form.confirm.new_pending_post',['pendingPost'=> $post->id])}}">
+                                    <a class="a-clear text-dark" href="{{route('profile',['post'=> $post->id])}}">
                                         <i class="fas fa-eye" style="color:#673ab7;"></i>
                                     </a>
                                 </button>
 
-                                <button type="button" id="delete-button" class="btn-clear" title="Delete"
-                                        data-toggle="modal" onclick="deleteItem('new_pending_posts',{{$post->id}})" data-target="#delete">
-                                    <i class="fal fa-times text-danger fw300"></i>
-                                </button>
+{{--                                <button type="button" id="delete-button" class="btn-clear" title="Delete"--}}
+{{--                                        data-toggle="modal" onclick="deleteItem('new_pending_posts',{{$post->id}})" data-target="#delete">--}}
+{{--                                    <i class="fal fa-times text-danger fw300"></i>--}}
+{{--                                </button>--}}
                             </td>
                         </tr>
                     @endforeach

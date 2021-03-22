@@ -58,30 +58,6 @@
                             <form id="form-submit" action="{{ route('search') }}" method="post">
                                 @csrf
                                 <div class="row">
-                                    {{-- <div class="col-md-3 first-item"> --}}
-                                    {{-- <fieldset> --}}
-                                    {{-- <input --}}
-                                    {{-- name="name" --}}
-                                    {{-- type="text" --}}
-                                    {{-- class="form-control" --}}
-                                    {{-- id="name" --}}
-                                    {{-- placeholder="Your name..." --}}
-                                    {{-- required="" --}}
-                                    {{-- /> --}}
-                                    {{-- </fieldset> --}}
-                                    {{-- </div> --}}
-                                    {{-- <div class="col-md-3 second-item"> --}}
-                                    {{-- <fieldset> --}}
-                                    {{-- <input --}}
-                                    {{-- name="location" --}}
-                                    {{-- type="text" --}}
-                                    {{-- class="form-control" --}}
-                                    {{-- id="location" --}}
-                                    {{-- placeholder="Type location..." --}}
-                                    {{-- required="" --}}
-                                    {{-- /> --}}
-                                    {{-- </fieldset> --}}
-                                    {{-- </div> --}}
                                     <div class="col-md-3 first-item">
                                         <fieldset>
                                             <select name="state_id">
@@ -155,16 +131,17 @@
                     </a>
                 </p>
             @endif
+
             <div class="row">
                 @if (count($posts) < 1)
                     @include('components.empty')
                 @else
-                    @foreach ($posts as $post) <a
-                        href="{{ route('profile', ['post' => $post->id]) }}">
+                    @foreach ($posts as $post)
+                        <a href="{{ route('profile', ['post' => $post->id]) }}">
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="featured-item">
                                 <div class="thumb">
-                                    <img src="{{ $post->image }} " alt=""/>
+                                    <img src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
                                 </div>
                                 <div class="down-content">
                                     <h4>{{ $post->name }}</h4>
@@ -180,111 +157,15 @@
 
                     </a> @endforeach
                 @endif
-                {{-- <div class="col-md-3 col-sm-6 col-xs-12"> --}}
-                {{-- <div class="featured-item"> --}}
-                {{-- <div class="thumb"> --}}
-                {{-- <img src="{{asset('web/img/featured_item_2.jpg')}} " alt="" /> --}}
-                {{-- </div> --}}
-                {{-- <div class="down-content"> --}}
-                {{-- <h4>Samson</h4> --}}
-                {{-- <p> --}}
-                {{-- 24 --}}
-                {{-- </p> --}}
-                {{-- <p> --}}
-                {{-- Yangon --}}
-                {{-- </p> --}}
-                {{-- </div> --}}
-                {{-- </div> --}}
-                {{-- </div> --}}
-                {{-- <div class="col-md-3 col-sm-6 col-xs-12"> --}}
-                {{-- <div class="featured-item"> --}}
-                {{-- <div class="thumb"> --}}
-                {{-- <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" /> --}}
-                {{-- </div> --}}
-                {{-- <div class="down-content"> --}}
-                {{-- <h4>Samson</h4> --}}
-                {{-- <p> --}}
-                {{-- 24 --}}
-                {{-- </p> --}}
-                {{-- <p> --}}
-                {{-- Yangon --}}
-                {{-- </p> --}}
-                {{-- </div> --}}
-                {{-- </div> --}}
-                {{-- </div> --}}
-
-
             </div>
-            {{-- <div class="row"> --}}
-            {{-- <div class="col-md-3 col-sm-6 col-xs-12"> --}}
-            {{-- <div class="featured-item"> --}}
-            {{-- <div class="thumb"> --}}
-            {{-- <img src="{{asset('web/img/featured_item_1.jpg')}} " alt="" /> --}}
-            {{-- </div> --}}
-            {{-- <div class="down-content"> --}}
-            {{-- <h4>Samson</h4> --}}
-            {{-- <p> --}}
-            {{-- 24 --}}
-            {{-- </p> --}}
-            {{-- <p> --}}
-            {{-- Yangon --}}
-            {{-- </p> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
-            {{-- <div class="col-md-3 col-sm-6 col-xs-12"> --}}
-            {{-- <div class="featured-item"> --}}
-            {{-- <div class="thumb"> --}}
-            {{-- <img src="{{asset('web/img/featured_item_2.jpg')}} " alt="" /> --}}
-            {{-- </div> --}}
-            {{-- <div class="down-content"> --}}
-            {{-- <h4>Samson</h4> --}}
-            {{-- <p> --}}
-            {{-- 24 --}}
-            {{-- </p> --}}
-            {{-- <p> --}}
-            {{-- Yangon --}}
-            {{-- </p> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
-            {{-- <div class="col-md-3 col-sm-6 col-xs-12"> --}}
-            {{-- <div class="featured-item"> --}}
-            {{-- <div class="thumb"> --}}
-            {{-- <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" /> --}}
-            {{-- </div> --}}
-            {{-- <div class="down-content"> --}}
-            {{-- <h4>Samson</h4> --}}
-            {{-- <p> --}}
-            {{-- 24 --}}
-            {{-- </p> --}}
-            {{-- <p> --}}
-            {{-- Yangon --}}
-            {{-- </p> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
-            {{-- <div class="col-md-3 col-sm-6 col-xs-12"> --}}
-            {{-- <div class="featured-item"> --}}
-            {{-- <div class="thumb"> --}}
-            {{-- <img src="{{asset('web/img/featured_item_3.jpg')}} " alt="" /> --}}
-            {{-- </div> --}}
-            {{-- <div class="down-content"> --}}
-            {{-- <h4>Samson</h4> --}}
-            {{-- <p> --}}
-            {{-- 24 --}}
-            {{-- </p> --}}
-            {{-- <p> --}}
-            {{-- Yangon --}}
-            {{-- </p> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
-            {{-- </div> --}}
+
         </div>
         @include('web.layout.pagination', ['paginator' => $posts])
 
     </section>
+    @include('web.layout.success_msg')
+
+
 
 
     <script>

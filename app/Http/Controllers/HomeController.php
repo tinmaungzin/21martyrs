@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Article;
 use App\Models\Post;
 use App\Models\Stat;
 use App\Models\State;
@@ -52,8 +53,21 @@ class HomeController extends Controller
 
         $posts = $query->orderBy('id', 'desc')->paginate(12);
         $states = State::all();
+        $stat = Stat::all()->last();
 
-        return view('web.index', compact('posts', 'states', 'filters'));
 
+        return view('web.index', compact('posts', 'states', 'filters','stat'));
+
+    }
+
+    public function articles()
+    {
+        $articles = Article::orderBy('id','desc')->paginate(12);
+        return view('web.exp_sharing.list',compact('articles'));
+    }
+
+    public function show_article(Article $article)
+    {
+        return view('web.exp_sharing.show',compact('article'));
     }
 }
