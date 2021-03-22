@@ -10,7 +10,7 @@ class PendingPost extends Model
 {
     use HasFactory;
 
-    protected array $guarded = [];
+    protected $guarded = [];
 
     public function images()
     {
@@ -37,7 +37,6 @@ class PendingPost extends Model
     {
         $this->attributes['publishing_status'] = ucfirst($valu);
     }
-
 
 
     public function getProfileUrlAttribute($value)
