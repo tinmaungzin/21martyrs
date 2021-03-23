@@ -10,7 +10,7 @@ class Post extends Model
 {
     use HasFactory;
 
-     protected array $guarded = [];
+    protected $guarded = [];
 
 
     public function state()
@@ -34,17 +34,17 @@ class Post extends Model
 //    }
 
 
-    public function scopeState($query,$state_id)
+    public function scopeState($query, $state_id)
     {
         return $query->where('state_id', '=', $state_id);
     }
 
-    public function scopeStatus($query,$status)
+    public function scopeStatus($query, $status)
     {
         return $query->where('state_id', '=', $status);
     }
 
-    public function scopeGender($query,$gender)
+    public function scopeGender($query, $gender)
     {
         return $query->where('state_id', '=', $gender);
     }

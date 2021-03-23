@@ -10,7 +10,7 @@ class Article extends Model
 {
     use HasFactory;
 
-    protected array $guarded = [];
+    protected $guarded = [];
 
     public function getFeatureImageUrlAttribute($value)
     {
