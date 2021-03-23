@@ -16,10 +16,12 @@ class FixEnumPostsTables extends Migration
     {
         //
         foreach (['pending_posts', 'posts'] as $table_name) {
+            Schema::disableForeignKeyConstraints();
             MigrationUtility::modifyEnum($table_name, 'gender', ['male', 'female', 'other']);
             MigrationUtility::modifyEnum($table_name, 'occupation',
                 ['student', 'cdm staff', 'government official', strtolower('Political Party Member'),
                     strtolower('Journalist'), strtolower('Civilian'), strtolower('Other'), null]);
+            Schema::enableForeignKeyConstraints();
 //            Schema::table($table_name, function (Blueprint $table) {
 //            })
         }
