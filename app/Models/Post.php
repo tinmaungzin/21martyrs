@@ -10,8 +10,26 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+//    protected $guarded = [];
 
+    protected $fillable = [
+        'name',
+        'comment',
+        'age',
+        'address',
+        'profile_url',
+        'gender',
+        'occupation',
+        'organization_name',
+        'city_id',
+        'state_id',
+        'status',
+        'prison',
+        'detained_date',
+        'reason_of_dead',
+        'reason_of_arrest',
+        'admin_id',
+    ];
 
     public function state()
     {

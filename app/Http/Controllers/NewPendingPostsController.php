@@ -19,10 +19,10 @@ class NewPendingPostsController extends Controller
         return view('admin.new_pending_posts.index',compact('posts'));
     }
 
-    public function new_pending_post_confirm_form(PendingPost $pendingPost)
+    public function new_pending_post_confirm_form(PendingPost $post)
     {
 
-        return view('admin.new_pending_posts.confirm',compact('pendingPost'));
+        return view('admin.new_pending_posts.edit',compact('post'));
     }
 
     public function getPostData($pendingPost)

@@ -68,15 +68,15 @@
                         </div>
                     </div>
 
+
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.city') }}</p>
+                            <p>{{ __('ui.arrestee_township') }}</p>
                         </div>
                         <div class="inputValue">
-                            <select id="city" name="city_id">
-                                <option value="" selected disabled>{{ __('ui.choose_city') }}</option>
-                            </select>
-                            <span class="text-danger">{{ $errors->first('city_id') }}</span>
+                            <input type="text" placeholder="{{ __('ui.arrestee_township_placeholder') }}"
+                                   name="address"/>
+                            <span class="text-danger">{{ $errors->first('address') }}</span>
 
                         </div>
                     </div>
@@ -224,45 +224,5 @@
     </form>
 
 
-    <script>
-        $(document).ready(function() {
-
-            function ajaxHeaders() {
-                return $.ajaxSetup({
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
-                    }
-                });
-            }
-
-
-            $('#state').change(function() {
-                $('#city').empty();
-
-                let data = {
-                    state_id: $('#state').val()
-                };
-                let cities;
-                ajaxHeaders();
-
-                $.post('/fetchCities', JSON.stringify(data))
-                    .done(function(data) {
-                        if (data.success) {
-                            cities = data.cities;
-                            cities.forEach(function(city) {
-                                $('#city').append(
-                                    `
-                                                                                                                                                                                <option value="${ city.id }">${city.name}</option>
-                                                                                                                                                                        `
-                                )
-                            });
-                        }
-                    });
-            });
-
-        });
-
-    </script>
 
 @endsection

@@ -32,6 +32,8 @@ return [
     'arrested_date' => 'Arrested Date',
     'arrested_reason' => 'Reason of being arrested',
     'arrestee_city' => 'Detained City',
+    'arrestee_township' => 'City/Township',
+    'arrestee_township_placeholder' => 'For eg, San Chaung',
     'arrestee_comment' => 'Comment',
     'arrestee_comment_placeholder' => 'Please provide further information about arrest.',
     'arrestee_info' => 'Detainee Information',

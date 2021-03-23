@@ -33,6 +33,8 @@ return [
     'arrested_date' => 'ဖမ်းဆီးခံရသည့်ရက်',
     'arrested_reason' => 'ဖမ်းဆီးခံရသည့်အကြောင်းအရင်း',
     'arrestee_city' => 'မြို့',
+    'arrestee_township' => 'မြို့/မြို့နယ်',
+    'arrestee_township_placeholder' => 'ဥပမာ, စမ်းချောင်း',
     'arrestee_comment' => 'မှတ်ချက်',
     'arrestee_comment_placeholder' => 'ကျေးဇူးပြု၍ ဖမ်းဆီးခြင်းနှင့် ပါတ်သက်၍ နောက်ထပ်သတင်းအချက်အလက်ကိုပေးပါ',
     'arrestee_info' => 'ဖမ်းဆီးခံရသူ၏အချက်အလက်',
