@@ -3,9 +3,9 @@
 
 
 @section('content')
-    <div style="text-align: center; padding-top: 5rem">
+    <div class="error-section">
         <img src="{{ asset('images/icons/404-icon.svg') }}" alt="Error 404 icon"
-            style="max-width: 100%; max-height: 350px" />
+             class="error-icon"/>
         <h4>
             {{ __('ui.page_not_found') }}
         </h4>
