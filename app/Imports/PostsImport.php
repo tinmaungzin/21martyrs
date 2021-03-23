@@ -75,6 +75,7 @@ class PostsImport implements ToCollection, WithHeadingRow
             }
             $states = State::all();
             foreach ($rows as $row) {
+                echo "Processing row no: {$row['no']} \n";
                 if (is_null($row['name'])) {
                     continue;
                 }
