@@ -32,10 +32,13 @@ class Post extends Model
         return $this->hasMany(Image::class);
     }
 
-//    public function getProfileUrlAttribute($value)
-//    {
-//        return ImageModule::urlFromPath($value);
-//    }
+    public function getProfileUrlAttribute($value): string
+    {
+        if (is_null($value)) {
+            return "";
+        }
+        return ImageModule::urlFromPath($value);
+    }
 
 
     public function scopeState($query, $state_id)

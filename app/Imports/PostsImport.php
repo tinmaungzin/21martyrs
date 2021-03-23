@@ -8,6 +8,7 @@ use App\Models\State;
 use App\Utility\ArrayUtility;
 use App\Utility\FileUtility;
 use App\Utility\ImageModule;
+use App\Utility\StringUtility;
 use Exception;
 use Illuminate\Support\Arr;
 use Illuminate\Support\Collection;
@@ -52,7 +53,8 @@ class PostsImport implements ToCollection, WithHeadingRow
         }
         $transformedRow['age'] = is_numeric($row['age']) ? (int)$row['age'] : null;
         $transformedRow['address'] = $row['township'];
-        $transformedRow['gender'] = ucfirst($row['gender']);
+        $transformedRow['gender'] = StringUtility::isEmpty(trim($row['gender'])) ? 'other' : strtolower($row['gender']);
+        $transformedRow['occupation'] = strtolower($row['occupation']);
         $transformedRow['status'] = $this->status == 'death' ? 'dead' : (strtolower($row['status']) == 'still detained' ? 'detained' : 'released');
         $transformedRow['released_date'] = $this->status == 'death' ? null :
             (strtolower($row['released_date']) == 'n/a' ? null : Date::excelToDateTimeObject($row['released_date']));
@@ -90,7 +92,6 @@ class PostsImport implements ToCollection, WithHeadingRow
                 try {
                     $transformedRow = self::transformRow($row, $states);
                     $transformedRow['admin_id'] = $admin->id;
-//                var_dump($transformedRow);
                     unset($transformedRow['no']);
                     array_push($transformedRows, $transformedRow->toArray());
                     Post::create($transformedRow->toArray());

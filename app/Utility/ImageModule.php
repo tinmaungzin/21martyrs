@@ -19,10 +19,7 @@ class ImageModule
     public static function uploadFromRequest(string $imageKey, string $name)
     {
 
-        return request()->file($imageKey)->storePubliclyAs(self::prepare_folder(), $name, config('filesystems.default'));
-//        $path = Storage::disk($DEFAULT_DISK)->putFileAs($DO_BASE_FOLDER, request()->file($imageKey), $name);
-//        Storage::disk($DEFAULT_DISK)->setVisibility($path, 'public');
-//        return $path;
+        return request()->file($imageKey)->storePubliclyAs(self::prepare_folder(), urlencode($name), config('filesystems.default'));
     }
 
     /**
@@ -33,8 +30,8 @@ class ImageModule
      */
     public static function upload(string $upload_path, $content, $visiblity = 'public'): string
     {
-        $final_path = self::prepare_folder() . Str::start($upload_path, '/');
-//        Storage::disk(config('filesystems.default'))->put($final_path, $content, $visiblity);
+        $final_path = urlencode(self::prepare_folder() . Str::start($upload_path, '/'));
+        Storage::disk(config('filesystems.default'))->put($final_path, $content, $visiblity);
         return Storage::disk(config('filesystems.default'))->path($final_path);
     }
 
