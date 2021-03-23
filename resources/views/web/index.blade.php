@@ -15,7 +15,7 @@
                         <span style="font-size: 18px">{{ __('ui.about_us_long') }}</span>
                         <div class="blue-button">
                             <a class="scrollTo" data-scrollTo="popular"
-                               href="about.html">{{ __('ui.discover_more') }}</a>
+                               href="{{route('about')}}">{{ __('ui.discover_more') }}</a>
                         </div>
                     </div>
                 </div>
