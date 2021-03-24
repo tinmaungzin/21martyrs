@@ -58,7 +58,12 @@
                             <form id="form-submit" action="{{ route('search') }}" method="post">
                                 @csrf
                                 <div class="row">
-                                    <div class="col-md-3 first-item">
+                                    <div class="col-md-3 third-item">
+                                        <fieldset>
+                                            <input type="text" name="name" placeholder="Type Name" autocomplete="off">
+                                        </fieldset>
+                                    </div>
+                                    <div class="col-md-3 second-item">
                                         <fieldset>
                                             <select name="state_id">
                                                 <option value="" selected
@@ -71,7 +76,7 @@
                                             </select>
                                         </fieldset>
                                     </div>
-                                    <div class="col-md-3 second-item">
+                                    <div class="col-md-3 third-item">
                                         <fieldset>
                                             <select name="status">
                                                 <option value="" selected disabled>{{ __('ui.select_status') }}</option>
@@ -81,17 +86,7 @@
                                             </select>
                                         </fieldset>
                                     </div>
-                                    <div class="col-md-3 third-item">
-                                        <fieldset>
-                                            <select name="gender">
-                                                <option value="" selected disabled>{{ __('ui.choose_gender') }}</option>
-                                                <option value="Male">{{ __('ui.male') }}</option>
-                                                <option value="Female">{{ __('ui.female') }}</option>
-                                                <option value="Other">{{ __('ui.other') }}</option>
 
-                                            </select>
-                                        </fieldset>
-                                    </div>
                                     <div class="col-md-3">
                                         <fieldset>
                                             <button type="submit" id="form-submit" class="btn">

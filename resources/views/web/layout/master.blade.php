@@ -8,7 +8,7 @@
 
     <title>21 Martyrs | @yield('title')</title>
 
-    <link rel="icon" href="{{ asset('images/21martyrs.webp') }} " sizes="16x16"/>
+    <link rel="icon" href="{{ asset('web/img/MM-Martyrs-500px.png') }} " sizes="16x16"/>
 
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -63,7 +63,8 @@
             <button id="primary-nav-button" style="right: 0;" type="button">Menu</button>
             <a href="{{ route('index') }}">
                 <div class="logo">
-                    <img src="{{ asset('images/icon.png') }} " alt="Logo"/>
+                    <img style="margin-left: 30%;" src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
+                    <h1>21 Martyrs</h1>
                 </div>
             </a>
             <nav id="primary-nav" class="dropdown cf">

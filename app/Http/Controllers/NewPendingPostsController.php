@@ -2,13 +2,16 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\NewPendingPostConfirmRequest;
 use App\Models\Image;
 use App\Models\PendingPost;
 use App\Models\Post;
+use App\Models\State;
 use App\Utility\ImageModule;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
+use Illuminate\Support\Str;
 
 class NewPendingPostsController extends Controller
 {
@@ -19,10 +22,10 @@ class NewPendingPostsController extends Controller
         return view('admin.new_pending_posts.index',compact('posts'));
     }
 
-    public function new_pending_post_confirm_form(PendingPost $post)
+    public function new_pending_post_confirm_form(PendingPost $pendingPost)
     {
-
-        return view('admin.new_pending_posts.edit',compact('post'));
+        $states = State::all();
+        return view('admin.new_pending_posts.edit',compact('pendingPost','states'));
     }
 
     public function getPostData($pendingPost)
@@ -35,7 +38,6 @@ class NewPendingPostsController extends Controller
         $data['gender'] = $pendingPost->gender;
         $data['occupation'] = $pendingPost->occupation;
         $data['organization_name'] = $pendingPost->organization_name;
-        $data['city_id'] = $pendingPost->city_id;
         $data['state_id'] = $pendingPost->state_id;
         $data['prison'] = $pendingPost->prison;
         $data['detained_date'] = $pendingPost->detained_date;
@@ -55,10 +57,17 @@ class NewPendingPostsController extends Controller
         return $image_data;
     }
 
-    public function handle_new_pending_post(Request $request, PendingPost $pendingPost)
+    public function handle_new_pending_post(NewPendingPostConfirmRequest $request, PendingPost $pendingPost)
     {
         if($request->is_confirm)
         {
+            $data = $request->except('is_confirm','photo');
+            if($request->has('photo'))
+            {
+                $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+                $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+            }
+            $pendingPost->update($data);
             $pendingPost->publishing_status = 'Confirmed';
             $pendingPost->save();
             DB::transaction(function() use($pendingPost)
