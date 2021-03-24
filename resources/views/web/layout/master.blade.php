@@ -7,11 +7,11 @@
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
     <title>21 Martyrs | @yield('title')</title>
-@if(App::environment('production'))
-    @include('components.seo')
-    @yield('seo')
-@endif
-<!-- Google Tag Manager -->
+    @if(App::environment('production'))
+        @include('components.seo')
+        @yield('seo')
+    @endif
+    {{--<!-- Google Tag Manager -->--}}
     <script>
         (function (w, d, s, l, i) {
             w[l] = w[l] || [];
@@ -27,7 +27,7 @@
             f.parentNode.insertBefore(j, f);
         })(window, document, 'script', 'dataLayer', 'GTM-W59G632');
     </script>
-    <!-- End Google Tag Manager -->
+    {{--    <!-- End Google Tag Manager -->--}}
     <link rel="icon" href="{{ asset('images/21martyrs.webp') }} " sizes="16x16"/>
 
     <meta name="description" content=""/>
@@ -73,12 +73,12 @@
 </head>
 
 <body>
-<!-- Google Tag Manager (noscript) -->
+{{--<!-- Google Tag Manager (noscript) -->--}}
 <noscript>
     <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-W59G632"
             height="0" width="0" style="display:none;visibility:hidden"></iframe>
 </noscript>
-<!-- End Google Tag Manager (noscript) -->
+{{--<!-- End Google Tag Manager (noscript) -->--}}
 <!-- Header -->
 @inject("constants", "\App\Utility\Constants")
 <div class="wrap">
