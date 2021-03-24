@@ -87,8 +87,8 @@
                         </a>
                         <ul class="sub-menu">
                             @foreach ($constants::LOCALE_MAP as $locale => $arr)
-                                <li>
-                                    <a href="#" class="change-locale" data-value={{ $locale }}>
+                                <li class="change-locale" data-value={{ $locale }}>
+                                    <a href="#">
                                         {{ $arr['text'] }} &nbsp;
                                         <img class="locale-icon" src="{{ asset($arr['pic']) }}"/>
                                     </a>
