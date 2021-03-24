@@ -6,6 +6,7 @@ use App\Models\Admin;
 use App\Models\Post;
 use App\Models\State;
 use App\Utility\ArrayUtility;
+use App\Utility\Constants;
 use App\Utility\FileUtility;
 use App\Utility\ImageModule;
 use App\Utility\StringUtility;
@@ -54,7 +55,8 @@ class PostsImport implements ToCollection, WithHeadingRow
         $transformedRow['age'] = is_numeric($row['age']) ? (int)$row['age'] : null;
         $transformedRow['address'] = $row['township'];
         $transformedRow['gender'] = StringUtility::isEmpty(trim($row['gender'])) ? 'other' : strtolower($row['gender']);
-        $transformedRow['occupation'] = strtolower($row['occupation']);
+        $transformedRow['occupation'] = StringUtility::isEmpty($row['occupation']) ? null :
+            (in_array(strtolower($row['occupation']), Constants::OCCUPATIONS_ENUM) ? strtolower($row['occupation']) : 'other');
         $transformedRow['status'] = $this->status == 'death' ? 'dead' : (strtolower($row['status']) == 'still detained' ? 'detained' : 'released');
         $transformedRow['released_date'] = $this->status == 'death' ? null :
             (strtolower($row['released_date']) == 'n/a' ? null : Date::excelToDateTimeObject($row['released_date']));

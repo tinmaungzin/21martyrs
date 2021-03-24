@@ -13,4 +13,15 @@ class ArrayUtility
     {
         return Arr::except($array, $keys);
     }
+
+    public static function compact($array)
+    {
+        return array_reduce($array, function ($acc, $item) {
+            if (is_null($item)) {
+                return $acc;
+            }
+            array_push($acc, $item);
+            return $acc;
+        }, []);
+    }
 }

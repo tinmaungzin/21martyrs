@@ -23,13 +23,13 @@ class MigrationUtility
                     "_{$col_name}_check CHECK ({$col_name}::TEXT = ANY (ARRAY[{$enumStr}]::TEXT[]))");
             });
         } else {
-            $enumStr = join(',', array_map(function ($enum) {
+            $enumStr = join(',', ArrayUtility::compact(array_map(function ($enum) {
                 if (is_null($enum)) {
-                    return "NULL";
+                    return null;
                 }
                 return "'{$enum}'";
-            }, $enums));
-            DB::statement("ALTER TABLE " . $table_name . " MODIFY COLUMN {$col_name} ENUM({$enumStr})");
+            }, $enums)));
+            DB::statement("ALTER TABLE " . $table_name . " MODIFY COLUMN {$col_name} ENUM({$enumStr}) NULL");
         }
     }
 
