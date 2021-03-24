@@ -23,4 +23,5 @@ class Stat extends Model
         'total_detained',
         'total_hurt',
     ];
+
 }

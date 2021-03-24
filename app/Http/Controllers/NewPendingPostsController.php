@@ -13,6 +13,7 @@ use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
 use Illuminate\Support\Str;
 
+
 class NewPendingPostsController extends Controller
 {
     public function new_pending_posts()
@@ -26,6 +27,7 @@ class NewPendingPostsController extends Controller
     {
         $states = State::all();
         return view('admin.new_pending_posts.edit',compact('pendingPost','states'));
+
     }
 
     public function getPostData($pendingPost)
@@ -38,6 +40,7 @@ class NewPendingPostsController extends Controller
         $data['gender'] = $pendingPost->gender;
         $data['occupation'] = $pendingPost->occupation;
         $data['organization_name'] = $pendingPost->organization_name;
+
         $data['state_id'] = $pendingPost->state_id;
         $data['prison'] = $pendingPost->prison;
         $data['detained_date'] = $pendingPost->detained_date;
@@ -68,6 +71,7 @@ class NewPendingPostsController extends Controller
                 $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
             }
             $pendingPost->update($data);
+
             $pendingPost->publishing_status = 'Confirmed';
             $pendingPost->save();
             DB::transaction(function() use($pendingPost)

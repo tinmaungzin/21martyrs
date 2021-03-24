@@ -10,8 +10,11 @@
     "require": {
         "php": "^7.3|^8.0",
         "aws/aws-sdk-php": "3.173.23",
+<<<<<<< HEAD
         "barryvdh/laravel-ide-helper": "^2.9",
         "doctrine/dbal": "^3.0",
+=======
+>>>>>>> origin/thetpai
         "fideloper/proxy": "^4.4",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
@@ -19,7 +22,12 @@
         "laravel/tinker": "^2.5",
         "league/flysystem-aws-s3-v3": "^1.0",
         "lorisleiva/laravel-deployer": "^0.3.5",
+<<<<<<< HEAD
         "silviolleite/laravelpwa": "~2.0.3"
+=======
+        "silviolleite/laravelpwa": "~2.0.3",
+        "barryvdh/laravel-ide-helper": "^2.9"
+>>>>>>> origin/thetpai
     },
     "require-dev": {
         "amirami/localizator": "^0.4.0@alpha",

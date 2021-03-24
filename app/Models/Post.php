@@ -31,6 +31,7 @@ class Post extends Model
         'admin_id',
     ];
 
+
     public function state()
     {
         return $this->belongsTo(State::class);

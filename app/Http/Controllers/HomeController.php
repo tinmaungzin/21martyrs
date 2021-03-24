@@ -43,6 +43,7 @@ class HomeController extends Controller
             $query->where('name','like', '%' . $request->name . '%');
             $filters += ['Name' => $request->name];
 
+
         }
         if (isset($request->status)) {
             $query->where('status', $request->status);

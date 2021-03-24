@@ -11,6 +11,7 @@
             <div class="mainHeader">
                 <h3>{{ __('ui.arrestee_info') }}</h3>
 
+
             </div>
             <div class="leftInfo">
                 <div class="inputBox">
@@ -20,6 +21,7 @@
                     </div>
                     <div class="inputValue">
                         <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name" value="{{$post->name}}" autocomplete="off" />
+
                         <span class="text-danger">{{$errors->first('name')}}</span>
 
                     </div>
@@ -31,6 +33,7 @@
                     </div>
                     <div class="inputValue">
                         <input type="number" id="age" name="age" value="{{$post->age}}" min="10" max="99" placeholder="{{ __('ui.age_placeholder') }}" />
+
                         <span class="text-danger">{{$errors->first('age')}}</span>
 
                     </div>
@@ -38,6 +41,7 @@
                 <div class="inputBox">
                     <div class="inputHeader">
                         <p>{{ __('ui.gender') }}</p>
+
 
                     </div>
 
@@ -47,6 +51,7 @@
                             <option @if($post->gender == 'Male') selected @endif value="Male">{{ __('ui.male') }}</option>
                             <option @if($post->gender == 'Female') selected @endif value="Female">{{ __('ui.female') }}</option>
                             <option @if($post->gender == 'Other') selected @endif value="Other">{{ __('ui.other') }}</option>
+
                         </select>
                         <span class="text-danger">{{$errors->first('gender')}}</span>
 
@@ -62,6 +67,7 @@
                     <div class="inputValue">
                         <select id="state" name="state_id" title="State">
                             <option value="" disabled selected>{{ __('ui.choose_state') }}</option>
+
                             @foreach($states as $state)
                             <option @if($post->state_id == $state->id) selected @endif value="{{$state->id}}">{{$state->name}}</option>
                             @endforeach
@@ -80,6 +86,7 @@
                         <input type="text" value="{{$post->address}}" placeholder="{{ __('ui.arrestee_township_placeholder') }}"
                                name="address"/>
                         <span class="text-danger">{{ $errors->first('address') }}</span>
+
 
                     </div>
                 </div>
@@ -101,6 +108,7 @@
                             <option @if($post->occupation == 'Journalist') selected @endif value="Journalist">{{ __('ui.journalist') }}</option>
                             <option @if($post->occupation == 'Civilian') selected @endif value="Civilian">{{ __('ui.civilian') }}</option>
                             <option @if($post->occupation == 'Other') selected @endif value="Other">{{ __('ui.other') }}</option>
+
                         </select>
                         <span class="text-danger">{{$errors->first('occupation')}}</span>
 
@@ -114,11 +122,13 @@
                     <div class="inputHeader">
                         <p>{{ __('ui.association') }}</p>
 
+
                     </div>
                     <div class="inputValue">
                         <input
                             type="text"
                             placeholder="{{ __('ui.arresstee_assoication_placholder') }}"
+
                             name="organization_name"
                             value="{{$post->organization_name}}"
                         />
@@ -130,6 +140,7 @@
                 <div class="inputBox">
                     <div class="inputHeader">
                         <p>{{ __('ui.arrested_date') }}</p>
+
 
                     </div>
                     <div class="inputValue">
@@ -150,6 +161,7 @@
                             <option @if($post->reason_of_arrest == 'Protest') selected @endif  value="Protest">{{ __('ui.protestor') }}</option>
                             <option @if($post->reason_of_arrest == 'Bystand') selected @endif value="Bystand">{{ __('ui.bystander') }}</option>
                             <option @if($post->reason_of_arrest == 'Other') selected @endif value="Other">{{ __('ui.others') }}</option>
+
                         </select>
                         <span class="text-danger">{{$errors->first('reason_of_arrest')}}</span>
 
@@ -165,6 +177,7 @@
                     </div>
                     <div class="inputValue">
                         <input type="text" value="{{$post->prison}}" placeholder="{{ __('ui.prison_placeholder') }}" name="prison" autocomplete="off" />
+
                         <span class="text-danger">{{$errors->first('prison')}}</span>
 
                     </div>
@@ -177,6 +190,7 @@
                     </div>
                     <div class="inputValue">
                         <textarea type="text" rows="6" placeholder="{{ __('ui.arrestee_comment_placeholder') }}" name="comment" autocomplete="off" >{{$post->comment}}</textarea>
+
                         <span class="text-danger">{{$errors->first('comment')}}</span>
 
                     </div>
@@ -198,6 +212,7 @@
                     </div>
                     <div class="inputValue">
                         <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="informant_name" autocomplete="off" />
+
                         <span class="text-danger">{{$errors->first('informant_name')}}</span>
 
                     </div>
@@ -210,6 +225,7 @@
                     </div>
                     <div class="inputValue">
                         <input type="text" placeholder="{{ __('ui.relationship_placeholder') }}" name="informant_association_with_victim" autocomplete="off" />
+
                         <span class="text-danger">{{$errors->first('informant_association_with_victim')}}</span>
 
                     </div>
@@ -219,12 +235,14 @@
                     <div class="inputHeader">
                         <p>{{ __('ui.informer_phone') }}</p>
 
+
                     </div>
                     <div class="inputValue">
                         <input
                             type="number"
                             id="age"
                             placeholder="{{ __('ui.phone_placholder') }}"
+
                             name="informant_phone"
                         />
                         <span class="text-danger">{{$errors->first('informant_phone')}}</span>
@@ -235,6 +253,7 @@
         </div>
         <div class="submitButton">
             <button type="submit">{{ __('ui.submit') }}</button>
+
         </div>
     </div>
     </form>
@@ -324,5 +343,6 @@
 
 {{--        });--}}
 {{--    </script>--}}
+
 
 @endsection

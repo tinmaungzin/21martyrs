@@ -8,97 +8,142 @@
     <section class="banner" id="top">
         <div class="container">
             <div class="row">
-                <div class="col-md-5 col-md-offset-1">
-                    <div class="banner-caption">
-                        <div class="line-dec"></div>
-                        <h2>{{ __('ui.about_us') }}</h2>
-                        <span style="font-size: 18px">{{ __('ui.about_us_long') }}</span>
-                        <div class="blue-button">
-                            <a class="scrollTo" data-scrollTo="popular"
-                               href="{{route('about')}}">{{ __('ui.discover_more') }}</a>
+
+                <div class="Test">
+
+
+                    <div class="col-md-5 col-md-offset-1">
+                        <div class="banner-caption">
+                            <div class="line-dec"></div>
+                            <h2>{{ __('ui.about_us') }}</h2>
+                            <span style="font-size: 18px">{{ __('ui.about_us_long') }}</span>
+                            <div class="blue-button">
+                                <a class="scrollTo" data-scrollTo="popular"
+
+                                   href="{{route('about')}}">{{ __('ui.discover_more') }}</a>
+                            </div>
                         </div>
                     </div>
-                </div>
-                <div class="col-md-4 col-md-offset-1">
-                    <div class="StaticBox">
-                        <h3 class="boxTitle">
-                            {{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h3>
-                        <div class="whiteBox">
-                            <div class="rightText">
-                                <h2 class="text-danger count">{{is_null($stat) ? 0: $stat->today_dead}}</h2>
-                                <p>{{ __('ui.today_dead') }}</p>
-                                <div class="subRightText">
-                                    <h3 class="count">{{is_null($stat)?  0: $stat->today_hurt}}</h3>
-                                    <h3 class="count">{{is_null($stat) ? 0: $stat->today_detained}}</h3>
+                    <div class="col-md-4 col-md-offset-1">
+
+                        {{-- staticBox --}}
+                        {{-- <div class="StaticBox">
+                            <h3 class="boxTitle">
+                                {{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h3>
+                            <div class="whiteBox">
+                                <div class="rightText">
+                                    <h2 class="text-danger count">{{is_null($stat) ? 0: $stat->today_dead}}</h2>
+                                    <p>{{ __('ui.today_dead') }}</p>
+                                    <div class="subRightText">
+                                        <h3 class="count">{{is_null($stat)?  0: $stat->today_hurt}}</h3>
+                                        <h3 class="count">{{is_null($stat) ? 0: $stat->today_detained}}</h3>
+                                    </div>
+                                    <div class="subRightText">
+                                        <p>{{ __('ui.today_hurt') }}</p>
+                                        <p>{{ __('ui.today_detained') }}</p>
+                                    </div>
                                 </div>
-                                <div class="subRightText">
-                                    <p>{{ __('ui.today_hurt') }}</p>
-                                    <p>{{ __('ui.today_detained') }}</p>
+                                <div class="leftText">
+                                    <h2 class="text-danger count">{{is_null($stat) ? 0: $stat->total_dead}}</h2>
+                                    <p>{{ __('ui.total_dead') }}</p>
+                                    <div class="subLeftText">
+                                        <h3 class="count">{{is_null($stat) ? 0:$stat->total_hurt}}</h3>
+                                        <h3 class="count">{{is_null($stat) ? 0: $stat->total_detained}}</h3>
+                                    </div>
+                                    <div class="subRightText">
+                                        <p>{{ __('ui.total_hurt') }}</p>
+                                        <p>{{ __('ui.total_detained') }}</p>
+                                    </div>
                                 </div>
+
                             </div>
-                            <div class="leftText">
-                                <h2 class="text-danger count">{{is_null($stat) ? 0: $stat->total_dead}}</h2>
-                                <p>{{ __('ui.total_dead') }}</p>
-                                <div class="subLeftText">
-                                    <h3 class="count">{{is_null($stat) ? 0:$stat->total_hurt}}</h3>
-                                    <h3 class="count">{{is_null($stat) ? 0: $stat->total_detained}}</h3>
-                                </div>
-                                <div class="subRightText">
-                                    <p>{{ __('ui.total_hurt') }}</p>
-                                    <p>{{ __('ui.total_detained') }}</p>
-                                </div>
+
+                        </div> --}}
+
+                        <div class="staticBox">
+                        <div class="TopBox">
+                            <h4 class="titleText">As of Mar 22 since the feb 1 coup</h4>
+                            <div class="TopText">
+                                <h3>200+</h3>
+                                <p>Total death</p>
                             </div>
+                            <div class="MiddleText">
+                                <h3>100+</h3>
+                                <h3>50+</h3>
+                                <h3>50+</h3>
+                            </div>
+                            <div class="subMiddleText">
+                                <p>Headshot</p>
+                                <p>Gunshot</p>
+                                <p>Assault</p>
+                            </div>
+                        </div>
+                        <div class="SubstaticBox">
+                            <h3>2300+</h3>
+                            <p>Abducted [ + the released]</p>
 
                         </div>
                     </div>
                 </div>
+                </div>
+            </div>
+
+            <div>
                 <div>
-                    <div>
-                        <div class="submit-form">
-                            <form id="form-submit" action="{{ route('search') }}" method="post">
-                                @csrf
-                                <div class="row">
-                                    <div class="col-md-3 third-item">
-                                        <fieldset>
-                                            <input type="text" name="name" placeholder="Type Name" autocomplete="off">
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-md-3 second-item">
-                                        <fieldset>
-                                            <select name="state_id">
-                                                <option value="" selected
-                                                        disabled>{{ __('ui.select_state_and_region') }}
-                                                </option>
-                                                @foreach ($states as $state)
-                                                    <option value="{{ $state->id }}">{{ $state->name }}</option>
-                                                @endforeach
+                    <div class="submit-form">
+                        <form id="form-submit" action="{{ route('search') }}" method="post">
+                            @csrf
+                            <div class="row">
 
-                                            </select>
-                                        </fieldset>
-                                    </div>
-                                    <div class="col-md-3 third-item">
-                                        <fieldset>
-                                            <select name="status">
-                                                <option value="" selected disabled>{{ __('ui.select_status') }}</option>
-                                                <option value="detained">{{ __('ui.detained') }}</option>
-                                                <option value="dead">{{ __('ui.dead') }}</option>
+                                <div class="col-md-3 first-item">
+                                    <fieldset>
+                                        <select name="state_id">
+                                            <option value="" selected
+                                                    disabled>{{ __('ui.select_state_and_region') }}
+                                            </option>
+                                            @foreach ($states as $state)
+                                                <option value="{{ $state->id }}">{{ $state->name }}</option>
+                                            @endforeach
 
-                                            </select>
-                                        </fieldset>
-                                    </div>
-
-                                    <div class="col-md-3">
-                                        <fieldset>
-                                            <button type="submit" id="form-submit" class="btn">
-                                                Search Now
-                                            </button>
-                                        </fieldset>
-                                    </div>
+                                        </select>
+                                    </fieldset>
                                 </div>
-                            </form>
-                        </div>
+
+                                <div class="col-md-3 second-item">
+                                    <fieldset>
+                                        <select name="status">
+                                            <option value="" selected disabled>{{ __('ui.select_status') }}</option>
+                                            <option value="detained">{{ __('ui.detained') }}</option>
+                                            <option value="dead">{{ __('ui.dead') }}</option>
+
+                                        </select>
+                                    </fieldset>
+                                </div>
+
+                                <div class="col-md-3 third-item">
+                                    <fieldset>
+                                        <select name="gender">
+                                            <option value="" selected disabled>{{ __('ui.choose_gender') }}</option>
+                                            <option value="Male">{{ __('ui.male') }}</option>
+                                            <option value="Female">{{ __('ui.female') }}</option>
+                                            <option value="Other">{{ __('ui.other') }}</option>
+
+                                        </select>
+                                    </fieldset>
+                                </div>
+                                <div class="col-md-3">
+                                    <fieldset>
+                                        <button type="submit" id="form-submit" class="btn">
+                                            Search Now
+                                        </button>
+                                    </fieldset>
+                                </div>
+                            </div>
+                        </form>
                     </div>
                 </div>
+            </div>
+        </div>
     </section>
     <!-- Image Search -->
 

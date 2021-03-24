@@ -78,6 +78,7 @@
                                    name="address"/>
                             <span class="text-danger">{{ $errors->first('address') }}</span>
 
+
                         </div>
                     </div>
 
@@ -222,6 +223,7 @@
             </div>
         </div>
     </form>
+
 
 
 

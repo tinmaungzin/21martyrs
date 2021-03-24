@@ -102,6 +102,7 @@ select {
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: none;
+
 }
 
 /* for confirm page */
@@ -181,6 +182,7 @@ select {
 .deleteButton button:hover {
     background-color: rgb(146, 45, 45);
     outline: none;
+
 }
 
 /* for profile page */
@@ -246,6 +248,7 @@ select {
 .editButton button:hover {
     background-color: #518aa5;
     outline: none;
+
 }
 
 /* for about us page */
@@ -265,6 +268,7 @@ select {
     background-color: rgb(168, 164, 164);
     border-radius: 7px;
     padding: 20px;
+
 }
 
 .contact-us-title {
@@ -634,4 +638,5 @@ textarea {
     margin: 1.6rem auto;
     max-width: 100%;
     max-height: 350px
+
 }

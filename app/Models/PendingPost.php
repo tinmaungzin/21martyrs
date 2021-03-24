@@ -35,6 +35,7 @@ class PendingPost extends Model
         'publishing_status',
     ];
 
+
     public function images()
     {
         return $this->hasMany(Image::class);

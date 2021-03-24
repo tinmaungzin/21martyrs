@@ -49,6 +49,7 @@
                                 <option value="Male">{{ __('ui.male') }}</option>
                                 <option value="Female">{{ __('ui.female') }}</option>
                                 <option value="Other">{{ __('ui.other') }}</option>
+
                             </select>
                             <span class="text-danger">{{ $errors->first('gender') }}</span>
 
@@ -81,6 +82,7 @@
                             <input type="text" placeholder="{{ __('ui.arrestee_township_placeholder') }}"
                                    name="address"/>
                             <span class="text-danger">{{ $errors->first('address') }}</span>
+
 
                         </div>
                     </div>
@@ -267,6 +269,7 @@
 {{--        });--}}
 
 {{--    </script>--}}
+
 
 @endsection
 
