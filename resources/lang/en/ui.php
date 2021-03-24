@@ -2,6 +2,7 @@
 
 return [
     '404_title' => 'Page not found',
+    'seo_description' => 'The website is established with the aim to commemorate the martyrs who have been killed, and who have been unlawfully detained by the military and police during Myanmar Spring Revolution 2021 that have emerged after the military seized the democratically elected governement on Feb 1, 2021.',
     '500_error' => 'Application error found. Please contact us if this error persists.',
     'about_us' => 'About us',
     'about_us_long' => 'We are an independent group of Gen-Z collecting the information of the fallens and detainees with the aim to commemorate our martyrs of Myanmar Spring Revolution 2021. We would like to invite you to help us provide the updates within your community as much as you can.',
