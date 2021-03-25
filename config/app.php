@@ -178,7 +178,7 @@ return [
         App\Providers\EventServiceProvider::class,
         App\Providers\RouteServiceProvider::class,
         App\Providers\DOSpaceServiceProvider::class,
-        ExcelServiceProvider::class,
+        // ExcelServiceProvider::class,
 
         /*
          * Development package
@@ -235,7 +235,7 @@ return [
         'URL' => Illuminate\Support\Facades\URL::class,
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
-        'Excel' => Excel::class,
+        // 'Excel' => Excel::class,
     ],
 
 ];

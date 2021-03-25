@@ -71,7 +71,10 @@ $link_limit = 7; // maximum number of links (a little bit inaccurate, but will b
 ?>
 
 @if ($paginator->lastPage() > 1)
-    <ul class="pagination" style="margin-left: 40%;">
+    <ul class="pagination" style="  display: flex !important;
+    justify-content: center !important;
+    border-radius: 4px;
+    padding-bottom: 30px !important;">
         <li class="{{ ($paginator->currentPage() == 1) ? ' disabled' : '' }}">
             <a href="{{ $paginator->url(1) }}"> << </a>
         </li>

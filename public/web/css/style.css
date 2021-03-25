@@ -195,9 +195,13 @@ select {
 }
 
 /* for profile page */
-.profileBody {
+/* .profileBody {
     width: 100%;
     overflow: hidden;
+    background-color: #f4f4f4;
+}
+.profileHeaders span {
+    color:black;
 }
 
 .profilePicture,
@@ -208,7 +212,7 @@ select {
 }
 
 .profileDetail h3 {
-    margin: 15px 0 20px 0;
+    margin: 20px 0 30px 0;
 }
 
 .profilePicture img {
@@ -227,35 +231,68 @@ select {
 }
 
 .profileHeaders {
-    width: 30%;
+    width: 40%;
     float: left;
 }
 
 .profileValues {
-    width: 70%;
+    width: 50%;
     overflow: hidden;
 }
 
 .profileValues span {
-    padding: 10px 20px;
-    border: 0;
-    border-radius: 3px;
-    color: white;
-    background-color: #af5c1d;
+    color: black;
+    border-bottom: 1px solid red;
+    padding: 0 5px 0 5px;
+} */
+
+ .profileBody {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+}
+.profileBody hr{
+    border-top: 1px solid #cecece;
+}
+.profilePicture{
+    max-width: fit-content;
+    max-height: 200px;
+}
+.profileInfo {
+    padding-bottom: 25px;
+
 }
 
+/* .profileInfo span{
+    color: ;
+} */
+
+.profileDetail{
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+}
+.profileDetail p{
+    width: 50%;
+
+}
+
+.editButton {
+    margin: 5px 0 20px 0;
+
+}
 .editButton button {
-    width: 300px;
-    padding: 12px 20px;
+    width: 60%;
+    padding: 8px 10px;
     margin: 30px 0 0 0;
     border: 0;
     border-radius: 3px;
     color: white;
-    background-color: #5da0bf;
+    background-color: #dc3545;
 }
 
 .editButton button:hover {
-    background-color: #518aa5;
+    background-color:#be2b39;
     outline: none;
 
 }
