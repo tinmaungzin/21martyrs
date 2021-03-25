@@ -218,9 +218,9 @@
                     </div>
                 </div>
             </div>
-            <div class="inputValue">
+            <div class="inputCheckbox">
                 <input type="checkbox" name="terms" id="terms">
-                <label for="terms" > Thank you for your information. Please note that we will verify and update as soon as we can.</label><br>
+                <label for="terms" >  Please note that we will verify and update as soon as we can.</label><br>
             </div>
             <div class="submitButton">
                 <button id="submit" type="submit">{{ __('ui.submit') }}</button>

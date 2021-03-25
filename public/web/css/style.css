@@ -9,8 +9,10 @@
     color: #3c738d;
 }
 
-label {
+.inputCheckbox label {
     color: #5da0bf;
+    padding-left: 30px;
+
 }
 
 .leftInfo,
@@ -72,6 +74,13 @@ select {
     border-radius: 3px;
     color: #5da0bf;
     outline: none;
+}
+
+.inputCheckbox{
+    width: 71%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
 }
 
 #checkBox input {
@@ -257,9 +266,7 @@ select {
     width: 100%;
 }
 
-.aboutPart {
-    margin: 30px;
-}
+
 
 .contactUs {
     overflow: hidden;
@@ -337,7 +344,22 @@ textarea {
     padding: 0 2rem;
 }
 
+@media (min-width: 2160px) {
+    .inputCheckbox{
+        width: 56%;
+    }
+}
+
+@media (max-width: 1250px) {
+    .inputCheckbox{
+        width: 66%;
+    }
+}
+
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
+    .inputCheckbox{
+        width: 90%;
+    }
     .inputDataBox {
         width: 83%;
         margin: auto;
@@ -383,7 +405,7 @@ textarea {
 
     .submitButton button {
         padding: 12px 20px;
-        margin: 30px 0 0 0;
+        margin: 30px 0 40px 0;
     }
 
     /* for profile page */
@@ -429,6 +451,9 @@ textarea {
 }
 
 @media only screen and (max-width: 640px) and (min-width: 321px) {
+    .inputCheckbox{
+        width: 100%;
+    }
     .inputDataBox {
         width: 100%;
         margin: 0;
@@ -475,7 +500,7 @@ textarea {
 
     .submitButton button {
         padding: 12px 20px;
-        margin: 30px 0 0 0;
+        margin: 30px 0 40px 0;
     }
 
     /* for profile page */
@@ -522,6 +547,12 @@ textarea {
     /* for about */
     .contactUs {
         border-radius: 0;
+    }
+}
+
+@media (max-width: 430px) {
+    .inputCheckbox{
+        width: 100%;
     }
 }
 
@@ -574,7 +605,7 @@ textarea {
 
     .submitButton button {
         padding: 12px 20px;
-        margin: 30px 0 0 0;
+        margin: 30px 0 40px 0;
     }
 
     /* for profile page */

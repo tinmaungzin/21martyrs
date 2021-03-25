@@ -88,15 +88,25 @@ section.banner {
   border: 1px solid #525050;
   border-radius: 5px;
   margin-top: 5px;
+
+}
+.SubstaticBox .SubTitle{
+  display: flex;
+  justify-content: space-evenly;
+}
+.SubstaticBox .SubText{
   display: flex;
   justify-content: space-evenly;
 }
 
-
 .SubstaticBox p{
   font-size: 15px;
   color: #7a7a7a;
-  padding-top: 21px;
+}
+
+.SubstaticBox h3{
+margin-top: 5px;
+margin-bottom: 0px !important;
 }
 
 .submit-form {

@@ -79,9 +79,15 @@
                             </div>
                         </div>
                         <div class="SubstaticBox">
-                            <h3>2300+</h3>
-                            <p>Abducted [ + the released]</p>
+                            <div class="SubTitle">
+                                <h3>2300+</h3>
+                                <h3>300+</h3>
+                            </div>
+                            <div class="SubText">
+                                <p>Abducted</p>
+                                <p>Released</p>
 
+                            </div>
                         </div>
                     </div>
                 </div>

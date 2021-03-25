@@ -136,7 +136,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4">
+            {{-- <div class="col-md-4">
                 <div class="useful-links">
                     <div class="footer-heading">
                         <h4>Useful Links</h4>
@@ -182,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-3">
                 <div class="contact-info">
                     <div class="footer-heading">
@@ -199,6 +199,34 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="ContactUs">
+                 <div class="footer-heading">
+                     <h4 class="ContactTitle">Contact Form</h4>
+                 </div>
+                 <div class="ContactBox">
+                     <form>
+                         <div class="contactInput">
+                           <label for="name" class="form-label">Name</label>
+                           <input type="text" class="form-control" id="name" placeholder="name">
+                         </div>
+                         <div class="contactInput">
+                           <label for="email" class="form-label">Email</label>
+                           <input type="eamil" class="form-control" id="email" placeholder="email">
+                         </div>
+                         <div class="contactInput">
+                             <label for="Message" class="form-label">Message</label>
+                             <textarea class="form-control" id="Message" rows="5" placeholder="message"></textarea>
+                           </div>
+                        <div class="buttonArea">
+                            <button type="submit" class="btn">Send Message</button>
+
+                        </div>
+                       </form>
+                 </div>
+                </div>
+  
+             </div>
         </div>
     </div>
 </footer>
@@ -213,12 +241,7 @@
 </footer>
 <!-- End footer -->
 
-<div class="sub-footer">
-    <p>
-        Copyright &copy; 2018 Company Name - Design:
-        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>
-    </p>
-</div>
+
 
 
 {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script> --}}
