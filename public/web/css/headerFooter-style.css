@@ -441,6 +441,7 @@ footer .contact-info ul li a {
 .form-control{
   background-color: #f4f4f4;
 }
+
 .form-control:focus {
   /* border-color: inherit; */
   -webkit-box-shadow: none;
