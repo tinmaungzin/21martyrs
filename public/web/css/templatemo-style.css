@@ -442,3 +442,11 @@ section.featured-Cards {
     margin-top: 100px !important;
   }
 }
+
+@media (max-width: 600px) {
+  .featured-Cards .featured-item {
+    cursor: pointer;
+    transition: none;
+    margin-bottom: 40px;
+}
+}
