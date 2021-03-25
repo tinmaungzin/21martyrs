@@ -120,10 +120,10 @@
                 <div class="about-veno">
                     <div class="logo">
                         <img style="height: 100px;width: 100%;object-fit:contain;" src="
-                                {{ asset('images/icon.png') }} " alt=" Venue Logo"/>
+                                {{ asset('web/img/MM-Martyrs-500px.png') }} " alt=" Venue Logo"/>
                     </div>
                     <p>
-                        {{ __('ui.footer_long_text') }}
+                        {{ __('ui.about_us_long') }}
                     </p>
                     <ul class="social-icons">
                         <li>
@@ -219,13 +219,13 @@
                              <textarea class="form-control" id="Message" rows="5" placeholder="message"></textarea>
                            </div>
                         <div class="buttonArea">
-                            <button type="submit" class="btn">Send Message</button>
+                            <button  type="submit" class="btn">Send Message</button>
 
                         </div>
                        </form>
                  </div>
                 </div>
-  
+
              </div>
         </div>
     </div>
@@ -234,7 +234,7 @@
 
 <div class="sub-footer">
     <p>
-        Copyright &copy; 2018 Company Name - Design:
+        Copyright &copy; 2021 Martyrs Myanmar - Design:
         <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>
     </p>
 </div>

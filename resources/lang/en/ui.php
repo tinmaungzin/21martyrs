@@ -94,6 +94,7 @@ return [
     'message_placeholder' => 'Please describe anything you want to tell us',
     'name' => 'Name',
     'name_placeholder' => 'Someone',
+    'type_name' => 'Type Name',
     'no_data' => 'No data',
     'occupation' => 'Occupation',
     'other' => 'Other',

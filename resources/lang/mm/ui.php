@@ -95,6 +95,8 @@ return [
     'message_placeholder' => 'ကျေးဇူးပြုပြီးပြောချင်တာကိုဖော်ပြပါ',
     'name' => 'နာမည်',
     'name_placeholder' => 'ဥပမာ... မောင်မောင်',
+    'type_name' => 'နာမည်ရိုက်ရှာရန်',
+
     'no_data' => 'ဒေတာမရှိပါ',
     'other' => 'အခြား',
     'others' => 'အခြား',
@@ -113,7 +115,7 @@ return [
     'relationship_with_deceased' => 'သေဆုံးသူနှင့် တော်စပ်ပုံ',
     'search_now' => 'ရှာမယ်',
     'select_state_and_region' => 'တိုင်း/ပြည်နယ်ရွေးပါ',
-    'select_status' => 'Select status',
+    'select_status' => 'အမျိုးအစား ရွေးချယ်ပါ',
     'social_media' => 'လူမှုကွန်ယက်',
     'state' => 'တိုင်း/ပြည်နယ်',
     'student' => 'ကျောင်းသား',
