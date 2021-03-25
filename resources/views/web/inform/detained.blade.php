@@ -223,8 +223,9 @@
                         </div>
                     </div>
                 </div>
+                
             </div>
-            <div class="inputValue">
+            <div class="inputCheckbox">
                 <input type="checkbox" name="terms" id="terms">
                 <label for="terms" > Thank you for your information. Please note that we will verify and update as soon as we can.</label><br>
             </div>
