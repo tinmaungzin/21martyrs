@@ -251,13 +251,28 @@
                 </div>
             </div>
         </div>
-        <div class="submitButton">
-            <button type="submit">{{ __('ui.submit') }}</button>
-
-        </div>
+            <div class="inputValue">
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms" > Thank you for your information. Please note that we will verify and update as soon as we can.</label><br>
+            </div>
+            <div class="submitButton">
+                <button id="submit" type="submit">{{ __('ui.submit') }}</button>
+            </div>
     </div>
     </form>
 
+    <script>
+        $(document).ready(function(){
+            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
+            else $("#submit").prop( "disabled", true );
+
+            $('#terms').click(function(){
+                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
+                else $("#submit").prop( "disabled", true );
+            });
+
+        })
+    </script>
 
 {{--    <script>--}}
 {{--        function ajaxHeaders()--}}

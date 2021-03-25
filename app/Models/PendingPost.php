@@ -65,6 +65,9 @@ class PendingPost extends Model
 
     public function getProfileUrlAttribute($value)
     {
+        if (is_null($value)) {
+            return "";
+        }
         return ImageModule::urlFromPath($value);
     }
 }

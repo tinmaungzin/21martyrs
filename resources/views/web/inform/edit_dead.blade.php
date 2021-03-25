@@ -7,7 +7,7 @@
     <form action="{{route('store.edit.dead',['post' => $post->id])}}" method="post" enctype="multipart/form-data">>
         @csrf
         <div class="inputContainer">
-        <div class="inputDataBox">
+            <div class="inputDataBox">
             <div class="mainHeader">
                 <h3>{{ __('ui.dead_person_info') }}</h3>
 
@@ -248,13 +248,28 @@
                 </div>
             </div>
         </div>
-        <div class="submitButton">
-            <button type="submit">{{ __('ui.submit') }}</button>
-
-
+            <div class="inputValue">
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms" > Thank you for your information. Please note that we will verify and update as soon as we can.</label><br>
+            </div>
+            <div class="submitButton">
+                <button id="submit" type="submit">{{ __('ui.submit') }}</button>
+            </div>
         </div>
-    </div>
     </form>
+
+    <script>
+        $(document).ready(function(){
+            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
+            else $("#submit").prop( "disabled", true );
+
+            $('#terms').click(function(){
+                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
+                else $("#submit").prop( "disabled", true );
+            });
+
+        })
+    </script>
 
 
 

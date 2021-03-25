@@ -36,12 +36,12 @@ class NewPendingPostsController extends Controller
         $data['comment'] = $pendingPost->comment;
         $data['age'] = $pendingPost->age;
         $data['status'] = $pendingPost->status;
-        $data['profile_url'] = $pendingPost->profile_url;
+        $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
         $data['gender'] = $pendingPost->gender;
         $data['occupation'] = $pendingPost->occupation;
         $data['organization_name'] = $pendingPost->organization_name;
-
         $data['state_id'] = $pendingPost->state_id;
+        $data['address'] = $pendingPost->address;
         $data['prison'] = $pendingPost->prison;
         $data['detained_date'] = $pendingPost->detained_date;
         $data['reason_of_dead'] = $pendingPost->reason_of_dead;

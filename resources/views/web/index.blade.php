@@ -181,7 +181,12 @@
                         <div class="col-md-3 col-sm-6 col-xs-12">
                             <div class="featured-item">
                                 <div class="thumb">
-                                    <img src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
+                                    @if(!is_null($post->profile_url))
+                                        <img height="260" src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
+                                    @else
+                                        <img height="260" src="{{ asset('web/img/default-profile.jpg') }}" alt="{{$post->name}}"/>
+
+                                    @endif
                                 </div>
                                 <div class="down-content">
                                     <h4>{{ $post->name }}</h4>

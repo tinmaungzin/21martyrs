@@ -66,7 +66,7 @@
             <a href="{{ route('index') }}">
                 <div class="logo">
                     <img style="margin-left: 30%;" src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
-                    <h1>21 Martyrs</h1>
+{{--                    <h1>21 Martyrs</h1>--}}
                 </div>
             </a>
             <nav id="primary-nav" class="dropdown cf">
@@ -90,8 +90,8 @@
                         </a>
                         <ul class="sub-menu">
                             @foreach ($constants::LOCALE_MAP as $locale => $arr)
-                                <li>
-                                    <a href="#" class="change-locale" data-value={{ $locale }}>
+                                <li class="change-locale" data-value={{ $locale }}>
+                                    <a href="#">
                                         {{ $arr['text'] }} &nbsp;
                                         <img class="locale-icon" src="{{ asset($arr['pic']) }}"/>
                                     </a>

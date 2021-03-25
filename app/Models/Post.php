@@ -6,6 +6,10 @@ use App\Utility\ImageModule;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
+/**
+ * @method static create(array $data)
+ * @method static insert(array $transformedRows)
+ */
 class Post extends Model
 {
     use HasFactory;
@@ -47,24 +51,14 @@ class Post extends Model
         return $this->hasMany(Image::class);
     }
 
-//    public function getProfileUrlAttribute($value)
-//    {
-//        return ImageModule::urlFromPath($value);
-//    }
-
-
-    public function scopeState($query, $state_id)
+    public function getProfileUrlAttribute($value): string
     {
-        return $query->where('state_id', '=', $state_id);
+        if (is_null($value)) {
+            return "";
+        }
+        return ImageModule::urlFromPath($value);
     }
 
-    public function scopeStatus($query, $status)
-    {
-        return $query->where('state_id', '=', $status);
-    }
 
-    public function scopeGender($query, $gender)
-    {
-        return $query->where('state_id', '=', $gender);
-    }
+
 }
