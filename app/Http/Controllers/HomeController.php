@@ -39,9 +39,10 @@ class HomeController extends Controller
             $query->where('state_id', $request->state_id);
             $filters += ['State and Region' => State::FindOrFail($request->state_id)->name];
         }
-        if (isset($request->gender)) {
-            $query->where('gender', $request->gender);
-            $filters += ['Gender' => $request->gender];
+        if (isset($request->name)) {
+            $query->where('name','like', '%' . $request->name . '%');
+            $filters += ['Name' => $request->name];
+
 
         }
         if (isset($request->status)) {

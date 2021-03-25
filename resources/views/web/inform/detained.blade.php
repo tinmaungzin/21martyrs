@@ -48,7 +48,8 @@
                                 <option value="" selected disabled>{{ __('ui.choose_gender') }}</option>
                                 <option value="Male">{{ __('ui.male') }}</option>
                                 <option value="Female">{{ __('ui.female') }}</option>
-                                <option value="Other">Other</option>
+                                <option value="Other">{{ __('ui.other') }}</option>
+
                             </select>
                             <span class="text-danger">{{ $errors->first('gender') }}</span>
 
@@ -72,15 +73,16 @@
                         </div>
                     </div>
 
+
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrestee_city') }}</p>
+                            <p>{{ __('ui.arrestee_township') }}</p>
                         </div>
                         <div class="inputValue">
-                            <select id="city" name="city_id">
-                                <option value="" selected disabled>{{ __('ui.choose_city') }}</option>
-                            </select>
-                            <span class="text-danger">{{ $errors->first('city_id') }}</span>
+                            <input type="text" placeholder="{{ __('ui.arrestee_township_placeholder') }}"
+                                   name="address"/>
+                            <span class="text-danger">{{ $errors->first('address') }}</span>
+
 
                         </div>
                     </div>
@@ -222,51 +224,69 @@
                     </div>
                 </div>
             </div>
+            <div class="inputValue">
+                <input type="checkbox" name="terms" id="terms">
+                <label for="terms" > Thank you for your information. Please note that we will verify and update as soon as we can.</label><br>
+            </div>
             <div class="submitButton">
-                <button type="submit">{{ __('ui.submit') }}</button>
+                <button id="submit" type="submit">{{ __('ui.submit') }}</button>
             </div>
         </div>
     </form>
 
 
     <script>
-        $(document).ready(function () {
+        $(document).ready(function(){
+            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
+            else $("#submit").prop( "disabled", true );
 
-            function ajaxHeaders() {
-                return $.ajaxSetup({
-                    headers: {
-                        "Content-Type": "application/json",
-                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
-                    }
-                });
-            }
-
-
-            $('#state').change(function () {
-                $('#city').empty();
-
-                let data = {
-                    state_id: $('#state').val()
-                };
-                let cities;
-                ajaxHeaders();
-
-                $.post('/fetchCities', JSON.stringify(data))
-                    .done(function (data) {
-                        if (data.success) {
-                            cities = data.cities;
-                            cities.forEach(function (city) {
-                                $('#city').append(`
-                                                                                    <option value="${city.id}">${city.name}</option>
-                                                                            `)
-                            });
-                        }
-                    });
+            $('#terms').click(function(){
+                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
+                else $("#submit").prop( "disabled", true );
             });
 
-        });
-
+        })
     </script>
+
+{{--    <script>--}}
+{{--        $(document).ready(function () {--}}
+
+{{--            function ajaxHeaders() {--}}
+{{--                return $.ajaxSetup({--}}
+{{--                    headers: {--}}
+{{--                        "Content-Type": "application/json",--}}
+{{--                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")--}}
+{{--                    }--}}
+{{--                });--}}
+{{--            }--}}
+
+
+{{--            $('#state').change(function () {--}}
+{{--                $('#city').empty();--}}
+
+{{--                let data = {--}}
+{{--                    state_id: $('#state').val()--}}
+{{--                };--}}
+{{--                let cities;--}}
+{{--                ajaxHeaders();--}}
+
+{{--                $.post('/fetchCities', JSON.stringify(data))--}}
+{{--                    .done(function (data) {--}}
+{{--                        if (data.success) {--}}
+{{--                            cities = data.cities;--}}
+{{--                            cities.forEach(function (city) {--}}
+{{--                                $('#city').append(`--}}
+{{--                                                                                    <option value="${city.id}">${city.name}</option>--}}
+{{--                                                                            `)--}}
+{{--                            });--}}
+{{--                        }--}}
+{{--                    });--}}
+{{--            });--}}
+
+{{--        });--}}
+
+{{--    </script>--}}
+
 
 @endsection
 

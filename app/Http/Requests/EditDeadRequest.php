@@ -28,7 +28,7 @@ class EditDeadRequest extends FormRequest
             'age' => 'required',
             'gender' => 'required',
             'state_id' => 'required',
-            'city_id' => 'required',
+            'address' => 'required',
             'occupation' => 'required',
             'organization_name' => 'required',
             'detained_date' => 'required',

@@ -51,15 +51,17 @@ section.banner {
 .banner .banner-caption .blue-button {
   margin-top: 30px;
 }
+
 .staticBox {
   margin: 200px 0 0 0;
-  
+
 }
 .TopBox{
   color: white;
   border: 1px solid #525050;
   border-radius: 5px;
 }
+
 .TopBox h3{
   margin-bottom: 0px !important;
 }
@@ -89,6 +91,7 @@ section.banner {
   display: flex;
   justify-content: space-evenly;
 }
+
 
 .SubstaticBox p{
   font-size: 15px;
@@ -176,6 +179,7 @@ section.banner {
   background-color: transparent;
   color: #4883ff;
 }
+
 
 
 
@@ -296,6 +300,7 @@ section.banner {
 }
 
 section.featured-Cards {
+
   margin-top: 80px;
   background-color: #f4f4f4;
 }
@@ -437,6 +442,7 @@ section.featured-Cards {
   -ms-transform: scale(1.1);
   -o-transform: scale(1.1);
 }
+
 @media (max-width: 992px) {
   .staticBox{
     margin-top: 100px !important;

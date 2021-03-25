@@ -14,9 +14,14 @@ Route::name('test.')->group(function () {
     })->name('upload_form');
 
     Route::post('/upload', function (Request $request) {
-        $path =  Str::uuid() . '-' . $request->file('image')->getClientOriginalName();
+        $path = Str::uuid() . '-' . $request->file('image')->getClientOriginalName();
         $uploadedPath = ImageModule::uploadFromRequest('image', $path);
         dd(ImageModule::urlFromPath($uploadedPath));
-        return view('test');
+//        return view('test');
     })->name('upload');
+
+    Route::get('/errors/{code}', function ($code) {
+        abort($code, "Error found");
+    })->name('500');
+
 });

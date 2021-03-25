@@ -7,10 +7,19 @@
     <div>
         <div class="profileBody">
             <div class="profilePicture">
-                <img
-                    src="{{$post->profile_url}}"
-                    alt="{{$post->name}}"
-                />
+                @if(!is_null($post->profile_url) )
+                    <img
+                         src="{{$post->profile_url}}"
+                         alt="{{$post->name}}"
+                    />
+
+                @else
+                    <img
+                        src="{{asset('web/img/default-profile.jpg')}}"
+                        alt="{{$post->name}}"
+                    />
+                    @endif
+
             </div>
             <div class="profileDetail">
                 <h3>Arrestee's Info</h3>
@@ -30,12 +39,31 @@
                         <span>{{$post->age}}</span>
                     </div>
                 </div>
+
+
+
                 <div class="profileDetailBox">
                     <div class="profileHeaders">
                         <span>Gender</span>
                     </div>
                     <div class="profileValues">
-                        <span>{{$post->gender}}</span>
+                        <span>{{ucfirst($post->gender)}}</span>
+                    </div>
+                </div>
+                <div class="profileDetailBox">
+                    <div class="profileHeaders">
+                        <span>State/Region</span>
+                    </div>
+                    <div class="profileValues">
+                        <span>{{$post->state->name}}</span>
+                    </div>
+                </div>
+                <div class="profileDetailBox">
+                    <div class="profileHeaders">
+                        <span>Township/Address</span>
+                    </div>
+                    <div class="profileValues">
+                        <span>{{$post->address}}</span>
                     </div>
                 </div>
                 <div class="profileDetailBox">

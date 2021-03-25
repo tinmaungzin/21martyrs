@@ -10,7 +10,31 @@ class PendingPost extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+//    protected $guarded = [];
+    protected $fillable = [
+        'name',
+        'comment',
+        'age',
+        'address',
+        'profile_url',
+        'gender',
+        'occupation',
+        'organization_name',
+        'city_id',
+        'state_id',
+        'status',
+        'prison',
+        'detained_date',
+        'reason_of_dead',
+        'reason_of_arrest',
+        'informant_name',
+        'informant_phone',
+        'informant_association_with_victim',
+        'post_id',
+        'user_id',
+        'publishing_status',
+    ];
+
 
     public function images()
     {
@@ -41,6 +65,9 @@ class PendingPost extends Model
 
     public function getProfileUrlAttribute($value)
     {
+        if (is_null($value)) {
+            return "";
+        }
         return ImageModule::urlFromPath($value);
     }
 }
