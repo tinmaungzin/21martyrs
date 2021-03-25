@@ -65,11 +65,11 @@
             <button id="primary-nav-button" style="right: 0;" type="button">Menu</button>
             <a href="{{ route('index') }}">
                 <div class="logo">
-                    <img style="margin-left: 30%;" src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
-{{--                    <h1>21 Martyrs</h1>--}}
+{{--                    <img style="margin-left: 30%;" src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>--}}
+                    <h2 style="padding-left: 80px; padding-bottom: 20px;">martyrs21mm.com</h2>
                 </div>
             </a>
-            <nav id="primary-nav" class="dropdown cf">
+            <nav id="primary-nav" class="dropdown cf" style="padding-top: 8px;">
                 <ul class="dropdown menu">
                     <li class="active"><a href="{{ route('index') }}">{{ __('ui.home') }}</a></li>
                     <li class="active"><a href="{{ route('about') }}">{{ __('ui.about_us') }}</a></li>

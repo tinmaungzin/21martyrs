@@ -206,7 +206,7 @@
 
         </div>
         @include('web.layout.pagination', ['paginator' => $posts])
-
+{{--        {{ $posts->onEachSide(2)->links() }}--}}
     </section>
     @include('web.layout.success_msg')
 

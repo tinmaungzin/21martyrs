@@ -7,13 +7,13 @@
     <form action="{{route('store.edit.detained',['post' => $post->id])}}" method="post" enctype="multipart/form-data">>
         @csrf
         <div class="inputContainer">
-        <div class="inputDataBox">
-            <div class="mainHeader">
-                <h3>{{ __('ui.arrestee_info') }}</h3>
+            <div class="inputDataBox">
+                <div class="mainHeader">
+                    <h3>{{ __('ui.arrestee_info') }}</h3>
 
 
-            </div>
-            <div class="leftInfo">
+                </div>
+                <div class="leftInfo">
                 <div class="inputBox">
                     <div class="inputHeader">
                         <p>{{ __('ui.name') }}</p>
@@ -258,7 +258,7 @@
             <div class="submitButton">
                 <button id="submit" type="submit">{{ __('ui.submit') }}</button>
             </div>
-    </div>
+        </div>
     </form>
 
     <script>
