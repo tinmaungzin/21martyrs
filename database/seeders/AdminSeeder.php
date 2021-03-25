@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\Admin;
 use Carbon\Carbon;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
@@ -15,11 +16,10 @@ class AdminSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('admins')->insert([
+        Admin::firstOrCreate(
+            ['email' => 'admin@martyrs21mm.com'], [
             'name' => 'Ko Admin',
-            'email' => 'admin@gmail.com',
-            'password' => bcrypt('password'),
-            'created_at' => Carbon::now(),
+            'password' => bcrypt(env('INITIAL_ADMIN_PASSWORD', 'password')),
         ]);
     }
 }

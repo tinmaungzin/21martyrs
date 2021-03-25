@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\State;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,51 +15,57 @@ class StateSeeder extends Seeder
      */
     public function run()
     {
-        DB::table('states')->insert([
-            'name' => 'Kachin',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Kayah',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Kayin',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Chin',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Mon',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Rakhine',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Shan',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Sagaing',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Tanintharyi',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Bago',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Magway',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Mandalay',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Yangon',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Ayeyarwady',
-        ]);
-        DB::table('states')->insert([
-            'name' => 'Naypyidaw',
-        ]);
-
+        $states = [
+            [
+                'name' => 'Kachin',
+            ],
+            [
+                'name' => 'Kayah',
+            ],
+            [
+                'name' => 'Kayin',
+            ],
+            [
+                'name' => 'Chin',
+            ],
+            [
+                'name' => 'Mon',
+            ],
+            [
+                'name' => 'Rakhine',
+            ],
+            [
+                'name' => 'Shan',
+            ],
+            [
+                'name' => 'Sagaing',
+            ],
+            [
+                'name' => 'Tanintharyi',
+            ],
+            [
+                'name' => 'Bago',
+            ],
+            [
+                'name' => 'Magway',
+            ],
+            [
+                'name' => 'Mandalay',
+            ],
+            [
+                'name' => 'Yangon',
+            ],
+            [
+                'name' => 'Ayeyarwady',
+            ],
+            [
+                'name' => 'Naypyidaw',
+            ],
+        ];
+        DB::transaction(function () use ($states) {
+            foreach ($states as $state) {
+                State::firstOrCreate($state);
+            }
+        });
     }
 }

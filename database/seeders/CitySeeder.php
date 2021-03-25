@@ -2,6 +2,7 @@
 
 namespace Database\Seeders;
 
+use App\Models\City;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 
@@ -14,141 +15,130 @@ class CitySeeder extends Seeder
      */
     public function run()
     {
-        DB::table('cities')->insert([
-            'name' => 'Yangon',
-            'state_id' => 13
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Mandalay',
-            'state_id' => 12
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Naypyidaw',
-            'state_id' => 15
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Mawlamyine',
-            'state_id' => 5
-        ]);
-        DB::table('cities')->insert([
-            'name' => '	Taunggyi',
-            'state_id' => 7
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Bago',
-            'state_id' => 10
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Monywa',
-            'state_id' => 8
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Myitkyina',
-            'state_id' => 1
-        ]);
-        DB::table('cities')->insert([
-            'name' => '	Pathein',
-            'state_id' => 14
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Sittwe',
-            'state_id' => 6
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Pyay',
-            'state_id' => 10
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Pakokku',
-            'state_id' => 11
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Myeik',
-            'state_id' => 9
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Meiktila',
-            'state_id' => 12
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Taungoo',
-            'state_id' => 10
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Myingyan',
-            'state_id' => 12
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Mogok',
-            'state_id' => 12
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Magway',
-            'state_id' => 11
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Hinthada',
-            'state_id' => 14
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Sagaing',
-            'state_id' => 8
-        ]);
-        DB::table('cities')->insert([
-            'name' => '	Thanlyin',
-            'state_id' => 13
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Dawei',
-            'state_id' => 9
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Nyaunglebin',
-            'state_id' => 10
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Shwebo',
-            'state_id' => 8
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Bhamo',
-            'state_id' => 1
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Aunglan',
-            'state_id' => 11
-        ]);
-        DB::table('cities')->insert([
-            'name' => '	Yenangyaung',
-            'state_id' => 11
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Bogale',
-            'state_id' => 14
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Minbu',
-            'state_id' => 11
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Hlegu',
-            'state_id' => 13
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Tharrawaddy',
-            'state_id' => 10
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Hakha',
-            'state_id' => 4
-        ]);
-        DB::table('cities')->insert([
-            'name' => 'Thayet',
-            'state_id' => 11
-        ]);
 
 
-
+        $cities = [
+            [
+                'name' => 'Yangon',
+                'state_id' => 13
+            ],
+            ['name' => 'Mandalay',
+                'state_id' => 12
+            ],
+            ['name' => 'Naypyidaw',
+                'state_id' => 15
+            ],
+            [
+                'name' => 'Mawlamyine',
+                'state_id' => 5
+            ],
+            ['name' => '	Taunggyi',
+                'state_id' => 7
+            ],
+            [
+                'name' => 'Bago',
+                'state_id' => 10
+            ],
+            ['name' => 'Monywa',
+                'state_id' => 8
+            ],
+            [
+                'name' => 'Myitkyina',
+                'state_id' => 1
+            ],
+            ['name' => '	Pathein',
+                'state_id' => 14
+            ],
+            [
+                'name' => 'Sittwe',
+                'state_id' => 6
+            ],
+            ['name' => 'Pyay',
+                'state_id' => 10
+            ],
+            [
+                'name' => 'Pakokku',
+                'state_id' => 11
+            ],
+            ['name' => 'Myeik',
+                'state_id' => 9
+            ],
+            [
+                'name' => 'Meiktila',
+                'state_id' => 12
+            ],
+            ['name' => 'Taungoo',
+                'state_id' => 10
+            ],
+            [
+                'name' => 'Myingyan',
+                'state_id' => 12
+            ],
+            ['name' => 'Mogok',
+                'state_id' => 12
+            ],
+            [
+                'name' => 'Magway',
+                'state_id' => 11
+            ],
+            ['name' => 'Hinthada',
+                'state_id' => 14
+            ],
+            [
+                'name' => 'Sagaing',
+                'state_id' => 8
+            ],
+            ['name' => '	Thanlyin',
+                'state_id' => 13
+            ],
+            [
+                'name' => 'Dawei',
+                'state_id' => 9
+            ],
+            ['name' => 'Nyaunglebin',
+                'state_id' => 10
+            ],
+            [
+                'name' => 'Shwebo',
+                'state_id' => 8
+            ],
+            ['name' => 'Bhamo',
+                'state_id' => 1
+            ],
+            [
+                'name' => 'Aunglan',
+                'state_id' => 11
+            ],
+            ['name' => '	Yenangyaung',
+                'state_id' => 11
+            ],
+            [
+                'name' => 'Bogale',
+                'state_id' => 14
+            ],
+            ['name' => 'Minbu',
+                'state_id' => 11
+            ],
+            [
+                'name' => 'Hlegu',
+                'state_id' => 13
+            ],
+            ['name' => 'Tharrawaddy',
+                'state_id' => 10
+            ],
+            [
+                'name' => 'Hakha',
+                'state_id' => 4
+            ],
+            ['name' => 'Thayet',
+                'state_id' => 11
+            ],
+        ];
+        DB::transaction(function () use ($cities) {
+            foreach ($cities as $city) {
+                City::firstOrCreate($city);
+            }
+        });
 
     }
 }
