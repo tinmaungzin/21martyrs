@@ -4,7 +4,7 @@ namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
-class StatRequest extends FormRequest
+class FeedbackRequest extends FormRequest
 {
     /**
      * Determine if the user is authorized to make this request.
@@ -24,12 +24,9 @@ class StatRequest extends FormRequest
     public function rules()
     {
         return [
-            'total_death' => 'required',
-            'headshot' => 'required',
-            'gunshot' => 'required',
-            'assault' => 'required',
-            'abducted' => 'required',
-            'released' => 'required',
+            'name' => 'required',
+            'email' => 'required',
+            'message' => 'required'
         ];
     }
 }

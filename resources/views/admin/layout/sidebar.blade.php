@@ -78,6 +78,13 @@
                     ]) ? 'active-link': ''}}">
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Statistic
             </a>
+            <a href="{{route('feedback.index')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
+            {{ in_array($route, [
+                    'feedback.index',
+                    'feedback.show',
+                    ]) ? 'active-link': ''}}">
+                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Feedback
+            </a>
 
 
             {{--            <button style="" class="fs15 btn-clear btn-collapse  text-left" type="button"--}}

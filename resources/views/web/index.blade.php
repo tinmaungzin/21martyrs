@@ -62,15 +62,15 @@
 
                         <div class="staticBox">
                         <div class="TopBox">
-                            <h4 class="titleText">As of Mar 22 since the feb 1 coup</h4>
+                            <h4 class="titleText">{{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
                             <div class="TopText">
-                                <h3>200+</h3>
+                                <h3 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h3>
                                 <p>Total death</p>
                             </div>
                             <div class="MiddleText">
-                                <h3>100+</h3>
-                                <h3>50+</h3>
-                                <h3>50+</h3>
+                                <h3 class="count">{{is_null($stat) ? 0: $stat->headshot}}</h3>
+                                <h3 class="count">{{is_null($stat) ? 0: $stat->gunshot}}</h3>
+                                <h3 class="count">{{is_null($stat) ? 0: $stat->assault}}</h3>
                             </div>
                             <div class="subMiddleText">
                                 <p>Headshot</p>
@@ -80,8 +80,8 @@
                         </div>
                         <div class="SubstaticBox">
                             <div class="SubTitle">
-                                <h3>2300+</h3>
-                                <h3>300+</h3>
+                                <h3 class="count">{{is_null($stat) ? 0: $stat->abducted}}</h3>
+                                <h3 class="count">{{is_null($stat) ? 0: $stat->released}}</h3>
                             </div>
                             <div class="SubText">
                                 <p>Abducted</p>

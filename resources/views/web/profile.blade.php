@@ -230,13 +230,14 @@
             <div class="row">
                 <div class="TopSection">
                     <div class="profilePicture">
-                        @if(!is_null($post->profile_url) )
+                        @if(isset($post->profile_url) )
+
                             <img
-                            src="{{asset('web/img/default-profile.jpg')}}"
+                                src="{{$post->profile_url}}"
                                 alt="{{$post->name}}"
                             />
-    
                         @else
+
                             <img
                                 src="{{asset('web/img/default-profile.jpg')}}"
                                 alt="{{$post->name}}"
@@ -245,13 +246,13 @@
                     </div>
                     <div class="profileInfo">
                         <h3>{{$post->name}}</h3>
-                        <span>{{$post->age}} yrs , {{$post->gender}}</span>
+                        <span>{{$post->age}} years old , {{$post->gender}}</span>
                         <div class="profileStatus">
                             <h4>Status</h4>
                             <p>{{$post->status}}, {{$post->detained_date->diffForHumans()}}</p>
                         </div>
                     </div>
-                   
+
                 </div>
             </div>
             <hr>
@@ -259,10 +260,7 @@
                 <div class="bottomWarp">
                     <div class="bottomSection">
                         <h4>Arrestee Info</h4>
-                        <div class="profileDetail">
-                            <p>Occupation:</p>
-                            <p class="DetailText">{{$post->occupation}}</p>
-                        </div>
+
                         <div class="profileDetail">
                             <p>State/Region:</p>
                             <p class="DetailText">{{$post->state->name}}</p>
@@ -271,28 +269,49 @@
                             <p>Township/Address:</p>
                             <p class="DetailText">{{$post->address}}</p>
                         </div>
-    
+                        <div class="profileDetail">
+                            <p>Occupation:</p>
+                            <p class="DetailText">{{$post->occupation}}</p>
+                        </div>
+                        <div class="profileDetail">
+                            <p>Organization:</p>
+                            <p class="DetailText">{{$post->organization_name}}</p>
+                        </div>
+
                         <div class="profileDetail">
                             <p>Arrested Date:</p>
                             <p class="DetailText">{{$post->detained_date}}</p>
                         </div>
-                        <div class="profileDetail">
-                            <p>Reason of being arrested:</p>
-                            <p class="DetailText">{{$post->reason_of_arrest}}</p>
-                        </div>
-                    @if(isset($post->prison))
-                        <div class="profileDetail">
-                            <p>Prison:</p>
-                            <p class="DetailText">{{$post->prison}}</p>
-                        </div>
-                    @endif
+                        @if($post->status == 'Detained')
+                            <div class="profileDetail">
+                                <p>Reason of Being Arrested:</p>
+                                <p class="DetailText">{{$post->reason_of_arrest}}</p>
+                            </div>
+                        @else
+                            <div class="profileDetail">
+                                <p>Reason of Death:</p>
+                                <p class="DetailText">{{$post->reason_of_dead}}</p>
+                            </div>
+                            @endif
+                        @if(isset($post->prison))
+                            <div class="profileDetail">
+                                <p>Prison:</p>
+                                <p class="DetailText">{{$post->prison}}</p>
+                            </div>
+                        @endif
+                        @if(isset($post->comment))
+                            <div class="profileDetail">
+                                <p>Comment By Informer:</p>
+                                <p class="DetailText">{{$post->comment}}</p>
+                            </div>
+                        @endif
                         <div class="editButton">
-                            @if($post->status == 'detained')
+                            @if($post->status == 'Detained')
                             <a href="{{route('form.edit.detained',['post'=> $post->id])}}">
                                 <button>Edit</button>
                             </a>
                                 @endif
-                                @if($post->status == 'dead')
+                                @if($post->status == 'Dead')
                                     <a href="{{route('form.edit.dead',['post'=> $post->id])}}">
                                         <button>Edit</button>
                                     </a>
@@ -305,5 +324,7 @@
         </div>
 
     </div>
+@include('web.layout.success_msg')
 
-    @endsection
+
+@endsection

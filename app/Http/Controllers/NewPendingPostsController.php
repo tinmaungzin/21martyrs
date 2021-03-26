@@ -71,7 +71,9 @@ class NewPendingPostsController extends Controller
                 $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
             }
             $pendingPost->update($data);
-
+            $pendingPost->informant_name = null;
+            $pendingPost->informant_phone = null;
+            $pendingPost->informant_association_with_victim = null;
             $pendingPost->publishing_status = 'Confirmed';
             $pendingPost->save();
             DB::transaction(function() use($pendingPost)
@@ -85,6 +87,9 @@ class NewPendingPostsController extends Controller
         }
         else
         {
+            $pendingPost->informant_name = null;
+            $pendingPost->informant_phone = null;
+            $pendingPost->informant_association_with_victim = null;
             $pendingPost->publishing_status = 'Rejected';
             $pendingPost->save();
             Session::flash('err-msg','Post is transferred to rejected list!');

@@ -16,12 +16,12 @@ class Stat extends Model
 //    protected $guarded = [];
 
     protected $fillable = [
-        'today_dead',
-        'today_detained',
-        'today_hurt',
-        'total_dead',
-        'total_detained',
-        'total_hurt',
+        'total_death',
+        'headshot',
+        'gunshot',
+        'assault',
+        'abducted',
+        'released',
     ];
 
 }

@@ -218,12 +218,18 @@
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>{{ __('ui.relationship_with_deceased') }}</p>
+                        <p>{{ __('ui.relationship_with_arrestee') }}</p>
                     </div>
                     <div class="inputValue">
-                        <input type="text" placeholder="{{ __('ui.relationship_placeholder') }}" name="informant_association_with_victim" autocomplete="off" />
+                        <select id="township" name="informant_association_with_victim">
+                            <option value="" selected disabled>{{ __('ui.relationship_placeholder') }}</option>
+                            <option value="Family">Family</option>
+                            <option value="Friend">Friend</option>
+                            <option value="Social Media">Social Media</option>
+                            <option value="Witness">Witness</option>
+                        </select>
 
-                        <span class="text-danger">{{$errors->first('informant_association_with_victim')}}</span>
+                        <span class="text-danger">{{ $errors->first('informant_association_with_victim') }}</span>
 
                     </div>
                 </div>
@@ -247,11 +253,12 @@
                     </div>
                 </div>
             </div>
+                <div class="inputCheckbox">
+                    <input type="checkbox" name="terms" id="terms">
+                    <label for="terms" >Thank you for your information. Please note that we will verify and update as soon as we can.</label>
+                </div>
         </div>
-            <div class="inputValue">
-                <input type="checkbox" name="terms" id="terms">
-                <label for="terms" > Thank you for your information. Please note that we will verify and update as soon as we can.</label><br>
-            </div>
+
             <div class="submitButton">
                 <button id="submit" type="submit">{{ __('ui.submit') }}</button>
             </div>
@@ -270,6 +277,8 @@
 
         })
     </script>
+    @include('web.layout.success_msg')
+
 
 
 

@@ -205,8 +205,14 @@
                             <p>{{ __('ui.relationship_with_arrestee') }}</p>
                         </div>
                         <div class="inputValue">
-                            <input type="text" placeholder="{{ __('ui.relationship_placeholder') }}"
-                                   name="informant_association_with_victim" autocomplete="off"/>
+                            <select id="township" name="informant_association_with_victim">
+                                <option value="" selected disabled>{{ __('ui.relationship_placeholder') }}</option>
+                                <option value="Family">Family</option>
+                                <option value="Friend">Friend</option>
+                                <option value="Social Media">Social Media</option>
+                                <option value="Witness">Witness</option>
+                            </select>
+
                             <span class="text-danger">{{ $errors->first('informant_association_with_victim') }}</span>
 
                         </div>
@@ -237,6 +243,7 @@
     </form>
 
 
+
     <script>
         $(document).ready(function(){
             if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
@@ -249,46 +256,7 @@
 
         })
     </script>
-
-{{--    <script>--}}
-{{--        $(document).ready(function () {--}}
-
-{{--            function ajaxHeaders() {--}}
-{{--                return $.ajaxSetup({--}}
-{{--                    headers: {--}}
-{{--                        "Content-Type": "application/json",--}}
-{{--                        "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")--}}
-{{--                    }--}}
-{{--                });--}}
-{{--            }--}}
-
-
-{{--            $('#state').change(function () {--}}
-{{--                $('#city').empty();--}}
-
-{{--                let data = {--}}
-{{--                    state_id: $('#state').val()--}}
-{{--                };--}}
-{{--                let cities;--}}
-{{--                ajaxHeaders();--}}
-
-{{--                $.post('/fetchCities', JSON.stringify(data))--}}
-{{--                    .done(function (data) {--}}
-{{--                        if (data.success) {--}}
-{{--                            cities = data.cities;--}}
-{{--                            cities.forEach(function (city) {--}}
-{{--                                $('#city').append(`--}}
-{{--                                                                                    <option value="${city.id}">${city.name}</option>--}}
-{{--                                                                            `)--}}
-{{--                            });--}}
-{{--                        }--}}
-{{--                    });--}}
-{{--            });--}}
-
-{{--        });--}}
-
-{{--    </script>--}}
-
+    @include('web.layout.success_msg')
 
 @endsection
 

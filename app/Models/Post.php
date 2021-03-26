@@ -65,6 +65,21 @@ class Post extends Model
         return ImageModule::urlFromPath($value);
     }
 
+    public function getGenderAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getStatusAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getOccupationAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
 
 
 }

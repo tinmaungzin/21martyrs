@@ -66,7 +66,7 @@
             <a href="{{ route('index') }}">
                 <div class="logo">
                    <img src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
-                    <h2>martyrs21mm.com</h2>
+                    <h1 style="padding-top: 10px;">MM Martyrs </h1>
                 </div>
             </a>
             <nav id="primary-nav" class="dropdown cf" >
@@ -205,19 +205,25 @@
                      <h4 class="ContactTitle">Contact Form</h4>
                  </div>
                  <div class="ContactBox">
-                     <form>
+                     <form action="{{route('feedback.store')}}" method="post">
+                         @csrf
                          <div class="contactInput">
                            <label for="name" class="form-label">Name</label>
-                           <input type="text" class="form-control" id="name" placeholder="name">
+                           <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                             <span class="text-danger">{{$errors->first('name')}}</span>
                          </div>
                          <div class="contactInput">
                            <label for="email" class="form-label">Email</label>
-                           <input type="eamil" class="form-control" id="email" placeholder="email">
+                           <input type="eamil" name="email" class="form-control" id="email" placeholder="Email">
+                             <span class="text-danger">{{$errors->first('email')}}</span>
+
                          </div>
                          <div class="contactInput">
                              <label for="Message" class="form-label">Message</label>
-                             <textarea class="form-control" id="Message" rows="5" placeholder="message"></textarea>
-                           </div>
+                             <textarea class="form-control" id="Message" name="message" rows="5" placeholder="Message"></textarea>
+                             <span class="text-danger">{{$errors->first('email')}}</span>
+
+                         </div>
                         <div class="buttonArea">
                             <button  type="submit" class="btn">Send Message</button>
 
