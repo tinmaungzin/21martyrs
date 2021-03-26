@@ -26,7 +26,7 @@ class Kernel extends HttpKernel
 
         // Custom middlewares
         \App\Http\Middleware\Localization::class,
-        EnforceHttpsMiddleware::class,
+
     ];
 
     /**
