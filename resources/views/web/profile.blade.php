@@ -250,39 +250,39 @@
             <div class="row">
                 <div class="bottomWarp">
                     <div class="bottomSection">
-                        <h4>Arrestee Info</h4>
-
+                        <h4>{{$post->status == 'detained' ? __('ui.arrestee_info'): __('ui.dead_person_info')}}</h4>
                         <div class="profileDetail">
-                            <p>State/Region:</p>
+                            <p>{{__('ui.state')}}:</p>
                             <p class="DetailText">{{is_null($post->state) ? __('ui.state_unknown'):$post->state->name}}</p>
                         </div>
                         <div class="profileDetail">
-                            <p>Township/Address:</p>
+                            <p>{{__('ui.address')}}:</p>
                             <p class="DetailText">
                                 {{ViewUtility::displayNullableText($post->address)}}</p>
                         </div>
                         <div class="profileDetail">
-                            <p>Occupation:</p>
+                            <p>{{__('ui.occupation')}}:</p>
                             <p class="DetailText">{{ViewUtility::displayNullableText($post->occupation)}}</p>
                         </div>
                         <div class="profileDetail">
-                            <p>Organization:</p>
+                            <p>{{__('ui.association')}}:</p>
                             <p class="DetailText">{{ViewUtility::displayNullableText($post->organization_name)}}</p>
                         </div>
 
                         <div class="profileDetail">
-                            <p>Arrested Date:</p>
+                            <p>{{$post->status =='detained' ? __('ui.arrested_date'): __('ui.death_date')}}:</p>
                             <p class="DetailText">{{is_null($post->detained_date)? __('ui.unknown'): ViewUtility::displayDate($post->detained_date)
                             }}</p>
                         </div>
                         @if($post->status == 'Detained')
                             <div class="profileDetail">
-                                <p>Reason of Being Arrested:</p>
+                                <p>{{__('ui.arrested_reason')}}
+                                    :</p>
                                 <p class="DetailText">{{$post->reason_of_arrest}}</p>
                             </div>
                         @else
                             <div class="profileDetail">
-                                <p>Reason of Death:</p>
+                                <p>{{__('ui.reason_of_death')}}:</p>
                                 <p class="DetailText">{{$post->reason_of_dead}}</p>
                             </div>
                         @endif
@@ -294,7 +294,7 @@
                         @endif
                         @if(isset($post->comment))
                             <div class="profileDetail">
-                                <p>Comment By Informer:</p>
+                                <p>{{__('ui.comment_by_informer')}}:</p>
                                 <p class="DetailText">{{$post->comment}}</p>
                             </div>
                         @endif
