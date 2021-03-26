@@ -4,142 +4,142 @@
 
 @section('content')
 
-{{-- <div class="profileBody">
-            <div class="container">
-            <div class="profilePicture">
-                @if(!is_null($post->profile_url) )
-                    <img
-                         src="{{$post->profile_url}}"
-                         alt="{{$post->name}}"
-                    />
+    {{-- <div class="profileBody">
+                <div class="container">
+                <div class="profilePicture">
+                    @if(!is_null($post->profile_url) )
+                        <img
+                             src="{{$post->profile_url}}"
+                             alt="{{$post->name}}"
+                        />
 
-                @else
-                    <img
-                        src="{{asset('web/img/default-profile.jpg')}}"
-                        alt="{{$post->name}}"
-                    />
-                    @endif
-
-            </div>
-            <div class="profileDetail">
-                <h3>Arrestee's Info</h3>
-                <div class="DetailBox">
-
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Name:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->name}}</span>
-                        </div>
-                    </div>
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Age:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->age}}</span>
-                        </div>
-                    </div>
-
-
-
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Gender:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{ucfirst($post->gender)}}</span>
-                        </div>
-                    </div>
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>State/Region:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->state->name}}</span>
-                        </div>
-                    </div>
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Township/Address:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->address}}</span>
-                        </div>
-                    </div>
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Arrested Date:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->detained_date}}</span>
-                        </div>
-                    </div>
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Occupation:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->occupation}}</span>
-                        </div>
-                    </div>
-                    @if($post->status == 'detained')
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Reason of being arrested:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->reason_of_arrest}}</span>
-                        </div>
-                    </div>
+                    @else
+                        <img
+                            src="{{asset('web/img/default-profile.jpg')}}"
+                            alt="{{$post->name}}"
+                        />
                         @endif
-                    @if($post->status == 'dead')
+
+                </div>
+                <div class="profileDetail">
+                    <h3>Arrestee's Info</h3>
+                    <div class="DetailBox">
+
                         <div class="profileDetailBox">
                             <div class="profileHeaders">
-                                <span>Reason of being Dead:</span>
+                                <span>Name:</span>
                             </div>
                             <div class="profileValues">
-                                <span>{{$post->reason_of_dead}}</span>
+                                <span>{{$post->name}}</span>
+                            </div>
+                        </div>
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>Age:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{$post->age}}</span>
+                            </div>
+                        </div>
+
+
+
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>Gender:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{ucfirst($post->gender)}}</span>
+                            </div>
+                        </div>
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>State/Region:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{$post->state->name}}</span>
+                            </div>
+                        </div>
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>Township/Address:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{$post->address}}</span>
+                            </div>
+                        </div>
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>Arrested Date:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{$post->detained_date}}</span>
+                            </div>
+                        </div>
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>Occupation:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{$post->occupation}}</span>
+                            </div>
+                        </div>
+                        @if($post->status == 'detained')
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>Reason of being arrested:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{$post->reason_of_arrest}}</span>
+                            </div>
+                        </div>
+                            @endif
+                        @if($post->status == 'dead')
+                            <div class="profileDetailBox">
+                                <div class="profileHeaders">
+                                    <span>Reason of being Dead:</span>
+                                </div>
+                                <div class="profileValues">
+                                    <span>{{$post->reason_of_dead}}</span>
+                                </div>
+                            </div>
+                            @endif
+
+                        @if(isset($post->prison))
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>Prison:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{$post->prison}}</span>
                             </div>
                         </div>
                         @endif
-
-                    @if(isset($post->prison))
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Prison:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->prison}}</span>
-                        </div>
-                    </div>
-                    @endif
-                    <div class="profileDetailBox">
-                        <div class="profileHeaders">
-                            <span>Status:</span>
-                        </div>
-                        <div class="profileValues">
-                            <span>{{$post->status}}</span>
+                        <div class="profileDetailBox">
+                            <div class="profileHeaders">
+                                <span>Status:</span>
+                            </div>
+                            <div class="profileValues">
+                                <span>{{$post->status}}</span>
+                            </div>
                         </div>
                     </div>
-                </div>
 
-                <div class="editButton">
-                    @if($post->status == 'detained')
-                    <a href="{{route('form.edit.detained',['post'=> $post->id])}}">
-                        <button>Edit</button>
-                    </a>
-                        @endif
-                        @if($post->status == 'dead')
-                            <a href="{{route('form.edit.dead',['post'=> $post->id])}}">
-                                <button>Edit</button>
-                            </a>
-                        @endif
+                    <div class="editButton">
+                        @if($post->status == 'detained')
+                        <a href="{{route('form.edit.detained',['post'=> $post->id])}}">
+                            <button>Edit</button>
+                        </a>
+                            @endif
+                            @if($post->status == 'dead')
+                                <a href="{{route('form.edit.dead',['post'=> $post->id])}}">
+                                    <button>Edit</button>
+                                </a>
+                            @endif
+                    </div>
                 </div>
             </div>
-        </div>
-    </div> --}}
+        </div> --}}
 
     {{-- <div class="profileBody">
         <div class="container">
@@ -233,7 +233,7 @@
                         @if(isset($post->profile_url) )
 
                             <img
-                                src="{{$post->profile_url}}"
+                                src="{{Str::of($post->profile)->isEmpty() ? asset('web/img/default-profile.jpg'): $post->profile}}"
                                 alt="{{$post->name}}"
                             />
                         @else
@@ -242,11 +242,11 @@
                                 src="{{asset('web/img/default-profile.jpg')}}"
                                 alt="{{$post->name}}"
                             />
-                            @endif
+                        @endif
                     </div>
                     <div class="profileInfo">
                         <h3>{{$post->name}}</h3>
-                        <span>{{$post->age}} years old , {{$post->gender}}</span>
+                        <span>{{App\Utility\StringUtility::isEmpty($post->age) ? '': "{$post->age} years old"}} , {{$post->gender}}</span>
                         <div class="profileStatus">
                             <h4>Status</h4>
                             <p>{{$post->status}}, {{$post->detained_date->diffForHumans()}}</p>
@@ -263,24 +263,26 @@
 
                         <div class="profileDetail">
                             <p>State/Region:</p>
-                            <p class="DetailText">{{$post->state->name}}</p>
+                            <p class="DetailText">{{is_null($post->state) ? __('ui.state_unknown'):$post->state->name}}</p>
                         </div>
                         <div class="profileDetail">
                             <p>Township/Address:</p>
-                            <p class="DetailText">{{$post->address}}</p>
+                            <p class="DetailText">
+                                {{ViewUtility::displayNullableText($post->address)}}</p>
                         </div>
                         <div class="profileDetail">
                             <p>Occupation:</p>
-                            <p class="DetailText">{{$post->occupation}}</p>
+                            <p class="DetailText">{{ViewUtility::displayNullableText($post->occupation)}}</p>
                         </div>
                         <div class="profileDetail">
                             <p>Organization:</p>
-                            <p class="DetailText">{{$post->organization_name}}</p>
+                            <p class="DetailText">{{ViewUtility::displayNullableText($post->organization_name)}}</p>
                         </div>
 
                         <div class="profileDetail">
                             <p>Arrested Date:</p>
-                            <p class="DetailText">{{$post->detained_date}}</p>
+                            <p class="DetailText">{{is_null($post->detained_date)? __('ui.unknown'): ViewUtility::displayDate($post->detained_date)
+                            }}</p>
                         </div>
                         @if($post->status == 'Detained')
                             <div class="profileDetail">
@@ -292,11 +294,11 @@
                                 <p>Reason of Death:</p>
                                 <p class="DetailText">{{$post->reason_of_dead}}</p>
                             </div>
-                            @endif
+                        @endif
                         @if(isset($post->prison))
                             <div class="profileDetail">
                                 <p>Prison:</p>
-                                <p class="DetailText">{{$post->prison}}</p>
+                                <p class="DetailText">{{ViewUtility::displayNullableText($post->prison)}}</p>
                             </div>
                         @endif
                         @if(isset($post->comment))
@@ -307,24 +309,28 @@
                         @endif
                         <div class="editButton">
                             @if($post->status == 'Detained')
-                            <a href="{{route('form.edit.detained',['post'=> $post->id])}}">
-                                <button>Edit</button>
-                            </a>
-                                @endif
-                                @if($post->status == 'Dead')
-                                    <a href="{{route('form.edit.dead',['post'=> $post->id])}}">
-                                        <button>Edit</button>
-                                    </a>
-                                @endif
+                                <a href="{{route('form.edit.detained',['post'=> $post->id])}}">
+                                    <button>{{__('ui.suggest_edit')}}
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </a>
+                            @endif
+                            @if($post->status == 'Dead')
+                                <a href="{{route('form.edit.dead',['post'=> $post->id])}}">
+                                    <button>{{__('ui.suggest_edit')}}
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </a>
+                            @endif
                         </div>
-                </div>
+                    </div>
 
                 </div>
             </div>
         </div>
 
     </div>
-@include('web.layout.success_msg')
+    @include('web.layout.success_msg')
 
 
 @endsection

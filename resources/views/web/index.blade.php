@@ -61,36 +61,36 @@
                         </div> --}}
 
                         <div class="staticBox">
-                        <div class="TopBox">
-                            <h4 class="titleText">{{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
-                            <div class="TopText">
-                                <h3 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h3>
-                                <p>Total death</p>
+                            <div class="TopBox">
+                                <h4 class="titleText">{{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
+                                <div class="TopText">
+                                    <h3 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h3>
+                                    <p>Total death</p>
+                                </div>
+                                <div class="MiddleText">
+                                    <h3 class="count">{{is_null($stat) ? 0: $stat->headshot}}</h3>
+                                    <h3 class="count">{{is_null($stat) ? 0: $stat->gunshot}}</h3>
+                                    <h3 class="count">{{is_null($stat) ? 0: $stat->assault}}</h3>
+                                </div>
+                                <div class="subMiddleText">
+                                    <p>Headshot</p>
+                                    <p>Gunshot</p>
+                                    <p>Assault</p>
+                                </div>
                             </div>
-                            <div class="MiddleText">
-                                <h3 class="count">{{is_null($stat) ? 0: $stat->headshot}}</h3>
-                                <h3 class="count">{{is_null($stat) ? 0: $stat->gunshot}}</h3>
-                                <h3 class="count">{{is_null($stat) ? 0: $stat->assault}}</h3>
-                            </div>
-                            <div class="subMiddleText">
-                                <p>Headshot</p>
-                                <p>Gunshot</p>
-                                <p>Assault</p>
-                            </div>
-                        </div>
-                        <div class="SubstaticBox">
-                            <div class="SubTitle">
-                                <h3 class="count">{{is_null($stat) ? 0: $stat->abducted}}</h3>
-                                <h3 class="count">{{is_null($stat) ? 0: $stat->released}}</h3>
-                            </div>
-                            <div class="SubText">
-                                <p>Abducted</p>
-                                <p>Released</p>
+                            <div class="SubstaticBox">
+                                <div class="SubTitle">
+                                    <h3 class="count">{{is_null($stat) ? 0: $stat->abducted}}</h3>
+                                    <h3 class="count">{{is_null($stat) ? 0: $stat->released}}</h3>
+                                </div>
+                                <div class="SubText">
+                                    <p>Abducted</p>
+                                    <p>Released</p>
 
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
                 </div>
             </div>
 
@@ -179,35 +179,40 @@
                 @else
                     @foreach ($posts as $post)
                         <a href="{{ route('profile', ['post' => $post->id]) }}">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="featured-item">
-                                <div class="thumb">
-                                    @if(!is_null($post->profile_url))
-                                        <img height="260" src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
-                                    @else
-                                        <img height="260" src="{{ asset('web/img/default-profile.jpg') }}" alt="{{$post->name}}"/>
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="featured-item">
+                                    <div class="thumb">
+                                        @if(!\App\Utility\StringUtility::isEmpty($post->profile_url))
+                                            <img
+                                                style="object-fit: cover"
+                                                height="260"
 
-                                    @endif
-                                </div>
-                                <div class="down-content">
-                                    <h4>{{ $post->name }}</h4>
-                                    <p>
-                                        {{ $post->age }}
-                                    </p>
-                                    <p>
-                                        {{ $post->state->name }}
-                                    </p>
+                                                src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
+                                        @else
+                                            <img height="260" src="{{ asset('web/img/default-profile.jpg') }}"
+                                                 alt="{{$post->name}}"/>
+
+                                        @endif
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{ Str::limit($post->name,18,'...') }}</h4>
+                                        <p>
+                                            {{ App\Utility\StringUtility::isEmpty(strval($post->age)) ? __('ui.unknown'): $post->age }}
+                                        </p>
+                                        <p>
+                                            {{is_null($post->state) ? __('ui.state_unknown'): $post->state->name }}
+                                        </p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
-                    </a> @endforeach
+                        </a> @endforeach
                 @endif
             </div>
 
         </div>
         @include('web.layout.pagination', ['paginator' => $posts])
-{{--        {{ $posts->onEachSide(2)->links() }}--}}
+        {{--        {{ $posts->onEachSide(2)->links() }}--}}
     </section>
     @include('web.layout.success_msg')
 
