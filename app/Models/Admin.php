@@ -8,6 +8,7 @@ use Illuminate\Foundation\Auth\User as Authenticable;
 
 /**
  * @method static firstOrCreate(string[] $array, array $array1)
+ * @method static where(array $array)
  */
 class Admin extends Authenticable
 {
