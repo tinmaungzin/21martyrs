@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\QueryFilter;
 use App\Utility\ImageModule;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -41,6 +42,10 @@ class Post extends Model
         'released_date'
     ];
 
+    public function scopeFilter($query,QueryFilter $filters)
+    {
+        return $filters->apply($query);
+    }
 
     public function state()
     {

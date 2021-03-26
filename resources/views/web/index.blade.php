@@ -97,8 +97,7 @@
             <div>
                 <div>
                     <div class="submit-form">
-                        <form id="form-submit" action="{{ route('search') }}" method="post">
-                            @csrf
+                        <form id="form-submit">
                             <div class="row">
 
                                 <div class="col-md-3 first-item">
@@ -108,7 +107,7 @@
                                 </div>
                                 <div class="col-md-3 second-item">
                                     <fieldset>
-                                        <select name="state_id">
+                                        <select name="state">
                                             <option value="" selected
                                                     disabled>{{ __('ui.select_state_and_region') }}
                                             </option>
@@ -134,7 +133,7 @@
 
                                 <div class="col-md-3">
                                     <fieldset>
-                                        <button type="submit" id="form-submit" class="btn">
+                                        <button onclick="location = this.value;" type="submit" id="form-submit" class="btn">
                                             Search Now
                                         </button>
                                     </fieldset>
@@ -156,10 +155,10 @@
                     <div class="section-heading">
                         <h2>{{ __('ui.detained_civilians') }}</h2>
                         {{--                        <span>Latest Arrested Civilians</span>--}}
-                        @if(isset($filters))
+                        @if(isset($query_string))
                             <h5>Applied Filters</h5>
-                            @foreach($filters as $filter)
-                                <h6>{{array_search($filter, $filters)}} : {{$filter}} </h6>
+                            @foreach($query_string as $string)
+                                <h6>{{ ucfirst(array_search($string, $query_string)) }} : {{ ucfirst($string) }} </h6>
                             @endforeach
                         @endif
                     </div>
@@ -211,7 +210,7 @@
             </div>
 
         </div>
-        @include('web.layout.pagination', ['paginator' => $posts])
+        @include('web.layout.pagination', ['paginator' => $posts->appends($query_string)])
         {{--        {{ $posts->onEachSide(2)->links() }}--}}
     </section>
     @include('web.layout.success_msg')
