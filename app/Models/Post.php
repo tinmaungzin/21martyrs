@@ -34,6 +34,12 @@ class Post extends Model
         'reason_of_arrest',
         'admin_id',
     ];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'detained_date',
+        'released_date'
+    ];
 
 
     public function state()

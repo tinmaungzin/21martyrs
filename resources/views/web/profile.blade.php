@@ -41,9 +41,9 @@
                             <span>{{$post->age}}</span>
                         </div>
                     </div>
-    
-    
-    
+
+
+
                     <div class="profileDetailBox">
                         <div class="profileHeaders">
                             <span>Gender:</span>
@@ -104,7 +104,7 @@
                             </div>
                         </div>
                         @endif
-    
+
                     @if(isset($post->prison))
                     <div class="profileDetailBox">
                         <div class="profileHeaders">
@@ -151,7 +151,7 @@
                                  src="{{$post->profile_url}}"
                                  alt="{{$post->name}}"
                             />
-        
+
                         @else
                             <img
                                 src="{{asset('web/img/default-profile.jpg')}}"
@@ -163,12 +163,12 @@
                 </div>
                 <div class="col-md-5 col-md-offset-1">
                     <div class="profileInfo">
-                        <h3>Ko Yin Maung Latt</h3>
-                        <span>23 yrs , Male</span>
+                        <h3>{{$post->name}}</h3>
+                        <span>{{$post->age}} yrs , {{$post->gender}}</span>
                     </div>
                     <div class="profileStatus">
                         <h5>Status</h5>
-                        <p>Detained 40days ago</p>
+                        <p>{{$post->status}}, {{$post->detained_date->diffForHumans()}}</p>
                     </div>
                     <hr>
                 </div>
@@ -181,29 +181,31 @@
                         <h4>Arrestee Info</h4>
                         <div class="profileDetail">
                             <p>Occupation</p>
-                            <p>Journalist</p>
+                            <p>{{$post->occupation}}</p>
                         </div>
                         <div class="profileDetail">
                             <p>State/Region</p>
-                            <p>Chin</p>
+                            <p>{{$post->state->name}}</p>
                         </div>
                         <div class="profileDetail">
                             <p>Township/Address</p>
-                            <p>Chin ,No (5),shinDawGone </p>
+                            <p>{{$post->address}}</p>
                         </div>
-                    
+
                         <div class="profileDetail">
                             <p>Arrested Date</p>
-                            <p>Chin</p>
+                            <p>{{$post->detained_date}}</p>
                         </div>
                         <div class="profileDetail">
                             <p>Reason of being arrested</p>
-                            <p>Protest</p>
+                            <p>{{$post->reason_of_arrest}}</p>
                         </div>
+                    @if(isset($post->prison))
                         <div class="profileDetail">
                             <p>Prison</p>
-                            <p>Insein</p>
+                            <p>{{$post->prison}}</p>
                         </div>
+                    @endif
                         <div class="editButton">
                             @if($post->status == 'detained')
                             <a href="{{route('form.edit.detained',['post'=> $post->id])}}">
@@ -218,7 +220,7 @@
                         </div>
                 </div>
             </div>
-         
+
         </div>
     </div>
 
