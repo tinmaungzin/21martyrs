@@ -18,7 +18,7 @@ class EnforceHttpsMiddleware
     public function handle(Request $request, Closure $next)
     {
         if (!$request->secure() && !App::environment('local')) {
-            return redirect()->secure($request->getRequestUri());
+            return redirect()->secure($request->path());
         }
         return $next($request);
     }
