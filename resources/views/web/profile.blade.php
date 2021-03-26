@@ -230,23 +230,14 @@
             <div class="row">
                 <div class="TopSection">
                     <div class="profilePicture">
-                        @if(isset($post->profile_url) )
-
-                            <img
-                                src="{{Str::of($post->profile)->isEmpty() ? asset('web/img/default-profile.jpg'): $post->profile}}"
-                                alt="{{$post->name}}"
-                            />
-                        @else
-
-                            <img
-                                src="{{asset('web/img/default-profile.jpg')}}"
-                                alt="{{$post->name}}"
-                            />
-                        @endif
+                        <img
+                            src="{{Str::of($post->profile_url)->isEmpty() ? asset('web/img/default-profile.jpg'): $post->profile_url}}"
+                            alt="{{$post->name}}"
+                        />
                     </div>
                     <div class="profileInfo">
                         <h3>{{$post->name}}</h3>
-                        <span>{{App\Utility\StringUtility::isEmpty($post->age) ? '': "{$post->age} years old"}} , {{$post->gender}}</span>
+                        <span>{{App\Utility\StringUtility::isEmpty($post->age) ? __('ui.age_unknown'): "{$post->age} years old"}} , {{$post->gender}}</span>
                         <div class="profileStatus">
                             <h4>Status</h4>
                             <p>{{$post->status}}, {{$post->detained_date->diffForHumans()}}</p>

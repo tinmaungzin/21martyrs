@@ -8,6 +8,7 @@ return [
     'about_us_paragraph' => 'The website is established with the aim to commemorate the martyrs who have been killed, and who have been unlawfully detained by the military and police during Myanmar Spring Revolution 2021 that have emerged after the military seized the democratically elected governement on Feb 1, 2021.',
     'age' => 'Age',
     'age_placeholder' => 'For eg, 21',
+    'age_unknown' => 'Age unknwon',
     'arresstee_assoication_placholder' => 'Please describe detainee\'s association. For eg, University, Hospital, etc',
     'arresstee_state' => 'Detained state',
     'arrested_date' => 'Arrested Date',
