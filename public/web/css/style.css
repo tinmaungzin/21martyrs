@@ -9,8 +9,10 @@
     color: #3c738d;
 }
 
-label {
+.inputCheckbox label {
     color: #5da0bf;
+    padding-left: 30px;
+
 }
 
 .leftInfo,
@@ -74,6 +76,13 @@ select {
     outline: none;
 }
 
+.inputCheckbox{
+    width: 71%;
+    display: flex;
+    justify-content: flex-end;
+    margin-top: 40px;
+}
+
 #checkBox input {
     max-width: 40px;
 }
@@ -102,6 +111,7 @@ select {
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: none;
+
 }
 
 /* for confirm page */
@@ -181,12 +191,17 @@ select {
 .deleteButton button:hover {
     background-color: rgb(146, 45, 45);
     outline: none;
+
 }
 
 /* for profile page */
-.profileBody {
+/* .profileBody {
     width: 100%;
     overflow: hidden;
+    background-color: #f4f4f4;
+}
+.profileHeaders span {
+    color:black;
 }
 
 .profilePicture,
@@ -197,7 +212,7 @@ select {
 }
 
 .profileDetail h3 {
-    margin: 15px 0 20px 0;
+    margin: 20px 0 30px 0;
 }
 
 .profilePicture img {
@@ -216,36 +231,70 @@ select {
 }
 
 .profileHeaders {
-    width: 30%;
+    width: 40%;
     float: left;
 }
 
 .profileValues {
-    width: 70%;
+    width: 50%;
     overflow: hidden;
 }
 
 .profileValues span {
-    padding: 10px 20px;
-    border: 0;
-    border-radius: 3px;
-    color: white;
-    background-color: #af5c1d;
+    color: black;
+    border-bottom: 1px solid red;
+    padding: 0 5px 0 5px;
+} */
+
+ .profileBody {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f4f4f4;
+}
+.profileBody hr{
+    border-top: 1px solid #cecece;
+}
+.profilePicture{
+    max-width: fit-content;
+    max-height: 200px;
+}
+.profileInfo {
+    padding-bottom: 25px;
+
 }
 
+/* .profileInfo span{
+    color: ;
+} */
+
+.profileDetail{
+    display: flex;
+    width: 100%;
+    padding: 10px 0;
+}
+.profileDetail p{
+    width: 50%;
+
+}
+
+.editButton {
+    margin: 5px 0 20px 0;
+
+}
 .editButton button {
-    width: 300px;
-    padding: 12px 20px;
+    width: 60%;
+    padding: 8px 10px;
     margin: 30px 0 0 0;
     border: 0;
     border-radius: 3px;
     color: white;
-    background-color: #5da0bf;
+    background-color: #dc3545;
 }
 
 .editButton button:hover {
-    background-color: #518aa5;
+    background-color:#be2b39;
     outline: none;
+
 }
 
 /* for about us page */
@@ -254,9 +303,7 @@ select {
     width: 100%;
 }
 
-.aboutPart {
-    margin: 30px;
-}
+
 
 .contactUs {
     overflow: hidden;
@@ -265,10 +312,11 @@ select {
     background-color: rgb(168, 164, 164);
     border-radius: 7px;
     padding: 20px;
+
 }
 
-.contact-us-title {
-}
+/* .contact-us-title {
+} */
 
 .contactUsQuestions {
     width: 30%;
@@ -333,7 +381,22 @@ textarea {
     padding: 0 2rem;
 }
 
+@media (min-width: 2160px) {
+    .inputCheckbox{
+        width: 56%;
+    }
+}
+
+@media (max-width: 1250px) {
+    .inputCheckbox{
+        width: 66%;
+    }
+}
+
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
+    .inputCheckbox{
+        width: 90%;
+    }
     .inputDataBox {
         width: 83%;
         margin: auto;
@@ -379,7 +442,7 @@ textarea {
 
     .submitButton button {
         padding: 12px 20px;
-        margin: 30px 0 0 0;
+        margin: 30px 0 40px 0;
     }
 
     /* for profile page */
@@ -425,6 +488,9 @@ textarea {
 }
 
 @media only screen and (max-width: 640px) and (min-width: 321px) {
+    .inputCheckbox{
+        width: 100%;
+    }
     .inputDataBox {
         width: 100%;
         margin: 0;
@@ -471,7 +537,7 @@ textarea {
 
     .submitButton button {
         padding: 12px 20px;
-        margin: 30px 0 0 0;
+        margin: 30px 0 40px 0;
     }
 
     /* for profile page */
@@ -518,6 +584,12 @@ textarea {
     /* for about */
     .contactUs {
         border-radius: 0;
+    }
+}
+
+@media (max-width: 430px) {
+    .inputCheckbox{
+        width: 100%;
     }
 }
 
@@ -570,7 +642,7 @@ textarea {
 
     .submitButton button {
         padding: 12px 20px;
-        margin: 30px 0 0 0;
+        margin: 30px 0 40px 0;
     }
 
     /* for profile page */
@@ -634,4 +706,5 @@ textarea {
     margin: 1.6rem auto;
     max-width: 100%;
     max-height: 350px
+
 }

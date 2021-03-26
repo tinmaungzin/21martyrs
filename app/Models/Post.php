@@ -14,7 +14,32 @@ class Post extends Model
 {
     use HasFactory;
 
-    protected $guarded = [];
+//    protected $guarded = [];
+
+    protected $fillable = [
+        'name',
+        'comment',
+        'age',
+        'address',
+        'profile_url',
+        'gender',
+        'occupation',
+        'organization_name',
+        'city_id',
+        'state_id',
+        'status',
+        'prison',
+        'detained_date',
+        'reason_of_dead',
+        'reason_of_arrest',
+        'admin_id',
+    ];
+    protected $dates = [
+        'created_at',
+        'updated_at',
+        'detained_date',
+        'released_date'
+    ];
 
 
     public function state()
@@ -41,18 +66,5 @@ class Post extends Model
     }
 
 
-    public function scopeState($query, $state_id)
-    {
-        return $query->where('state_id', '=', $state_id);
-    }
 
-    public function scopeStatus($query, $status)
-    {
-        return $query->where('state_id', '=', $status);
-    }
-
-    public function scopeGender($query, $gender)
-    {
-        return $query->where('state_id', '=', $gender);
-    }
 }

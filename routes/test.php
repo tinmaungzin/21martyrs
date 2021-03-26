@@ -23,4 +23,5 @@ Route::name('test.')->group(function () {
     Route::get('/errors/{code}', function ($code) {
         abort($code, "Error found");
     })->name('500');
+
 });
