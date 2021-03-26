@@ -24,7 +24,7 @@
 
 .mainHeader h3 {
     margin: 30px 0 -20px 70px;
-    color: black;
+    color: #3c738d;
 }
 
 .rightInfo h3 {
@@ -44,10 +44,7 @@
     color: #7a7a7a;
 }
 
-.inputBoxImg {
-    width: 50%;
-    height: 80px;
-}
+
 
 .inputValue input,
 select {
@@ -60,27 +57,52 @@ select {
     outline: none;
 }
 
+.inputValue input[type=date]
+ {
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 0px 10px;
+    color: black;
+    width: 300px;
+    margin: 0;
+    outline: none;
+}
+
+
 .inputValue input:focus {
-    border: 1px solid #4883ff;
+    border: 1px solid #dc3545;
 }
 
 .inputValue ::placeholder {
     color: #afb4b6;
 }
-
-.inputBoxImg input {
+.inputBoxImg{
+    margin-bottom: 30px;
+}
+.inputBoxImg label{
     padding-left: 62px;
     margin-top: 40px;
+    border-radius: 3px;
+    color: #7a7a7a;
+    outline: none;
+    font-weight: 400;
+    margin-bottom: 10px;
+}
+.inputBoxImg .text-danger{
+    padding-left: 62px;
+}
+.inputBoxImg input {
+    padding-left: 62px;
     border-radius: 3px;
     color: #5da0bf;
     outline: none;
 }
 
 .inputCheckbox{
-    width: 71%;
+    width: 100%;
     display: flex;
-    justify-content: flex-end;
-    margin-top: 40px;
+    padding-left: 60px;
+    padding-top: 40px;
 }
 
 #checkBox input {
@@ -99,7 +121,7 @@ select {
     border: 0;
     border-radius: 3px;
     color: white;
-    background-color: #4883ff;
+    background-color: #dc3545;
 }
 
 .submitButton button:hover {
@@ -251,16 +273,47 @@ select {
     overflow: hidden;
     background-color: #f4f4f4;
 }
-.profileBody hr{
-    border-top: 1px solid #cecece;
+.TopSection {
+    display: flex;
+    justify-content: center;
+    width: 90%;
+}
+.TopSection h3,h4{
+    font-weight: 600;
 }
 .profilePicture{
-    max-width: fit-content;
-    max-height: 200px;
+    max-width: 150px;
+    margin-top: 20px;
 }
-.profileInfo {
-    padding-bottom: 25px;
 
+.profilePicture img{
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+}
+
+.profileInfo {
+    padding: 10px 0 25px 50px;
+
+}
+
+.profileStatus{
+    padding-top: 15px;
+
+}
+.profileStatus p {
+    font-size: 15px;
+}
+
+.bottomWarp{
+    display: flex;
+    justify-content: center;
+}
+.bottomSection{
+    width: 50%;
+    margin-left: 13%;
 }
 
 /* .profileInfo span{
@@ -274,7 +327,11 @@ select {
 }
 .profileDetail p{
     width: 50%;
-
+    font-size: 15px;
+}
+.profileDetail .DetailText{
+    border-bottom: 1px solid #dc3545;
+    width: fit-content;
 }
 
 .editButton {
@@ -334,15 +391,17 @@ select {
 
 .contactUsValues input,
 textarea {
-    width: 100%;
+    border-radius: 3px;
+    border: 1px solid #ccc;
+    padding: 8px 10px;
+    color: black;
+    width: 300px;
+    margin: 0;
     outline: none;
-    border: 0;
-    border-radius: 5px;
-    padding: 12px 10px;
-    margin: 10px 0 10px 0;
-    text-indent: 3px;
 }
-
+.inputValue textarea:focus{
+    border: 1px solid #dc3545;
+}
 .contactUsValues textarea {
     height: 200px;
     resize: none;
@@ -396,6 +455,8 @@ textarea {
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
     .inputCheckbox{
         width: 90%;
+        padding-left: 10px;
+
     }
     .inputDataBox {
         width: 83%;
@@ -425,14 +486,27 @@ textarea {
     select {
         width: 100%;
     }
-
+    .inputValue input[type=date]
+     {
+        width: 100%;
+    }
+    .inputValue textarea
+    {
+       width: 100%;
+   }
     .inputBoxi {
         margin-right: 0;
     }
-
-    .inputBoxImg input {
+    .inputBoxImg label{
         padding-left: 20px;
         margin-top: 40px;
+
+    }
+    .inputBoxImg .text-danger{
+        padding-left: 12px;
+    }
+    .inputBoxImg input {
+        padding-left: 20px;
     }
 
     .submitButton {
@@ -447,9 +521,11 @@ textarea {
 
     /* for profile page */
     .profilePicture {
-        margin-top: 40px;
-        width: 100%;
-        float: none;
+        margin-top: 20px;
+    }
+    .bottomSection{
+        width: 60%;
+
     }
 
     .profileDetail {
@@ -462,12 +538,7 @@ textarea {
         font-size: 300%;
     }
 
-    .profilePicture img {
-        float: none;
-        width: 80%;
-        height: auto;
-        margin: 0 0 0 100px;
-    }
+ 
 
     .profileDetailBox {
         margin: 24px 0 24px 100px;
@@ -490,10 +561,11 @@ textarea {
 @media only screen and (max-width: 640px) and (min-width: 321px) {
     .inputCheckbox{
         width: 100%;
+        padding-left: 0px;
     }
     .inputDataBox {
-        width: 100%;
-        margin: 0;
+        width: 80%;
+        margin: 0 auto;
     }
 
     .inputDataBox h3 {
@@ -514,6 +586,14 @@ textarea {
     .inputBox {
         width: 100%;
     }
+    .inputValue input[type=date]
+    {
+       width: 100%;
+   }
+   .inputValue textarea
+   {
+      width: 100%;
+  }
 
     .inputBox,
     .inputBoxImg {
@@ -525,9 +605,16 @@ textarea {
         width: 100%;
     }
 
-    .inputBoxImg input {
-        padding-left: 20px;
+    .inputBoxImg label{
+        padding-left: 3px;
         margin-top: 40px;
+    }
+
+    .inputBoxImg input {
+        padding-left: 3px;
+    }
+    .inputBoxImg .text-danger{
+        padding-left: 0px;
     }
 
     .submitButton {
@@ -544,6 +631,10 @@ textarea {
     .profilePicture {
         width: 100%;
         float: none;
+    }
+    .bottomSection{
+        width: 75%;
+        margin-left: 20%;
     }
 
     .profileDetail {
@@ -585,6 +676,13 @@ textarea {
     .contactUs {
         border-radius: 0;
     }
+}
+
+@media (max-width: 500px) {
+.bottomSection{
+    width: 90%;
+    margin-left: 18%;
+}
 }
 
 @media (max-width: 430px) {
@@ -674,7 +772,7 @@ textarea {
     }
 
     .profileDetailBox span {
-        font-size: 13px;
+        font-size: 15px;
     }
 
     .profileHeaders {

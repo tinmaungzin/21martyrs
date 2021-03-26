@@ -9,27 +9,6 @@
     <title>21 Martyrs | @yield('title')</title>
 
     <link rel="icon" href="{{ asset('web/img/MM-Martyrs-500px.png') }} " sizes="16x16"/>
-    @if(App::environment('production'))
-        @include('components.seo')
-        @yield('seo')
-    @endif
-    {{--<!-- Google Tag Manager -->--}}
-    <script>
-        (function (w, d, s, l, i) {
-            w[l] = w[l] || [];
-            w[l].push({
-                'gtm.start':
-                    new Date().getTime(), event: 'gtm.js'
-            });
-            var f = d.getElementsByTagName(s)[0],
-                j = d.createElement(s), dl = l != 'dataLayer' ? '&l=' + l : '';
-            j.async = true;
-            j.src =
-                'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
-            f.parentNode.insertBefore(j, f);
-        })(window, document, 'script', 'dataLayer', 'GTM-W59G632');
-    </script>
-    {{--    <!-- End Google Tag Manager -->--}}
 
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
@@ -52,6 +31,7 @@
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
 
+
     {{-- <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css"> --}}
     {{-- <link rel="stylesheet" href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/css/bootstrap-combined.min.css"> --}}
     {{-- <link rel="stylesheet" type="text/css" media="screen" href="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/css/bootstrap-select.min.css"> --}}
@@ -62,6 +42,7 @@
 
     @laravelPWA
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
+
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
@@ -84,10 +65,11 @@
             <button id="primary-nav-button" style="right: 0;" type="button">Menu</button>
             <a href="{{ route('index') }}">
                 <div class="logo">
-                    <img src="{{ asset('images/icon.png') }} " alt="Logo"/>
+                   <img src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
+                    <h2>martyrs21mm.com</h2>
                 </div>
             </a>
-            <nav id="primary-nav" class="dropdown cf">
+            <nav id="primary-nav" class="dropdown cf" >
                 <ul class="dropdown menu">
                     <li class="active"><a href="{{ route('index') }}">{{ __('ui.home') }}</a></li>
                     <li class="active"><a href="{{ route('about') }}">{{ __('ui.about_us') }}</a></li>
@@ -138,10 +120,10 @@
                 <div class="about-veno">
                     <div class="logo">
                         <img style="height: 100px;width: 100%;object-fit:contain;" src="
-                                {{ asset('images/icon.png') }} " alt=" Venue Logo"/>
+                                {{ asset('web/img/MM-Martyrs-500px.png') }} " alt=" Venue Logo"/>
                     </div>
                     <p>
-                        {{ __('ui.footer_long_text') }}
+                        {{ __('ui.about_us_long') }}
                     </p>
                     <ul class="social-icons">
                         <li>
@@ -154,7 +136,7 @@
                     </ul>
                 </div>
             </div>
-            <div class="col-md-4">
+            {{-- <div class="col-md-4">
                 <div class="useful-links">
                     <div class="footer-heading">
                         <h4>Useful Links</h4>
@@ -200,7 +182,7 @@
                         </div>
                     </div>
                 </div>
-            </div>
+            </div> --}}
             <div class="col-md-3">
                 <div class="contact-info">
                     <div class="footer-heading">
@@ -217,6 +199,34 @@
                     </ul>
                 </div>
             </div>
+            <div class="col-md-4">
+                <div class="ContactUs">
+                 <div class="footer-heading">
+                     <h4 class="ContactTitle">Contact Form</h4>
+                 </div>
+                 <div class="ContactBox">
+                     <form>
+                         <div class="contactInput">
+                           <label for="name" class="form-label">Name</label>
+                           <input type="text" class="form-control" id="name" placeholder="name">
+                         </div>
+                         <div class="contactInput">
+                           <label for="email" class="form-label">Email</label>
+                           <input type="eamil" class="form-control" id="email" placeholder="email">
+                         </div>
+                         <div class="contactInput">
+                             <label for="Message" class="form-label">Message</label>
+                             <textarea class="form-control" id="Message" rows="5" placeholder="message"></textarea>
+                           </div>
+                        <div class="buttonArea">
+                            <button  type="submit" class="btn">Send Message</button>
+
+                        </div>
+                       </form>
+                 </div>
+                </div>
+
+             </div>
         </div>
     </div>
 </footer>
@@ -224,19 +234,14 @@
 
 <div class="sub-footer">
     <p>
-        Copyright &copy; 2018 Company Name - Design:
+        Copyright &copy; 2021 Martyrs Myanmar - Design:
         <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>
     </p>
 </div>
 </footer>
 <!-- End footer -->
 
-<div class="sub-footer">
-    <p>
-        Copyright &copy; 2018 Company Name - Design:
-        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>
-    </p>
-</div>
+
 
 
 {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script> --}}

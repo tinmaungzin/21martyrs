@@ -173,9 +173,9 @@
                     </div>
 
                     <div class="inputBoxImg">
-                        <input type="file" id="myFile" name="photo" />
+                        <label for="myfile">Photo</label>
+                        <input type="file" id="myFile" name="photo"/>
                         <span class="text-danger">{{ $errors->first('photo') }}</span>
-
                     </div>
 
 
@@ -217,11 +217,12 @@
                         </div>
                     </div>
                 </div>
+                <div class="inputCheckbox">
+                    <input type="checkbox" name="terms" id="terms">
+                    <label for="terms" >Thank you for your information. Please note that we will verify and update as soon as we can.</label>
+                </div>
             </div>
-            <div class="inputCheckbox">
-                <input type="checkbox" name="terms" id="terms">
-                <label for="terms" >  Please note that we will verify and update as soon as we can.</label><br>
-            </div>
+        
             <div class="submitButton">
                 <button id="submit" type="submit">{{ __('ui.submit') }}</button>
             </div>

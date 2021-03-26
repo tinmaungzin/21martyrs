@@ -55,6 +55,10 @@ p {
   color: white;
 }
 
+#header #primary-nav{
+  padding-top: 8px;
+}
+
 /* Header Style */
 
 .cf:before,
@@ -109,7 +113,7 @@ p {
   /* content: 'â˜°'; */
   content: "\2261";
   display: inline-block;
-  background-color: #4883ff;
+  background-color: #dc3545;
   font-size: 36px;
   font-style: normal;
   font-weight: normal;
@@ -123,6 +127,7 @@ p {
 }
 
 #header .logo {
+  display: flex;
   float: left;
 }
 
@@ -130,6 +135,10 @@ p {
   width: auto;
   height: 100px;
   overflow: hidden;
+}
+
+#header .logo h2{
+  padding:15px 0 0 10px;
 }
 
 .locale-icon {
@@ -189,7 +198,7 @@ p {
 }
 
 .sub-menu {
-  border-top: 3px solid #4883ff;
+  border-top: 3px solid #dc3545;
 }
 
 .sub-menu li a {
@@ -446,7 +455,7 @@ footer .contact-info ul li a {
   /* border-color: inherit; */
   -webkit-box-shadow: none;
   box-shadow: none;
-  border: 1px solid #4883ff;
+  border: 1px solid #dc3545;
 }
 .buttonArea{
   display: flex;
@@ -463,6 +472,20 @@ footer .contact-info ul li a {
     background-color: #dc3545;
     text-align: center;
 }
+
+.buttonArea button:hover{
+  background-color:#be2b39;
+  outline: none;
+}
+
+
+@media (max-width: 1090px) {
+  .menu li{
+    margin-left: 10px;
+  }
+  }
+
+
 
 @media (max-width: 992px) {
   .banner .banner-caption {
@@ -536,7 +559,7 @@ footer .contact-info ul li a {
     margin-top: 60px;
   }
   #primary-nav li a{
-    line-height: 80px;
+    line-height: 70px;
   }
   .Test{
     display: flex;
@@ -545,6 +568,9 @@ footer .contact-info ul li a {
   .menu{
     margin-top: 0px !important;
   }
+  #header #primary-nav{
+    padding-top: 0px;
+  }
 }
 
 @media (max-width: 590px) {
@@ -552,3 +578,10 @@ footer .contact-info ul li a {
     line-height: 60px;
   }
 }
+
+@media (max-width: 500px) {
+  .logo h2{
+    display: none;
+  }
+}
+

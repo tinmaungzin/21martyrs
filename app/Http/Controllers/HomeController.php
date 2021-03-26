@@ -16,7 +16,7 @@ class HomeController extends Controller
     {
         $states = State::all();
         $stat = Stat::all()->last();
-        $posts = Post::orderBy('id', 'desc')->paginate(12)->onEachSide(1);
+        $posts = Post::orderBy('id', 'desc')->paginate(1)->onEachSide(1);
         return view('web.index', compact('posts', 'states', 'states', 'stat'));
     }
 

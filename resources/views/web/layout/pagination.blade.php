@@ -64,7 +64,12 @@
 
 
 
-
+<style>
+    .pagination>.active>a{
+        background-color: #dc3545 !important;
+        border-color: #dc3545 !important;
+    }
+</style>
 <?php
 // config
 $link_limit = 7; // maximum number of links (a little bit inaccurate, but will be ok for now)
