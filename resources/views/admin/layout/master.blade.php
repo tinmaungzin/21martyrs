@@ -32,54 +32,57 @@
 </head>
 
 <body style="background-color: #eff1f5">
-    <div id="app" class="overall-container">
-        @include('admin.layout.sidebar')
-        @yield('content')
-    </div>
+<div id="app" class="overall-container">
+    @include('admin.layout.sidebar')
+    @if (session('status'))
+        <div class="alert-success alert">
+            {{ session('status') }}
+        </div>
+    @endif
+    @yield('content')
+</div>
 
 
+@yield('script')
 
-    @yield('script')
 
+<script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script>
+<script src=" {{ asset('js/bootstrap.js') }} "></script>
+<script src=" {{ asset('js/bs.js') }} "></script>
+<script src=" {{ asset('js/MonthPicker.min.js') }} "></script>
+<script src=" {{ asset('js/datepicker.min.js') }} "></script>
+<script src=" {{ asset('js/yearpicker.js') }} "></script>
+<script src=" {{ asset('js/vue.js') }} "></script>
+<script src=" {{ asset('js/sorting.js') }} "></script>
 
-    <script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script>
-    <script src=" {{ asset('js/bootstrap.js') }} "></script>
-    <script src=" {{ asset('js/bs.js') }} "></script>
-    <script src=" {{ asset('js/MonthPicker.min.js') }} "></script>
-    <script src=" {{ asset('js/datepicker.min.js') }} "></script>
-    <script src=" {{ asset('js/yearpicker.js') }} "></script>
-    <script src=" {{ asset('js/vue.js') }} "></script>
-    <script src=" {{ asset('js/sorting.js') }} "></script>
+<script type="application/javascript">
+    $(document).ready(function () {
+        $('.normal').autosize();
+        $('.animated-txtarea').autosize();
 
-    <script type="application/javascript">
-        $(document).ready(function (){
-            $('.normal').autosize();
-            $('.animated-txtarea').autosize();
-
-            $("#myInput").on("keyup", function() {
-                var value = $(this).val().toLowerCase();
-                $("#myTable tbody tr").filter(function() {
-                    $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-                });
-            });
-            $('.selectpicker').selectpicker('refresh');
-            $('#monthpicker').MonthPicker({ Button: false });
-            $(".yearpicker").yearpicker({
-                // autohide:true,
-                // initialYear:null,
-                onShow:null,
-                year:null,
-                startYear: 1990,
-                endYear: 2030,
-                pick:null,
-                show:null,
-
+        $("#myInput").on("keyup", function () {
+            var value = $(this).val().toLowerCase();
+            $("#myTable tbody tr").filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
             });
         });
+        $('.selectpicker').selectpicker('refresh');
+        $('#monthpicker').MonthPicker({Button: false});
+        $(".yearpicker").yearpicker({
+            // autohide:true,
+            // initialYear:null,
+            onShow: null,
+            year: null,
+            startYear: 1990,
+            endYear: 2030,
+            pick: null,
+            show: null,
+
+        });
+    });
 
 
-
-    </script>
+</script>
 </body>
 
 </html>

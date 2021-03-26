@@ -31,33 +31,50 @@
 
 <body style="background-color: #f3f7fa">
 <div id="app" class="overall-container">
-    <form action="{{route('admin.login')}}" method="post">
+
+    <form action="/admin/login" method="post">
         @csrf
+        @if (session('status'))
+            <div class="font-medium alert alert-success p-3 text-center">
+                {{ session('status') }}
+            </div>
+        @endif
         <div class="login-container">
             <div class="login-leftside py-4">
                 <div style="margin-top: 11%;margin-bottom: 14%">
-                    <h2 style="color: #111;font-weight: 900;font-family: 'Roboto', sans-serif" class="text-center mb-5">Login</h2>
+                    <h2 style="color: #111;font-weight: 900;font-family: 'Roboto', sans-serif" class="text-center mb-5">
+                        Login</h2>
                     <div class="mb-4 justify-content-center d-flex mt-3">
-                        <input type="text" style="" value="{{old('email')}}" name="email" class="login-input px-2" placeholder="Email">
+                        <input type="text" style="" value="{{old('email')}}" name="email" class="login-input px-2"
+                               placeholder="Email">
                     </div>
-                    <span class="text-danger" style="font-size: 12px; margin-left: 100px;">{{$errors->first('email')}}</span>
+                    <span class="text-danger"
+                          style="font-size: 12px; margin-left: 100px;">{{$errors->first('email')}}</span>
                     <div class="mb-4 justify-content-center d-flex">
                         <input type="password" style="" name="password" class="login-input px-2" placeholder="Password">
                     </div>
-                    <span class="text-danger" style="font-size: 12px; margin-left: 100px;">{{$errors->first('password')}}</span>
-
+                    <span class="text-danger"
+                          style="font-size: 12px; margin-left: 100px;">{{$errors->first('password')}}</span>
+                    <div class="mb-4 justify-content-center d-flex">
+                        <input type="checkbox" name="remember" class="mr-2">
+                        <p style="line-height: 0.7">Remember me</p>
+                    </div>
                     <div class="justify-content-center d-flex pt-2">
-                        <button type="submit" class="btn-danger border-0 px-5" style="border-radius: 12px;padding-top: 5px;padding-bottom: 5px">LOG IN</button>
+                        <button type="submit" class="btn-danger border-0 px-5"
+                                style="border-radius: 12px;padding-top: 5px;padding-bottom: 5px">LOG IN
+                        </button>
                     </div>
                 </div>
             </div>
             <div class="login-rightside">
                 <div style="margin-top: 12%;margin-bottom: 15%">
                     <div class="d-flex justify-content-center pt-4">
-                        <img src="{{asset('images/21martyrs.webp')}}" style="height: 80px;width: 80px;border-radius: 50%" alt="">
+                        <img src="{{asset('images/21martyrs.webp')}}"
+                             style="height: 80px;width: 80px;border-radius: 50%" alt="">
                     </div>
                     <div class="px-4 my-3 py-3">
-                        <p  class="font-weight-bold text-white text-center" style="font-size: 26px!important;"><span style="font-size: 28px!important;">21 Martyrs</span><br> Admin Panel</p>
+                        <p class="font-weight-bold text-white text-center" style="font-size: 26px!important;"><span
+                                style="font-size: 28px!important;">21 Martyrs</span><br> Admin Panel</p>
                     </div>
                 </div>
             </div>
