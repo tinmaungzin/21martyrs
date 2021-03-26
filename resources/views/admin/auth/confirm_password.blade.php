@@ -6,7 +6,11 @@
     <div class=" main-container">
         <header class="header mb-3">
             <nav>
-                <a href="#" class="a-clear text-dark fm-roboto fs17">Please enter your password</a>
+                <h4 class="a-clear text-dark fm-roboto mb-3">Please enter your password</h4>
+                <p class="fs-18 fm-roboto text-info">
+                    Please provide your password to continue this action. We won't ask your password again for a few
+                    hours.
+                </p>
             </nav>
         </header>
         <form action="/admin/user/confirm-password" method="POST"
