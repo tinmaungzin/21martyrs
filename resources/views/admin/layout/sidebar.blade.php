@@ -86,6 +86,10 @@
                 <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Feedback
             </a>
 
+            <a href="{{route('admin.logout')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15>
+                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Logout
+            </a>
+
 
             {{--            <button style="" class="fs15 btn-clear btn-collapse  text-left" type="button"--}}
             {{--                    data-toggle="collapse" data-target="#cycle"--}}
