@@ -44,17 +44,17 @@ class PendingPost extends Model
 
     public function setGenderAttribute($val)
     {
-        $this->attributes['gender'] = ucfirst($val);
+        $this->attributes['gender'] = strtolower($val);
     }
 
     public function setReasonOfArrestAttribute($val)
     {
-        $this->attributes['reason_of_arrest'] = ucfirst($val);
+        $this->attributes['reason_of_arrest'] = strtolower($val);
     }
 
     public function setOccupationAttribute($val)
     {
-        $this->attributes['occupation'] = ucfirst($val);
+        $this->attributes['occupation'] = strtolower($val);
     }
 
     public function setPublishingStatusAttribute($valu)

@@ -16,7 +16,7 @@ Route::name('test.')->group(function () {
     Route::post('/upload', function (Request $request) {
         $path = Str::uuid() . '-' . $request->file('image')->getClientOriginalName();
         $uploadedPath = ImageModule::uploadFromRequest('image', $path);
-        dd(ImageModule::urlFromPath($uploadedPath));
+        dd("uploaded path", $uploadedPath, ImageModule::urlFromPath($uploadedPath));
 //        return view('test');
     })->name('upload');
 

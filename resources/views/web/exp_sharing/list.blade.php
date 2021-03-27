@@ -15,23 +15,27 @@
                 </div>
             </div>
             <div class="row">
-                @foreach($articles as $article)
-                    <a href="{{route('show.experience',['article'=> $article->id])}}">
-                        <div class="col-md-3 col-sm-6 col-xs-12">
-                            <div class="featured-item">
-                                <div class="thumb">
-                                    <img src="{{$article->feature_image_url}}" alt="{{$article->title}}" />
-                                </div>
-                                <div class="down-content">
-                                    <h4>{{$article->title}}</h4>
-                                    <p>{{$article->author_name}}</p>
-                                    <p>{{$article->updated_at->diffForHumans()}}</p>
+                @if($articles->toArray()['total'] <= 0)
+                    @include('components.empty')
+                @else
+                    @foreach($articles as $article)
+                        <a href="{{route('show.experience',['article'=> $article->id])}}">
+                            <div class="col-md-3 col-sm-6 col-xs-12">
+                                <div class="featured-item">
+                                    <div class="thumb">
+                                        <img src="{{$article->feature_image_url}}" alt="{{$article->title}}"/>
+                                    </div>
+                                    <div class="down-content">
+                                        <h4>{{$article->title}}</h4>
+                                        <p>{{$article->author_name}}</p>
+                                        <p>{{$article->updated_at->diffForHumans()}}</p>
+                                    </div>
                                 </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
 
-                @endforeach
+                    @endforeach
+                @endif
 
             </div>
 
