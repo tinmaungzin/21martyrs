@@ -45,7 +45,6 @@
 }
 
 
-
 .inputValue input,
 select {
     border-radius: 3px;
@@ -57,8 +56,7 @@ select {
     outline: none;
 }
 
-.inputValue input[type=date]
- {
+.inputValue input[type=date] {
     border-radius: 3px;
     border: 1px solid #ccc;
     padding: 0px 10px;
@@ -76,10 +74,12 @@ select {
 .inputValue ::placeholder {
     color: #afb4b6;
 }
-.inputBoxImg{
+
+.inputBoxImg {
     margin-bottom: 30px;
 }
-.inputBoxImg label{
+
+.inputBoxImg label {
     padding-left: 62px;
     margin-top: 40px;
     border-radius: 3px;
@@ -88,9 +88,11 @@ select {
     font-weight: 400;
     margin-bottom: 10px;
 }
-.inputBoxImg .text-danger{
+
+.inputBoxImg .text-danger {
     padding-left: 62px;
 }
+
 .inputBoxImg input {
     padding-left: 62px;
     border-radius: 3px;
@@ -98,7 +100,7 @@ select {
     outline: none;
 }
 
-.inputCheckbox{
+.inputCheckbox {
     width: 100%;
     display: flex;
     padding-left: 60px;
@@ -268,25 +270,28 @@ select {
     padding: 0 5px 0 5px;
 } */
 
- .profileBody {
+.profileBody {
     width: 100%;
     overflow: hidden;
     background-color: #f4f4f4;
 }
+
 .TopSection {
     display: flex;
     justify-content: center;
     width: 90%;
 }
-.TopSection h3,h4{
+
+.TopSection h3, h4 {
     font-weight: 600;
 }
-.profilePicture{
+
+.profilePicture {
     max-width: 150px;
     margin-top: 20px;
 }
 
-.profilePicture img{
+.profilePicture img {
     border-radius: 50%;
     -webkit-border-radius: 50%;
     -moz-border-radius: 50%;
@@ -299,19 +304,21 @@ select {
 
 }
 
-.profileStatus{
+.profileStatus {
     padding-top: 15px;
 
 }
+
 .profileStatus p {
     font-size: 15px;
 }
 
-.bottomWarp{
+.bottomWarp {
     display: flex;
     justify-content: center;
 }
-.bottomSection{
+
+.bottomSection {
     width: 50%;
     margin-left: 13%;
 }
@@ -320,16 +327,18 @@ select {
     color: ;
 } */
 
-.profileDetail{
+.profileDetail {
     display: flex;
     width: 100%;
     padding: 10px 0;
 }
-.profileDetail p{
+
+.profileDetail p {
     width: 50%;
     font-size: 15px;
 }
-.profileDetail .DetailText{
+
+.profileDetail .DetailText {
     border-bottom: 1px solid #dc3545;
     width: fit-content;
 }
@@ -338,6 +347,7 @@ select {
     margin: 5px 0 20px 0;
 
 }
+
 .editButton button {
     width: 60%;
     padding: 8px 10px;
@@ -349,7 +359,7 @@ select {
 }
 
 .editButton button:hover {
-    background-color:#be2b39;
+    background-color: #be2b39;
     outline: none;
 
 }
@@ -359,7 +369,6 @@ select {
 .aboutBody {
     width: 100%;
 }
-
 
 
 .contactUs {
@@ -399,9 +408,11 @@ textarea {
     margin: 0;
     outline: none;
 }
-.inputValue textarea:focus{
+
+.inputValue textarea:focus {
     border: 1px solid #dc3545;
 }
+
 .contactUsValues textarea {
     height: 200px;
     resize: none;
@@ -441,23 +452,24 @@ textarea {
 }
 
 @media (min-width: 2160px) {
-    .inputCheckbox{
+    .inputCheckbox {
         width: 56%;
     }
 }
 
 @media (max-width: 1250px) {
-    .inputCheckbox{
+    .inputCheckbox {
         width: 66%;
     }
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
-    .inputCheckbox{
+    .inputCheckbox {
         width: 90%;
         padding-left: 10px;
 
     }
+
     .inputDataBox {
         width: 83%;
         margin: auto;
@@ -486,25 +498,29 @@ textarea {
     select {
         width: 100%;
     }
-    .inputValue input[type=date]
-     {
+
+    .inputValue input[type=date] {
         width: 100%;
     }
-    .inputValue textarea
-    {
-       width: 100%;
-   }
+
+    .inputValue textarea {
+        width: 100%;
+    }
+
     .inputBoxi {
         margin-right: 0;
     }
-    .inputBoxImg label{
+
+    .inputBoxImg label {
         padding-left: 20px;
         margin-top: 40px;
 
     }
-    .inputBoxImg .text-danger{
+
+    .inputBoxImg .text-danger {
         padding-left: 12px;
     }
+
     .inputBoxImg input {
         padding-left: 20px;
     }
@@ -523,7 +539,8 @@ textarea {
     .profilePicture {
         margin-top: 20px;
     }
-    .bottomSection{
+
+    .bottomSection {
         width: 60%;
 
     }
@@ -538,7 +555,6 @@ textarea {
         font-size: 300%;
     }
 
- 
 
     .profileDetailBox {
         margin: 24px 0 24px 100px;
@@ -559,10 +575,11 @@ textarea {
 }
 
 @media only screen and (max-width: 640px) and (min-width: 321px) {
-    .inputCheckbox{
+    .inputCheckbox {
         width: 100%;
         padding-left: 0px;
     }
+
     .inputDataBox {
         width: 80%;
         margin: 0 auto;
@@ -586,14 +603,14 @@ textarea {
     .inputBox {
         width: 100%;
     }
-    .inputValue input[type=date]
-    {
-       width: 100%;
-   }
-   .inputValue textarea
-   {
-      width: 100%;
-  }
+
+    .inputValue input[type=date] {
+        width: 100%;
+    }
+
+    .inputValue textarea {
+        width: 100%;
+    }
 
     .inputBox,
     .inputBoxImg {
@@ -605,7 +622,7 @@ textarea {
         width: 100%;
     }
 
-    .inputBoxImg label{
+    .inputBoxImg label {
         padding-left: 3px;
         margin-top: 40px;
     }
@@ -613,7 +630,8 @@ textarea {
     .inputBoxImg input {
         padding-left: 3px;
     }
-    .inputBoxImg .text-danger{
+
+    .inputBoxImg .text-danger {
         padding-left: 0px;
     }
 
@@ -632,7 +650,8 @@ textarea {
         width: 100%;
         float: none;
     }
-    .bottomSection{
+
+    .bottomSection {
         width: 75%;
         margin-left: 20%;
     }
@@ -679,14 +698,14 @@ textarea {
 }
 
 @media (max-width: 500px) {
-.bottomSection{
-    width: 90%;
-    margin-left: 18%;
-}
+    .bottomSection {
+        width: 90%;
+        margin-left: 18%;
+    }
 }
 
 @media (max-width: 430px) {
-    .inputCheckbox{
+    .inputCheckbox {
         width: 100%;
     }
 }
@@ -805,4 +824,11 @@ textarea {
     max-width: 100%;
     max-height: 350px
 
+}
+
+#submit:disabled,
+#submit[disabled] {
+    cursor: not-allowed;
+    background-color: #6d6d6d;
+    color: white;
 }

@@ -37,8 +37,7 @@ class InformController extends Controller
     public function store_edit_detained(EditDetainedRequest $request, Post $post)
     {
         $data = $request->except('photo');
-        if($request->has('photo'))
-        {
+        if ($request->has('photo')) {
             $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
             $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         }
@@ -52,7 +51,7 @@ class InformController extends Controller
         });
 
 
-        Session::flash('msg', 'Data sent successfully! Thank You.');
+        Session::flash('msg', __('messages.inform_success'));
         return redirect(route('index'));
     }
 
@@ -71,7 +70,7 @@ class InformController extends Controller
         $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
         $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         $data['status'] = 'detained';
-        $data['gender'] = ucfirst($data['gender']);
+        $data['gender'] = strtolower($data['gender']);
         $data['publishing_status'] = 'None';
         //TODO add user id
 
@@ -81,7 +80,7 @@ class InformController extends Controller
         });
 
 
-        Session::flash('msg', 'Data sent successfully! Thank You');
+        Session::flash('msg', __('messages.inform_success'));
         return redirect(route('index'));
     }
 
@@ -115,7 +114,7 @@ class InformController extends Controller
         });
 
 
-        Session::flash('msg', 'Data sent successfully! Thank You.');
+        Session::flash('msg', __('messages.inform_success'));
         return redirect(route('index'));
     }
 
@@ -130,10 +129,9 @@ class InformController extends Controller
     public function store_edit_dead(EditDeadRequest $request, Post $post)
     {
         $data = $request->except('photo');
-        if($request->has('photo'))
-        {
-            $path =  Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-            $data['profile_url'] = ImageModule::uploadFromRequest('photo',$path);
+        if ($request->has('photo')) {
+            $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+            $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         }
 
         $data['status'] = 'dead';
@@ -146,7 +144,7 @@ class InformController extends Controller
         });
 
 
-        Session::flash('msg', 'Data sent successfully! Thank You.');
+        Session::flash('msg', __('messages.inform_success'));
         return redirect(route('index'));
     }
 }

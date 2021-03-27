@@ -18,7 +18,7 @@
     @endif
     <meta property="og:description" content="{{__('ui.seo_description')}}">
     <meta property="og:image" content="{{asset('web/img/MM-Martyrs-Cover-withoutLogo.jpg')}}">
-    <meta property="og:title" content="21 Maryrs | Fallen heroes of Myanmar military coup">
+    <meta property="og:title" content="21 Maryrs | Heroes of 21st Reveloution">
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{url()->current()}}">
     <meta property="og:locale" content="{{$constants::LOCALE_MAP[App::getLocale()]['code']}}">
@@ -254,8 +254,6 @@
         <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>
     </p>
 </div>
-</footer>
-<!-- End footer -->
 
 
 {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script> --}}
@@ -280,6 +278,7 @@
 <script src="{{ asset('web/js/plugins.js') }} "></script>
 <script src="{{ asset('web/js/util.js') }}"></script>
 <script src="{{ asset('web/js/main.js') }} "></script>
+@yield('script')
 </body>
 
 </html>

@@ -1,4 +1,4 @@
-<?php
+<?php 
 
 return [
     '404_title' => 'Page not found',
