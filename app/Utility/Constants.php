@@ -7,11 +7,12 @@ class Constants
     const LOCALE_MAP = [
         'en' => [
             'text' => "English",
-            'pic' => 'images/icons/en-icon.png'
+            'pic' => 'images/icons/en-icon.png',
+            'code' => 'en_GB'
         ],
         'mm' => [
             'text' => "မြန်မာ",
-
+            'code' => 'my_MM',
             'pic' => 'images/icons/mm-icon.png'
         ]
     ];
