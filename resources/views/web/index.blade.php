@@ -64,28 +64,28 @@
                             <div class="TopBox">
                                 <h4 class="titleText">{{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
                                 <div class="TopText">
-                                    <h3 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h3>
-                                    <p>Total death</p>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h1>
+                                    <h4>Total death</h4>
                                 </div>
                                 <div class="MiddleText">
-                                    <h3 class="count">{{is_null($stat) ? 0: $stat->headshot}}</h3>
-                                    <h3 class="count">{{is_null($stat) ? 0: $stat->gunshot}}</h3>
-                                    <h3 class="count">{{is_null($stat) ? 0: $stat->assault}}</h3>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->headshot}}</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->gunshot}}</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->assault}}</h1>
                                 </div>
                                 <div class="subMiddleText">
-                                    <p>Headshot</p>
-                                    <p>Gunshot</p>
-                                    <p>Assault</p>
+                                    <h4>Headshot</h4>
+                                    <h4>Gunshot</h4>
+                                    <h4>Assault</h4>
                                 </div>
                             </div>
                             <div class="SubstaticBox">
                                 <div class="SubTitle">
-                                    <h3 class="count">{{is_null($stat) ? 0: $stat->abducted}}</h3>
-                                    <h3 class="count">{{is_null($stat) ? 0: $stat->released}}</h3>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->abducted}}</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->released}}</h1>
                                 </div>
                                 <div class="SubText">
-                                    <p>Abducted</p>
-                                    <p>Released</p>
+                                    <h4>Abducted</h4>
+                                    <h4>Released</h4>
 
                                 </div>
                             </div>

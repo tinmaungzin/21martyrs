@@ -22,7 +22,7 @@ return [
     'arrestee_pic' => 'Please upload photo of arrest',
     'arrestee_township' => 'City/Township',
     'arrestee_township_placeholder' => 'For eg, San Chaung',
-    'as_of_date' => 'As of :date',
+    'as_of_date' => 'As of :date Since Feb 1 Coup',
     'association' => 'Association/Organization',
     'association_placeholder' => 'Association placeholder',
     'back_to_home' => 'Back to home',
@@ -102,6 +102,10 @@ return [
     'political_party_member' => 'Political Party Member',
     'prison' => 'Prison',
     'prison_placeholder' => 'If sent to prison',
+    'released_date' => 'Released Date',
+    'form_edit_desc' => 'Please help us update the information here if anything needed.',
+    'form_desc' => 'Please inform new detainees within your network. Your information is for verification purpose only and will be kept confidential. ',
+
     'protestor' => 'Protester',
     'reason_of_death' => 'Reason of death',
     'relationship_placeholder' => 'Please describe your relationship with victim',
@@ -126,4 +130,5 @@ return [
     'type_name' => 'Type Name',
     'unknown' => 'Unknown',
     'witness' => 'Witness',
+
 ];

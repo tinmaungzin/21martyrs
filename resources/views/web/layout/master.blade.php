@@ -65,7 +65,7 @@
             <a href="{{ route('index') }}">
                 <div class="logo">
                     <img src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
-                    <h1 style="padding-top: 10px;">MM Martyrs </h1>
+                    <h1 style="padding-top: 10px;">MM Martyrs 21 </h1>
                 </div>
             </a>
             <nav id="primary-nav" class="dropdown cf">

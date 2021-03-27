@@ -11,7 +11,13 @@
                 <div class="mainHeader">
                     <h3>{{ __('ui.arrestee_info') }}</h3>
                 </div>
+
+
+
                 <div class="leftInfo">
+                    <div style="padding-bottom: 20px;">
+                        <span>{{__('ui.form_desc')}}</span>
+                    </div>
 
                     <div class="inputBox">
                         <div class="inputHeader">
@@ -230,10 +236,10 @@
                         </div>
                     </div>
                 </div>
-                <div class="inputCheckbox">
-                    <input type="checkbox" name="terms" id="terms">
-                    <label for="terms" >Thank you for your information. Please note that we will verify and update as soon as we can.</label>
-                </div>
+{{--                <div class="inputCheckbox">--}}
+{{--                    <input type="checkbox" name="terms" id="terms">--}}
+{{--                    <label for="terms" >Thank you for your information. Please note that we will verify and update as soon as we can.</label>--}}
+{{--                </div>--}}
 
             </div>
             <div class="submitButton">
@@ -244,18 +250,18 @@
 
 
 
-    <script>
-        $(document).ready(function(){
-            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
-            else $("#submit").prop( "disabled", true );
+{{--    <script>--}}
+{{--        $(document).ready(function(){--}}
+{{--            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
+{{--            else $("#submit").prop( "disabled", true );--}}
 
-            $('#terms').click(function(){
-                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );
-                else $("#submit").prop( "disabled", true );
-            });
+{{--            $('#terms').click(function(){--}}
+{{--                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
+{{--                else $("#submit").prop( "disabled", true );--}}
+{{--            });--}}
 
-        })
-    </script>
+{{--        })--}}
+{{--    </script>--}}
     @include('web.layout.success_msg')
 
 @endsection

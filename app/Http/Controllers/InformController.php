@@ -31,6 +31,7 @@ class InformController extends Controller
     {
         $states = State::all();
         $cities = City::all();
+//        dd($post->detained_date);
         return view('web.inform.edit_detained', compact('post', 'states', 'cities'));
     }
 

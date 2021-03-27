@@ -38,8 +38,8 @@ class Post extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'detained_date',
-        'released_date'
+//        'detained_date',
+//        'released_date'
     ];
 
     public function scopeFilter($query,QueryFilter $filters)

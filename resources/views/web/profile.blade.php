@@ -240,7 +240,7 @@
                         <span>{{App\Utility\StringUtility::isEmpty($post->age) ? __('ui.age_unknown'): "{$post->age} years old"}} , {{$post->gender}}</span>
                         <div class="profileStatus">
                             <h4>Status</h4>
-                            <p>{{$post->status}}, {{$post->detained_date->diffForHumans()}}</p>
+                            <p>{{$post->status}}</p>
                         </div>
                     </div>
 
@@ -250,7 +250,7 @@
             <div class="row">
                 <div class="bottomWarp">
                     <div class="bottomSection">
-                        <h4>{{$post->status == 'detained' ? __('ui.arrestee_info'): __('ui.dead_person_info')}}</h4>
+                        <h4>{{$post->status == 'Detained' ? __('ui.arrestee_info'): __('ui.dead_person_info')}}</h4>
                         <div class="profileDetail">
                             <p>{{__('ui.state')}}:</p>
                             <p class="DetailText">{{is_null($post->state) ? __('ui.state_unknown'):$post->state->name}}</p>
@@ -270,7 +270,7 @@
                         </div>
 
                         <div class="profileDetail">
-                            <p>{{$post->status =='detained' ? __('ui.arrested_date'): __('ui.death_date')}}:</p>
+                            <p>{{$post->status =='Detained' ? __('ui.arrested_date'): __('ui.death_date')}}:</p>
                             <p class="DetailText">{{is_null($post->detained_date)? __('ui.unknown'): ViewUtility::displayDate($post->detained_date)
                             }}</p>
                         </div>
@@ -288,8 +288,14 @@
                         @endif
                         @if(isset($post->prison))
                             <div class="profileDetail">
-                                <p>Prison:</p>
+                                <p>{{__('ui.prison')}}</p>
                                 <p class="DetailText">{{ViewUtility::displayNullableText($post->prison)}}</p>
+                            </div>
+                        @endif
+                        @if(isset($post->released_date))
+                            <div class="profileDetail">
+                                <p>{{__('ui.released_date')}}</p>
+                                <p class="DetailText">{{ViewUtility::displayDate($post->released_date)}}</p>
                             </div>
                         @endif
                         @if(isset($post->comment))

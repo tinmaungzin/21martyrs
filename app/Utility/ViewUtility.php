@@ -18,7 +18,7 @@ class ViewUtility
         return StringUtility::isEmpty($value) ? $null_display_text : $value;
     }
 
-    public static function displayDate($date, $format = 'Y-M-d H:i A'): string
+    public static function displayDate($date, $format = 'l jS F Y'): string
     {
         $carbon = new Carbon($date, new DateTimeZone('Asia/Yangon'));
         return $carbon->format($format);
