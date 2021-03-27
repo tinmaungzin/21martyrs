@@ -23,7 +23,7 @@
 }
 
 .mainHeader h3 {
-    margin: 30px 0 -20px 70px;
+    margin: 30px 0 20px 0px;
     color: #3c738d;
 }
 
@@ -42,8 +42,12 @@
     margin-top: 15px;
     margin-bottom: 5px;
     color: #7a7a7a;
+    /* font-size: 16px; */
 }
-
+.inputHeader span{
+    font-size: 14px;
+    font-family: 'FontAwesome';
+}
 
 
 .inputValue input,
@@ -87,6 +91,10 @@ select {
     outline: none;
     font-weight: 400;
     margin-bottom: 10px;
+}
+.inputBoxImg label span{
+    font-family: "fontAwesome";
+    font-size: 14px;
 }
 .inputBoxImg .text-danger{
     padding-left: 62px;
@@ -282,20 +290,20 @@ select {
     font-weight: 600;
 }
 .profilePicture{
-    max-width: 150px;
+    max-width: 170px;
     margin-top: 20px;
 }
 
 .profilePicture img{
-    border-radius: 50%;
-    -webkit-border-radius: 50%;
-    -moz-border-radius: 50%;
-    -ms-border-radius: 50%;
-    -o-border-radius: 50%;
+    border-radius: 2%;
+    -webkit-border-radius: 2%;
+    -moz-border-radius: 2%;
+    -ms-border-radius: 2%;
+    -o-border-radius: 2%;
 }
 
 .profileInfo {
-    padding: 10px 0 25px 50px;
+    padding: 10px 0 25px 70px;
 
 }
 
@@ -312,8 +320,8 @@ select {
     justify-content: center;
 }
 .bottomSection{
-    width: 50%;
-    margin-left: 13%;
+    width: 60%;
+    margin-left: 7%;
 }
 
 /* .profileInfo span{
@@ -327,11 +335,10 @@ select {
 }
 .profileDetail p{
     width: 50%;
-    font-size: 15px;
+    font-size: 17px;
 }
 .profileDetail .DetailText{
-    border-bottom: 1px solid #dc3545;
-    width: fit-content;
+    font-weight: 800;
 }
 
 .editButton {
@@ -450,6 +457,19 @@ textarea {
     .inputCheckbox{
         width: 66%;
     }
+
+}
+
+@media only screen and (max-width: 1200px) and (min-width: 1024px) {
+    .inputValue input, select{
+        width: 132%;
+    }
+    .contactUsValues input, textarea{
+        width: 114% !important; 
+    }
+    .inputValue input[type=date]{
+        width: 132% !important;
+    }
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
@@ -464,7 +484,7 @@ textarea {
     }
 
     .inputDataBox h3 {
-        margin: 70px 0 0 0;
+        margin: 70px 0 20px 0;
     }
 
     .rightInfo h3 {
@@ -524,7 +544,8 @@ textarea {
         margin-top: 20px;
     }
     .bottomSection{
-        width: 60%;
+        width: 80%;
+        margin-left: 15%;
 
     }
 
@@ -569,7 +590,7 @@ textarea {
     }
 
     .inputDataBox h3 {
-        margin: 10px;
+        margin: 70px 0 20px 0;
     }
 
     .rightInfo h3 {
@@ -633,8 +654,7 @@ textarea {
         float: none;
     }
     .bottomSection{
-        width: 75%;
-        margin-left: 20%;
+        width: 85%;
     }
 
     .profileDetail {
@@ -646,6 +666,10 @@ textarea {
         margin: 15px 0 20px 10px;
         font-size: 30px;
     }
+    .profileDetail p{
+        width: 50%;
+        font-size: 15px;
+    }
 
     .profilePicture img {
         float: none;
@@ -653,6 +677,9 @@ textarea {
         height: auto;
         margin: 0;
         padding: 0;
+    }
+    .profileInfo{
+        padding: 10px 0 25px 30px;
     }
 
     .profileDetailBox {
@@ -681,7 +708,7 @@ textarea {
 @media (max-width: 500px) {
 .bottomSection{
     width: 90%;
-    margin-left: 18%;
+
 }
 }
 
@@ -689,8 +716,34 @@ textarea {
     .inputCheckbox{
         width: 100%;
     }
-}
+    .bottomSection{
+        width: 100%;
+        margin-left: 0%;
+        padding-left: 10px;
+    
+    }
 
+    .TopSection{
+        width: 80%;
+        padding-left: 10px;
+
+    }
+    .profileInfo{
+        padding: 10px 0 25px 20px;
+
+    }
+    .editButton button{
+        width: 70%;
+    }
+}
+@media (max-width: 370px) {
+    .profileDetail .DetailText{
+        width: 45%;
+    }
+    .inputContainer{
+        padding: 10px;
+    }
+}
 @media only screen and (max-width: 320px) {
     .rightInfo h3 {
         margin: 10px;

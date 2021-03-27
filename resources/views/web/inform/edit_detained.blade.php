@@ -13,13 +13,14 @@
 
 
                 </div>
+                <div>
+                    <span>{{__('ui.form_edit_desc')}}</span>
+                </div>
                 <div class="leftInfo">
-                    <div style="padding-bottom: 20px;">
-                        <span>{{__('ui.form_edit_desc')}}</span>
-                    </div>
+                   
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.name') }}</p>
+                            <p>{{ __('ui.name') }}<span>*</span></p>
 
                         </div>
                         <div class="inputValue">
@@ -31,7 +32,7 @@
                     </div>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.age') }}</p>
+                            <p>{{ __('ui.age') }}<span>*</span></p>
 
                         </div>
                         <div class="inputValue">
@@ -43,7 +44,7 @@
                     </div>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.gender') }}</p>
+                            <p>{{ __('ui.gender') }}<span>*</span></p>
 
 
                         </div>
@@ -64,7 +65,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arresstee_state') }}</p>
+                            <p>{{ __('ui.arresstee_state') }}<span>*</span></p>
 
                         </div>
                         <div class="inputValue">
@@ -83,7 +84,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrestee_township') }}</p>
+                            <p>{{ __('ui.arrestee_township') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="text" value="{{$post->address}}" placeholder="{{ __('ui.arrestee_township_placeholder') }}"
@@ -97,7 +98,7 @@
                     <div class="inputBox">
                         <div class="inputHeader">
                             <p>
-                                {{ __('ui.arrestee_occupation') }}
+                                {{ __('ui.arrestee_occupation') }}<span>*</span>
                             </p>
                         </div>
                         <div class="inputValue">
@@ -123,7 +124,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.association') }}</p>
+                            <p>{{ __('ui.association') }}<span>*</span></p>
 
 
                         </div>
@@ -142,7 +143,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrested_date') }}</p>
+                            <p>{{ __('ui.arrested_date') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="date" id="arrested_date" value="{{$post->detained_date}}" name="detained_date" />
@@ -153,7 +154,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrested_reason') }}</p>
+                            <p>{{ __('ui.arrested_reason') }}<span>*</span></p>
 
                         </div>
                         <div class="inputValue">
@@ -174,7 +175,7 @@
             <div class="rightInfo">
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>{{ __('ui.prison') }}</p>
+                        <p>{{ __('ui.prison') }}<span>*</span></p>
                     </div>
                     <div class="inputValue">
                         <input type="text" value="{{$post->prison}}" placeholder="{{ __('ui.prison_placeholder') }}" name="prison" autocomplete="off" />
@@ -186,7 +187,7 @@
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>{{ __('ui.arrestee_comment') }}</p>
+                        <p>{{ __('ui.arrestee_comment') }}<span>*</span></p>
 
                     </div>
                     <div class="inputValue">
@@ -198,6 +199,8 @@
                 </div>
 
                 <div class="inputBoxImg">
+                    <label for="myfile">Photo<span>*</span></label>
+
                     <input type="file" id="myFile" name="photo" />
                     <span class="text-danger">{{$errors->first('photo')}}</span>
 
@@ -209,7 +212,7 @@
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>{{ __('ui.informer_name') }}</p>
+                        <p>{{ __('ui.informer_name') }}<span>*</span></p>
                     </div>
                     <div class="inputValue">
                         <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="informant_name" autocomplete="off" />
@@ -221,7 +224,7 @@
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>{{ __('ui.relationship_with_arrestee') }}</p>
+                        <p>{{ __('ui.relationship_with_arrestee') }}<span>*</span></p>
                     </div>
                     <div class="inputValue">
                         <select id="township" name="informant_association_with_victim">
@@ -239,7 +242,7 @@
 
                 <div class="inputBox">
                     <div class="inputHeader">
-                        <p>{{ __('ui.informer_phone') }}</p>
+                        <p>{{ __('ui.informer_phone') }}<span>*</span></p>
 
 
                     </div>

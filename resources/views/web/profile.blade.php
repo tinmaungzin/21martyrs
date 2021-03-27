@@ -232,6 +232,7 @@
                     <div class="profilePicture">
                         <img
                             src="{{Str::of($post->profile_url)->isEmpty() ? asset('web/img/default-profile.jpg'): $post->profile_url}}"
+                            {{-- src="{{asset('web/img/default-profile.jpg')}}" --}}
                             alt="{{$post->name}}"
                         />
                     </div>
@@ -250,58 +251,58 @@
             <div class="row">
                 <div class="bottomWarp">
                     <div class="bottomSection">
-                        <h4>{{$post->status == 'Detained' ? __('ui.arrestee_info'): __('ui.dead_person_info')}}</h4>
+                        <h3>{{$post->status == 'Detained' ? __('ui.arrestee_info'): __('ui.dead_person_info')}}</h3>
                         <div class="profileDetail">
-                            <p>{{__('ui.state')}}:</p>
-                            <p class="DetailText">{{is_null($post->state) ? __('ui.state_unknown'):$post->state->name}}</p>
+                            <p class="DetailText">{{__('ui.state')}}:</p>
+                            <p>{{is_null($post->state) ? __('ui.state_unknown'):$post->state->name}}</p>
                         </div>
                         <div class="profileDetail">
-                            <p>{{__('ui.address')}}:</p>
-                            <p class="DetailText">
+                            <p class="DetailText">{{__('ui.address')}}:</p>
+                            <p>
                                 {{ViewUtility::displayNullableText($post->address)}}</p>
                         </div>
                         <div class="profileDetail">
-                            <p>{{__('ui.occupation')}}:</p>
-                            <p class="DetailText">{{ViewUtility::displayNullableText($post->occupation)}}</p>
+                            <p class="DetailText">{{__('ui.occupation')}}:</p>
+                            <p>{{ViewUtility::displayNullableText($post->occupation)}}</p>
                         </div>
                         <div class="profileDetail">
-                            <p>{{__('ui.association')}}:</p>
-                            <p class="DetailText">{{ViewUtility::displayNullableText($post->organization_name)}}</p>
+                            <p class="DetailText">{{__('ui.association')}}:</p>
+                            <p>{{ViewUtility::displayNullableText($post->organization_name)}}</p>
                         </div>
 
                         <div class="profileDetail">
-                            <p>{{$post->status =='Detained' ? __('ui.arrested_date'): __('ui.death_date')}}:</p>
-                            <p class="DetailText">{{is_null($post->detained_date)? __('ui.unknown'): ViewUtility::displayDate($post->detained_date)
+                            <p class="DetailText">{{$post->status =='Detained' ? __('ui.arrested_date'): __('ui.death_date')}}:</p>
+                            <p>{{is_null($post->detained_date)? __('ui.unknown'): ViewUtility::displayDate($post->detained_date)
                             }}</p>
                         </div>
                         @if($post->status == 'Detained')
                             <div class="profileDetail">
-                                <p>{{__('ui.arrested_reason')}}
+                                <p class="DetailText">{{__('ui.arrested_reason')}}
                                     :</p>
-                                <p class="DetailText">{{$post->reason_of_arrest}}</p>
+                                <p>{{$post->reason_of_arrest}}</p>
                             </div>
                         @else
                             <div class="profileDetail">
-                                <p>{{__('ui.reason_of_death')}}:</p>
-                                <p class="DetailText">{{$post->reason_of_dead}}</p>
+                                <p class="DetailText">{{__('ui.reason_of_death')}}:</p>
+                                <p>{{$post->reason_of_dead}}</p>
                             </div>
                         @endif
                         @if(isset($post->prison))
                             <div class="profileDetail">
-                                <p>{{__('ui.prison')}}</p>
-                                <p class="DetailText">{{ViewUtility::displayNullableText($post->prison)}}</p>
+                                <p class="DetailText">{{__('ui.prison')}}</p>
+                                <p>{{ViewUtility::displayNullableText($post->prison)}}</p>
                             </div>
                         @endif
                         @if(isset($post->released_date))
                             <div class="profileDetail">
-                                <p>{{__('ui.released_date')}}</p>
-                                <p class="DetailText">{{ViewUtility::displayDate($post->released_date)}}</p>
+                                <p class="DetailText">{{__('ui.released_date')}}</p>
+                                <p>{{ViewUtility::displayDate($post->released_date)}}</p>
                             </div>
                         @endif
                         @if(isset($post->comment))
                             <div class="profileDetail">
-                                <p>{{__('ui.comment_by_informer')}}:</p>
-                                <p class="DetailText">{{$post->comment}}</p>
+                                <p class="DetailText">{{__('ui.comment_by_informer')}}:</p>
+                                <p>{{$post->comment}}</p>
                             </div>
                         @endif
                         <div class="editButton">

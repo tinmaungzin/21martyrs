@@ -11,13 +11,14 @@
                 <div class="mainHeader">
                     <h3>{{ __('ui.dead_person_info') }}</h3>
                 </div>
+                <div>
+                    <span>{{__('ui.form_desc')}}</span>
+                </div>
                 <div class="leftInfo">
-                    <div style="padding-bottom: 20px;">
-                        <span>{{__('ui.form_desc')}}</span>
-                    </div>
+                   
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.deceased_name') }}</p>
+                            <p>{{ __('ui.deceased_name') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name"
@@ -28,7 +29,7 @@
                     </div>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.deceased_age') }}</p>
+                            <p>{{ __('ui.deceased_age') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="number" id="age" name="age" min="10" max="99"
@@ -39,7 +40,7 @@
                     </div>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.gender') }}</p>
+                            <p>{{ __('ui.gender') }} <span>*</span></p>
                         </div>
 
                         <div class="inputValue">
@@ -57,7 +58,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.state') }}</p>
+                            <p>{{ __('ui.state') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <select id="state" name="state_id" title="State">
@@ -74,7 +75,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrestee_township') }}</p>
+                            <p>{{ __('ui.arrestee_township') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.arrestee_township_placeholder') }}"
@@ -87,7 +88,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.deceased_occupation') }}</p>
+                            <p>{{ __('ui.deceased_occupation') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             {{-- <select id="occupation" name="occupation">
@@ -111,7 +112,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.deceased_association') }}</p>
+                            <p>{{ __('ui.deceased_association') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.association_placeholder') }}"
@@ -123,7 +124,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.death_date') }}</p>
+                            <p>{{ __('ui.death_date') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="date" id="arrested_date" name="detained_date" />
@@ -134,7 +135,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.reason_of_death') }}</p>
+                            <p>{{ __('ui.reason_of_death') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <select id="township" name="reason_of_dead">
@@ -165,7 +166,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.comment') }}</p>
+                            <p>{{ __('ui.comment') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <textarea type="text" rows="6" placeholder="{{ __('ui.deceased_comment_placeholder') }}"
@@ -176,7 +177,7 @@
                     </div>
 
                     <div class="inputBoxImg">
-                        <label for="myfile">Photo</label>
+                        <label for="myfile">Photo  <span>*</span></label>
                         <input type="file" id="myFile" name="photo"/>
                         <span class="text-danger">{{ $errors->first('photo') }}</span>
                     </div>
@@ -186,7 +187,7 @@
                     <h3>{{ __('ui.informer_info') }}</h3>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.informer_name') }}</p>
+                            <p>{{ __('ui.informer_name') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="text" placeholder="{{ __('ui.name_placeholder') }}" name="informant_name"
@@ -198,7 +199,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.relationship_with_arrestee') }}</p>
+                            <p>{{ __('ui.relationship_with_arrestee') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <select id="township" name="informant_association_with_victim">
@@ -216,7 +217,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.informer_phone') }}</p>
+                            <p>{{ __('ui.informer_phone') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="number" id="age" placeholder="{{ __('ui.phone_placholder') }}"
