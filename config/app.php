@@ -1,6 +1,7 @@
 <?php
 
 use App\Providers\FortifyServiceProvider;
+use App\Utility\ViewUtility;
 use Maatwebsite\Excel\ExcelServiceProvider;
 use Maatwebsite\Excel\Facades\Excel;
 
@@ -238,6 +239,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
         // 'Excel' => Excel::class,
+        'ViewUtility' => ViewUtility::class,
     ],
 
 ];

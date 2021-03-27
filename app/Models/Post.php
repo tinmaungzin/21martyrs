@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\QueryFilter;
 use App\Utility\ImageModule;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
@@ -37,10 +38,14 @@ class Post extends Model
     protected $dates = [
         'created_at',
         'updated_at',
-        'detained_date',
-        'released_date'
+//        'detained_date',
+//        'released_date'
     ];
 
+    public function scopeFilter($query,QueryFilter $filters)
+    {
+        return $filters->apply($query);
+    }
 
     public function state()
     {
@@ -63,6 +68,21 @@ class Post extends Model
             return "";
         }
         return ImageModule::urlFromPath($value);
+    }
+
+    public function getGenderAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getStatusAttribute($value)
+    {
+        return ucfirst($value);
+    }
+
+    public function getOccupationAttribute($value)
+    {
+        return ucfirst($value);
     }
 
 

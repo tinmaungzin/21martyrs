@@ -24,15 +24,6 @@ class EditDeadRequest extends FormRequest
     public function rules()
     {
         return [
-            'name' => 'required',
-            'age' => 'required',
-            'gender' => 'required',
-            'state_id' => 'required',
-            'address' => 'required',
-            'occupation' => 'required',
-            'organization_name' => 'required',
-            'detained_date' => 'required',
-            'reason_of_dead' => 'required',
             'informant_name' => 'required',
             'informant_association_with_victim' => 'required',
             'informant_phone' => 'required'

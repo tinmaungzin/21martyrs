@@ -24,12 +24,12 @@ class StatRequest extends FormRequest
     public function rules()
     {
         return [
-            'today_dead' => 'required',
-            'today_detained' => 'required',
-            'today_hurt' => 'required',
-            'total_dead' => 'required',
-            'total_detained' => 'required',
-            'total_hurt' => 'required',
+            'total_death' => 'required',
+            'headshot' => 'required',
+            'gunshot' => 'required',
+            'assault' => 'required',
+            'abducted' => 'required',
+            'released' => 'required',
         ];
     }
 }

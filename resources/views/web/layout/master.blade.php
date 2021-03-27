@@ -17,7 +17,6 @@
 
     <link rel="stylesheet" href="{{ asset('web/css/bootstrap.min.css') }}">
     {{-- <link rel="stylesheet" href=" {{ asset('css/selectboot.css') }} "> --}}
-
     <link rel="stylesheet" href=" {{ asset('web/css/bootstrap-theme.min.css') }} "/>
 
 
@@ -65,11 +64,11 @@
             <button id="primary-nav-button" style="right: 0;" type="button">Menu</button>
             <a href="{{ route('index') }}">
                 <div class="logo">
-                   <img src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
-                    <h2>martyrs21mm.com</h2>
+                    <img src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
+                    <h1 style="padding-top: 10px;">MM Martyrs 21 </h1>
                 </div>
             </a>
-            <nav id="primary-nav" class="dropdown cf" >
+            <nav id="primary-nav" class="dropdown cf">
                 <ul class="dropdown menu">
                     <li class="active"><a href="{{ route('index') }}">{{ __('ui.home') }}</a></li>
                     <li class="active"><a href="{{ route('about') }}">{{ __('ui.about_us') }}</a></li>
@@ -201,32 +200,39 @@
             </div>
             <div class="col-md-4">
                 <div class="ContactUs">
-                 <div class="footer-heading">
-                     <h4 class="ContactTitle">Contact Form</h4>
-                 </div>
-                 <div class="ContactBox">
-                     <form>
-                         <div class="contactInput">
-                           <label for="name" class="form-label">Name</label>
-                           <input type="text" class="form-control" id="name" placeholder="name">
-                         </div>
-                         <div class="contactInput">
-                           <label for="email" class="form-label">Email</label>
-                           <input type="eamil" class="form-control" id="email" placeholder="email">
-                         </div>
-                         <div class="contactInput">
-                             <label for="Message" class="form-label">Message</label>
-                             <textarea class="form-control" id="Message" rows="5" placeholder="message"></textarea>
-                           </div>
-                        <div class="buttonArea">
-                            <button  type="submit" class="btn">Send Message</button>
+                    <div class="footer-heading">
+                        <h4 class="ContactTitle">Contact Form</h4>
+                    </div>
+                    <div class="ContactBox">
+                        <form action="{{route('feedback.store')}}" method="post">
+                            @csrf
+                            <div class="contactInput">
+                                <label for="name" class="form-label">Name</label>
+                                <input type="text" name="name" class="form-control" id="name" placeholder="Name">
+                                <span class="text-danger">{{$errors->first('name')}}</span>
+                            </div>
+                            <div class="contactInput">
+                                <label for="email" class="form-label">Email</label>
+                                <input type="eamil" name="email" class="form-control" id="email" placeholder="Email">
+                                <span class="text-danger">{{$errors->first('email')}}</span>
 
-                        </div>
-                       </form>
-                 </div>
+                            </div>
+                            <div class="contactInput">
+                                <label for="Message" class="form-label">Message</label>
+                                <textarea class="form-control" id="Message" name="message" rows="5"
+                                          placeholder="Message"></textarea>
+                                <span class="text-danger">{{$errors->first('email')}}</span>
+
+                            </div>
+                            <div class="buttonArea">
+                                <button type="submit" class="btn">Send Message</button>
+
+                            </div>
+                        </form>
+                    </div>
                 </div>
 
-             </div>
+            </div>
         </div>
     </div>
 </footer>
@@ -240,8 +246,6 @@
 </div>
 </footer>
 <!-- End footer -->
-
-
 
 
 {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script> --}}

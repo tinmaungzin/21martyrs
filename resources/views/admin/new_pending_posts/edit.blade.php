@@ -145,7 +145,7 @@
                         </div>
                     </div>
 
-                    @if($pendingPost->status == 'detained')
+                    @if($pendingPost->status == 'Detained')
 
                         <div class="inputBox">
                             <div class="inputHeader">
@@ -183,7 +183,7 @@
 
                         </div>
                     @endif
-                    @if($pendingPost->status == 'detained')
+                    @if($pendingPost->status == 'Detained')
                         <div class="inputBox">
                             <div class="inputHeader">
                                 <p>Prison</p>
@@ -268,6 +268,9 @@
                         </div>
                     </div>
                 </div>
+            </div>
+            <div style="padding-top: 30px; padding-bottom: 30px; padding-left: 20%;" >
+                <h4 class="text-danger">Please note that once you confirm or delete this data, the informer's data will be permanently deleted.</h4>
             </div>
             <div class="" style="margin-left: 30%">
                 <form action="{{route('handle.new_pending_post',['pendingPost'=> $pendingPost->id])}}" method="post">

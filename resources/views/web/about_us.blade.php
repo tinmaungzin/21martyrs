@@ -66,5 +66,7 @@
         </div>
 
     </div>
+    @include('web.layout.success_msg')
+
 
 @endsection

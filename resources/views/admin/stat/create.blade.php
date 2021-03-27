@@ -14,50 +14,50 @@
                 @csrf
                 <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
                     <div class="col-7">
-                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Today Death</label>
-                        <input type="number" class="input-form" style="border-radius: 6px;" name="today_dead" value="{{old('today_dead')}}"
-                               placeholder="Today Death">
-                        <span class="text-danger">{{$errors->first('today_dead')}}</span>
-                    </div>
-                </div>
-                <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
-                    <div class="col-7">
-                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Today Detained</label>
-                        <input type="number" class="input-form" style="border-radius: 6px;" name="today_detained" value="{{old('today_detained')}}"
-                               placeholder="Today Detained">
-                        <span class="text-danger">{{$errors->first('today_detained')}}</span>
-                    </div>
-                </div>
-                <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
-                    <div class="col-7">
-                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Today Hurt</label>
-                        <input type="number" class="input-form" style="border-radius: 6px;" name="today_hurt" value="{{old('today_hurt')}}"
-                               placeholder="Today Hurt">
-                        <span class="text-danger">{{$errors->first('today_hurt')}}</span>
-                    </div>
-                </div>
-                <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
-                    <div class="col-7">
                         <label for="" class="label-form mb-3" style="font-size: 17px!important;">Total Death</label>
-                        <input type="number" class="input-form" style="border-radius: 6px;" name="total_dead" value="{{old('total_dead')}}"
+                        <input type="number" class="input-form" style="border-radius: 6px;" name="total_death" value="{{old('total_death')}}"
                                placeholder="Total Death">
-                        <span class="text-danger">{{$errors->first('total_dead')}}</span>
+                        <span class="text-danger">{{$errors->first('total_death')}}</span>
                     </div>
                 </div>
                 <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
                     <div class="col-7">
-                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Total Detained</label>
-                        <input type="number" class="input-form" style="border-radius: 6px;" name="total_detained" value="{{old('total_detained')}}"
-                               placeholder="Total Detained">
-                        <span class="text-danger">{{$errors->first('total_detained')}}</span>
+                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Headshot</label>
+                        <input type="number" class="input-form" style="border-radius: 6px;" name="headshot" value="{{old('headshot')}}"
+                               placeholder="Headshot">
+                        <span class="text-danger">{{$errors->first('headshot')}}</span>
                     </div>
                 </div>
                 <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
                     <div class="col-7">
-                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Total Hurt</label>
-                        <input type="number" class="input-form" style="border-radius: 6px;" name="total_hurt" value="{{old('total_hurt')}}"
-                               placeholder="Total Hurt">
-                        <span class="text-danger">{{$errors->first('total_hurt')}}</span>
+                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Gunshot</label>
+                        <input type="number" class="input-form" style="border-radius: 6px;" name="gunshot" value="{{old('gunshot')}}"
+                               placeholder="Gunshot">
+                        <span class="text-danger">{{$errors->first('gunshot')}}</span>
+                    </div>
+                </div>
+                <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
+                    <div class="col-7">
+                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Assault</label>
+                        <input type="number" class="input-form" style="border-radius: 6px;" name="assault" value="{{old('assault')}}"
+                               placeholder="Assault">
+                        <span class="text-danger">{{$errors->first('assault')}}</span>
+                    </div>
+                </div>
+                <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
+                    <div class="col-7">
+                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Abducted</label>
+                        <input type="number" class="input-form" style="border-radius: 6px;" name="abducted" value="{{old('abducted')}}"
+                               placeholder="Abducted">
+                        <span class="text-danger">{{$errors->first('abducted')}}</span>
+                    </div>
+                </div>
+                <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
+                    <div class="col-7">
+                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Released</label>
+                        <input type="number" class="input-form" style="border-radius: 6px;" name="released" value="{{old('released')}}"
+                               placeholder="Released">
+                        <span class="text-danger">{{$errors->first('released')}}</span>
                     </div>
                 </div>
 

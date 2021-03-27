@@ -102,7 +102,7 @@ $link_limit = 7; // maximum number of links (a little bit inaccurate, but will b
             @endif
         @endfor
         <li class="{{ ($paginator->currentPage() == $paginator->lastPage()) ? ' disabled' : '' }}">
-            <a href="{{ $paginator->url($paginator->lastPage()) }}"> >> </a>
+            <a href="{{ $paginator->url($paginator->currentPage()+1) }}"> >> </a>
         </li>
     </ul>
 @endif

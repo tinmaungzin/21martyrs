@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\AuthController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\FeedbackController;
 use App\Http\Controllers\StatController;
 use App\Http\Controllers\ArticleController;
 use App\Http\Controllers\InformController;
@@ -36,6 +37,7 @@ Route::prefix('admin')->group(function () {
         Route::resource('admins', AdminController::class);
         Route::resource('stats', StatController::class);
         Route::resource('articles', ArticleController::class);
+        Route::resource('feedback', FeedbackController::class);
 
         Route::get('new_pending_posts', [NewPendingPostsController::class, 'new_pending_posts'])->name('list.new_pending_posts');
         Route::get('new_pending_posts/{pendingPost}/confirm', [NewPendingPostsController::class, 'new_pending_post_confirm_form'])->name('form.confirm.new_pending_post');
