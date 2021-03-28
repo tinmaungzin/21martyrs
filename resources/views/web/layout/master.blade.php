@@ -75,7 +75,7 @@
             <a href="{{ route('index') }}">
                 <div class="logo">
                     <img src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
-                    <h1 style="padding-top: 10px;">MM Martyrs 21 </h1>
+                    <h1 style="padding-top: 10px;">MYANMAR MARTYRS </h1>
                 </div>
             </a>
             <nav id="primary-nav" class="dropdown cf">
@@ -155,10 +155,9 @@
 {{--                        Praesent iaculis gravida elementum. Proin fermentum neque--}}
 {{--                        facilisis semper pharetra. Sed vestibulum vehicula tincidunt.--}}
 {{--                    </p>--}}
-                    <ul style="margin-top: 50px;">
-                        <li><span>Phone:</span><a href="#">010-050-0550</a></li>
-                        <li><span>Email:</span><a href="#">hi@company.co</a></li>
-                        <li><span>Address:</span><a href="#">company.co</a></li>
+                    <ul style="margin-top: 100px;">
+                        <li><span>Email:</span>admin@martyrs21mm.com</li>
+                        <li><span>Website:</span>Myanmar Martyrs 2021</li>
                     </ul>
                 </div>
             </div>

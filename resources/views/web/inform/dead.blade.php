@@ -97,16 +97,7 @@
                             <p>{{ __('forms.occupation_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
-                            {{-- <select id="occupation" name="occupation">
-                                <option value="" selected disabled>Choose Occupation</option>
-                                <option value="Student">Student</option>
-                                <option value="CDM Staff">CDM staff</option>
-                                <option value="Government Official">Government official</option>
-                                <option value="Political Party Member">Political party member</option>
-                                <option value="Journalist">Journalist</option>
-                                <option value="Civilian">Civilian</option>
-                                <option value="Other">Other</option>
-                            </select> --}}
+
                             <input
                                 value="{{old('occupation')}}"
                                 type="text" placeholder="{{ __('forms.occupation_placeholder') }}"
@@ -115,9 +106,7 @@
                             <span class="text-danger">{{ $errors->first('occupation') }}</span>
 
                         </div>
-                        {{-- <div class="inputValue" style="display: none"> --}}
-                        {{-- <input type="text" placeholder="please specify" name="name" /> --}}
-                        {{-- </div> --}}
+
                     </div>
 
                     <div class="inputBox">
@@ -156,14 +145,7 @@
                                 value="{{old('reason_of_dead')}}"
                                 type="text" placeholder="{{ __('forms.dead_reason_placeholder') }}"
                                 name="reason_of_dead"/>
-{{--                            <select id="reason_of_dead"--}}
-{{--                                    data-value="{{old('reason_of_dead')}}"--}}
-{{--                                    name="reason_of_dead">--}}
-{{--                                <option value="" selected disabled>{{ __('ui.choose_reason_of_death') }}</option>--}}
-{{--                                <option value="Gunshot">{{ __('ui.gunshot') }}</option>--}}
-{{--                                <option value="Beaten">{{ __('ui.beaten') }}</option>--}}
-{{--                                <option value="Other">{{ __('ui.others') }}</option>--}}
-{{--                            </select>--}}
+
                             <span class="text-danger">{{ $errors->first('reason_of_dead') }}</span>
 
                         </div>
@@ -172,17 +154,6 @@
                 </div>
 
                 <div class="rightInfo">
-                    {{-- <div class="inputBox"> --}}
-                    {{-- <div class="inputHeader"> --}}
-                    {{-- <p>ဖမ်းဆီးခံရသူအား ချုပ်နှောင်ထားသည့် အကျဥ်းထောင်</p> --}}
-                    {{-- <p>(မသိပါက အလွတ်ထားခဲ့ပါ)</p> --}}
-                    {{-- </div> --}}
-                    {{-- <div class="inputValue"> --}}
-                    {{-- <input type="text" placeholder="ဥပမာ... အင်းစိန်အကျဥ်းထောင်" name="prison" autocomplete="off" /> --}}
-                    {{-- <span class="text-danger">{{$errors->first('prison')}}</span> --}}
-
-                    {{-- </div> --}}
-                    {{-- </div> --}}
 
                     <div class="inputBox">
                         <div class="inputHeader">
@@ -254,10 +225,6 @@
                         </div>
                     </div>
                 </div>
-{{--                <div class="inputCheckbox">--}}
-{{--                    <input type="checkbox" name="terms" id="terms">--}}
-{{--                    <label for="terms" >Thank you for your information. Please note that we will verify and update as soon as we can.</label>--}}
-{{--                </div>--}}
             </div>
 
             <div class="submitButton">
@@ -268,18 +235,6 @@
         </div>
     </form>
 
-{{--    <script>--}}
-{{--        $(document).ready(function(){--}}
-{{--            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
-{{--            else $("#submit").prop( "disabled", true );--}}
-
-{{--            $('#terms').click(function(){--}}
-{{--                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
-{{--                else $("#submit").prop( "disabled", true );--}}
-{{--            });--}}
-
-{{--        })--}}
-{{--    </script>--}}
     @include('web.layout.success_msg')
 
 @endsection

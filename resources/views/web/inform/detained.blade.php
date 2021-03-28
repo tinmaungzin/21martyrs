@@ -11,7 +11,7 @@
                 <div class="mainHeader">
                     <h3>{{ __('forms.detained_header') }}</h3>
                 </div>
-                <div >
+                <div class="headerText">
                     <span>{{__('forms.detained_disclaimer')}}</span>
                 </div>
 
