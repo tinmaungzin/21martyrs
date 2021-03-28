@@ -1,3 +1,8 @@
+.mainHeader, .headerText{
+    width: 90%;
+    padding-left: 60px;
+}
+
 .inputDataBox {
     width: 55%;
     margin: auto;
@@ -464,6 +469,10 @@ textarea {
 }
 
 @media only screen and (max-width: 1200px) and (min-width: 1024px) {
+    .mainHeader, .headerText{
+        width: 100%;
+        padding-left: 0px;
+    }
     .inputValue input, select{
         width: 132%;
     }
@@ -476,6 +485,10 @@ textarea {
 }
 
 @media only screen and (max-width: 1024px) and (min-width: 641px) {
+    .mainHeader, .headerText{
+        width: 100%;
+        padding-left: 0px;
+    }
     .inputCheckbox{
         width: 90%;
         padding-left: 10px;
@@ -583,6 +596,10 @@ textarea {
 }
 
 @media only screen and (max-width: 640px) and (min-width: 321px) {
+    .mainHeader, .headerText{
+        width: 100%;
+        padding-left: 0px;
+    }
     .inputCheckbox{
         width: 100%;
         padding-left: 0px;
@@ -709,13 +726,21 @@ textarea {
 }
 
 @media (max-width: 500px) {
-.bottomSection{
-    width: 90%;
+    .mainHeader, .headerText{
+        width: 100%;
+        padding-left: 0px;
+    }
+    .bottomSection{
+        width: 90%;
 
-}
+    }
 }
 
 @media (max-width: 430px) {
+    .mainHeader, .headerText{
+        width: 100%;
+        padding-left: 0px;
+    }
     .inputCheckbox{
         width: 100%;
     }
@@ -740,6 +765,10 @@ textarea {
     }
 }
 @media (max-width: 370px) {
+    .mainHeader, .headerText{
+        width: 100%;
+        padding-left: 0px;
+    }
     .profileDetail .DetailText{
         width: 45%;
     }
@@ -748,6 +777,10 @@ textarea {
     }
 }
 @media only screen and (max-width: 320px) {
+    .mainHeader, .headerText{
+        width: 100%;
+        padding-left: 0px;
+    }
     .rightInfo h3 {
         margin: 10px;
     }
