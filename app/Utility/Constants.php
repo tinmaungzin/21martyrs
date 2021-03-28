@@ -20,4 +20,6 @@ class Constants
     const OCCUPATIONS_ENUM = ['student', 'cdm staff', 'government official', 'political party member', 'journalist', 'civilian', 'other', null];
 
     const GENDER_ENUM = ['male', 'female', 'other'];
+
+    const POSTS_STATUS = ['missing', 'released', 'detained', 'dead'];
 }
