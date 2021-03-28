@@ -11,7 +11,7 @@
                 <div class="mainHeader">
                     <h3>{{ __('forms.dead_header') }}</h3>
                 </div>
-                <div>
+                <div class="headerText">
                     <span>{{__('forms.dead_disclaimer')}}</span>
                 </div>
                 <div class="leftInfo">
