@@ -1,4 +1,4 @@
-<select id="occupation" name="occupation">
+<select data-value="{{old('occupation')}}" id="occupation" name="occupation">
     <option value="" selected disabled>{{ __('ui.choose_occupation') }}</option>
     <option value="Student">{{ __('ui.student') }}</option>
     <option value="CDM Staff">{{ __('ui.cdm_staff') }}</option>

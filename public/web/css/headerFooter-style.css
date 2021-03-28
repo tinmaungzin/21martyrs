@@ -580,8 +580,11 @@ footer .contact-info ul li a {
 }
 
 @media (max-width: 500px) {
-  .logo h2{
+  .logo h1{
     display: none;
   }
+  .banner .banner-caption h2 {
+    font-size: 35px !important;
 }
 
+}

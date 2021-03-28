@@ -123,7 +123,6 @@
                 <div class="col-md-12">
                     <div class="section-heading">
                         <h2>{{ __('ui.detained_civilians') }}</h2>
-                        {{--                        <span>Latest Arrested Civilians</span>--}}
                         @if(isset($query_string))
                             <h5>Applied Filters</h5>
                             @foreach($query_string as $string)

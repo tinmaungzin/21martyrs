@@ -34,4 +34,12 @@ class FileUtility
     {
         return pathinfo($file_path)['extension'];
     }
+
+    static function pathJoin(array $strs): string
+    {
+        $transformed_path = array_map(function ($str) {
+            return trim($str, "/");
+        }, $strs);
+        return implode('/', $transformed_path);
+    }
 }

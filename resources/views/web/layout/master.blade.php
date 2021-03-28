@@ -2,6 +2,7 @@
 <html>
 
 <head>
+    @inject("constants", "\App\Utility\Constants")
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
@@ -12,6 +13,16 @@
 
     <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    @if(App::environment('production'))
+        @include('components.seo')
+    @endif
+    <meta property="og:description" content="{{__('ui.seo_description')}}">
+    <meta property="og:image" content="{{asset('web/img/MM-Martyrs-Cover-withoutLogo.jpg')}}">
+    <meta property="og:title" content="21 Maryrs | Heroes of 21st Reveloution">
+    <meta property="og:type" content="website"/>
+    <meta property="og:url" content="{{url()->current()}}">
+    <meta property="og:locale" content="{{$constants::LOCALE_MAP[App::getLocale()]['code']}}">
+
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
 
@@ -55,7 +66,6 @@
 
 <body>
 <!-- Header -->
-@inject("constants", "\App\Utility\Constants")
 <div class="wrap">
     <header id="header">
         <div class="container-fluid" style="padding: 0">
@@ -244,8 +254,6 @@
         <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>
     </p>
 </div>
-</footer>
-<!-- End footer -->
 
 
 {{-- <script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.7.5/js/bootstrap-select.min.js"></script> --}}
@@ -270,6 +278,7 @@
 <script src="{{ asset('web/js/plugins.js') }} "></script>
 <script src="{{ asset('web/js/util.js') }}"></script>
 <script src="{{ asset('web/js/main.js') }} "></script>
+@yield('script')
 </body>
 
 </html>
