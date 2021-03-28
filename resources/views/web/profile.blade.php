@@ -4,8 +4,6 @@
 
 @section('content')
 
-   }
-
 
     <div class="profileBody">
         <div class="container">
@@ -20,7 +18,7 @@
                     </div>
                     <div class="profileInfo">
                         <h3>{{$post->name}}</h3>
-                        <span>{{App\Utility\StringUtility::isEmpty($post->age) ? __('ui.age_unknown'): "{$post->age} years old"}} , {{$post->gender}}</span>
+                        <span>{{App\Utility\StringUtility::isEmpty($post->age) ? __('home.unknown'): "{$post->age} years old"}} , {{$post->gender}}</span>
                         <div class="profileStatus">
                             <h4>Status</h4>
                             <p>{{$post->status}}</p>
@@ -33,10 +31,22 @@
             <div class="row">
                 <div class="bottomWarp">
                     <div class="bottomSection">
-                        <h3>{{$post->status == 'Detained' ? __('forms.detained_header'): __('forms.dead_header')}}</h3>
+                        @if($post->status == 'Detained')
+                            <h3>{{__('forms.detained_header')}}</h3>
+                        @endif
+                        @if($post->status == 'Dead')
+                            <h3>{{__('forms.dead_header')}}</h3>
+                        @endif
+                        @if($post->status == 'Missing')
+                            <h3>{{__('forms.missing_header')}}</h3>
+                        @endif
+                        @if($post->status == 'Released')
+                            <h3>{{__('forms.released_header')}}</h3>
+                        @endif
+
                         <div class="profileDetail">
                             <p class="DetailText">{{__('forms.state_label')}}:</p>
-                            <p>{{is_null($post->state) ? __('ui.state_unknown'):$post->state->name}}</p>
+                            <p>{{is_null($post->state) ? __('home.unknown'):$post->state->name}}</p>
                         </div>
                         <div class="profileDetail">
                             <p class="DetailText">{{__('forms.address_label')}}:</p>
@@ -53,9 +63,28 @@
                         </div>
 
                         <div class="profileDetail">
-                            <p class="DetailText">{{$post->status =='Detained' ? __('forms.detained_date'): __('forms.death_date')}}:</p>
-                            <p>{{is_null($post->detained_date)? __('ui.unknown'): ViewUtility::displayDate($post->detained_date)
+                            @if($post->status == 'Detained')
+                                <p class="DetailText">{{__('forms.detained_date')}}:</p>
+                            @endif
+                            @if($post->status == 'Dead')
+                                <p class="DetailText">{{__('forms.death_date')}}:</p>
+                            @endif
+                            @if($post->status == 'Missing')
+                                <p class="DetailText">{{__('forms.missed_date')}}:</p>
+                            @endif
+                            @if($post->status == 'Released')
+                                <p class="DetailText">{{__('forms.released_date')}}:</p>
+                            @endif
+
+                            @if(!($post->status == 'Released'))
+                                    <p>{{is_null($post->detained_date)? __('home.unknown'): ViewUtility::displayDate($post->detained_date)
                             }}</p>
+                            @endif
+                            @if($post->status == 'Released')
+                                    <p>{{is_null($post->released_date)? __('home.unknown'): ViewUtility::displayDate($post->released_date)
+                            }}</p>
+                            @endif
+
                         </div>
                         @if($post->status == 'Detained')
                             <div class="profileDetail">
@@ -63,12 +92,14 @@
                                     :</p>
                                 <p>{{$post->reason_of_arrest}}</p>
                             </div>
-                        @else
+                        @endif
+                        @if($post->status == 'Dead')
                             <div class="profileDetail">
-                                <p class="DetailText">{{__('forms.dead_reason')}}:</p>
+                                <p class="DetailText">{{__('forms.dead_reason_label')}}:</p>
                                 <p>{{$post->reason_of_dead}}</p>
                             </div>
                         @endif
+
                         @if(isset($post->prison))
                             <div class="profileDetail">
                                 <p class="DetailText">{{__('forms.prison')}}</p>

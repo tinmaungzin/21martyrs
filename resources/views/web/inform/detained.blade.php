@@ -37,7 +37,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('forms.age_label') }}<span>*</span></p>
+                            <p>{{ __('forms.age_label') }}</p>
                         </div>
                         <div class="inputValue">
                             <input
@@ -88,7 +88,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('forms.address_label') }}<span>*</span></p>
+                            <p>{{ __('forms.address_label') }}</p>
                         </div>
                         <div class="inputValue">
                             <input
@@ -208,7 +208,7 @@
                     </div>
 
                     <div class="inputBoxImg">
-                        <label for="myfile">{{__('forms.photo_label')}}<span>*</span></label>
+                        <label for="myfile">{{__('forms.photo_label')}}</label>
                         <input type="file" id="myFile" name="photo"/>
                         <span class="text-danger">{{ $errors->first('photo') }}</span>
                     </div>

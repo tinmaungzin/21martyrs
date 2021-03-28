@@ -33,36 +33,6 @@ class HomeController extends Controller
         return view('web.profile', compact('post'));
     }
 
-//    public function search(Request $request)
-//    {
-//        $query = Post::query();
-//        $filters = array();
-//
-//        if (isset($request->state_id)) {
-//            $query->where('state_id', $request->state_id);
-//            $filters += ['State and Region' => State::FindOrFail($request->state_id)->name];
-//        }
-//        if (isset($request->name)) {
-//            $query->where('name','like', '%' . $request->name . '%');
-//            $filters += ['Name' => $request->name];
-//
-//
-//        }
-//        if (isset($request->status)) {
-//            $query->where('status', $request->status);
-//            $filters += ['Status' => $request->status];
-//
-//        }
-//
-//
-//        $posts = $query->orderBy('id', 'desc')->paginate(12);
-//        $states = State::all();
-//        $stat = Stat::all()->last();
-//
-//
-//        return view('web.index', compact('posts', 'states', 'filters','stat'));
-//
-//    }
 
     public function articles()
     {
@@ -83,7 +53,9 @@ class HomeController extends Controller
     public function fetchNames(Request $request)
     {
         $name= $request->name;
-        $names = Post::where('name','like', '%' . $name . '%')->get();
+        $names = Post::whereRaw( 'LOWER(`name`) LIKE ?', [ $name ] )->get();
+
+//        $names = Post::where('name','ilike', '%' . $name . '%')->get();
         return response()->json(array('success' => true, 'names'=> $names) , 200);
     }
 }

@@ -27,14 +27,14 @@ class InformRequest extends FormRequest
 
         $rules = [
             'name' => 'required',
-            'age' => 'required',
+//            'age' => 'required',
             'gender' => 'required',
             'state_id' => 'required',
-            'address' => 'required',
+//            'address' => 'required',
             'occupation' => 'required',
 //            'organization_name' => 'required',
             'detained_date' => 'required',
-            'photo' => 'required',
+//            'photo' => 'required',
             'informant_name' => 'required',
             'informant_association_with_victim' => 'required',
             'informant_phone' => 'required',
