@@ -4,8 +4,7 @@
 
 @section('content')
 
-{{--    <form action="{{route('handle.new_pending_post',['pendingPost'=> $pendingPost->id])}}" method="post" enctype="multipart/form-data">>--}}
-{{--        @csrf--}}
+{{--    <form action="#" enctype="multipart/form-data">--}}
         <div class="inputContainer">
             <div class="inputDataBox">
                 <div class="mainHeader">
@@ -98,17 +97,17 @@
                         <div class="inputValue">
                             <input type="text" value="{{$pendingPost->occupation}}"
                                    name="occupation"/>
-                            {{--                            <select id="occupation" name="occupation">--}}
-                            {{--                                <option value="" selected disabled>{{ __('forms.choose_occupation') }}</option>--}}
+{{--                            <select id="occupation" name="occupation">--}}
+{{--                                <option value="" selected disabled>{{ __('forms.choose_occupation') }}</option>--}}
 
-                            {{--                                <option @if($pendingPost->occupation == 'Student') selected @endif value="Student">{{ __('forms.student') }}</option>--}}
-                            {{--                                <option @if($pendingPost->occupation == 'CDM Staff') selected @endif value="CDM Staff">{{ __('forms.cdm_staff') }}</option>--}}
-                            {{--                                <option @if($pendingPost->occupation == 'Government Official') selected @endif value="Government Official">{{ __('forms.government_offical') }}</option>--}}
-                            {{--                                <option @if($pendingPost->occupation == 'Political Party Member') selected @endif value="Political Party Member">{{ __('forms.political_party_member') }}</option>--}}
-                            {{--                                <option @if($pendingPost->occupation == 'Journalist') selected @endif value="Journalist">{{ __('forms.journalist') }}</option>--}}
-                            {{--                                <option @if($pendingPost->occupation == 'Civilian') selected @endif value="Civilian">{{ __('forms.civilian') }}</option>--}}
-                            {{--                                <option @if($pendingPost->occupation == 'Other') selected @endif value="Other">{{ __('forms.other') }}</option>--}}
-                            {{--                            </select>--}}
+{{--                                <option @if($pendingPost->occupation == 'Student') selected @endif value="Student">{{ __('forms.student') }}</option>--}}
+{{--                                <option @if($pendingPost->occupation == 'CDM Staff') selected @endif value="CDM Staff">{{ __('forms.cdm_staff') }}</option>--}}
+{{--                                <option @if($pendingPost->occupation == 'Government Official') selected @endif value="Government Official">{{ __('forms.government_offical') }}</option>--}}
+{{--                                <option @if($pendingPost->occupation == 'Political Party Member') selected @endif value="Political Party Member">{{ __('forms.political_party_member') }}</option>--}}
+{{--                                <option @if($pendingPost->occupation == 'Journalist') selected @endif value="Journalist">{{ __('forms.journalist') }}</option>--}}
+{{--                                <option @if($pendingPost->occupation == 'Civilian') selected @endif value="Civilian">{{ __('forms.civilian') }}</option>--}}
+{{--                                <option @if($pendingPost->occupation == 'Other') selected @endif value="Other">{{ __('forms.other') }}</option>--}}
+{{--                            </select>--}}
                             <span class="text-danger">{{$errors->first('occupation')}}</span>
 
                         </div>
@@ -157,12 +156,12 @@
                             <div class="inputValue">
                                 <input type="text" value="{{$pendingPost->reason_of_arrest}}"
                                        name="reason_of_arrest"/>
-                                {{--                                <select id="township" name="reason_of_arrest">--}}
-                                {{--                                    <option value="" selected disabled>{{ __('forms.choose_reason_of_arrest') }}</option>--}}
-                                {{--                                    <option @if($pendingPost->reason_of_arrest == 'Protest') selected @endif  value="Protest">{{ __('forms.protestor') }}</option>--}}
-                                {{--                                    <option @if($pendingPost->reason_of_arrest == 'Bystand') selected @endif value="Bystand">{{ __('forms.bystander') }}</option>--}}
-                                {{--                                    <option @if($pendingPost->reason_of_arrest == 'Other') selected @endif value="Other">{{ __('forms.others') }}</option>--}}
-                                {{--                                </select>--}}
+{{--                                <select id="township" name="reason_of_arrest">--}}
+{{--                                    <option value="" selected disabled>{{ __('forms.choose_reason_of_arrest') }}</option>--}}
+{{--                                    <option @if($pendingPost->reason_of_arrest == 'Protest') selected @endif  value="Protest">{{ __('forms.protestor') }}</option>--}}
+{{--                                    <option @if($pendingPost->reason_of_arrest == 'Bystand') selected @endif value="Bystand">{{ __('forms.bystander') }}</option>--}}
+{{--                                    <option @if($pendingPost->reason_of_arrest == 'Other') selected @endif value="Other">{{ __('forms.others') }}</option>--}}
+{{--                                </select>--}}
                                 <span class="text-danger">{{$errors->first('reason_of_arrest')}}</span>
 
                             </div>
@@ -177,12 +176,12 @@
                             <div class="inputValue">
                                 <input type="text" value="{{$pendingPost->reason_of_dead}}"
                                        name="reason_of_dead"/>
-                                {{--                                <select id="township" name="reason_of_dead">--}}
-                                {{--                                    <option value="" disabled>{{ __('forms.choose_reason_of_death') }}</option>--}}
-                                {{--                                    <option @if($pendingPost->reason_of_dead == 'Gunshot') selected @endif  value="Gunshot">{{ __('forms.gunshot') }}</option>--}}
-                                {{--                                    <option @if($pendingPost->reason_of_dead == 'Beaten') selected @endif value="Beaten">{{ __('forms.beaten') }}</option>--}}
-                                {{--                                    <option @if($pendingPost->reason_of_dead == 'Other') selected @endif value="Other">{{ __('forms.others') }}</option>--}}
-                                {{--                                </select>--}}
+{{--                                <select id="township" name="reason_of_dead">--}}
+{{--                                    <option value="" disabled>{{ __('forms.choose_reason_of_death') }}</option>--}}
+{{--                                    <option @if($pendingPost->reason_of_dead == 'Gunshot') selected @endif  value="Gunshot">{{ __('forms.gunshot') }}</option>--}}
+{{--                                    <option @if($pendingPost->reason_of_dead == 'Beaten') selected @endif value="Beaten">{{ __('forms.beaten') }}</option>--}}
+{{--                                    <option @if($pendingPost->reason_of_dead == 'Other') selected @endif value="Other">{{ __('forms.others') }}</option>--}}
+{{--                                </select>--}}
                                 <span class="text-danger">{{$errors->first('reason_of_dead')}}</span>
 
                             </div>
@@ -275,19 +274,20 @@
                 </div>
 
             </div>
+            <a style="padding-top: 30px; padding-bottom: 30px; padding-left: 50%;" target="_blank"  href="{{route('profile',['post'=> $pendingPost->post_id])}}">Click Here To See Original Post.</a>
 
             <div style="padding-top: 30px; padding-bottom: 30px; padding-left: 20%;" >
                 <h4 class="text-danger">Please note that once you confirm or delete this data, the informer's data will be permanently deleted.</h4>
             </div>
             <div class="" style="margin-left: 30%">
-                <form action="{{route('handle.new_pending_post',['pendingPost'=> $pendingPost->id])}}" method="post">
+                <form action="{{route('handle.suggested_edit_pending_post',['pendingPost'=> $pendingPost->id])}}" method="post">
                     @csrf
                     <div class="confirmButton">
                         <input type="text" value="true" name="is_confirm" hidden>
                         <button type="submit">Confirm</button>
                     </div>
                 </form>
-                <form action="{{route('handle.new_pending_post',['pendingPost'=> $pendingPost->id])}}" method="post">
+                <form action="{{route('handle.suggested_edit_pending_post',['pendingPost'=> $pendingPost->id])}}" method="post">
                     @csrf
                     <div class="deleteButton">
                         <input type="text" value="false" name="is_confirm" hidden>

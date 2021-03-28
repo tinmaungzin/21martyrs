@@ -62,7 +62,7 @@ class NewPendingPostsController extends Controller
 
     public function handle_new_pending_post(NewPendingPostConfirmRequest $request, PendingPost $pendingPost)
     {
-        if($request->is_confirm)
+        if($request->is_confirm == 'true')
         {
             $data = $request->except('is_confirm','photo');
             if($request->has('photo'))
@@ -85,7 +85,7 @@ class NewPendingPostsController extends Controller
 
             Session::flash('msg','Post published successfully!');
         }
-        else
+        if($request->is_confirm == 'false')
         {
             $pendingPost->informant_name = null;
             $pendingPost->informant_phone = null;

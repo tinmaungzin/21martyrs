@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\PendingPost;
 use App\Models\Post;
+use App\Models\State;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Session;
@@ -19,25 +20,20 @@ class SuggestedEditPendingPostsController extends Controller
 
     public function suggested_edit_pending_post_confirm_form(PendingPost $pendingPost)
     {
-        return view('admin.suggested_edit_pending_posts.confirm',compact('pendingPost'));
+        $states = State::all();
+        return view('admin.suggested_edit_pending_posts.edit',compact('pendingPost','states'));
 
     }
 
     public function getPostData($pendingPost)
     {
-        $data['name'] = $pendingPost->name;
-        $data['comment'] = $pendingPost->comment;
-        $data['age'] = $pendingPost->age;
-        $data['profile_url'] = $pendingPost->profile_url;
-        $data['gender'] = $pendingPost->gender;
-        $data['occupation'] = $pendingPost->occupation;
-        $data['organization_name'] = $pendingPost->organization_name;
-        $data['city_id'] = $pendingPost->city_id;
-        $data['state_id'] = $pendingPost->state_id;
-        $data['prison'] = $pendingPost->prison;
-        $data['detained_date'] = $pendingPost->detained_date;
-        $data['reason_of_dead'] = $pendingPost->reason_of_dead;
-        $data['reason_of_arrest'] = $pendingPost->reason_of_arrest;
+
+        foreach(['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name',
+                    'state_id', 'prison', 'detained_date' ,'reason_of_arrest','reason_of_dead'
+                ] as $field )
+        {
+            if($pendingPost[$field] != '') $data[$field] = $pendingPost[$field];
+        }
         $data['admin_id'] = auth()->guard('admin')->user()->id;
 
         return $data;
@@ -45,7 +41,9 @@ class SuggestedEditPendingPostsController extends Controller
 
     public function handle_suggested_edit_pending_post(Request $request, PendingPost $pendingPost)
     {
-        if($request->is_confirm)
+
+//        dd($request->is_confirm);
+        if($request->is_confirm == 'true')
         {
             $pendingPost->publishing_status = 'Confirmed';
             $pendingPost->save();
@@ -53,12 +51,10 @@ class SuggestedEditPendingPostsController extends Controller
             {
                 $post = Post::FindOrFail($pendingPost->post_id);
                 $post->update($this->getPostData($pendingPost));
-//                $post->image->url = $post->profile_url;
-//                $post->image->save();
             });
             Session::flash('msg','Post updated successfully!');
         }
-        else
+        if($request->is_confirm == 'false')
         {
             $pendingPost->publishing_status = 'Rejected';
             $pendingPost->save();

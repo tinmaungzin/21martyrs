@@ -34,32 +34,32 @@
 
         <div class="aboutPart" style="padding-top: 30px;">
             <div class="block">
-                <h2 class="header-style">{{__('ui.about_us')}}</h2>
-                <p class="body-style">{{ __('ui.about_us_paragraph') }}</p>
+                <h2 class="header-style">{{__('about_us.about_us')}}</h2>
+                <p class="body-style">{{ __('about_us.about_us_paragraph') }}</p>
             </div>
             <hr>
             <div class="block">
-                <h2 class="header-style">{{__('ui.how_information_collected')}}</h2>
-                <p class="body-style">{{ __('ui.how_information_collected_paragraph') }}</p>
-                <p class="sub-body-style">{{ __('ui.how_information_collected_paragraph_1') }}</p>
-                <p class="sub-body-style">{{ __('ui.how_information_collected_paragraph_2') }}</p>
-                <p class="sub-body-style">{{ __('ui.how_information_collected_paragraph_3') }}</p>
+                <h2 class="header-style">{{__('about_us.how_information_collected')}}</h2>
+                <p class="body-style">{{ __('about_us.how_information_collected_paragraph') }}</p>
+                <p class="sub-body-style">{{ __('about_us.how_information_collected_paragraph_1') }}</p>
+                <p class="sub-body-style">{{ __('about_us.how_information_collected_paragraph_2') }}</p>
+                <p class="sub-body-style">{{ __('about_us.how_information_collected_paragraph_3') }}</p>
             </div>
             <hr>
 
             <div class="block">
-                <h2 class="header-style">{{__('ui.how_information_used')}}</h2>
+                <h2 class="header-style">{{__('about_us.how_information_used')}}</h2>
                 <div style="padding-top: 50px;"></div>
-                <p class="sub-body-style">{{ __('ui.how_information_used_paragraph_1') }}</p>
-                <p class="sub-body-style">{{ __('ui.how_information_used_paragraph_2') }}</p>
-                <p class="sub-body-style">{{ __('ui.how_information_used_paragraph_3') }}</p>
-                <p class="sub-body-style">{{ __('ui.how_information_used_paragraph_4') }}</p>
+                <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_1') }}</p>
+                <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_2') }}</p>
+                <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_3') }}</p>
+                <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_4') }}</p>
             </div>
             <hr>
 
             <div class="block">
-                <h2 class="header-style">{{__('ui.note_from_admins')}}</h2>
-                <p class="body-style">{{ __('ui.note_from_admins_paragraph') }}</p>
+                <h2 class="header-style">{{__('about_us.note_from_admins')}}</h2>
+                <p class="body-style">{{ __('about_us.note_from_admins_paragraph') }}</p>
             </div>
 
 
