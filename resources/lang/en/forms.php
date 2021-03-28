@@ -8,6 +8,9 @@ return [
     'dead_header' => 'Deceased\'s Information',
     'dead_disclaimer' => 'Please inform new deceased within your network. Your contact information is for verification purpose only and will be kept confidential.',
 
+    'missing_header' => 'Missing Person\'s Information',
+    'missing_disclaimer' => 'Please inform new missing persons within your network. Your contact information is for verification purpose only and will be kept confidential.',
+
     'disclaimer_edit' => 'Please help us update the information here if anything needed.',
 
     'informer_header' => 'Informer\'s Information',

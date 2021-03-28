@@ -37,27 +37,6 @@ class InformController extends Controller
         return view('web.inform.edit_detained', compact('post', 'states', 'cities'));
     }
 
-    public function store_edit_detained(EditDetainedRequest $request, Post $post)
-    {
-        $data = $request->except('photo');
-        if ($request->has('photo')) {
-            $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-            $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
-        }
-        $data['status'] = 'detained';
-        $data['post_id'] = $post->id;
-        $data['publishing_status'] = 'None';
-        //TODO add user id
-        DB::transaction(function () use ($data) {
-            $pendingPost = PendingPost::create($data);
-            //            Image::create($this->getImageData($pendingPost));
-        });
-
-
-        Session::flash('msg', __('messages.inform_success'));
-        return redirect(route('index'));
-    }
-
     public function getImageData($pendingPost)
     {
         $image_data['url'] = $pendingPost->profile_url;
@@ -115,8 +94,6 @@ class InformController extends Controller
     }
 
 
-
-
     public function edit_dead_form(Post $post)
     {
         $states = State::all();
@@ -124,26 +101,20 @@ class InformController extends Controller
         return view('web.inform.edit_dead', compact('post', 'states', 'cities'));
     }
 
-
-    public function store_edit_dead(EditDeadRequest $request, Post $post)
+    public function missing_form()
     {
-        $data = $request->except('photo');
-        if ($request->has('photo')) {
-            $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-            $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
-        }
-
-        $data['status'] = 'dead';
-        $data['post_id'] = $post->id;
-        $data['publishing_status'] = 'None';
-        //TODO add user id
-        DB::transaction(function () use ($data) {
-            $pendingPost = PendingPost::create($data);
-            //            Image::create($this->getImageData($pendingPost));
-        });
-
-
-        Session::flash('msg', __('messages.inform_success'));
-        return redirect(route('index'));
+        $states = State::all();
+        $cities = City::all();
+        return view('web.inform.missing', compact('states', 'cities'));
     }
+
+
+    public function edit_missing_form(Post $post)
+    {
+        $states = State::all();
+        $cities = City::all();
+        return view('web.inform.edit_missing', compact('post', 'states', 'cities'));
+    }
+
+
 }

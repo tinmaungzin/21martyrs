@@ -102,6 +102,13 @@
                                     </button>
                                 </a>
                             @endif
+                            @if($post->status == 'Missing')
+                                <a href="{{route('form.edit.missing',['post'=> $post->id])}}">
+                                    <button>{{__('forms.suggest_edit')}}
+                                        <i class="fa fa-edit"></i>
+                                    </button>
+                                </a>
+                            @endif
                         </div>
                     </div>
 

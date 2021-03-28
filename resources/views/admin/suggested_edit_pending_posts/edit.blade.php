@@ -8,7 +8,7 @@
         <div class="inputContainer">
             <div class="inputDataBox">
                 <div class="mainHeader">
-                    @if($pendingPost->status == 'detained')
+                    @if($pendingPost->status == 'Detained')
                         <h3>{{ __('forms.detained_header') }}</h3>
 
                     @else
@@ -146,7 +146,7 @@
                         </div>
                     </div>
 
-                    @if($pendingPost->status == 'detained')
+                    @if($pendingPost->status == 'Detained')
 
                         <div class="inputBox">
                             <div class="inputHeader">
