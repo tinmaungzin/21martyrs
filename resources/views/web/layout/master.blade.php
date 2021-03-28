@@ -129,7 +129,7 @@
                 <div class="about-veno">
                     <div class="logo">
                         <img style="height: 100px;width: 100%;object-fit:contain;" src="
-                                {{ asset('web/img/MM-Martyrs-500px.png') }} " alt=" Venue Logo"/>
+                                {{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
                     </div>
                     <p>
                         {{ __('home.about_us_long') }}
@@ -151,12 +151,12 @@
                     <div class="footer-heading">
                         <h3>{{ __('master.contact_information') }}</h3>
                     </div>
-{{--                    <p>--}}
-{{--                        Praesent iaculis gravida elementum. Proin fermentum neque--}}
-{{--                        facilisis semper pharetra. Sed vestibulum vehicula tincidunt.--}}
-{{--                    </p>--}}
+                    {{--                    <p>--}}
+                    {{--                        Praesent iaculis gravida elementum. Proin fermentum neque--}}
+                    {{--                        facilisis semper pharetra. Sed vestibulum vehicula tincidunt.--}}
+                    {{--                    </p>--}}
                     <ul style="margin-top: 100px;">
-                        <li><span>Email:</span>admin@martyrs21mm.com</li>
+                        <li><span>Email:</span>support@martyrs21mm.com</li>
                         <li><span>Website:</span>Myanmar Martyrs 2021</li>
                     </ul>
                 </div>
@@ -204,7 +204,7 @@
 <div class="sub-footer">
     <p>
         Copyright &copy; 2021 Martyrs Myanmar
-{{--        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>--}}
+        {{--        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>--}}
     </p>
 </div>
 
