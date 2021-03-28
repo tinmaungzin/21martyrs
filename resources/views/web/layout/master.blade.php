@@ -80,20 +80,19 @@
             </a>
             <nav id="primary-nav" class="dropdown cf">
                 <ul class="dropdown menu">
-                    <li class="active"><a href="{{ route('index') }}">{{ __('ui.home') }}</a></li>
-                    <li class="active"><a href="{{ route('about') }}">{{ __('ui.about_us') }}</a></li>
-                    <li class="active"><a href="{{route('list.experiences')}}">{{ __('ui.experience_sharing') }}</a>
-                    </li>
+                    <li class="active"><a href="{{ route('index') }}">{{ __('master.home') }}</a></li>
+                    <li class="active"><a href="{{ route('about') }}">{{ __('master.about_us') }}</a></li>
+                    <li class="active"><a href="{{route('list.experiences')}}">{{ __('master.stories') }}</a></li>
                     <li>
-                        <a href="#">{{ __('ui.inform_us') }}</a>
+                        <a href="#">{{ __('master.inform') }}</a>
                         <ul class="sub-menu">
-                            <li><a href="{{ route('form.detained') }}">{{ __('ui.detained') }}</a>
+                            <li><a href="{{ route('form.detained') }}">{{ __('home.detained') }}</a>
                             </li>
-                            <li><a href="{{ route('form.dead') }}">{{ __('ui.dead') }}</a></li>
+                            <li><a href="{{ route('form.dead') }}">{{ __('home.dead') }}</a></li>
                         </ul>
                     </li>
                     <li>
-                        <a href="#">{{ __('ui.lang') }}:
+                        <a href="#">{{ __('master.lang') }}:
                             <img class="locale-icon"
                                  src="{{ asset($constants::LOCALE_MAP[App::getLocale()]['pic']) }}"/>
                         </a>
@@ -132,7 +131,7 @@
                                 {{ asset('web/img/MM-Martyrs-500px.png') }} " alt=" Venue Logo"/>
                     </div>
                     <p>
-                        {{ __('ui.about_us_long') }}
+                        {{ __('home.about_us_long') }}
                     </p>
                     <ul class="social-icons">
                         <li>
@@ -145,63 +144,17 @@
                     </ul>
                 </div>
             </div>
-            {{-- <div class="col-md-4">
-                <div class="useful-links">
-                    <div class="footer-heading">
-                        <h4>Useful Links</h4>
-                    </div>
-                    <div class="row">
-                        <div class="col-md-6">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>Help FAQs</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>Register</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>Login</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>My Profile</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>How It Works?</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>More About Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <ul>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>Our Clients</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>Partnerships</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>Blog Entries</a>
-                                </li>
-                                <li>
-                                    <a href="#"><i class="fa fa-stop"></i>Contact Us</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div> --}}
+
             <div class="col-md-3">
                 <div class="contact-info">
                     <div class="footer-heading">
-                        <h4>{{ __('ui.contact_information') }}</h4>
+                        <h3>{{ __('master.contact_information') }}</h3>
                     </div>
-                    <p>
-                        Praesent iaculis gravida elementum. Proin fermentum neque
-                        facilisis semper pharetra. Sed vestibulum vehicula tincidunt.
-                    </p>
-                    <ul>
+{{--                    <p>--}}
+{{--                        Praesent iaculis gravida elementum. Proin fermentum neque--}}
+{{--                        facilisis semper pharetra. Sed vestibulum vehicula tincidunt.--}}
+{{--                    </p>--}}
+                    <ul style="margin-top: 50px;">
                         <li><span>Phone:</span><a href="#">010-050-0550</a></li>
                         <li><span>Email:</span><a href="#">hi@company.co</a></li>
                         <li><span>Address:</span><a href="#">company.co</a></li>
@@ -211,7 +164,7 @@
             <div class="col-md-4">
                 <div class="ContactUs">
                     <div class="footer-heading">
-                        <h4 class="ContactTitle">Contact Form</h4>
+                        <h3 class="ContactTitle">{{__('master.message')}}</h3>
                     </div>
                     <div class="ContactBox">
                         <form action="{{route('feedback.store')}}" method="post">
@@ -250,8 +203,8 @@
 
 <div class="sub-footer">
     <p>
-        Copyright &copy; 2021 Martyrs Myanmar - Design:
-        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>
+        Copyright &copy; 2021 Martyrs Myanmar
+{{--        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>--}}
     </p>
 </div>
 

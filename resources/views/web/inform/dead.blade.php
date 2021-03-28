@@ -4,26 +4,26 @@
 
 @section('content')
 
-    <form action="{{ route('store.dead') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('store.inform') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="inputContainer">
             <div class="inputDataBox">
                 <div class="mainHeader">
-                    <h3>{{ __('ui.dead_person_info') }}</h3>
+                    <h3>{{ __('forms.dead_header') }}</h3>
                 </div>
                 <div>
-                    <span>{{__('ui.form_desc')}}</span>
+                    <span>{{__('forms.dead_disclaimer')}}</span>
                 </div>
                 <div class="leftInfo">
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.deceased_name') }} <span>*</span></p>
+                            <p>{{ __('forms.name_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('name')}}"
-                                type="text" placeholder="{{ __('ui.name_placeholder') }}" name="name"
+                                type="text" placeholder="{{ __('forms.name_placeholder') }}" name="name"
                                 autocomplete="off"/>
                             <span class="text-danger">{{ $errors->first('name') }}</span>
 
@@ -31,28 +31,28 @@
                     </div>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.deceased_age') }} <span>*</span></p>
+                            <p>{{ __('forms.age_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('age')}}"
                                 type="number" id="age" name="age" min="10" max="99"
-                                placeholder="{{ __('ui.age_placeholder') }}"/>
+                                placeholder="{{ __('forms.age_placeholder') }}"/>
                             <span class="text-danger">{{ $errors->first('age') }}</span>
 
                         </div>
                     </div>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.gender') }} <span>*</span></p>
+                            <p>{{ __('forms.gender_label') }} <span>*</span></p>
                         </div>
 
                         <div class="inputValue">
                             <select data-value="{{old('gender')}}" id="gender" name="gender">
-                                <option value="" selected disabled>{{ __('ui.choose_gender') }}</option>
-                                <option value="Male">{{ __('ui.male') }}</option>
-                                <option value="Female">{{ __('ui.female') }}</option>
-                                <option value="Other">{{ __('ui.other') }}</option>
+                                <option value="" selected disabled>{{ __('forms.gender_title') }}</option>
+                                <option value="Male">{{ __('forms.male') }}</option>
+                                <option value="Female">{{ __('forms.female') }}</option>
+                                <option value="Other">{{ __('forms.other') }}</option>
                             </select>
                             <span class="text-danger">{{ $errors->first('gender') }}</span>
 
@@ -62,11 +62,11 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.state') }} <span>*</span></p>
+                            <p>{{ __('forms.state_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <select data-value="{{old('state_id')}}" id="state" name="state_id" title="State">
-                                <option value="" disabled selected>{{ __('ui.choose_state') }}</option>
+                                <option value="" disabled selected>{{ __('forms.state_title') }}</option>
                                 @foreach ($states as $state)
                                     <option value="{{ $state->id }}">{{ $state->name }}</option>
                                 @endforeach
@@ -79,12 +79,12 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrestee_township') }} <span>*</span></p>
+                            <p>{{ __('forms.address_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('address')}}"
-                                type="text" placeholder="{{ __('ui.arrestee_township_placeholder') }}"
+                                type="text" placeholder="{{ __('forms.address_placeholder') }}"
                                 name="address"/>
                             <span class="text-danger">{{ $errors->first('address') }}</span>
 
@@ -94,7 +94,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.deceased_occupation') }} <span>*</span></p>
+                            <p>{{ __('forms.occupation_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             {{-- <select id="occupation" name="occupation">
@@ -107,7 +107,11 @@
                                 <option value="Civilian">Civilian</option>
                                 <option value="Other">Other</option>
                             </select> --}}
-                            @include('components.form.occupation_selector')
+                            <input
+                                value="{{old('occupation')}}"
+                                type="text" placeholder="{{ __('forms.occupation_placeholder') }}"
+                                name="occupation"/>
+{{--                            @include('components.form.occupation_selector')--}}
                             <span class="text-danger">{{ $errors->first('occupation') }}</span>
 
                         </div>
@@ -118,12 +122,12 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.deceased_association') }} <span>*</span></p>
+                            <p>{{ __('forms.association_label') }}</p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('organization_name')}}"
-                                type="text" placeholder="{{ __('ui.association_placeholder') }}"
+                                type="text" placeholder="{{ __('forms.association_placeholder') }}"
                                 name="organization_name"/>
                             <span class="text-danger">{{ $errors->first('organization_name') }}</span>
 
@@ -132,7 +136,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.death_date') }} <span>*</span></p>
+                            <p>{{ __('forms.death_date') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
@@ -145,17 +149,21 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.reason_of_death') }} <span>*</span></p>
+                            <p>{{ __('forms.dead_reason_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
-                            <select id="reason_of_dead"
-                                    data-value="{{old('reason_of_dead')}}"
-                                    name="reason_of_dead">
-                                <option value="" selected disabled>{{ __('ui.choose_reason_of_death') }}</option>
-                                <option value="Gunshot">{{ __('ui.gunshot') }}</option>
-                                <option value="Beaten">{{ __('ui.beaten') }}</option>
-                                <option value="Other">{{ __('ui.others') }}</option>
-                            </select>
+                            <input
+                                value="{{old('reason_of_dead')}}"
+                                type="text" placeholder="{{ __('forms.dead_reason_placeholder') }}"
+                                name="reason_of_dead"/>
+{{--                            <select id="reason_of_dead"--}}
+{{--                                    data-value="{{old('reason_of_dead')}}"--}}
+{{--                                    name="reason_of_dead">--}}
+{{--                                <option value="" selected disabled>{{ __('ui.choose_reason_of_death') }}</option>--}}
+{{--                                <option value="Gunshot">{{ __('ui.gunshot') }}</option>--}}
+{{--                                <option value="Beaten">{{ __('ui.beaten') }}</option>--}}
+{{--                                <option value="Other">{{ __('ui.others') }}</option>--}}
+{{--                            </select>--}}
                             <span class="text-danger">{{ $errors->first('reason_of_dead') }}</span>
 
                         </div>
@@ -178,10 +186,10 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.comment') }} <span>*</span></p>
+                            <p>{{ __('forms.comment_label') }} </p>
                         </div>
                         <div class="inputValue">
-                            <textarea type="text" rows="6" placeholder="{{ __('ui.deceased_comment_placeholder') }}"
+                            <textarea type="text" rows="6" placeholder="{{ __('forms.comment_placeholder') }}"
                                 name="comment" autocomplete="off"></textarea>
                             <span class="text-danger">{{ $errors->first('comment') }}</span>
 
@@ -189,7 +197,7 @@
                     </div>
 
                     <div class="inputBoxImg">
-                        <label for="myfile">Photo  <span>*</span></label>
+                        <label for="myfile">{{__('forms.photo_label')}}  <span>*</span></label>
                         <input
                             value="{{old('photo')}}"
                             type="file" id="myFile" name="photo"/>
@@ -197,15 +205,15 @@
                     </div>
 
 
-                    <h3>{{ __('ui.informer_info') }}</h3>
+                    <h3>{{ __('forms.informer_header') }}</h3>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.informer_name') }} <span>*</span></p>
+                            <p>{{ __('forms.informer_name_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('informant_name')}}"
-                                type="text" placeholder="{{ __('ui.name_placeholder') }}" name="informant_name"
+                                type="text" placeholder="{{ __('forms.name_placeholder') }}" name="informant_name"
                                 autocomplete="off"/>
                             <span class="text-danger">{{ $errors->first('informant_name') }}</span>
 
@@ -214,17 +222,17 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.relationship_with_arrestee') }} <span>*</span></p>
+                            <p>{{ __('forms.relationship_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <select
                                 data-value="{{old('informant_association_with_victim')}}"
                                 id="informant_assoication" name="informant_association_with_victim">
-                                <option value="" selected disabled>{{ __('ui.relationship_placeholder') }}</option>
-                                <option value="Family">Family</option>
-                                <option value="Friend">Friend</option>
-                                <option value="Social Media">Social Media</option>
-                                <option value="Witness">Witness</option>
+                                <option value="" selected disabled>{{ __('forms.choose_relationship') }}</option>
+                                <option value="Family">{{__('forms.family')}}</option>
+                                <option value="Friend">{{__('forms.friend')}}</option>
+                                <option value="Social Media">{{__('forms.social')}}</option>
+                                <option value="Witness">{{__('forms.witness')}}</option>
                             </select>
 
                             <span class="text-danger">{{ $errors->first('informant_association_with_victim') }}</span>
@@ -234,12 +242,12 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.informer_phone') }} <span>*</span></p>
+                            <p>{{ __('forms.informer_phone_label') }} <span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('informant_phone')}}"
-                                type="number" id="age" placeholder="{{ __('ui.phone_placholder') }}"
+                                type="number" id="age" placeholder="{{ __('forms.informer_phone_placeholder') }}"
                                 name="informant_phone"/>
                             <span class="text-danger">{{ $errors->first('informant_phone') }}</span>
 
@@ -253,7 +261,9 @@
             </div>
 
             <div class="submitButton">
-                <button id="submit" type="submit">{{ __('ui.submit') }}</button>
+                <input type="text" value="dead" name="status" hidden>
+
+                <button id="submit" type="submit">{{ __('forms.submit') }}</button>
             </div>
         </div>
     </form>

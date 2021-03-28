@@ -6,6 +6,8 @@ use App\Http\Requests\DeadRequest;
 use App\Http\Requests\DetainedRequest;
 use App\Http\Requests\EditDeadRequest;
 use App\Http\Requests\EditDetainedRequest;
+use App\Http\Requests\InformEditRequest;
+use App\Http\Requests\InformRequest;
 use App\Models\City;
 use App\Models\Image;
 use App\Models\PendingPost;
@@ -65,31 +67,44 @@ class InformController extends Controller
         return $image_data;
     }
 
-    public function store_detained(DetainedRequest $request)
+
+    public function store(InformRequest $request)
     {
         $data = $request->except('photo');
         $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
         $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
-        $data['status'] = 'detained';
         $data['gender'] = strtolower($data['gender']);
         $data['publishing_status'] = 'None';
         //TODO add user id
 
         DB::transaction(function () use ($data) {
             $pendingPost = PendingPost::create($data);
-            //            Image::create($this->getImageData($pendingPost));
         });
 
 
         Session::flash('msg', __('messages.inform_success'));
         return redirect(route('index'));
+
     }
 
-    public function getCities(Request $request)
+
+    public function store_edit(InformEditRequest $request, Post $post)
     {
-        $state_id = $request->state_id;
-        $cities = City::where('state_id', $state_id)->get();
-        return response()->json(array('success' => true, 'cities' => $cities), 200);
+        $data = $request->except('photo');
+        if ($request->has('photo')) {
+            $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+            $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+        }
+        $data['post_id'] = $post->id;
+        $data['publishing_status'] = 'None';
+        //TODO add user id
+        DB::transaction(function () use ($data) {
+            $pendingPost = PendingPost::create($data);
+        });
+
+
+        Session::flash('msg', __('messages.inform_success'));
+        return redirect(route('index'));
     }
 
     public function dead_form()
@@ -100,24 +115,7 @@ class InformController extends Controller
     }
 
 
-    public function store_dead(DeadRequest $request)
-    {
-        $data = $request->except('photo');
-        $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-        $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
-        $data['status'] = 'dead';
-        $data['publishing_status'] = 'None';
-        //TODO add user id
 
-        DB::transaction(function () use ($data) {
-            $pendingPost = PendingPost::create($data);
-            //            Image::create($this->getImageData($pendingPost));
-        });
-
-
-        Session::flash('msg', __('messages.inform_success'));
-        return redirect(route('index'));
-    }
 
     public function edit_dead_form(Post $post)
     {

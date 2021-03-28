@@ -4,15 +4,15 @@
 
 @section('content')
 
-    <form action="{{ route('store.detained') }}" method="post" enctype="multipart/form-data">
+    <form action="{{ route('store.inform') }}" method="post" enctype="multipart/form-data">
         @csrf
         <div class="inputContainer">
             <div class="inputDataBox">
                 <div class="mainHeader">
-                    <h3>{{ __('ui.arrestee_info') }}</h3>
+                    <h3>{{ __('forms.detained_header') }}</h3>
                 </div>
                 <div >
-                    <span>{{__('ui.form_desc')}}</span>
+                    <span>{{__('forms.detained_disclaimer')}}</span>
                 </div>
 
 
@@ -21,10 +21,10 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.name') }}<span>*</span></p>
+                            <p>{{ __('forms.name_label') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
-                            <input type="text" id="name" placeholder="{{ __('ui.name_placeholder') }}" name="name"
+                            <input type="text" id="name" placeholder="{{ __('forms.name_placeholder') }}" name="name"
                                    autocomplete="off"
                                    value="{{old('name')}}"
                             />
@@ -37,28 +37,28 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.age') }}<span>*</span></p>
+                            <p>{{ __('forms.age_label') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('age')}}"
                                 type="number" id="age" name="age" min="10" max="99"
-                                placeholder="{{ __('ui.age_placeholder') }}"/>
+                                placeholder="{{ __('forms.age_placeholder') }}"/>
                             <span class="text-danger">{{ $errors->first('age') }}</span>
 
                         </div>
                     </div>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.gender') }}<span>*</span></p>
+                            <p>{{ __('forms.gender_label') }}<span>*</span></p>
                         </div>
 
                         <div class="inputValue">
                             <select id="gender" data-value="{{old('gender')}}" name="gender">
-                                <option value="" selected disabled>{{ __('ui.choose_gender') }}</option>
-                                <option value="Male">{{ __('ui.male') }}</option>
-                                <option value="Female">{{ __('ui.female') }}</option>
-                                <option value="Other">{{ __('ui.other') }}</option>
+                                <option value="" selected disabled>{{ __('forms.gender_title') }}</option>
+                                <option value="Male">{{ __('forms.male') }}</option>
+                                <option value="Female">{{ __('forms.female') }}</option>
+                                <option value="Other">{{ __('forms.other') }}</option>
 
                             </select>
                             <span class="text-danger">{{ $errors->first('gender') }}</span>
@@ -69,13 +69,13 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arresstee_state') }}<span>*</span></p>
+                            <p>{{ __('forms.state_label') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <select id="state"
                                     data-value="{{old('state_id')}}"
                                     name="state_id" title="State">
-                                <option value="" disabled selected>{{ __('ui.choose_state') }}</option>
+                                <option value="" disabled selected>{{ __('forms.state_title') }}</option>
                                 @foreach ($states as $state)
                                     <option value="{{ $state->id }}">{{ $state->name }}</option>
                                 @endforeach
@@ -88,12 +88,12 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrestee_township') }}</p>
+                            <p>{{ __('forms.address_label') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('address')}}"
-                                type="text" placeholder="{{ __('ui.arrestee_township_placeholder') }}"
+                                type="text" placeholder="{{ __('forms.address_placeholder') }}"
                                 name="address"/>
                             <span class="form-text text-danger">{{ $errors->first('address') }}</span>
                         </div>
@@ -102,22 +102,26 @@
                     <div class="inputBox">
                         <div class="inputHeader">
                             <p>
-                                {{ __('ui.arrestee_occupation') }}<span>*</span>
+                                {{ __('forms.occupation_label') }}<span>*</span>
                             </p>
                         </div>
                         <div class="inputValue">
-                            <select
-                                data-value="{{old('occupation')}}"
-                                id="occupation" name="occupation">
-                                <option value="" selected disabled>{{ __('ui.choose_occupation') }}</option>
-                                <option value="Student">{{ __('ui.student') }}</option>
-                                <option value="CDM Staff">{{ __('ui.cdm_staff') }}</option>
-                                <option value="Government Official">{{ __('ui.government_offical') }}</option>
-                                <option value="Political Party Member">{{ __('ui.political_party_member') }}</option>
-                                <option value="Journalist">{{ __('ui.journalist') }}</option>
-                                <option value="Civilian">{{ __('ui.civilian') }}</option>
-                                <option value="Other">{{ __('ui.other') }}</option>
-                            </select>
+                            <input
+                                value="{{old('occupation')}}"
+                                type="text" placeholder="{{ __('forms.occupation_placeholder') }}"
+                                name="occupation"/>
+{{--                            <select--}}
+{{--                                data-value="{{old('occupation')}}"--}}
+{{--                                id="occupation" name="occupation">--}}
+{{--                                <option value="" selected disabled>{{ __('ui.choose_occupation') }}</option>--}}
+{{--                                <option value="Student">{{ __('ui.student') }}</option>--}}
+{{--                                <option value="CDM Staff">{{ __('ui.cdm_staff') }}</option>--}}
+{{--                                <option value="Government Official">{{ __('ui.government_offical') }}</option>--}}
+{{--                                <option value="Political Party Member">{{ __('ui.political_party_member') }}</option>--}}
+{{--                                <option value="Journalist">{{ __('ui.journalist') }}</option>--}}
+{{--                                <option value="Civilian">{{ __('ui.civilian') }}</option>--}}
+{{--                                <option value="Other">{{ __('ui.other') }}</option>--}}
+{{--                            </select>--}}
                             {{--                            <span class="form-ttext-danger"></span>--}}
                             <x-form.form-text message="{{ $errors->first('occupation') }}"
                                               type="danger"></x-form.form-text>
@@ -130,12 +134,12 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.association') }}<span>*</span></p>
+                            <p>{{ __('forms.association_label') }}</p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('organization_name')}}"
-                                type="text" placeholder="{{ __('ui.arresstee_assoication_placholder') }}"
+                                type="text" placeholder="{{ __('forms.association_placeholder') }}"
                                 name="organization_name"/>
                             <span class="text-danger">{{ $errors->first('organization_name') }}</span>
 
@@ -144,7 +148,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrested_date') }}<span>*</span></p>
+                            <p>{{ __('forms.detained_date') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input type="date" id="arrested_date" name="detained_date"/>
@@ -155,16 +159,20 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrested_reason') }}<span>*</span></p>
+                            <p>{{ __('forms.detained_reason_label') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
-                            <select data-value="{{old('reason_of_arrest')}}" id="reason_of_arrest"
-                                    name="reason_of_arrest">
-                                <option value="" selected disabled>{{ __('ui.choose_reason_of_arrest') }}</option>
-                                <option value="Protest">{{ __('ui.protestor') }}</option>
-                                <option value="Bystand">{{ __('ui.bystander') }}</option>
-                                <option value="Other">{{ __('ui.others') }}</option>
-                            </select>
+                            <input
+                                value="{{old('reason_of_arrest')}}"
+                                type="text" placeholder="{{ __('forms.detained_reason_placeholder') }}"
+                                name="reason_of_arrest"/>
+{{--                            <select data-value="{{old('reason_of_arrest')}}" id="reason_of_arrest"--}}
+{{--                                    name="reason_of_arrest">--}}
+{{--                                <option value="" selected disabled>{{ __('ui.choose_reason_of_arrest') }}</option>--}}
+{{--                                <option value="Protest">{{ __('ui.protestor') }}</option>--}}
+{{--                                <option value="Bystand">{{ __('ui.bystander') }}</option>--}}
+{{--                                <option value="Other">{{ __('ui.others') }}</option>--}}
+{{--                            </select>--}}
                             <span class="text-danger">{{ $errors->first('reason_of_arrest') }}</span>
 
                         </div>
@@ -177,10 +185,10 @@
                 <div class="rightInfo">
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.prison') }}<span>*</span></p>
+                            <p>{{ __('forms.prison_label') }}</p>
                         </div>
                         <div class="inputValue">
-                            <input type="text" placeholder="{{ __('ui.prison_placeholder') }}" name="prison"
+                            <input type="text" placeholder="{{ __('forms.prison_placeholder') }}" name="prison"
                                    autocomplete="off"/>
                             <span class="text-danger">{{ $errors->first('prison') }}</span>
 
@@ -189,10 +197,10 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.arrestee_comment') }}<span>*</span></p>
+                            <p>{{ __('forms.comment_label') }}</p>
                         </div>
                         <div class="inputValue">
-                            <textarea type="text" rows="6" placeholder="{{ __('ui.arrestee_comment_placeholder') }}"
+                            <textarea type="text" rows="6" placeholder="{{ __('forms.comment_placeholder') }}"
                                       name="comment" autocomplete="off"></textarea>
                             <span class="text-danger">{{ $errors->first('comment') }}</span>
 
@@ -200,21 +208,21 @@
                     </div>
 
                     <div class="inputBoxImg">
-                        <label for="myfile">Photo<span>*</span></label>
+                        <label for="myfile">{{__('forms.photo_label')}}<span>*</span></label>
                         <input type="file" id="myFile" name="photo"/>
                         <span class="text-danger">{{ $errors->first('photo') }}</span>
                     </div>
 
 
-                    <h3>{{ __('ui.informer_info') }}</h3>
+                    <h3>{{ __('forms.informer_header') }}</h3>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.informer_name') }}<span>*</span></p>
+                            <p>{{ __('forms.informer_name_label') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <input
                                 value="{{old('informant_name')}}"
-                                type="text" placeholder="{{ __('ui.name_placeholder') }}" name="informant_name"
+                                type="text" placeholder="{{ __('forms.name_placeholder') }}" name="informant_name"
                                 autocomplete="off"/>
                             <span class="text-danger">{{ $errors->first('informant_name') }}</span>
 
@@ -223,17 +231,17 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.relationship_with_arrestee') }}<span>*</span></p>
+                            <p>{{ __('forms.relationship_label') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
                             <select
                                 data-value="{{old('informant_association_with_victim')}}"
                                 id="inform_association" name="informant_association_with_victim">
-                                <option value="" selected disabled>{{ __('ui.relationship_placeholder') }}</option>
-                                <option value="Family">Family</option>
-                                <option value="Friend">Friend</option>
-                                <option value="Social Media">Social Media</option>
-                                <option value="Witness">Witness</option>
+                                <option value="" selected disabled>{{ __('forms.choose_relationship') }}</option>
+                                <option value="Family">{{__('forms.family')}}</option>
+                                <option value="Friend">{{__('forms.friend')}}</option>
+                                <option value="Social Media">{{__('forms.social')}}</option>
+                                <option value="Witness">{{__('forms.witness')}}</option>
                             </select>
 
                             <span class="text-danger">{{ $errors->first('informant_association_with_victim') }}</span>
@@ -243,10 +251,10 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('ui.informer_phone') }}<span>*</span></p>
+                            <p>{{ __('forms.informer_phone_label') }}<span>*</span></p>
                         </div>
                         <div class="inputValue">
-                            <input type="number" id="age" placeholder="{{ __('ui.phone_placholder') }}"
+                            <input type="number" id="age" placeholder="{{ __('forms.informer_phone_placeholder') }}"
                                    value="{{old('informant_phone')}}"
                                    name="informant_phone"/>
                             <span class="text-danger">{{ $errors->first('informant_phone') }}</span>
@@ -261,7 +269,8 @@
 
             </div>
             <div class="submitButton">
-                <button id="submit" type="submit">{{ __('ui.submit') }}</button>
+                <input type="text" value="detained" name="status" hidden>
+                <button id="submit" type="submit">{{ __('forms.submit') }}</button>
             </div>
         </div>
     </form>

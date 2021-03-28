@@ -15,12 +15,12 @@
                     <div class="col-md-5 col-md-offset-1">
                         <div class="banner-caption">
                             <div class="line-dec"></div>
-                            <h2>{{ __('ui.about_us') }}</h2>
-                            <span style="font-size: 18px">{{ __('ui.about_us_long') }}</span>
+                            <h2>{{ __('home.about_us') }}</h2>
+                            <span style="font-size: 18px">{{ __('home.about_us_long') }}</span>
                             <div class="blue-button">
                                 <a class="scrollTo" data-scrollTo="popular"
 
-                                   href="{{route('about')}}">{{ __('ui.discover_more') }}</a>
+                                   href="{{route('about')}}">{{ __('home.discover_more') }}</a>
                             </div>
                         </div>
                     </div>
@@ -28,7 +28,7 @@
 
                         <div class="staticBox">
                             <div class="TopBox">
-                                <h4 class="titleText">{{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
+                                <h4 class="titleText">{{ __('home.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
                                 <div class="TopText">
                                     <h1 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h1>
                                     <h4>Total death</h4>
@@ -68,7 +68,7 @@
 
                                 <div class="col-md-3 first-item">
                                     <fieldset>
-                                        <input type="text" id="name_search" name="name" autocomplete="off" placeholder="{{__('ui.type_name')}}">
+                                        <input type="text" id="name_search" name="name" autocomplete="off" placeholder="{{__('home.filter_name')}}">
                                     </fieldset>
                                     <div id="name_suggestion" style="display: block; cursor: pointer;"></div>
 
@@ -77,7 +77,7 @@
                                     <fieldset>
                                         <select name="state">
                                             <option value="" selected
-                                                    disabled>{{ __('ui.select_state_and_region') }}
+                                                    disabled>{{ __('home.filter_state') }}
                                             </option>
                                             @foreach ($states as $state)
                                                 <option value="{{ $state->id }}">{{ $state->name }}</option>
@@ -90,10 +90,11 @@
                                 <div class="col-md-3 third-item">
                                     <fieldset>
                                         <select name="status">
-                                            <option value="" selected disabled>{{ __('ui.select_status') }}</option>
-                                            <option value="detained">{{ __('ui.detained') }}</option>
-                                            <option value="dead">{{ __('ui.dead') }}</option>
-                                            <option value="released">{{ __('ui.released') }}</option>
+                                            <option value="" selected disabled>{{ __('home.filter_status') }}</option>
+                                            <option value="detained">{{ __('home.detained') }}</option>
+                                            <option value="dead">{{ __('home.dead') }}</option>
+                                            <option value="released">{{ __('home.released') }}</option>
+                                            <option value="missing">{{ __('home.missing') }}</option>
 
                                         </select>
                                     </fieldset>
@@ -103,7 +104,7 @@
                                 <div class="col-md-3">
                                     <fieldset>
                                         <button onclick="location = this.value;" type="submit" id="form-submit" class="btn">
-                                            Search Now
+                                            {{__('home.search')}}
                                         </button>
                                     </fieldset>
                                 </div>
@@ -122,8 +123,8 @@
             <div class="row">
                 <div class="col-md-12">
                     <div class="section-heading">
-                        <h2>{{ __('ui.detained_civilians') }}</h2>
-                        @if(isset($query_string))
+                        <h2>{{ __('home.deaths_and_detainees') }}</h2>
+                        @if($query_string != [])
                             <h5>Applied Filters</h5>
                             @foreach($query_string as $string)
                                 <h6>{{ ucfirst(array_search($string, $query_string)) }} : {{ ucfirst($string) }} </h6>
@@ -132,10 +133,10 @@
                     </div>
                 </div>
             </div>
-            @if(isset($filters))
+            @if($query_string != [])
                 <p class="browse">
                     <a href="{{route('index')}}">
-                        {{ __('ui.browse_all') }}
+                        {{ __('home.browse_all') }}
                     </a>
                 </p>
             @endif
@@ -164,10 +165,10 @@
                                     <div class="down-content">
                                         <h4>{{ Str::limit($post->name,18,'...') }}</h4>
                                         <p>
-                                            {{ App\Utility\StringUtility::isEmpty(strval($post->age)) ? __('ui.unknown'): $post->age }}
+                                            {{ App\Utility\StringUtility::isEmpty(strval($post->age)) ? __('home.unknown'): $post->age }} years old
                                         </p>
                                         <p>
-                                            {{is_null($post->state) ? __('ui.state_unknown'): $post->state->name }}
+                                            {{is_null($post->state) ? __('home.unknown'): $post->state->name }}
                                         </p>
                                     </div>
                                 </div>
@@ -207,7 +208,6 @@
         {
             if($('#name_search').val() === '')
             {
-                console.log('ik');
                 $('#name_suggestion').empty();
 
             }

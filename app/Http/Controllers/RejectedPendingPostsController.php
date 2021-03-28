@@ -9,7 +9,7 @@ class RejectedPendingPostsController extends Controller
 {
     public function rejected_pending_posts()
     {
-        $posts = PendingPost::where('post_id',null)->where('publishing_status','Rejected')
+        $posts = PendingPost::where('publishing_status','Rejected')
             ->orderBy('id','desc')->paginate(10);
         return view('admin.rejected_pending_posts.index',compact('posts'));
     }
