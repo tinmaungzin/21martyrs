@@ -13,7 +13,7 @@
 
 
                 </div>
-                <div>
+                <div class="headerText">
                     <span>{{__('forms.disclaimer_edit')}}</span>
                 </div>
                 <div class="leftInfo">
