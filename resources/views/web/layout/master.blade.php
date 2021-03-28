@@ -89,6 +89,7 @@
                             <li><a href="{{ route('form.detained') }}">{{ __('home.detained') }}</a>
                             </li>
                             <li><a href="{{ route('form.dead') }}">{{ __('home.dead') }}</a></li>
+                            <li><a href="{{ route('form.missing') }}">{{ __('home.missing') }}</a></li>
                         </ul>
                     </li>
                     <li>

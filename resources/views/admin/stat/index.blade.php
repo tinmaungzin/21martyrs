@@ -33,8 +33,8 @@
                         <th class="table-header">
                             No.
                         </th>
-                        <th class="table-header"> Today Death</th>
-                        <th class="table-header">Today Detained</th>
+                        <th class="table-header"> Total Death</th>
+                        <th class="table-header">Abducted</th>
                         <th class="table-header">Date</th>
                         <th class="table-header">Actions</th>
                     </tr>
@@ -51,12 +51,12 @@
                             </th>
                             <td class="padding-table-row">
                                 <div class="text-td text-capitalize">
-                                    {{$stat->today_dead}}
+                                    {{$stat->total_death}}
                                 </div>
                             </td>
                             <td class="padding-table-row">
                                 <div class="text-td text-capitalize">
-                                    {{$stat->today_detained}}
+                                    {{$stat->abducted}}
                                 </div>
                             </td>
                             <td class="padding-table-row">

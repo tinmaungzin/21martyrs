@@ -45,6 +45,8 @@ Route::prefix('admin')->group(function () {
 
 
         Route::get('published_posts', [PublishedPostsController::class, 'published_posts'])->name('list.published_posts');
+        Route::get('published_posts/{post}', [PublishedPostsController::class, 'edit'])->name('edit.published_posts');
+        Route::post('published_posts/{post}', [PublishedPostsController::class, 'update'])->name('update.published_posts');
 
         Route::get('rejected_pending_posts', [RejectedPendingPostsController::class, 'rejected_pending_posts'])->name('list.rejected_pending_posts');
         Route::get('rejected_pending_posts/{pendingPost}/confirm', [RejectedPendingPostsController::class, 'rejected_pending_post_confirm_form'])->name('form.confirm.rejected_pending_post');
@@ -77,6 +79,10 @@ Route::get('inform/detained', [InformController::class, 'detained_form'])->name(
 Route::get('inform/edit_detained/{post}', [InformController::class, 'edit_detained_form'])->name('form.edit.detained');
 //Route::post('inform/edit_detained/{post}', [InformController::class, 'store_edit_detained'])->name('store.edit.detained');
 
+Route::get('inform/missing', [InformController::class, 'missing_form'])->name('form.missing');
+//Route::post('inform/detained', [InformController::class, 'store_detained'])->name('store.detained');
+Route::get('inform/edit_missing/{post}', [InformController::class, 'edit_missing_form'])->name('form.edit.missing');
+//Route::post('inform/edit_detained/{post}', [InformController::class, 'store_edit_detained'])->name('store.edit.detained');
 
 Route::get('inform/dead', [InformController::class, 'dead_form'])->name('form.dead');
 //Route::post('inform/dead', [InformController::class, 'store_dead'])->name('store.dead');

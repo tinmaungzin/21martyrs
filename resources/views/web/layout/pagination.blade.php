@@ -81,7 +81,10 @@ $link_limit = 7; // maximum number of links (a little bit inaccurate, but will b
     border-radius: 4px;
     padding-bottom: 30px !important;">
         <li class="{{ ($paginator->currentPage() == 1) ? ' disabled' : '' }}">
-            <a href="{{ $paginator->url(1) }}"> << </a>
+            <a href="{{ $paginator->url(1) }}"> <<< </a>
+        </li>
+        <li class="{{ ($paginator->currentPage() == 1) ? ' disabled' : '' }}">
+            <a href="{{ $paginator->url($paginator->currentPage()-1) }}"> < </a>
         </li>
         @for ($i = 1; $i <= $paginator->lastPage(); $i++)
             <?php
@@ -102,7 +105,11 @@ $link_limit = 7; // maximum number of links (a little bit inaccurate, but will b
             @endif
         @endfor
         <li class="{{ ($paginator->currentPage() == $paginator->lastPage()) ? ' disabled' : '' }}">
-            <a href="{{ $paginator->url($paginator->currentPage()+1) }}"> >> </a>
+            <a href="{{ $paginator->url($paginator->currentPage()+1) }}"> > </a>
+        </li>
+
+        <li class="{{ ($paginator->currentPage() == $paginator->lastPage()) ? ' disabled' : '' }}">
+            <a href="{{ $paginator->url($paginator->lastPage()) }}"> >>> </a>
         </li>
     </ul>
 @endif
