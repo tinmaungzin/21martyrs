@@ -130,5 +130,6 @@ return [
     'type_name' => 'Type Name',
     'unknown' => 'Unknown',
     'witness' => 'Witness',
+    'released' => 'Released'
 
 ];

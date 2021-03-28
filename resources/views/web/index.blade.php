@@ -26,40 +26,6 @@
                     </div>
                     <div class="col-md-4 col-md-offset-1">
 
-                        {{-- staticBox --}}
-                        {{-- <div class="StaticBox">
-                            <h3 class="boxTitle">
-                                {{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h3>
-                            <div class="whiteBox">
-                                <div class="rightText">
-                                    <h2 class="text-danger count">{{is_null($stat) ? 0: $stat->today_dead}}</h2>
-                                    <p>{{ __('ui.today_dead') }}</p>
-                                    <div class="subRightText">
-                                        <h3 class="count">{{is_null($stat)?  0: $stat->today_hurt}}</h3>
-                                        <h3 class="count">{{is_null($stat) ? 0: $stat->today_detained}}</h3>
-                                    </div>
-                                    <div class="subRightText">
-                                        <p>{{ __('ui.today_hurt') }}</p>
-                                        <p>{{ __('ui.today_detained') }}</p>
-                                    </div>
-                                </div>
-                                <div class="leftText">
-                                    <h2 class="text-danger count">{{is_null($stat) ? 0: $stat->total_dead}}</h2>
-                                    <p>{{ __('ui.total_dead') }}</p>
-                                    <div class="subLeftText">
-                                        <h3 class="count">{{is_null($stat) ? 0:$stat->total_hurt}}</h3>
-                                        <h3 class="count">{{is_null($stat) ? 0: $stat->total_detained}}</h3>
-                                    </div>
-                                    <div class="subRightText">
-                                        <p>{{ __('ui.total_hurt') }}</p>
-                                        <p>{{ __('ui.total_detained') }}</p>
-                                    </div>
-                                </div>
-
-                            </div>
-
-                        </div> --}}
-
                         <div class="staticBox">
                             <div class="TopBox">
                                 <h4 class="titleText">{{ __('ui.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
@@ -102,8 +68,10 @@
 
                                 <div class="col-md-3 first-item">
                                     <fieldset>
-                                        <input type="text" name="name" placeholder="{{__('ui.type_name')}}">
+                                        <input type="text" id="name_search" name="name" autocomplete="off" placeholder="{{__('ui.type_name')}}">
                                     </fieldset>
+                                    <div id="name_suggestion" style="display: block; cursor: pointer;"></div>
+
                                 </div>
                                 <div class="col-md-3 second-item">
                                     <fieldset>
@@ -125,6 +93,7 @@
                                             <option value="" selected disabled>{{ __('ui.select_status') }}</option>
                                             <option value="detained">{{ __('ui.detained') }}</option>
                                             <option value="dead">{{ __('ui.dead') }}</option>
+                                            <option value="released">{{ __('ui.released') }}</option>
 
                                         </select>
                                     </fieldset>
@@ -218,7 +187,79 @@
 
 
     <script>
+        function ajaxHeaders()
+        {
+            return $.ajaxSetup({
+                headers: {
+                    "Content-Type": "application/json",
+                    "X-CSRF-TOKEN": $('meta[name="csrf-token"]').attr("content")
+                }
+            });
+        }
+
+        function setName(name)
+        {
+            $("#name_search").val(name);
+            $('#name_suggestion').empty();
+        }
+
+        function emptySuggestion()
+        {
+            if($('#name_search').val() === '')
+            {
+                console.log('ik');
+                $('#name_suggestion').empty();
+
+            }
+
+
+        }
+
+        function fetchNames()
+        {
+            // $('#name_suggestion').empty();
+
+
+            // let names='';
+
+            $('#name_search').keyup(function (){
+
+                // emptySuggestion();
+
+
+                $('#name_suggestion').empty();
+
+                let form = {
+                    'name' : $('#name_search').val()
+                };
+
+                ajaxHeaders();
+
+                $.post('/fetch_names', JSON.stringify(form))
+                    .done(function(data)
+                    {
+                        if(data.success)
+                        {
+                            // names = data.names;
+                            data.names.forEach(function(name)
+                            {
+                                $('#name_suggestion').append(`
+                                        <p onclick="setName('${name.name}')">${name.name}</p>
+                                `)
+                            });
+                        }
+                    });
+                // names = '';
+            });
+
+        }
+
         $(document).ready(function () {
+
+            // emptySuggestion();
+            fetchNames();
+
+
             $('.count').each(function () {
                 let $this = $(this);
                 $({Counter: 0}).animate({Counter: $this.text()}, {
@@ -229,6 +270,8 @@
                     }
                 });
             });
+
+
         })
     </script>
 

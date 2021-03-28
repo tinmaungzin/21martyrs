@@ -79,4 +79,11 @@ class HomeController extends Controller
     {
         return request()->except('page'); //to append in paginator in blade file
     }
+
+    public function fetchNames(Request $request)
+    {
+        $name= $request->name;
+        $names = Post::where('name','like', '%' . $name . '%')->get();
+        return response()->json(array('success' => true, 'names'=> $names) , 200);
+    }
 }
