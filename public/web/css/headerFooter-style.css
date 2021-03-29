@@ -457,13 +457,13 @@ footer .contact-info ul li a {
   box-shadow: none;
   border: 1px solid #dc3545;
 }
-.buttonArea{
+.SendArea{
   display: flex;
   justify-content: flex-end;
   width: 95%;
 }
 
-.buttonArea .btn{
+.SendArea .Message{
      width: 95%;
     margin: 30px 0 40px 0;
     border: 0;
@@ -473,7 +473,7 @@ footer .contact-info ul li a {
     text-align: center;
 }
 
-.buttonArea button:hover{
+.SendArea button:hover{
   background-color:#be2b39;
   outline: none;
 }

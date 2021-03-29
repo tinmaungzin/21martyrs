@@ -123,12 +123,12 @@ select {
     max-width: 40px;
 }
 
-.submitButton {
+.inputContainer .submitButton {
     width: 20%;
     margin: auto;
 }
 
-.submitButton button {
+.inputContainer .submitButton button {
     width: 300px;
     padding: 8px 20px;
     margin: 30px 0 40px 0;
@@ -138,12 +138,12 @@ select {
     background-color: #dc3545;
 }
 
-.submitButton button:hover {
+.inputContainer .submitButton button:hover {
     /* background-color: #518aa5; */
     outline: none;
 }
 
-.submitButton button:focus {
+.inputContainer .submitButton button:focus {
     -webkit-box-shadow: none;
     box-shadow: none;
     outline: none;
@@ -525,7 +525,7 @@ textarea {
     .inputValue input, select{
         width: 132%;
     }
-    .contactUsValues input, textarea{
+    .contactUsValues input, .contactUsValues textarea{
         width: 114% !important;
     }
     .inputValue input[type=date]{
@@ -595,12 +595,12 @@ textarea {
     }
 
     .submitButton {
-        width: 100%;
+   .inputContainer      width: 100%;
         text-align: center;
     }
 
     .submitButton button {
-        padding: 12px 20px;
+   .inputContainer      padding: 12px 20px;
         margin: 30px 0 40px 0;
     }
 
@@ -715,12 +715,12 @@ textarea {
     }
 
     .submitButton {
-        width: 100%;
+   .inputContainer      width: 100%;
         text-align: center;
     }
 
     .submitButton button {
-        padding: 12px 20px;
+   .inputContainer      padding: 12px 20px;
         margin: 30px 0 40px 0;
     }
 
@@ -888,12 +888,12 @@ textarea {
     }
 
     .submitButton {
-        width: 100%;
+   .inputContainer      width: 100%;
         text-align: center;
     }
 
     .submitButton button {
-        padding: 12px 20px;
+   .inputContainer      padding: 12px 20px;
         margin: 30px 0 40px 0;
     }
 
