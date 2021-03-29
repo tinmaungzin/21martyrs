@@ -201,7 +201,8 @@ margin-bottom: 0px !important;
   cursor: pointer;
   /* display: none; */
   background-color: #f4f4f4;
-
+  width: 56%;
+  margin: auto;
 }
 #name_suggestion p{
     padding: 8px 22px;

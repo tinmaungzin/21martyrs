@@ -3,6 +3,10 @@
 @section('title', 'Experience Sharing')
 
 @section('content')
+
+<div class="ComingArea">
+    <h2>Coming Soon</h2>
+</div>
     <section class="ExpSharing">
         <div class="container expContainer">
             <h2 class="ExpTitle">Experience sharing</h2>
@@ -10,10 +14,11 @@
             <p class="ExpText">You can write us your experience here</p>
             <div class="col-md-7 ExpForm">
                 <div class="ExpForm">
+
                     <div class="row formRow">
                         <p class="col-md-4 formText">Name</p>
                         <div class="col-sm-10 col-md-6">
-                            <input
+                            <input disabled
                                 type="email"
                                 class="form-control form-control-sm"
                                 id="colFormLabelSm"
@@ -25,6 +30,7 @@
                         <p class="col-md-4 formText">Email</p>
                         <div class="col-sm-10 col-md-6">
                             <input
+                            disabled
                                 type="email"
                                 class="form-control form-control-sm"
                                 id="colFormLabelSm"
@@ -35,7 +41,7 @@
                     <div class="row formRow">
                         <p class="col-md-4 formText">Title</p>
                         <div class="col-sm-10 col-md-6">
-                            <input
+                            <input disabled
                                 type="email"
                                 class="form-control form-control-sm"
                                 id="colFormLabelSm"
@@ -46,7 +52,7 @@
                     <div class="row formRow">
                         <p class="col-md-4 formText">Key words</p>
                         <div class="col-sm-10 col-md-6">
-                            <input
+                            <input disabled
                                 type="email"
                                 class="form-control form-control-sm"
                                 id="colFormLabelSm"
@@ -58,6 +64,7 @@
                         <p class="col-md-4 formText">Body Text</p>
                         <div class="col-sm-10 col-md-6">
                 <textarea
+                disabled
                     class="form-control"
                     id="exampleFormControlTextarea1"
                     rows="6"
@@ -69,7 +76,7 @@
                         <p class="col-md-4 formText">Is it your own experience?</p>
                         <div class="col-sm-10 col-md-6 CheckExp">
                             <div class="form-check">
-                                <input
+                                <input disabled
                                     class="form-check-input"
                                     type="checkbox"
                                     id="gridCheck1"
@@ -77,7 +84,7 @@
                                 <label class="form-check-label" for="gridCheck1"> Yes </label>
                             </div>
                             <div class="form-check">
-                                <input
+                                <input disabled
                                     class="form-check-input"
                                     type="checkbox"
                                     id="gridCheck1"
@@ -89,7 +96,7 @@
                     <div class="row formRow">
                         <p class="col-md-4 formText">Name of the original author</p>
                         <div class="col-sm-10 col-md-6">
-                            <input
+                            <input disabled
                                 type="email"
                                 class="form-control form-control-sm"
                                 id="colFormLabelSm"
@@ -100,7 +107,7 @@
                     <div class="row formRow">
                         <p class="col-md-4 formText">Source</p>
                         <div class="col-sm-10 col-md-6">
-                            <input
+                            <input disabled
                                 type="email"
                                 class="form-control form-control-sm"
                                 id="colFormLabelSm"
@@ -108,8 +115,8 @@
                             />
                         </div>
                     </div>
-                    <div class="buttonArea">
-                        <a class="btn submitButton" href="ExpConfirm.html" role="button"
+                    <div class="PreviewArea">
+                        <a class="btn submitButton" href="ExpConfirm.html" disabled role="button"
                         >Preview</a
                         >
                     </div>
@@ -144,6 +151,7 @@
             </div>
         </div>
     </section>
+    
     @include('web.layout.success_msg')
 
 

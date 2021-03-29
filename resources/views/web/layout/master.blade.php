@@ -212,8 +212,8 @@
                                 <span class="text-danger">{{$errors->first('email')}}</span>
 
                             </div>
-                            <div class="buttonArea">
-                                <button type="submit" class="btn">Send Message</button>
+                            <div class="SendArea">
+                                <button type="submit" class="btn Message">Send Message</button>
 
                             </div>
                         </form>

@@ -37,7 +37,7 @@ img {
   outline: none;
 }
 
-.submitButton {
+.ExpBody .submitButton {
   background-color: #4883ff;
   color: white;
   width: 20%;
