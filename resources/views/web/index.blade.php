@@ -63,16 +63,17 @@
             <div>
                 <div>
                     <div class="submit-form">
-                        <form id="form-submit">
+                        <form id="form-submit" autocomplete="on">
                             <div class="row">
 
                                 <div class="col-md-3 first-item">
                                     <fieldset>
                                         <input type="text" id="name_search" name="name" autocomplete="off" placeholder="{{__('home.filter_name')}}">
                                     </fieldset>
-                                    <div id="name_suggestion" style="display: block; cursor: pointer;"></div>
-
+                                    
+                                    
                                 </div>
+                                
                                 <div class="col-md-3 second-item">
                                     <fieldset>
                                         <select name="state">
@@ -115,8 +116,9 @@
             </div>
         </div>
     </section>
+    <div id="name_suggestion"></div>
     <!-- Image Search -->
-
+    
     <!-- Card Container -->
     <section class="featured-Cards" id="blog">
         <div class="container">

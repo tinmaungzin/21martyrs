@@ -396,6 +396,7 @@ select {
 .modal-header .close{
     margin-top: -30px !important;
     font-size: 25px !important;
+    outline: none;
 }
 
 .modal-footer .ChangeButton{
