@@ -1,6 +1,6 @@
 <style>
 .alertBox{
-    position: fixed; 
+    position: fixed;
     right:28%;
      bottom: 2%;
      z-index: 100;
@@ -54,14 +54,14 @@
 
 
 
-{{-- @if(Session::has('msg')) --}}
-    <div class="alert alert-info alertBox role="alert" ">
+ @if(Session::has('msg'))
+    <div class="alert alert-info alertBox" role="alert">
         <button type="button" class="close" data-dismiss="alert">&times;</button>
         <div class="checkArea">
             <img  src="{{asset('web/img/icons8-checkmark.svg')}}" alt="">
-           <p> Thank you for submmiting! We will review and upload it as soon as possible. Stay Safe!</p>
+            <p>{{Session::get('msg')}}</p>
+{{--           <p> Thank you for submmiting! We will review and upload it as soon as possible. Stay Safe!</p>--}}
         </div>
-        {{-- {{Session::get('msg')}} --}}
     </div>
-{{-- @endif --}}
+ @endif
 

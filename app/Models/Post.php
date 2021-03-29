@@ -31,6 +31,7 @@ class Post extends Model
         'status',
         'prison',
         'detained_date',
+        'released_date',
         'reason_of_dead',
         'reason_of_arrest',
         'admin_id',

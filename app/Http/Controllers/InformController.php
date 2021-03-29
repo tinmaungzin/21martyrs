@@ -116,5 +116,52 @@ class InformController extends Controller
         return view('web.inform.edit_missing', compact('post', 'states', 'cities'));
     }
 
+    public function getDataForStatusChange($request,$post)
+    {
+        $data = $request->all();
+        if($data['status'] == 'Released')
+        {
+            $fields = ['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name',
+                'state_id', 'prison' ,'reason_of_arrest','reason_of_dead','detained_date','address'
+            ];
+        }
+        if($data['status'] == 'Dead')
+        {
+            $fields = ['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name',
+                'state_id', 'prison' ,'reason_of_arrest' ,'address'
+            ];
+        }
+        if($data['status'] == 'Detained')
+        {
+            $fields = ['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name',
+                'state_id', 'prison' ,'reason_of_dead' ,'address'
+            ];
+        }
+        if($data['status'] == 'Missing')
+        {
+            $fields = ['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name',
+                'state_id', 'prison' ,'reason_of_dead' , 'reason_of_arrest' ,'address'
+            ];
+        }
+
+        foreach($fields as $field )
+        {
+            if($post[$field] != '') $data[$field] = $post[$field];
+        }
+        $data['post_id'] = $post->id;
+        $data['publishing_status'] = 'None';
+        return $data;
+    }
+
+    public function change_status( Request $request , Post $post)
+    {
+
+        PendingPost::create($this->getDataForStatusChange($request,$post));
+
+        Session::flash('msg', __('messages.inform_success'));
+        return redirect(route('index'));
+
+    }
+
 
 }

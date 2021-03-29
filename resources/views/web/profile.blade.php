@@ -23,16 +23,18 @@
                             <h4>Status</h4>
                             <p>{{$post->status}}</p>
                         </div>
-                        <div class="StatusButton">
-                            <button type="button"  onclick="popup();return false;"">
-                                Change Status
-                              </button>
-                        </div>
+                        @if($post->status != 'Dead')
+                            <div class="StatusButton">
+                                <button  onclick="popup();return false;">
+                                    Change Status
+                                  </button>
+                            </div>
+                        @endif
                     </div>
-                                          
+
                 </div>
             </div>
-           
+
             <hr>
             <div class="row">
                 <div class="bottomWarp">
@@ -155,60 +157,11 @@
 
     </div>
 
-
-    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered" role="document">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h3 class="modal-title" id="exampleModalLongTitle">Modal title</h3>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="modal-body">
-                <form>
-                    <div class="form-group">
-                      <label for="exampleInputEmail1">Email address</label>
-                      <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                    </div>
-                    <div class="form-group">
-                      <label for="Status">Status</label>
-                      <select class="form-control id ="Status">
-                        <option>Default select</option>
-                        <option>Dead</option>
-                        <option>Detained</option>
-                        <option>Dead</option>
+    @include("web.layout.change_status",['post' => $post])
 
 
-                      </select>
-                                      
-                    </div>
-
-                    <div class="form-group">
-                        <label for="arrested_date">Date</label>
-                        <input type="date" id="arrested_date"  class="form-control" name="detained_date"/>
-                                        
-                      </div>
-                   
-                  </form>
-                           
-                </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-              <button type="button" class="ChangeButton">Save changes</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-    <script>
-        function popup() {
-  $('[id*="exampleModalCenter"]').modal('show');
-}
-    </script>
 
     @include('web.layout.success_msg')
-    @include("web.layout.change_status")
 
 
 

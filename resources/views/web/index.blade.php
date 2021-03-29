@@ -70,10 +70,15 @@
                                     <fieldset>
                                         <input type="text" id="name_search" name="name" autocomplete="off" placeholder="{{__('home.filter_name')}}">
                                     </fieldset>
-                                    
-                                    
+{{--<<<<<<< HEAD--}}
+{{--                                    <div id="name_suggestion"  style="display: block; cursor: pointer;"></div>--}}
+
+{{--=======--}}
+{{--                                    --}}
+{{--                                    --}}
+{{-->>>>>>> origin/thetpai--}}
                                 </div>
-                                
+
                                 <div class="col-md-3 second-item">
                                     <fieldset>
                                         <select name="state">
@@ -118,7 +123,7 @@
     </section>
     <div id="name_suggestion"></div>
     <!-- Image Search -->
-    
+
     <!-- Card Container -->
     <section class="featured-Cards" id="blog">
         <div class="container">
