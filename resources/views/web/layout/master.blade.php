@@ -49,8 +49,9 @@
 
     {{-- <script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script> --}}
 
-
-    @laravelPWA
+    @if(!App::environment('local'))
+        @laravelPWA
+    @endif
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
@@ -80,16 +81,36 @@
             </a>
             <nav id="primary-nav" class="dropdown cf">
                 <ul class="dropdown menu">
-                    <li class="active"><a href="{{ route('index') }}">{{ __('master.home') }}</a></li>
-                    <li class="active"><a href="{{ route('about') }}">{{ __('master.about_us') }}</a></li>
-                    <li class="active"><a href="{{route('list.experiences')}}">{{ __('master.stories') }}</a></li>
                     <li>
-                        <a href="#">{{ __('master.inform') }}</a>
+                        <x-nav-link
+                            url="{{route('index')}}" text="{{__('ui.home')}}"></x-nav-link>
+                    </li>
+                    <li>
+                        <x-nav-link url="{{route('about')}}" text="{{__('master.about_us')}}"></x-nav-link>
+                    </li>
+                    <li>
+                        <x-nav-link url="{{route('list.experiences')}}" text="{{ __('master.stories') }}"></x-nav-link>
+                    </li>
+                    <li>
+                        @php
+                            $possible_urls = implode(",",[route('form.detained'), route('form.missing'), route('form.dead')]);
+                        @endphp
+                        <x-nav-link
+                            url="#" text="{{ __('master.inform') }}"
+                            possible-urls="{{$possible_urls}}">
+                        </x-nav-link>
                         <ul class="sub-menu">
-                            <li><a href="{{ route('form.detained') }}">{{ __('home.detained') }}</a>
+                            <li>
+                                <x-nav-link url="{{ route('form.detained') }}"
+                                            text="{{ __('home.detained') }}"></x-nav-link>
                             </li>
-                            <li><a href="{{ route('form.dead') }}">{{ __('home.dead') }}</a></li>
-                            <li><a href="{{ route('form.missing') }}">{{ __('home.missing') }}</a></li>
+                            <li>
+                                <x-nav-link url="{{ route('form.dead') }}" text="{{ __('home.dead') }}"></x-nav-link>
+                            </li>
+                            <li>
+                                <x-nav-link url="{{ route('form.missing') }}"
+                                            text="{{ __('home.missing') }}"></x-nav-link>
+                            </li>
                         </ul>
                     </li>
                     <li>
@@ -176,7 +197,7 @@
                             </div>
                             <div class="contactInput">
                                 <label for="email" class="form-label">Email</label>
-                                <input type="eamil" name="email" class="form-control" id="email" placeholder="Email">
+                                <input type="email" name="email" class="form-control" id="email" placeholder="Email">
                                 <span class="text-danger">{{$errors->first('email')}}</span>
 
                             </div>

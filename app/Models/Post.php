@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use App\Models\Traits\GenericDB;
 use App\QueryFilter;
 use App\Utility\ImageModule;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
@@ -10,10 +11,11 @@ use Illuminate\Database\Eloquent\Model;
 /**
  * @method static create(array $data)
  * @method static insert(array $transformedRows)
+ * @method static filter(\App\PostFilter $post_filter): Builder
  */
 class Post extends Model
 {
-    use HasFactory;
+    use HasFactory, GenericDB;
 
 //    protected $guarded = [];
 
@@ -42,7 +44,7 @@ class Post extends Model
 //        'released_date'
     ];
 
-    public function scopeFilter($query,QueryFilter $filters)
+    public function scopeFilter($query, QueryFilter $filters)
     {
         return $filters->apply($query);
     }
@@ -84,7 +86,5 @@ class Post extends Model
     {
         return ucfirst($value);
     }
-
-
 
 }
