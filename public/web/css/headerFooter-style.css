@@ -447,7 +447,7 @@ footer .contact-info ul li a {
   font-weight: 400;
   color: #7a7a7a;
 }
-.form-control{
+.ContactBox .form-control{
   background-color: #f4f4f4;
 }
 
@@ -540,9 +540,9 @@ footer .contact-info ul li a {
     margin-bottom: 30px;
   }
 
-  .modal-content {
+  /* .modal-content {
     width: 90%;
-  }
+  } */
   .modal-content .close {
     right: 50%;
     left: 50%;
@@ -577,12 +577,13 @@ footer .contact-info ul li a {
   #primary-nav li a{
     line-height: 60px;
   }
-}
-
-@media (max-width: 500px) {
   .logo h1{
     display: none;
   }
+}
+
+@media (max-width: 500px) {
+
   .banner .banner-caption h2 {
     font-size: 35px !important;
 }
