@@ -81,6 +81,10 @@ return [
 
 
     'submit' => 'Submit',
+    'close' => 'Close',
+
+    'change_status' => 'Suggest to edit status',
+
 
     'suggest_edit' => 'Suggest To Edit'
 

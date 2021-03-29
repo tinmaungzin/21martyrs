@@ -70,7 +70,7 @@
                                     <fieldset>
                                         <input type="text" id="name_search" name="name" autocomplete="off" placeholder="{{__('home.filter_name')}}">
                                     </fieldset>
-                                    <div id="name_suggestion" style="display: block; cursor: pointer;"></div>
+                                    <div id="name_suggestion"  style="display: block; cursor: pointer;"></div>
 
                                 </div>
                                 <div class="col-md-3 second-item">

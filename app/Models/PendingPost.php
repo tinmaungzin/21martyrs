@@ -25,6 +25,7 @@ class PendingPost extends Model
         'status',
         'prison',
         'detained_date',
+        'released_date',
         'reason_of_dead',
         'reason_of_arrest',
         'informant_name',
@@ -69,5 +70,10 @@ class PendingPost extends Model
             return "";
         }
         return ImageModule::urlFromPath($value);
+    }
+
+    public function getStatusAttribute($value)
+    {
+        return ucfirst($value);
     }
 }

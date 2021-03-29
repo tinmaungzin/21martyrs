@@ -83,6 +83,10 @@ return [
     'informer_phone_placeholder' => 'ဥပမာ... 09xxxxxxxx',
 
     'submit' => 'ပေးပို့မည်',
+    'close' => 'ပိတ်မည်',
+
+    'change_status' => 'အမျိုးအစား ပြောင်းလဲရန် အကြံပြုမည်',
+
 
     'suggest_edit' => 'ပြင်ဆင်ရန် အကြံပြုပါ'
 

@@ -20,6 +20,7 @@ class SuggestedEditPendingPostsController extends Controller
 
     public function suggested_edit_pending_post_confirm_form(PendingPost $pendingPost)
     {
+//        dd($pendingPost);
         $states = State::all();
         return view('admin.suggested_edit_pending_posts.edit',compact('pendingPost','states'));
 
@@ -28,8 +29,8 @@ class SuggestedEditPendingPostsController extends Controller
     public function getPostData($pendingPost)
     {
 
-        foreach(['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name',
-                    'state_id', 'prison', 'detained_date' ,'reason_of_arrest','reason_of_dead'
+        foreach(['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name', 'status',
+                    'state_id', 'prison', 'detained_date' ,'reason_of_arrest','reason_of_dead','address','released_date'
                 ] as $field )
         {
             if($pendingPost[$field] != '') $data[$field] = $pendingPost[$field];

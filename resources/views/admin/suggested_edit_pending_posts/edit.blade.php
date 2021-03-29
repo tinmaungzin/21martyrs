@@ -10,11 +10,20 @@
                 <div class="mainHeader">
                     @if($pendingPost->status == 'Detained')
                         <h3>{{ __('forms.detained_header') }}</h3>
-
-                    @else
-                        <h3>{{ __('forms.dead_header') }}</h3>
-
                     @endif
+
+                    @if($pendingPost->status == 'Dead')
+                        <h3>{{ __('forms.dead_header') }}</h3>
+                    @endif
+
+                    @if($pendingPost->status == 'Missing')
+                        <h3>{{ __('forms.missing_header') }}</h3>
+                    @endif
+
+                    @if($pendingPost->status == 'Released')
+                        <h3>{{ __('forms.released_header') }}</h3>
+                    @endif
+
 
 
                 </div>
@@ -97,23 +106,9 @@
                         <div class="inputValue">
                             <input type="text" value="{{$pendingPost->occupation}}"
                                    name="occupation"/>
-{{--                            <select id="occupation" name="occupation">--}}
-{{--                                <option value="" selected disabled>{{ __('forms.choose_occupation') }}</option>--}}
-
-{{--                                <option @if($pendingPost->occupation == 'Student') selected @endif value="Student">{{ __('forms.student') }}</option>--}}
-{{--                                <option @if($pendingPost->occupation == 'CDM Staff') selected @endif value="CDM Staff">{{ __('forms.cdm_staff') }}</option>--}}
-{{--                                <option @if($pendingPost->occupation == 'Government Official') selected @endif value="Government Official">{{ __('forms.government_offical') }}</option>--}}
-{{--                                <option @if($pendingPost->occupation == 'Political Party Member') selected @endif value="Political Party Member">{{ __('forms.political_party_member') }}</option>--}}
-{{--                                <option @if($pendingPost->occupation == 'Journalist') selected @endif value="Journalist">{{ __('forms.journalist') }}</option>--}}
-{{--                                <option @if($pendingPost->occupation == 'Civilian') selected @endif value="Civilian">{{ __('forms.civilian') }}</option>--}}
-{{--                                <option @if($pendingPost->occupation == 'Other') selected @endif value="Other">{{ __('forms.other') }}</option>--}}
-{{--                            </select>--}}
                             <span class="text-danger">{{$errors->first('occupation')}}</span>
 
                         </div>
-                        {{--                    <div class="inputValue" style="display: none">--}}
-                        {{--                        <input type="text" placeholder="please specify" name="name" />--}}
-                        {{--                    </div>--}}
                     </div>
 
                     <div class="inputBox">
@@ -133,17 +128,39 @@
                         </div>
                     </div>
 
-
                     <div class="inputBox">
-                        <div class="inputHeader">
-                            <p>Date</p>
+                        @if($pendingPost->status == 'Detained')
+                            <div class="inputHeader">
+                                <p> Detained Date</p>
+                            </div>
+                        @endif
+                        @if($pendingPost->status == 'Dead')
+                            <div class="inputHeader">
+                                <p>Death Date</p>
+                            </div>
+                        @endif
+                        @if($pendingPost->status == 'Missing')
+                            <div class="inputHeader">
+                                <p>Missed Date</p>
+                            </div>
+                        @endif
+                        @if($pendingPost->status == 'Released')
+                            <div class="inputHeader">
+                                <p> Released Date</p>
+                            </div>
+                        @endif
 
-                        </div>
-                        <div class="inputValue">
-                            <input type="date" id="arrested_date" value="{{$pendingPost->detained_date}}" name="detained_date" />
-                            <span class="text-danger">{{$errors->first('detained_date')}}</span>
-
-                        </div>
+                        @if($pendingPost->status == 'Released')
+                            <div class="inputValue">
+                                <input type="date" id="arrested_date" value="{{$pendingPost->released_date}}" name="released_date" />
+                                <span class="text-danger">{{$errors->first('released_date')}}</span>
+                            </div>
+                            @else
+                                <div class="inputValue">
+                                    <input type="date" id="arrested_date" value="{{$pendingPost->detained_date}}" name="detained_date" />
+                                    <span class="text-danger">{{$errors->first('detained_date')}}</span>
+                                </div>
+                        @endif
                     </div>
 
                     @if($pendingPost->status == 'Detained')
@@ -156,18 +173,13 @@
                             <div class="inputValue">
                                 <input type="text" value="{{$pendingPost->reason_of_arrest}}"
                                        name="reason_of_arrest"/>
-{{--                                <select id="township" name="reason_of_arrest">--}}
-{{--                                    <option value="" selected disabled>{{ __('forms.choose_reason_of_arrest') }}</option>--}}
-{{--                                    <option @if($pendingPost->reason_of_arrest == 'Protest') selected @endif  value="Protest">{{ __('forms.protestor') }}</option>--}}
-{{--                                    <option @if($pendingPost->reason_of_arrest == 'Bystand') selected @endif value="Bystand">{{ __('forms.bystander') }}</option>--}}
-{{--                                    <option @if($pendingPost->reason_of_arrest == 'Other') selected @endif value="Other">{{ __('forms.others') }}</option>--}}
-{{--                                </select>--}}
                                 <span class="text-danger">{{$errors->first('reason_of_arrest')}}</span>
 
                             </div>
 
                         </div>
-                    @else
+                    @endif
+                    @if($pendingPost->status == 'Dead')
                         <div class="inputBox">
                             <div class="inputHeader">
                                 <p>Reason of Death</p>
@@ -176,19 +188,13 @@
                             <div class="inputValue">
                                 <input type="text" value="{{$pendingPost->reason_of_dead}}"
                                        name="reason_of_dead"/>
-{{--                                <select id="township" name="reason_of_dead">--}}
-{{--                                    <option value="" disabled>{{ __('forms.choose_reason_of_death') }}</option>--}}
-{{--                                    <option @if($pendingPost->reason_of_dead == 'Gunshot') selected @endif  value="Gunshot">{{ __('forms.gunshot') }}</option>--}}
-{{--                                    <option @if($pendingPost->reason_of_dead == 'Beaten') selected @endif value="Beaten">{{ __('forms.beaten') }}</option>--}}
-{{--                                    <option @if($pendingPost->reason_of_dead == 'Other') selected @endif value="Other">{{ __('forms.others') }}</option>--}}
-{{--                                </select>--}}
                                 <span class="text-danger">{{$errors->first('reason_of_dead')}}</span>
 
                             </div>
 
                         </div>
                     @endif
-                    @if($pendingPost->status == 'Detained')
+                    @if($pendingPost->status == 'Detained' && isset($pendingPost->prison))
                         <div class="inputBox">
                             <div class="inputHeader">
                                 <p>Prison</p>
