@@ -194,9 +194,18 @@ margin-bottom: 0px !important;
   background-color: transparent;
   color: #dc3545;
 }
-
-
-
+.submit-form #name_suggestion{
+  display: block; 
+    border: none;
+    background-color: transparent;
+    font-size: 13px;
+    color: #9a9a9a;
+    outline: none;
+    padding: 0px 10px;
+    display: inline-block;
+    box-shadow: none;
+    cursor: pointer;
+}
 
 .filter-form {
   justify-content: center;
