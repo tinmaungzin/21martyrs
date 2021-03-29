@@ -151,7 +151,7 @@
             </div>
         </div>
     </section>
-    
+
     @include('web.layout.success_msg')
 
 

@@ -80,7 +80,7 @@
             <a href="{{ route('index') }}">
                 <div class="logo">
                     <img src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
-                    <h1 style="padding-top: 10px;">MYANMAR MARTYRS </h1>
+                    <h1 style="padding-top: 10px;">MARTYRS 21 MM </h1>
                 </div>
             </a>
             <nav id="primary-nav" class="dropdown cf">

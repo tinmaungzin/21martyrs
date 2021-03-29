@@ -348,12 +348,12 @@ select {
     font-weight: 800;
 }
 
-.editButton {
+.profileButton {
     margin: 5px 0 20px 0;
 
 }
 
-.editButton button {
+.profileButton button {
     width: 60%;
     padding: 8px 10px;
     margin: 30px 0 0 0;
@@ -363,7 +363,7 @@ select {
     background-color: #dc3545;
 }
 
-.editButton button:hover {
+.profileButton button:hover {
     background-color:#be2b39;
     outline: none;
 
@@ -825,7 +825,7 @@ textarea {
         padding: 10px 0 25px 30px;
 
     }
-    .editButton button{
+    .profileButton button{
         width: 70%;
     }
 }

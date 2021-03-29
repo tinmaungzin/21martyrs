@@ -114,19 +114,13 @@
                                 <p>{{ViewUtility::displayNullableText($post->prison)}}</p>
                             </div>
                         @endif
-{{--                        @if(isset($post->released_date))--}}
-{{--                            <div class="profileDetail">--}}
-{{--                                <p class="DetailText">{{__('forms.released_date_label')}}</p>--}}
-{{--                                <p>{{ViewUtility::displayDate($post->released_date)}}</p>--}}
-{{--                            </div>--}}
-{{--                        @endif--}}
                         @if(isset($post->comment))
                             <div class="profileDetail">
                                 <p class="DetailText">{{__('forms.comment_label')}}:</p>
                                 <p>{{$post->comment}}</p>
                             </div>
                         @endif
-                        <div class="editButton">
+                        <div class="profileButton">
                             @if($post->status == 'Detained')
                                 <a href="{{route('form.edit.detained',['post'=> $post->id])}}">
                                     <button>{{__('forms.suggest_edit')}}
