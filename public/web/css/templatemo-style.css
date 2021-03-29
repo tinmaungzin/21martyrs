@@ -194,18 +194,26 @@ margin-bottom: 0px !important;
   background-color: transparent;
   color: #dc3545;
 }
-.submit-form #name_suggestion{
-  display: block; 
-    border: none;
-    background-color: transparent;
-    font-size: 13px;
-    color: #9a9a9a;
-    outline: none;
-    padding: 0px 10px;
-    display: inline-block;
-    box-shadow: none;
-    cursor: pointer;
+ #name_suggestion{
+  position: absolute;
+  left: 17%;
+  width: 15%;
+  cursor: pointer;
+  /* display: none; */
+  background-color: #f4f4f4;
+
 }
+#name_suggestion p{
+    padding: 8px 22px;
+  font-size: 14px;
+  border-bottom: 1px solid #e3dada;
+}
+
+#name_suggestion p:last-child{
+
+border-bottom: none;
+}
+
 
 .filter-form {
   justify-content: center;
