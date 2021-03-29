@@ -51,9 +51,9 @@
     {{-- <script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script> --}}
 
 
-    @if(!App::environment('local'))
-        @laravelPWA
-    @endif
+    {{--    @if(!App::environment('local'))--}}
+    {{--        @laravelPWA--}}
+    {{--    @endif--}}
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
