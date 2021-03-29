@@ -18,8 +18,6 @@ return [
     'choose_relationship' => 'Choose One',
     'choose_state' => '',
     'civilian' => '',
-    'comment_label' => 'Comment',
-    'comment_placeholder' => 'Provide further information',
     'dead_disclaimer' => 'Please inform new deceased within your network. Your contact information is for verification purpose only and will be kept confidential.',
     'dead_header' => 'Deceased\'s Information',
     'dead_reason_label' => 'Reason Of Death',
@@ -55,8 +53,12 @@ return [
     'others' => '',
     'photo_label' => 'Photo',
     'political_party_member' => '',
+    'prison' => 'Prison',
     'prison_label' => 'Prison (leave blank, if unknown.)',
     'prison_placeholder' => 'Eg. Inn Sain Prison',
+
+    'comment_label' => 'Comment',
+    'comment_placeholder' => 'Provide further information',
 
 
     'status_label' => 'Status',
