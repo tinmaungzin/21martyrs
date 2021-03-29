@@ -1,6 +1,6 @@
-<?php 
+<?php
 
 return [
-    'next' => '',
-    'previous' => '',
+    'next' => ' နောက်သို့',
+    'previous' => '‌ေရှ့သို့',
 ];

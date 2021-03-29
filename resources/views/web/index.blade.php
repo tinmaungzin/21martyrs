@@ -68,7 +68,8 @@
 
                                 <div class="col-md-3 first-item">
                                     <fieldset>
-                                        <input type="text" id="name_search" name="name" autocomplete="off" placeholder="{{__('home.filter_name')}}">
+                                        <input type="text" id="name_search" name="name" autocomplete="off"
+                                               placeholder="{{__('home.filter_name')}}">
                                     </fieldset>
 {{--<<<<<<< HEAD--}}
 {{--                                    <div id="name_suggestion"  style="display: block; cursor: pointer;"></div>--}}
@@ -109,7 +110,8 @@
 
                                 <div class="col-md-3">
                                     <fieldset>
-                                        <button onclick="location = this.value;" type="submit" id="form-submit" class="btn">
+                                        <button onclick="location = this.value;" type="submit" id="form-submit"
+                                                class="btn">
                                             {{__('home.search')}}
                                         </button>
                                     </fieldset>
@@ -172,7 +174,8 @@
                                     <div class="down-content">
                                         <h4>{{ Str::limit($post->name,18,'...') }}</h4>
                                         <p>
-                                            {{ App\Utility\StringUtility::isEmpty(strval($post->age)) ? __('home.unknown'): $post->age }} years old
+                                            {{ App\Utility\StringUtility::isEmpty(strval($post->age)) ? __('home.unknown'): $post->age }}
+                                            years old
                                         </p>
                                         <p>
                                             {{is_null($post->state) ? __('home.unknown'): $post->state->name }}
@@ -192,11 +195,13 @@
     @include('web.layout.success_msg')
 
 
+    <!-- Card Container -->
+@endsection
 
-
-    <script>
-        function ajaxHeaders()
-        {
+@section('script')
+    <script src="https://cdn.jsdelivr.net/npm/lodash@4.17.10/lodash.min.js"></script>
+    <script defer>
+        function ajaxHeaders() {
             return $.ajaxSetup({
                 headers: {
                     "Content-Type": "application/json",
@@ -205,16 +210,13 @@
             });
         }
 
-        function setName(name)
-        {
+        function setName(name) {
             $("#name_search").val(name);
             $('#name_suggestion').empty();
         }
 
-        function emptySuggestion()
-        {
-            if($('#name_search').val() === '')
-            {
+        function emptySuggestion() {
+            if ($('#name_search').val() === '') {
                 $('#name_suggestion').empty();
 
             }
@@ -222,14 +224,12 @@
 
         }
 
-        function fetchNames()
-        {
+        function fetchNames() {
             // $('#name_suggestion').empty();
 
 
             // let names='';
-
-            $('#name_search').keyup(function (){
+            const debouncedSearch = _.debounce(function () {
 
                 // emptySuggestion();
 
@@ -237,19 +237,16 @@
                 $('#name_suggestion').empty();
 
                 let form = {
-                    'name' : $('#name_search').val()
+                    'name': $('#name_search').val()
                 };
 
                 ajaxHeaders();
 
                 $.post('/fetch_names', JSON.stringify(form))
-                    .done(function(data)
-                    {
-                        if(data.success)
-                        {
+                    .done(function (data) {
+                        if (data.success) {
                             // names = data.names;
-                            data.names.forEach(function(name)
-                            {
+                            data.names.forEach(function (name) {
                                 $('#name_suggestion').append(`
                                         <p onclick="setName('${name.name}')">${name.name}</p>
                                 `)
@@ -257,8 +254,8 @@
                         }
                     });
                 // names = '';
-            });
-
+            }, 300, {trailing: true})
+            $('#name_search').keyup(debouncedSearch);
         }
 
         $(document).ready(function () {
@@ -281,8 +278,4 @@
 
         })
     </script>
-
-
-    <!-- Card Container -->
-
 @endsection

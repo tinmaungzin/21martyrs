@@ -1,12 +1,11 @@
-<?php
+<?php 
 
 return [
-    'home' => 'Home',
     'about_us' => 'About Us',
-    'stories' => 'Stories',
+    'contact_information' => 'Contact Information',
+    'home' => 'Home',
     'inform' => 'Inform Us',
     'lang' => 'Language',
-
-    'contact_information' => 'Contact Information',
     'message' => 'Message',
+    'stories' => 'Stories',
 ];
