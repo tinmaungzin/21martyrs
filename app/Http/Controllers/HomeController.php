@@ -20,7 +20,7 @@ class HomeController extends Controller
         $stat = Stat::all()->last();
         $posts = Post::filter($filters)->orderBy('id', 'desc')->paginate(12);
 //        dd($query_string);
-        return view('web.index', compact('posts', 'states', 'states', 'stat', 'query_string'));
+        return view('web.index', compact('posts', 'states', 'states', 'stat','query_string'));
     }
 
     public function getQueryString()
@@ -37,6 +37,7 @@ class HomeController extends Controller
     {
         return view('web.profile', compact('post'));
     }
+
 
     public function articles()
     {
