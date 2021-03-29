@@ -36,7 +36,7 @@ class HomeController extends Controller
 
     public function articles()
     {
-        $articles = Article::orderBy('id','desc')->paginate(12);
+        $articles = Article::orderBy('id','desc')->paginate(3);
         return view('web.exp_sharing.list',compact('articles'));
     }
 

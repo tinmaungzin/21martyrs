@@ -37,6 +37,8 @@
     <link rel="stylesheet" href="{{ asset('web/css/datepicker.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/headerFooter-style.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/templatemo-style.css') }} "/>
+    <link rel="stylesheet" href="{{ asset('web/css/ExpConfirm-style.css') }} "/>
+    <link rel="stylesheet" href="{{ asset('web/css/ExpSharing-style.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }} ">
     <link rel="stylesheet"
           href="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/css/bootstrap-select.min.css">
