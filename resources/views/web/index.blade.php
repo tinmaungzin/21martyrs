@@ -71,13 +71,6 @@
                                         <input type="text" id="name_search" name="name" autocomplete="off"
                                                placeholder="{{__('home.filter_name')}}">
                                     </fieldset>
-{{--<<<<<<< HEAD--}}
-{{--                                    <div id="name_suggestion"  style="display: block; cursor: pointer;"></div>--}}
-
-{{--=======--}}
-{{--                                    --}}
-{{--                                    --}}
-{{-->>>>>>> origin/thetpai--}}
                                 </div>
 
                                 <div class="col-md-3 second-item">
@@ -161,18 +154,20 @@
                                     <div class="thumb">
                                         @if(!\App\Utility\StringUtility::isEmpty($post->profile_url))
                                             <img
-                                                style="object-fit: cover"
-                                                height="260"
+                                                style="object-fit: cover; height: 260px !important;"
 
                                                 src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
                                         @else
-                                            <img height="260" src="{{ asset('web/img/default-profile.jpg') }}"
+                                            <img style="height: 260px !important; object-fit: cover;"
+                                                 src="{{ asset('web/img/default-profile.jpg') }}"
                                                  alt="{{$post->name}}"/>
 
                                         @endif
                                     </div>
                                     <div class="down-content">
-                                        <h4>{{ Str::limit($post->name,18,'...') }}</h4>
+                                        <div
+                                            {{--                                            style="max-width: 200px"--}}
+                                            class="text-nowrap text-truncate">{{$post->name}}</div>
                                         <p>
                                             {{ App\Utility\StringUtility::isEmpty(strval($post->age)) ? __('home.unknown'): $post->age }}
                                             years old

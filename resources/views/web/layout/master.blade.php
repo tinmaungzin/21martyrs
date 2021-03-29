@@ -25,7 +25,6 @@
 
 
     <link rel="stylesheet" href="{{ asset('css/app.css') }}"/>
-
     <link rel="stylesheet" href="{{ asset('web/css/bootstrap.min.css') }}">
     {{-- <link rel="stylesheet" href=" {{ asset('css/selectboot.css') }} "> --}}
     <link rel="stylesheet" href=" {{ asset('web/css/bootstrap-theme.min.css') }} "/>
@@ -60,7 +59,7 @@
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
     <script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.1/js/bootstrap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap-select@1.13.14/dist/js/bootstrap-select.min.js"></script>
-{{--    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>--}}
+    {{--    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>--}}
 
     <script src="{{ asset('web/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }} "></script>
     <!--

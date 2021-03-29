@@ -4,3 +4,11 @@
     --small-font-size: 1rem;
     --primary-color: #d44457;
 }
+
+.text-truncate {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    /*display: inline-block;*/
+    max-width: 100%;
+}
