@@ -2,11 +2,16 @@
 
 namespace App;
 
+use App\Models\Traits\GenericDB;
+
 class PostFilter extends QueryFilter
 {
+    use GenericDB;
+
     public function name($name)
     {
-        return $this->builder->where('name','like', '%' . $name . '%');
+//        return $this->builder->where('name', 'like', '%' . $name . '%');
+        return self::caseInsensitiveSearch($this->builder, 'name', $name);
     }
 
     public function state($state)
@@ -14,9 +19,9 @@ class PostFilter extends QueryFilter
         return $this->builder->where('state_id', $state);
 
     }
+
     public function status($status)
     {
         return $this->builder->where('status', $status);
-
     }
 }

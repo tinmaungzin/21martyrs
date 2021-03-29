@@ -1,6 +1,6 @@
-<?php 
+<?php
 
 return [
-    'failed' => '',
-    'throttle' => '',
+    'failed' => 'Auth failed',
+    'throttle' => 'Authentication has been disabled for a while for too many attempts',
 ];
