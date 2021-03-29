@@ -11,8 +11,8 @@
                 <div class="TopSection">
                     <div class="profilePicture">
                         <img
-                            {{-- src="{{Str::of($post->profile_url)->isEmpty() ? asset('web/img/default-profile.jpg'): $post->profile_url}}" --}}
-                            src="{{asset('web/img/default-profile.jpg')}}"
+                            src="{{Str::of($post->profile_url)->isEmpty() ? asset('web/img/default-profile.jpg'): $post->profile_url}}"
+                            {{--                            src="{{asset('web/img/default-profile.jpg')}}"--}}
                             alt="{{$post->name}}"
                         />
                     </div>
@@ -25,9 +25,9 @@
                         </div>
                         @if($post->status != 'Dead')
                             <div class="StatusButton">
-                                <button  onclick="popup();return false;">
+                                <button onclick="popup();return false;">
                                     Change Status
-                                  </button>
+                                </button>
                             </div>
                         @endif
                     </div>
@@ -85,11 +85,11 @@
                             @endif
 
                             @if(!($post->status == 'Released'))
-                                    <p>{{is_null($post->detained_date)? __('home.unknown'): ViewUtility::displayDate($post->detained_date)
+                                <p>{{is_null($post->detained_date)? __('home.unknown'): ViewUtility::displayDate($post->detained_date)
                             }}</p>
                             @endif
                             @if($post->status == 'Released')
-                                    <p>{{is_null($post->released_date)? __('home.unknown'): ViewUtility::displayDate($post->released_date)
+                                <p>{{is_null($post->released_date)? __('home.unknown'): ViewUtility::displayDate($post->released_date)
                             }}</p>
                             @endif
 
