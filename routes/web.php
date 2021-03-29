@@ -31,14 +31,14 @@ Route::prefix('admin')->group(function () {
 //    Route::middleware(['throttle:login'])->post('/login', [LoginController::class, 'login'])->name('admin.login');
     Route::get('/logout', [LoginController::class, 'logout'])->name('admin.logout');
 
-
     Route::middleware('admin')->group(function () {
 
         Route::resource('admins', AdminController::class);
         Route::resource('stats', StatController::class);
         Route::resource('articles', ArticleController::class);
-        Route::resource('feedback', FeedbackController::class);
-
+//        Route::resource('feedback', FeedbackController::class);
+        Route::get('feedback', [FeedbackController::class, 'index'])->name('feedback.index');
+        Route::get('feedback/{feedback}', [FeedbackController::class, 'show'])->name('feedback.show');
         Route::get('new_pending_posts', [NewPendingPostsController::class, 'new_pending_posts'])->name('list.new_pending_posts');
         Route::get('new_pending_posts/{pendingPost}/confirm', [NewPendingPostsController::class, 'new_pending_post_confirm_form'])->name('form.confirm.new_pending_post');
         Route::post('new_pending_posts/{pendingPost}/confirm', [NewPendingPostsController::class, 'handle_new_pending_post'])->name('handle.new_pending_post');
@@ -70,6 +70,7 @@ Route::get('/about', [HomeController::class, 'about_us'])->name('about');
 Route::post('/fetch_names', [HomeController::class, 'fetchNames'])->name('fetch.names');
 Route::get('/experiences', [HomeController::class, 'articles'])->name('list.experiences');
 Route::get('/article/{article}', [HomeController::class, 'show_article'])->name('show.experience');
+Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
 
 Route::get('/profile/{post}', [HomeController::class, 'profile'])->name('profile');
 
@@ -83,8 +84,8 @@ Route::get('inform/edit_missing/{post}', [InformController::class, 'edit_missing
 Route::get('inform/dead', [InformController::class, 'dead_form'])->name('form.dead');
 Route::get('inform/edit_dead/{post}', [InformController::class, 'edit_dead_form'])->name('form.edit.dead');
 
-Route::post('inform',[InformController::class,'store'])->name('store.inform');
-Route::post('inform/edit/{post}',[InformController::class,'store_edit'])->name('edit.inform');
+Route::post('inform', [InformController::class, 'store'])->name('store.inform');
+Route::post('inform/edit/{post}', [InformController::class, 'store_edit'])->name('edit.inform');
 
 Route::post('inform/change_status/{post}',[InformController::class,'change_status'])->name('change_status.inform');
 
