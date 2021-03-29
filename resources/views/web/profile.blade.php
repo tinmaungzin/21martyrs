@@ -22,6 +22,7 @@
                         <div class="profileStatus">
                             <h4>Status</h4>
                             <p>{{$post->status}}</p>
+                           <button>Change Button</button>
                         </div>
                     </div>
 
@@ -73,7 +74,7 @@
                                 <p class="DetailText">{{__('forms.missed_date')}}:</p>
                             @endif
                             @if($post->status == 'Released')
-                                <p class="DetailText">{{__('forms.released_date')}}:</p>
+                                <p class="DetailText">{{__('forms.released')}}:</p>
                             @endif
 
                             @if(!($post->status == 'Released'))
@@ -106,12 +107,12 @@
                                 <p>{{ViewUtility::displayNullableText($post->prison)}}</p>
                             </div>
                         @endif
-                        @if(isset($post->released_date))
-                            <div class="profileDetail">
-                                <p class="DetailText">{{__('forms.released_date')}}</p>
-                                <p>{{ViewUtility::displayDate($post->released_date)}}</p>
-                            </div>
-                        @endif
+{{--                        @if(isset($post->released_date))--}}
+{{--                            <div class="profileDetail">--}}
+{{--                                <p class="DetailText">{{__('forms.released_date_label')}}</p>--}}
+{{--                                <p>{{ViewUtility::displayDate($post->released_date)}}</p>--}}
+{{--                            </div>--}}
+{{--                        @endif--}}
                         @if(isset($post->comment))
                             <div class="profileDetail">
                                 <p class="DetailText">{{__('forms.comment_label')}}:</p>
@@ -149,6 +150,8 @@
 
     </div>
     @include('web.layout.success_msg')
+    @include("web.layout.change_status")
+
 
 
 @endsection

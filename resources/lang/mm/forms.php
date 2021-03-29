@@ -66,9 +66,12 @@ return [
 
     'photo_label' => 'ဓါတ်ပုံ',
 
+    'status_label' => 'အမျိုးအစား',
+    'status_title' => 'အမျိုးအစား ရွေးချယ်ရန်',
+
     'informer_name_label' => 'သတင်းပေးပို့သူ၏ အမည် (အမည်လွှဲ ဖြည့်သွင်းနိုင်ပါတယ်)',
 
-    'relationship_label' => 'သတင်းကို ရရှိခဲ့ပုံ',
+    'relationship_label' => 'ယခုသတင်းကို ရရှိခဲ့ပုံ',
     'choose_relationship' => 'တခု ရွေးချယ်ရန်',
     'family' => 'မိသားစု',
     'friend' => 'သူငယ်ချင်း',

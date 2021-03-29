@@ -62,6 +62,9 @@ return [
 
     'photo_label' => 'Photo',
 
+    'status_label' => 'Status',
+    'status_title' => 'Choose Status',
+
     'informer_name_label' => 'Informer\'s Name (You don\'t have to fill real name)',
 
 

@@ -67,10 +67,10 @@
                                     </a>
                                 </button>
 
-{{--                                <button type="button" id="delete-button" class="btn-clear" title="Delete"--}}
-{{--                                        data-toggle="modal" onclick="deleteItem('new_pending_posts',{{$post->id}})" data-target="#delete">--}}
-{{--                                    <i class="fal fa-times text-danger fw300"></i>--}}
-{{--                                </button>--}}
+                                <button type="button" id="delete-button" class="btn-clear" title="Delete"
+                                        data-toggle="modal" onclick="deleteItem('new_pending_posts',{{$post->id}})" data-target="#delete">
+                                    <i class="fal fa-times text-danger fw300"></i>
+                                </button>
                             </td>
                         </tr>
                     @endforeach

@@ -102,18 +102,6 @@
                             </p>
                         </div>
                         <div class="inputValue">
-{{--                            <select id="occupation" name="occupation">--}}
-{{--                                <option value="" selected disabled>{{ __('forms.choose_occupation') }}</option>--}}
-
-{{--                                <option @if($post->occupation == 'Student') selected @endif value="Student">{{ __('forms.student') }}</option>--}}
-{{--                                <option @if($post->occupation == 'CDM Staff') selected @endif value="CDM Staff">{{ __('forms.cdm_staff') }}</option>--}}
-{{--                                <option @if($post->occupation == 'Government Official') selected @endif value="Government Official">{{ __('forms.government_offical') }}</option>--}}
-{{--                                <option @if($post->occupation == 'Political Party Member') selected @endif value="Political Party Member">{{ __('forms.political_party_member') }}</option>--}}
-{{--                                <option @if($post->occupation == 'Journalist') selected @endif value="Journalist">{{ __('forms.journalist') }}</option>--}}
-{{--                                <option @if($post->occupation == 'Civilian') selected @endif value="Civilian">{{ __('forms.civilian') }}</option>--}}
-{{--                                <option @if($post->occupation == 'Other') selected @endif value="Other">{{ __('forms.other') }}</option>--}}
-
-{{--                            </select>--}}
                             <input
                                 value="{{$post->occupation}}"
                                 type="text" placeholder="{{ __('forms.occupation_placeholder') }}"
@@ -121,9 +109,6 @@
                             <span class="text-danger">{{$errors->first('occupation')}}</span>
 
                         </div>
-    {{--                    <div class="inputValue" style="display: none">--}}
-    {{--                        <input type="text" placeholder="please specify" name="name" />--}}
-    {{--                    </div>--}}
                     </div>
 
                     <div class="inputBox">
@@ -162,13 +147,6 @@
 
                         </div>
                         <div class="inputValue">
-{{--                            <select id="township" name="reason_of_arrest">--}}
-{{--                                <option value="" selected disabled>{{ __('forms.choose_reason_of_arrest') }}</option>--}}
-{{--                                <option @if($post->reason_of_arrest == 'Protest') selected @endif  value="Protest">{{ __('forms.protestor') }}</option>--}}
-{{--                                <option @if($post->reason_of_arrest == 'Bystand') selected @endif value="Bystand">{{ __('forms.bystander') }}</option>--}}
-{{--                                <option @if($post->reason_of_arrest == 'Other') selected @endif value="Other">{{ __('forms.others') }}</option>--}}
-
-{{--                            </select>--}}
                             <input
                                 value="{{$post->reason_of_arrest}}"
                                 type="text" placeholder="{{ __('forms.detained_reason_placeholder') }}"
@@ -213,6 +191,28 @@
                     <span class="text-danger">{{$errors->first('photo')}}</span>
 
                 </div>
+
+{{--                <div class="inputBox">--}}
+{{--                    <div class="inputHeader">--}}
+{{--                        <p>{{__('forms.status_label')}}</p>--}}
+{{--                    </div>--}}
+{{--                    <div class="inputValue">--}}
+{{--                        <select id="status" name="status">--}}
+{{--                            <option value="" selected disabled>{{ __('forms.status_title') }}</option>--}}
+{{--                            <option selected value="Detained">{{__('home.detained')}}</option>--}}
+{{--                            <option value="Dead">{{__('home.dead')}}</option>--}}
+{{--                            <option value="Missing">{{__('home.missing')}}</option>--}}
+{{--                            <option value="Released">{{__('home.released')}}</option>--}}
+{{--                        </select>--}}
+
+{{--                        <span class="text-danger">{{ $errors->first('status') }}</span>--}}
+
+{{--                    </div>--}}
+{{--                </div>--}}
+
+{{--                <div id="extension">--}}
+
+{{--                </div>--}}
 
 
 
@@ -267,10 +267,6 @@
                     </div>
                 </div>
             </div>
-{{--                <div class="inputCheckbox">--}}
-{{--                    <input type="checkbox" name="terms" id="terms">--}}
-{{--                    <label for="terms" >Thank you for your information. Please note that we will verify and update as soon as we can.</label>--}}
-{{--                </div>--}}
         </div>
 
             <div class="submitButton">
@@ -281,19 +277,45 @@
         </div>
     </form>
 
-{{--    <script>--}}
-{{--        $(document).ready(function(){--}}
-{{--            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
-{{--            else $("#submit").prop( "disabled", true );--}}
-
-{{--            $('#terms').click(function(){--}}
-{{--                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
-{{--                else $("#submit").prop( "disabled", true );--}}
-{{--            });--}}
-
-{{--        })--}}
-{{--    </script>--}}
     @include('web.layout.success_msg')
+
+
+{{--    <script>--}}
+{{--        $(document).ready(function (){--}}
+{{--            $('#status').change(function (){--}}
+{{--                if($('#status').val() == 'Dead')--}}
+{{--                {--}}
+{{--                    $('#extension').append(`--}}
+{{--                    <div class="inputBox">--}}
+{{--                        <div class="inputHeader">--}}
+{{--                            <p>{{ __('forms.death_date') }}</p>--}}
+{{--                        </div>--}}
+{{--                        <div class="inputValue">--}}
+{{--                            <input type="date" id="arrested_date" name="detained_date" />--}}
+{{--                            <span class="text-danger">{{$errors->first('detained_date')}}</span>--}}
+
+{{--                        </div>--}}
+{{--                    </div>--}}
+
+{{--                    <div class="inputBox">--}}
+{{--                        <div class="inputHeader">--}}
+{{--                            <p>{{ __('forms.dead_reason_label') }}</p>--}}
+
+{{--                        </div>--}}
+{{--                        <div class="inputValue">--}}
+{{--                            <input--}}
+{{--                                type="text" placeholder="{{ __('forms.dead_reason_placeholder') }}"--}}
+{{--                                name="reason_of_dead"/>--}}
+{{--                            <span class="text-danger">{{$errors->first('reason_of_dead')}}</span>--}}
+
+{{--                        </div>--}}
+
+{{--                    </div>--}}
+{{--                    `);--}}
+{{--                }--}}
+{{--            });--}}
+{{--        });--}}
+{{--    </script>--}}
 
 
 
