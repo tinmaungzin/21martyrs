@@ -54,9 +54,12 @@
                                     <h4>Released</h4>
 
                                 </div>
-                                <p>
+                                <div class="staticText">
+<p>
                                     Source - <a href="#">Free the People: Protest Dashboard</a>
                                 </p>
+                                </div>
+                                
 
                             </div>
                         </div>

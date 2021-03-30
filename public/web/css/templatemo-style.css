@@ -114,6 +114,15 @@ font-weight: 500;
 margin-bottom: 0px !important;
 }
 
+.staticText {
+  display: flex;
+  justify-content: center;
+}
+
+.staticText a{
+  color: #4883ff;
+}
+
 .submit-form {
   justify-content: center;
   border-bottom: 5px solid #dc3545;
