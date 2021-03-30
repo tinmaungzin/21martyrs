@@ -64,7 +64,7 @@ return [
     'protestor' => '',
     'relationship_label' => 'သတင်းကို ရရှိခဲ့ပုံ',
     'released' => 'ပြန်လည်လွတ်မြောက်သည့်နေ့',
-    'released_date' => '',
+    'released_date' => 'ပြန်လည်လွတ်မြောက်သည့်နေ့',
     'released_header' => 'ပြန်လည်လွတ်မြောက်လာသူ၏ အချက်အလက်',
 
 

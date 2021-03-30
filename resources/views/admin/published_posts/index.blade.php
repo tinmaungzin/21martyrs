@@ -17,6 +17,12 @@
                 <div class="d-flex justify-content-between px-3 pt-2 pb-2">
                     <div>
                         <input type="text" name="name" placeholder="Type Name">
+                        <select name="status" id="">
+                            <option value="Detained">Detained</option>
+                            <option value="Dead">Dead</option>
+                            <option value="Missing">Missing</option>
+                            <option value="Released">Released</option>
+                        </select>
                         <button onclick="location = this.value;" class="btn-primary" type="submit">Search</button>
                     </div>
                     @if($query_string != [])
