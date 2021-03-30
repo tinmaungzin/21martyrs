@@ -11,7 +11,7 @@
                 <div class="TopSection">
                     <div class="profilePicture">
                         <img
-                            src="{{Str::of($post->profile_url)->isEmpty() ? asset('web/img/default-profile.jpg'): $post->profile_url}}"
+                            src="{{Str::of($post->profile_url)->isEmpty() ? asset('web/img/default_profile_img.png'): $post->profile_url}}"
                             {{--                            src="{{asset('web/img/default-profile.jpg')}}"--}}
                             alt="{{$post->name}}"
                         />
