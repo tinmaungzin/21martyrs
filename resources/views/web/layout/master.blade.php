@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="{{ asset('web/css/datepicker.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/headerFooter-style.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/templatemo-style.css') }} "/>
-    <link rel="stylesheet" href="{{ asset('web/css/ExpConfirm-style.css') }} "/>
+{{--    <link rel="stylesheet" href="{{ asset('web/css/ExpConfirm-style.css') }} "/>--}}
     <link rel="stylesheet" href="{{ asset('web/css/ExpSharing-style.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }} ">
     <link rel="stylesheet"

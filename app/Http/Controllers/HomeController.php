@@ -52,9 +52,9 @@ class HomeController extends Controller
 
     public function fetchNames(Request $request)
     {
-        dd($request->all());
         $post_filter = new PostFilter($request);
         $names = Post::filter($post_filter)->limit(15)->get();
+//        $names = Post::where('name', 'like', '%' . $request->name . '%')->get();
         return response()->json(array('success' => true, 'names' => $names), 200);
     }
 }

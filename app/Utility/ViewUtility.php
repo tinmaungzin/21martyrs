@@ -11,7 +11,7 @@ class ViewUtility
 {
     public static function displayNullableText($value, $null_text = null)
     {
-        $null_display_text = $null_text ?? __('ui.unknown');
+        $null_display_text = $null_text ?? __('home.unknown');
         if (is_null($value)) {
             return $null_display_text;
         }
