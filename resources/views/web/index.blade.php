@@ -68,9 +68,11 @@
 
                                 <div class="col-md-3 first-item">
                                     <fieldset>
-                                        <input type="text" id="name_search" name="name" autocomplete="off"
+                                        <input type="text" list="names" id="name_search" name="name" autocomplete="off"
                                                placeholder="{{__('home.filter_name')}}">
                                     </fieldset>
+                                    <datalist id="names"></datalist>
+
                                 </div>
 
                                 <div class="col-md-3 second-item">
@@ -155,7 +157,6 @@
                                         @if(!\App\Utility\StringUtility::isEmpty($post->profile_url))
                                             <img
                                                 style="object-fit: cover; height: 260px !important;"
-
                                                 src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
                                         @else
                                             <img style="height: 260px !important; object-fit: cover;"
@@ -207,29 +208,13 @@
 
         function setName(name) {
             $("#name_search").val(name);
-            $('#name_suggestion').empty();
-        }
-
-        function emptySuggestion() {
-            if ($('#name_search').val() === '') {
-                $('#name_suggestion').empty();
-
-            }
-
-
+            $('#names').empty();
         }
 
         function fetchNames() {
-            // $('#name_suggestion').empty();
-
-
-            // let names='';
             const debouncedSearch = _.debounce(function () {
 
-                // emptySuggestion();
-
-
-                $('#name_suggestion').empty();
+                $('#names').empty();
 
                 let form = {
                     'name': $('#name_search').val()
@@ -240,22 +225,18 @@
                 $.post('/fetch_names', JSON.stringify(form))
                     .done(function (data) {
                         if (data.success) {
-                            // names = data.names;
                             data.names.forEach(function (name) {
-                                $('#name_suggestion').append(`
-                                        <p onclick="setName('${name.name}')">${name.name}</p>
+                                $('#names').append(`
+                                        <option onclick="setName('${name.name}')">${name.name}</option>
                                 `)
                             });
                         }
                     });
-                // names = '';
             }, 300, {trailing: true})
             $('#name_search').keyup(debouncedSearch);
         }
 
         $(document).ready(function () {
-
-            // emptySuggestion();
             fetchNames();
 
 
