@@ -286,6 +286,7 @@ select {
     width: 100%;
     overflow: hidden;
     background-color: #f4f4f4;
+    padding-top: 120px;
 }
 .TopSection {
     display: flex;
@@ -373,6 +374,7 @@ select {
 
 .aboutBody {
     width: 100%;
+    padding-top: 100px;
 }
 
 .StatusButton{
@@ -502,6 +504,7 @@ textarea {
 .inputContainer {
     background-color: #f4f4f4;
     padding: 0 2rem;
+    padding-top: 130px;
 }
 
 @media (min-width: 2160px) {
