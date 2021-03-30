@@ -53,7 +53,7 @@
                 <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_1') }}</p>
                 <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_2') }}</p>
                 <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_3') }}</p>
-                <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_4') }}</p>
+{{--                <p class="sub-body-style">{{ __('about_us.how_information_used_paragraph_4') }}</p>--}}
             </div>
             <hr>
 

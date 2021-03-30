@@ -5,7 +5,7 @@
 @section('content')
 
 <div class="ComingArea">
-    <img src="Coming-Soon-Tile.png" alt="">
+    <h2>Coming Soon</h2>
 </div>
     <section class="ExpSharing">
         <div class="container expContainer">
