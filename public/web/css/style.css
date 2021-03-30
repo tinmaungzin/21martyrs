@@ -509,6 +509,24 @@ textarea {
         width: 56%;
     }
 }
+@media (max-width: 1360px) {
+    .inputDataBox{
+        width: 70%;
+    }
+    .inputContainer .submitButton{
+        width: 35%;
+    }
+
+}
+
+@media only screen and (max-width: 1360px) and (min-width: 1025px) {
+ .mainHeader ,.headerText ,.inputBox,.inputBoxImg label, .inputBoxImg input {
+     padding-left: 0px;
+ }
+ .rightInfo h3{
+     margin-left: 0px;
+ }
+}
 
 @media (max-width: 1250px) {
     .inputCheckbox{
@@ -517,19 +535,19 @@ textarea {
 
 }
 
-@media only screen and (max-width: 1200px) and (min-width: 1024px) {
+@media only screen and (max-width: 1200px) and (min-width: 1025px) {
     .mainHeader, .headerText{
         width: 100%;
         padding-left: 0px;
     }
     .inputValue input, select{
-        width: 132%;
+        width: 90%;
     }
-    .contactUsValues input, .contactUsValues textarea{
-        width: 114% !important;
+    .inputValue textarea{
+        width: 90% !important;
     }
     .inputValue input[type=date]{
-        width: 132% !important;
+        width: 90% !important;
     }
 }
 
@@ -544,16 +562,18 @@ textarea {
 
     }
     .inputDataBox {
-        width: 83%;
+        width: 100%;
         margin: auto;
     }
 
     .inputDataBox h3 {
         margin: 70px 0 20px 0;
     }
-
+    .inputContainer .submitButton {
+        width: 45%;
+    }
     .rightInfo h3 {
-        margin: 10px;
+        margin: 30px;
     }
 
     .inputBox {
@@ -564,7 +584,7 @@ textarea {
     .inputBox,
     .inputBoxImg {
         float: none;
-        padding-left: 0;
+        padding-left: 20px;
     }
 
     .inputValue input,
@@ -594,13 +614,13 @@ textarea {
         padding-left: 20px;
     }
 
-    .submitButton {
-   .inputContainer      width: 100%;
+    .inputContainer   .submitButton {
+        width: 100%;
         text-align: center;
     }
 
-    .submitButton button {
-   .inputContainer      padding: 12px 20px;
+    .inputContainer   .submitButton button {
+         padding: 12px 20px;
         margin: 30px 0 40px 0;
     }
 
@@ -670,7 +690,10 @@ textarea {
     }
 
     .rightInfo h3 {
-        margin: 10px;
+        margin: 0px;
+    }
+    .inputContainer .submitButton button{
+        width: 100%;
     }
 
     .leftInfo,
@@ -714,14 +737,14 @@ textarea {
         padding-left: 0px;
     }
 
-    .submitButton {
-   .inputContainer      width: 100%;
+    .inputContainer  .submitButton {
+         width: 40%;
         text-align: center;
     }
 
-    .submitButton button {
-   .inputContainer      padding: 12px 20px;
-        margin: 30px 0 40px 0;
+    .inputContainer .submitButton button {
+        padding: 10px 15px;
+            margin: 30px 0 40px 0;
     }
 
     /* for profile page */
@@ -887,14 +910,18 @@ textarea {
         margin-top: 40px;
     }
 
-    .submitButton {
-   .inputContainer      width: 100%;
+    .inputContainer .submitButton {
+     width: 70%;
         text-align: center;
     }
 
-    .submitButton button {
-   .inputContainer      padding: 12px 20px;
+    .inputContainer .submitButton button {
+         padding: 12px 20px;
         margin: 30px 0 40px 0;
+        width: 100%;
+    }
+    .inputValue textarea{
+        width: 100%;
     }
 
     /* for profile page */

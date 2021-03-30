@@ -192,30 +192,6 @@
 
                 </div>
 
-{{--                <div class="inputBox">--}}
-{{--                    <div class="inputHeader">--}}
-{{--                        <p>{{__('forms.status_label')}}</p>--}}
-{{--                    </div>--}}
-{{--                    <div class="inputValue">--}}
-{{--                        <select id="status" name="status">--}}
-{{--                            <option value="" selected disabled>{{ __('forms.status_title') }}</option>--}}
-{{--                            <option selected value="Detained">{{__('home.detained')}}</option>--}}
-{{--                            <option value="Dead">{{__('home.dead')}}</option>--}}
-{{--                            <option value="Missing">{{__('home.missing')}}</option>--}}
-{{--                            <option value="Released">{{__('home.released')}}</option>--}}
-{{--                        </select>--}}
-
-{{--                        <span class="text-danger">{{ $errors->first('status') }}</span>--}}
-
-{{--                    </div>--}}
-{{--                </div>--}}
-
-{{--                <div id="extension">--}}
-
-{{--                </div>--}}
-
-
-
                 <h3>{{ __('forms.informer_header') }}</h3>
 
                 <div class="inputBox">

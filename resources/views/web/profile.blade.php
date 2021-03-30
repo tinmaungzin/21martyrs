@@ -88,13 +88,21 @@
                                 <p>{{is_null($post->detained_date)? __('home.unknown'): ViewUtility::displayDate($post->detained_date)
                             }}</p>
                             @endif
+
                             @if($post->status == 'Released')
                                 <p>{{is_null($post->released_date)? __('home.unknown'): ViewUtility::displayDate($post->released_date)
                             }}</p>
                             @endif
 
                         </div>
-                        @if($post->status == 'Detained')
+                        @if(isset($post->detained_date) && $post->status == 'Released')
+                            <div class="profileDetail">
+                                <p class="DetailText">{{__('forms.detained_date')}}</p>
+                                <p>{{is_null($post->detained_date)? __('home.unknown'): ViewUtility::displayDate($post->detained_date)
+                            }}</p>
+                            </div>
+                        @endif
+                        @if($post->status == 'Detained' || $post->status == 'Released')
                             <div class="profileDetail">
                                 <p class="DetailText">{{__('forms.detained_reason_label')}}
                                     :</p>
@@ -107,6 +115,8 @@
                                 <p>{{$post->reason_of_dead}}</p>
                             </div>
                         @endif
+
+
 
                         @if(isset($post->prison))
                             <div class="profileDetail">
@@ -142,6 +152,13 @@
                                     </button>
                                 </a>
                             @endif
+                                @if($post->status == 'Released')
+                                    <a href="{{route('form.edit.released',['post'=> $post->id])}}">
+                                        <button>{{__('forms.suggest_edit')}}
+                                            <i class="fa fa-edit"></i>
+                                        </button>
+                                    </a>
+                                @endif
                         </div>
                     </div>
 
