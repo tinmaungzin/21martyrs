@@ -42,7 +42,7 @@
                         <div class="inputValue">
                             <input
                                 value="{{old('age')}}"
-                                type="number" id="age" name="age" min="10" max="99"
+                                type="number" id="age" name="age"
                                 placeholder="{{ __('forms.age_placeholder') }}"/>
                             <span class="text-danger">{{ $errors->first('age') }}</span>
 
