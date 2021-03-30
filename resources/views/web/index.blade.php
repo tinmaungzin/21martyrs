@@ -30,7 +30,7 @@
                             <div class="TopBox">
                                 <h4 class="titleText">{{ __('home.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
                                 <div class="TopText">
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->total_death}}+</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h1>
                                     <h4>Total death</h4>
                                 </div>
                                 <div class="MiddleText">
@@ -46,8 +46,8 @@
                             </div>
                             <div class="SubstaticBox">
                                 <div class="SubTitle">
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->abducted}}+</h1>
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->released}}+</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->abducted}}</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->released}}</h1>
                                 </div>
                                 <div class="SubText">
                                     <h4>Abducted</h4>
@@ -172,8 +172,7 @@
                                             {{--                                            style="max-width: 200px"--}}
                                             class="text-nowrap text-truncate">{{$post->name}}</h4>
                                         <p>
-                                            {{ App\Utility\StringUtility::isEmpty(strval($post->age)) ? __('home.unknown'): $post->age }}
-                                            years old
+                                            {{ App\Utility\StringUtility::isEmpty(strval($post->status)) ? __('home.unknown'): $post->status }}
                                         </p>
                                         <p>
                                             {{is_null($post->state) ? __('home.unknown'): $post->state->name }}
