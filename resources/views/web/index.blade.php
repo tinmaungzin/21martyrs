@@ -157,6 +157,7 @@
                                     <div class="thumb">
                                         @if(!\App\Utility\StringUtility::isEmpty($post->profile_url))
                                             <img
+                                                onerror="this.src= '{{asset('web/img/default-profile.jpg')}}'"
                                                 style="object-fit: cover; height: 260px !important;"
                                                 src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
                                         @else

@@ -8,5 +8,4 @@ routes.scanned.php
 schedule-*
 services.json
 
-*
 !.gitignore
