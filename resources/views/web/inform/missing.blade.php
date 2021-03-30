@@ -151,7 +151,7 @@
                     </div>
 
                     <div class="inputBoxImg">
-                        <label for="myfile">{{__('forms.photo_label')}}  <span>*</span></label>
+                        <label for="myfile">{{__('forms.photo_label')}} </label>
                         <input
                             value="{{old('photo')}}"
                             type="file" id="myFile" name="photo"/>
