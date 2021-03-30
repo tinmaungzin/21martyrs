@@ -68,9 +68,21 @@
 
                                 <div class="col-md-3 first-item">
                                     <fieldset>
-                                        <input type="text" id="name_search" name="name" autocomplete="off"
+                                        <input type="text" list="country" id="name_search" name="name" autocomplete="off"
                                                placeholder="{{__('home.filter_name')}}">
+                                        <datalist id="country">
+
+                                            <option value="U.S.">
+                                            <option value="France">
+                                            <option value="China">
+                                            <option value="Cambodia">
+                                            <option value="Chile">
+                                            <option value="Canada">
+                                            <option value="Poland">
+
+                                        </datalist>
                                     </fieldset>
+
 {{--<<<<<<< HEAD--}}
 {{--                                    <div id="name_suggestion"  style="display: block; cursor: pointer;"></div>--}}
 
@@ -163,7 +175,6 @@
                                             <img
                                                 style="object-fit: cover"
                                                 height="260"
-
                                                 src="{{ $post->profile_url }}" alt="{{$post->name}}"/>
                                         @else
                                             <img height="260" src="{{ asset('web/img/default-profile.jpg') }}"
@@ -224,16 +235,51 @@
 
         }
 
+        // function fetchNames() {
+        //     // $('#name_suggestion').empty();
+        //
+        //
+        //     // let names='';
+        //     const debouncedSearch = _.debounce(function () {
+        //
+        //         // emptySuggestion();
+        //
+        //
+        //         $('#name_suggestion').empty();
+        //
+        //         let form = {
+        //             'name': $('#name_search').val()
+        //         };
+        //
+        //         ajaxHeaders();
+        //
+        //         $.post('/fetch_names', JSON.stringify(form))
+        //             .done(function (data) {
+        //                 if (data.success) {
+        //                     // names = data.names;
+        //                     data.names ={
+        //                         name: 'Ok'
+        //                     }
+        //                     data.names.forEach(function (name) {
+        //                         $('#name_suggestion').append(`
+        //                                 <p onclick="setName('${name.name}')">${name.name}</p>
+        //                         `)
+        //                     });
+        //                 }
+        //             });
+        //         // names = '';
+        //     }, 300, {trailing: true})
+        //     $('#name_search').keyup(debouncedSearch);
+        // }
+
+
         function fetchNames() {
             // $('#name_suggestion').empty();
 
 
             // let names='';
-            const debouncedSearch = _.debounce(function () {
-
-                // emptySuggestion();
-
-
+            $('#name_search').keyup(function (){
+                console.log('here')
                 $('#name_suggestion').empty();
 
                 let form = {
@@ -241,11 +287,13 @@
                 };
 
                 ajaxHeaders();
-
                 $.post('/fetch_names', JSON.stringify(form))
                     .done(function (data) {
                         if (data.success) {
                             // names = data.names;
+                            // data.names ={
+                            //     name: 'Ok'
+                            // }
                             data.names.forEach(function (name) {
                                 $('#name_suggestion').append(`
                                         <p onclick="setName('${name.name}')">${name.name}</p>
@@ -253,9 +301,7 @@
                             });
                         }
                     });
-                // names = '';
-            }, 300, {trailing: true})
-            $('#name_search').keyup(debouncedSearch);
+            })
         }
 
         $(document).ready(function () {
