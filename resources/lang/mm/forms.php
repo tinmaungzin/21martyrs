@@ -7,7 +7,7 @@ return [
     'age_placeholder' => 'ဥပမာ... ၂၁',
     'association' => 'အဖွဲ့အစည်း',
     'association_label' => 'အဖွဲ့အစည်း (မရှိပါက အလွတ်ထားခဲ့ပါ)',
-    'association_placeholder' => 'ဥပမာ. တက္ကသိုလ်/နိုင်ငံရေးပါတီ/အဖွဲ့အစည်း',
+    'association_placeholder' => 'ဥပမာ. တက္ကသိုလ်/ရုံး/အဖွဲ့အစည်း',
     'beaten' => '',
     'bystander' => '',
     'cdm_staff' => '',

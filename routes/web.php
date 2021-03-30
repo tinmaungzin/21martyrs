@@ -84,6 +84,8 @@ Route::get('inform/edit_missing/{post}', [InformController::class, 'edit_missing
 Route::get('inform/dead', [InformController::class, 'dead_form'])->name('form.dead');
 Route::get('inform/edit_dead/{post}', [InformController::class, 'edit_dead_form'])->name('form.edit.dead');
 
+Route::get('inform/edit_released/{post}', [InformController::class, 'edit_released_form'])->name('form.edit.released');
+
 Route::post('inform', [InformController::class, 'store'])->name('store.inform');
 Route::post('inform/edit/{post}', [InformController::class, 'store_edit'])->name('edit.inform');
 

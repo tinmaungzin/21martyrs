@@ -50,8 +50,10 @@ class InformController extends Controller
     public function store(InformRequest $request)
     {
         $data = $request->except('photo');
-        $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
-        $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+        if ($request->has('photo')) {
+            $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+            $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+        }
         $data['gender'] = strtolower($data['gender']);
         $data['publishing_status'] = 'None';
         //TODO add user id
@@ -114,6 +116,13 @@ class InformController extends Controller
         $states = State::all();
         $cities = City::all();
         return view('web.inform.edit_missing', compact('post', 'states', 'cities'));
+    }
+
+    public function edit_released_form(Post $post)
+    {
+        $states = State::all();
+        $cities = City::all();
+        return view('web.inform.edit_released', compact('post', 'states', 'cities'));
     }
 
     public function getDataForStatusChange($request,$post)

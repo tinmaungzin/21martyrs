@@ -31,7 +31,7 @@
                     </div>
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('forms.age_label') }} <span>*</span></p>
+                            <p>{{ __('forms.age_label') }} </p>
                         </div>
                         <div class="inputValue">
                             <input
@@ -79,7 +79,7 @@
 
                     <div class="inputBox">
                         <div class="inputHeader">
-                            <p>{{ __('forms.address_label') }} <span>*</span></p>
+                            <p>{{ __('forms.address_label') }} </p>
                         </div>
                         <div class="inputValue">
                             <input

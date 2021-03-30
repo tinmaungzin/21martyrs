@@ -167,9 +167,9 @@
                                         @endif
                                     </div>
                                     <div class="down-content">
-                                        <div
+                                        <h4
                                             {{--                                            style="max-width: 200px"--}}
-                                            class="text-nowrap text-truncate">{{$post->name}}</div>
+                                            class="text-nowrap text-truncate">{{$post->name}}</h4>
                                         <p>
                                             {{ App\Utility\StringUtility::isEmpty(strval($post->age)) ? __('home.unknown'): $post->age }}
                                             years old

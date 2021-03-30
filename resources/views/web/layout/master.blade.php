@@ -36,7 +36,7 @@
     <link rel="stylesheet" href="{{ asset('web/css/datepicker.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/headerFooter-style.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/templatemo-style.css') }} "/>
-{{--    <link rel="stylesheet" href="{{ asset('web/css/ExpConfirm-style.css') }} "/>--}}
+
     <link rel="stylesheet" href="{{ asset('web/css/ExpSharing-style.css') }} "/>
     <link rel="stylesheet" href="{{ asset('web/css/style.css') }} ">
     <link rel="stylesheet"
@@ -51,9 +51,9 @@
     {{-- <script src=" {{ asset('js/bootstrap.popper.min.js') }} "></script> --}}
 
 
-    @if(!App::environment('local'))
-        @laravelPWA
-    @endif
+    {{--    @if(!App::environment('local'))--}}
+    {{--        @laravelPWA--}}
+    {{--    @endif--}}
     <link href="https://fonts.googleapis.com/css?family=Raleway:100,200,300,400,500,600,700,800,900" rel="stylesheet"/>
 
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
