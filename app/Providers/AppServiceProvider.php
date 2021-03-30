@@ -6,6 +6,7 @@ use App\Http\Views\Composers\AuthStaffComposer;
 use App\Http\Views\Composers\RouteComposer;
 
 use Aws\S3\S3Client;
+use Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\URL;
@@ -27,6 +28,9 @@ class AppServiceProvider extends ServiceProvider
     public function register()
     {
         //
+        if ($this->app->environment() === 'local') {
+            $this->app->register(IdeHelperServiceProvider::class);
+        }
     }
 
     /**
