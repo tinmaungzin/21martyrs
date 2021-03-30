@@ -54,9 +54,6 @@
                                     <h4>Released</h4>
 
                                 </div>
-                                <p>
-                                    Source - <a href="#">Free the People: Protest Dashboard</a>
-                                </p>
 
                             </div>
                         </div>

@@ -7,7 +7,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
     <meta name="csrf-token" content="{{ csrf_token() }}"/>
 
-    <title>21 Martyrs | @yield('title')</title>
+    <title> Martyrs 21 MM | @yield('title')</title>
 
     <link rel="icon" href="{{ asset('web/img/MM-Martyrs-500px.png') }} " sizes="16x16"/>
 
@@ -77,9 +77,9 @@
             {{-- <div class="col-md-12"> --}}
             <button id="primary-nav-button" style="right: 0;" type="button">Menu</button>
             <a href="{{ route('index') }}">
-                <div class="logo">
+                <div class="logo" style="margin-left: 30px;">
                     <img src="{{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
-                    <h1 style="padding-top: 10px;">MARTYRS 21 MM </h1>
+                    <h1 style="padding-top: 15px;  font-family:'Courier New'; font-weight: bold">MARTYRS 2021 </h1>
                 </div>
             </a>
             <nav id="primary-nav" class="dropdown cf">
@@ -155,10 +155,10 @@
                         <img style="height: 100px;width: 100%;object-fit:contain;" src="
                                 {{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
                     </div>
-                    <p>
+                    <p style="text-align: center">
                         {{ __('about_us.gandhi') }}
                     </p>
-                    <ul class="social-icons">
+                    <ul class="social-icons" style="text-align: center">
                         <li>
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
@@ -167,6 +167,9 @@
                             <a href="#"><i class="fa fa-dribbble"></i></a>
                         </li>
                     </ul>
+                    <p style="text-align: center; margin-top: 20px;">
+                        Source for the number of deaths, abducted and released - <a target="_blank" href="https://www.facebook.com/101219322009964">Free the People: Protest Dashboard</a>
+                    </p>
                 </div>
             </div>
 
