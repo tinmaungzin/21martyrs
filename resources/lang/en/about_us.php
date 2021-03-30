@@ -3,6 +3,7 @@
 return [
     'about_us' => 'About Us',
     'about_us_paragraph' => 'The website is established to commemorate the martyrs who have been killed, and those who have been unlawfully detained by the security forces during Myanmar Spring Revolution 2021, a movement that emerged after the military coup on Feb 1, 2021.',
+    'gandhi' => ' "It\'s the cause, not the death, that makes the martyr." - Gandhi',
     'how_information_collected' => 'How the information is collected',
     'how_information_collected_paragraph' => 'The information on the fallen and detainees on this website is collected in (3) ways:',
     'how_information_collected_paragraph_1' => '1) By monitoring the news updates on social media (Facebook, Twitter) that came out from credible sources.',

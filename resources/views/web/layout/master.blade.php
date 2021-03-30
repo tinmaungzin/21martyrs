@@ -156,7 +156,7 @@
                                 {{ asset('web/img/MM-Martyrs-500px.png') }} " alt="Logo"/>
                     </div>
                     <p>
-                        {{ __('home.about_us_long') }}
+                        {{ __('about_us.gandhi') }}
                     </p>
                     <ul class="social-icons">
                         <li>
