@@ -63,12 +63,12 @@
             <div>
                 <div>
                     <div class="submit-form">
-                        <form id="form-submit" autocomplete="on">
+                        <form id="form-submit" >
                             <div class="row">
 
                                 <div class="col-md-3 first-item">
                                     <fieldset>
-                                        <input type="text" id="name_search" name="name" autocomplete="off"
+                                        <input type="text" id="name_search" name="name" autocomplete="on"
                                                placeholder="{{__('home.filter_name')}}">
                                     </fieldset>
                                 </div>
