@@ -179,7 +179,7 @@
                         </li>
                     </ul>
                     <p style="text-align: center; margin-top: 20px;">
-                        Source for the number of deaths, abducted and released - <a target="_blank" href="https://www.facebook.com/101219322009964">Free the People: Protest Dashboard</a>
+                        Source of the number of deaths, abducted and released - <a target="_blank" href="https://www.facebook.com/101219322009964">Free the People: Protest Dashboard</a>
                     </p>
                 </div>
             </div>

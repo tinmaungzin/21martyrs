@@ -18,10 +18,11 @@
                     <div>
                         <input type="text" name="name" placeholder="Type Name">
                         <select name="status" id="">
-                            <option value="Detained">Detained</option>
-                            <option value="Dead">Dead</option>
-                            <option value="Missing">Missing</option>
-                            <option value="Released">Released</option>
+                            <option value="">None</option>
+                            <option value="detained">Detained</option>
+                            <option value="dead">Dead</option>
+                            <option value="missing">Missing</option>
+                            <option value="released">Released</option>
                         </select>
                         <button onclick="location = this.value;" class="btn-primary" type="submit">Search</button>
                     </div>

@@ -11,7 +11,7 @@
         <div class="container expContainer">
             <h2 class="ExpTitle">Experience sharing</h2>
             <hr />
-            <p class="ExpText">You can write us your experience here</p>
+            <p class="ExpText">You can write us your stories here</p>
             <div class="col-md-7 ExpForm">
                 <div class="ExpForm">
 
