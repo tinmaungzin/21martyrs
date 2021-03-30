@@ -13,7 +13,7 @@ class MigrationUtility
         if (config('database.default') === 'pgsql') {
             $enumStr = join(", ", array_map(function ($enum) {
                 if (is_null($enum)) {
-                    return null;
+                    return "NULL::CHARACTER VARYING";
                 }
                 return "'{$enum}'::CHARACTER VARYING";
             }, $enums));
