@@ -68,28 +68,10 @@
 
                                 <div class="col-md-3 first-item">
                                     <fieldset>
-                                        <input type="text" list="country" id="name_search" name="name" autocomplete="off"
+                                        <input type="text" list="names" id="name_search" name="name" autocomplete="off"
                                                placeholder="{{__('home.filter_name')}}">
-                                        <datalist id="country">
-
-                                            <option value="U.S.">
-                                            <option value="France">
-                                            <option value="China">
-                                            <option value="Cambodia">
-                                            <option value="Chile">
-                                            <option value="Canada">
-                                            <option value="Poland">
-
-                                        </datalist>
                                     </fieldset>
-
-{{--<<<<<<< HEAD--}}
-{{--                                    <div id="name_suggestion"  style="display: block; cursor: pointer;"></div>--}}
-
-{{--=======--}}
-{{--                                    --}}
-{{--                                    --}}
-{{-->>>>>>> origin/thetpai--}}
+                                    <datalist id="names"></datalist>
                                 </div>
 
                                 <div class="col-md-3 second-item">
@@ -223,90 +205,35 @@
 
         function setName(name) {
             $("#name_search").val(name);
-            $('#name_suggestion').empty();
+            $('#names').empty();
         }
-
-        function emptySuggestion() {
-            if ($('#name_search').val() === '') {
-                $('#name_suggestion').empty();
-
-            }
-
-
-        }
-
-        // function fetchNames() {
-        //     // $('#name_suggestion').empty();
-        //
-        //
-        //     // let names='';
-        //     const debouncedSearch = _.debounce(function () {
-        //
-        //         // emptySuggestion();
-        //
-        //
-        //         $('#name_suggestion').empty();
-        //
-        //         let form = {
-        //             'name': $('#name_search').val()
-        //         };
-        //
-        //         ajaxHeaders();
-        //
-        //         $.post('/fetch_names', JSON.stringify(form))
-        //             .done(function (data) {
-        //                 if (data.success) {
-        //                     // names = data.names;
-        //                     data.names ={
-        //                         name: 'Ok'
-        //                     }
-        //                     data.names.forEach(function (name) {
-        //                         $('#name_suggestion').append(`
-        //                                 <p onclick="setName('${name.name}')">${name.name}</p>
-        //                         `)
-        //                     });
-        //                 }
-        //             });
-        //         // names = '';
-        //     }, 300, {trailing: true})
-        //     $('#name_search').keyup(debouncedSearch);
-        // }
-
 
         function fetchNames() {
-            // $('#name_suggestion').empty();
+            const debouncedSearch = _.debounce(function () {
 
-
-            // let names='';
-            $('#name_search').keyup(function (){
-                console.log('here')
-                $('#name_suggestion').empty();
+                $('#names').empty();
 
                 let form = {
                     'name': $('#name_search').val()
                 };
 
                 ajaxHeaders();
+
                 $.post('/fetch_names', JSON.stringify(form))
                     .done(function (data) {
                         if (data.success) {
-                            // names = data.names;
-                            // data.names ={
-                            //     name: 'Ok'
-                            // }
                             data.names.forEach(function (name) {
-                                $('#name_suggestion').append(`
-                                        <p onclick="setName('${name.name}')">${name.name}</p>
+                                $('#names').append(`
+                                        <option onclick="setName('${name.name}')">${name.name}</option>
                                 `)
                             });
                         }
                     });
-            })
+            }, 300, {trailing: true})
+            $('#name_search').keyup(debouncedSearch);
         }
 
         $(document).ready(function () {
-
-            // emptySuggestion();
             fetchNames();
 
 
