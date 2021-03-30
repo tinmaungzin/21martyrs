@@ -11,7 +11,6 @@
 
     <link rel="icon" href="{{ asset('web/img/MM-Martyrs-500px.png') }} " sizes="16x16"/>
 
-    <meta name="description" content=""/>
     <meta name="viewport" content="width=device-width, initial-scale=1"/>
     @if(App::environment('production'))
         @include('components.seo')
@@ -69,13 +68,13 @@
 </head>
 
 <style>
-.sticky {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
+    .sticky {
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 100;
 
-}
+    }
 
 </style>
 
@@ -179,7 +178,9 @@
                         </li>
                     </ul>
                     <p style="text-align: center; margin-top: 20px;">
-                        Source of the number of deaths, abducted and released - <a target="_blank" href="https://www.facebook.com/101219322009964">Free the People: Protest Dashboard</a>
+                        Source of the number of deaths, abducted and released - <a target="_blank"
+                                                                                   href="https://www.facebook.com/101219322009964">Free
+                            the People: Protest Dashboard</a>
                     </p>
                 </div>
             </div>
@@ -261,11 +262,11 @@
     // });
 
     function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("header").style.padding = "0px 0px 40px 0";
-    document.getElementById("logo").style.fontSize = "25px";
-  } 
-}
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("header").style.padding = "0px 0px 40px 0";
+            document.getElementById("logo").style.fontSize = "25px";
+        }
+    }
 
 </script>
 
