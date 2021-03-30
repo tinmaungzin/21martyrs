@@ -12,8 +12,17 @@
                     @if($pendingPost->status == 'Detained')
                         <h3>{{ __('forms.detained_header') }}</h3>
 
-                    @else
+                    @endif
+                    @if($pendingPost->status == 'Dead')
                         <h3>{{ __('forms.dead_header') }}</h3>
+
+                    @endif
+                    @if($pendingPost->status == 'Missing')
+                        <h3>{{ __('forms.missing_header') }}</h3>
+
+                    @endif
+                    @if($pendingPost->status == 'Released')
+                        <h3>{{ __('forms.released_header') }}</h3>
 
                     @endif
 
@@ -50,9 +59,9 @@
                         <div class="inputValue">
                             <select id="gender" name="gender">
                                 <option value="" disabled>{{ __('forms.choose_gender') }}</option>
-                                <option @if($pendingPost->gender == 'Male') selected @endif value="Male">{{ __('forms.male') }}</option>
-                                <option @if($pendingPost->gender == 'Female') selected @endif value="Female">{{ __('forms.female') }}</option>
-                                <option @if($pendingPost->gender == 'Other') selected @endif value="Other">{{ __('forms.other') }}</option>
+                                <option @if($pendingPost->gender == 'male') selected @endif value="Male">{{ __('forms.male') }}</option>
+                                <option @if($pendingPost->gender == 'female') selected @endif value="Female">{{ __('forms.female') }}</option>
+                                <option @if($pendingPost->gender == 'other') selected @endif value="Other">{{ __('forms.other') }}</option>
                             </select>
                             <span class="text-danger">{{$errors->first('gender')}}</span>
 
@@ -123,18 +132,55 @@
 
 
                     <div class="inputBox">
-                        <div class="inputHeader">
-                            <p>Date</p>
+                        @if($pendingPost->status == 'Detained')
+                            <div class="inputHeader">
+                                <p> Detained Date</p>
+                            </div>
+                        @endif
+                        @if($pendingPost->status == 'Dead')
+                            <div class="inputHeader">
+                                <p>Death Date</p>
+                            </div>
+                        @endif
+                        @if($pendingPost->status == 'Missing')
+                            <div class="inputHeader">
+                                <p>Missed Date</p>
+                            </div>
+                        @endif
+                        @if($pendingPost->status == 'Released')
+                            <div class="inputHeader">
+                                <p> Released Date</p>
+                            </div>
+                        @endif
 
-                        </div>
-                        <div class="inputValue">
-                            <input type="date" id="arrested_date" value="{{$pendingPost->detained_date}}" name="detained_date" />
-                            <span class="text-danger">{{$errors->first('detained_date')}}</span>
-
-                        </div>
+                        @if($pendingPost->status == 'Released')
+                            <div class="inputValue">
+                                <input type="date" id="arrested_date" value="{{$pendingPost->released_date}}" name="released_date" />
+                                <span class="text-danger">{{$errors->first('released_date')}}</span>
+                            </div>
+                        @else
+                            <div class="inputValue">
+                                <input type="date" id="arrested_date" value="{{$pendingPost->detained_date}}" name="detained_date" />
+                                <span class="text-danger">{{$errors->first('detained_date')}}</span>
+                            </div>
+                        @endif
                     </div>
+                    @if(isset($pendingPost->detained_date) && $pendingPost->status == 'Released')
+                        <div class="inputBox">
+                            <div class="inputHeader">
+                                <p>Detained Date</p>
 
-                    @if($pendingPost->status == 'Detained')
+                            </div>
+                            <div class="inputValue">
+                                <input type="date" value="{{$pendingPost->detained_date}}"
+                                       name="detained_date"/>
+                                <span class="text-danger">{{$errors->first('detained_date')}}</span>
+
+                            </div>
+
+                        </div>
+                    @endif
+                    @if($pendingPost->status == 'Detained' || $pendingPost->status == 'Released')
 
                         <div class="inputBox">
                             <div class="inputHeader">
@@ -149,7 +195,8 @@
                             </div>
 
                         </div>
-                    @else
+                    @endif
+                    @if($pendingPost->status == 'Dead')
                         <div class="inputBox">
                             <div class="inputHeader">
                                 <p>Reason of Death</p>
@@ -164,7 +211,15 @@
 
                         </div>
                     @endif
-                    @if($pendingPost->status == 'Detained')
+
+
+
+                </div>
+
+                <div class="rightInfo">
+
+                    @if(($pendingPost->status == 'Detained' || $pendingPost->status =='Released'))
+
                         <div class="inputBox">
                             <div class="inputHeader">
                                 <p>Prison</p>
@@ -176,12 +231,6 @@
                             </div>
                         </div>
                     @endif
-
-                </div>
-
-                <div class="rightInfo">
-
-
                     <div class="inputBox">
                         <div class="inputHeader">
                             <p>Comment</p>
