@@ -18,6 +18,10 @@ yarn-error.log
 # Editor config
 .idea/
 
+# mixin compiled assets
+public/build
+public/mix-manifest.json
+
 # Deployment credentials
 config/deploy.php
 
