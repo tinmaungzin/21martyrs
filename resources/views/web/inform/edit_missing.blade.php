@@ -35,7 +35,7 @@
 
                     </div>
                     <div class="inputValue">
-                        <input type="number" id="age" name="age" value="{{$post->age}}" min="10" max="99" placeholder="{{ __('forms.age_placeholder') }}" />
+                        <input type="number" id="age" name="age" value="{{$post->age}}" placeholder="{{ __('forms.age_placeholder') }}" />
 
                         <span class="text-danger">{{$errors->first('age')}}</span>
 
