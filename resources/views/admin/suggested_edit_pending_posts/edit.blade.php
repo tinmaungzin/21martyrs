@@ -58,9 +58,9 @@
                         <div class="inputValue">
                             <select id="gender" name="gender">
                                 <option value="" disabled>{{ __('forms.choose_gender') }}</option>
-                                <option @if($pendingPost->gender == 'Male') selected @endif value="Male">{{ __('forms.male') }}</option>
-                                <option @if($pendingPost->gender == 'Female') selected @endif value="Female">{{ __('forms.female') }}</option>
-                                <option @if($pendingPost->gender == 'Other') selected @endif value="Other">{{ __('forms.other') }}</option>
+                                <option @if($pendingPost->gender == 'male') selected @endif value="Male">{{ __('forms.male') }}</option>
+                                <option @if($pendingPost->gender == 'female') selected @endif value="Female">{{ __('forms.female') }}</option>
+                                <option @if($pendingPost->gender == 'other') selected @endif value="Other">{{ __('forms.other') }}</option>
                             </select>
                             <span class="text-danger">{{$errors->first('gender')}}</span>
 
@@ -163,7 +163,7 @@
                         @endif
                     </div>
 
-                    @if($pendingPost->status == 'Detained')
+                    @if($pendingPost->status == 'Detained' || $pendingPost->status == 'Released')
 
                         <div class="inputBox">
                             <div class="inputHeader">
@@ -194,7 +194,13 @@
 
                         </div>
                     @endif
-                    @if($pendingPost->status == 'Detained' && isset($pendingPost->prison))
+
+
+                </div>
+
+                <div class="rightInfo">
+
+                    @if(($pendingPost->status == 'Detained' || $pendingPost->status =='Released'))
                         <div class="inputBox">
                             <div class="inputHeader">
                                 <p>Prison</p>
@@ -206,12 +212,6 @@
                             </div>
                         </div>
                     @endif
-
-                </div>
-
-                <div class="rightInfo">
-
-
                     <div class="inputBox">
                         <div class="inputHeader">
                             <p>Comment</p>

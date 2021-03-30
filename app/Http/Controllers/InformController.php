@@ -50,10 +50,13 @@ class InformController extends Controller
     public function store(InformRequest $request)
     {
         $data = $request->except('photo');
-        if ($request->has('photo')) {
+        if ($request->has('photo'))
+        {
             $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
             $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         }
+        if($request->has('released_date')) $data['status'] = 'released';
+
         $data['gender'] = strtolower($data['gender']);
         $data['publishing_status'] = 'None';
         //TODO add user id

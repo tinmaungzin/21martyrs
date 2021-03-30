@@ -32,20 +32,27 @@ class NewPendingPostsController extends Controller
 
     public function getPostData($pendingPost)
     {
-        $data['name'] = $pendingPost->name;
-        $data['comment'] = $pendingPost->comment;
-        $data['age'] = $pendingPost->age;
-        $data['status'] = $pendingPost->status;
-        $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
-        $data['gender'] = $pendingPost->gender;
-        $data['occupation'] = $pendingPost->occupation;
-        $data['organization_name'] = $pendingPost->organization_name;
-        $data['state_id'] = $pendingPost->state_id;
-        $data['address'] = $pendingPost->address;
-        $data['prison'] = $pendingPost->prison;
-        $data['detained_date'] = $pendingPost->detained_date;
-        $data['reason_of_dead'] = $pendingPost->reason_of_dead;
-        $data['reason_of_arrest'] = $pendingPost->reason_of_arrest;
+//        $data['name'] = $pendingPost->name;
+//        $data['comment'] = $pendingPost->comment;
+//        $data['age'] = $pendingPost->age;
+//        $data['status'] = $pendingPost->status;
+//        $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
+//        $data['gender'] = $pendingPost->gender;
+//        $data['occupation'] = $pendingPost->occupation;
+//        $data['organization_name'] = $pendingPost->organization_name;
+//        $data['state_id'] = $pendingPost->state_id;
+//        $data['address'] = $pendingPost->address;
+//        $data['prison'] = $pendingPost->prison;
+//        $data['detained_date'] = $pendingPost->detained_date;
+//        $data['reason_of_dead'] = $pendingPost->reason_of_dead;
+//        $data['reason_of_arrest'] = $pendingPost->reason_of_arrest;
+        if($pendingPost['profile_url'] != '') $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
+        foreach(['name','comment', 'age', 'gender', 'occupation', 'organization_name', 'status',
+                    'state_id', 'prison', 'detained_date' ,'reason_of_arrest','reason_of_dead','address','released_date'
+                ] as $field )
+        {
+            if($pendingPost[$field] != '') $data[$field] = $pendingPost[$field];
+        }
         $data['admin_id'] = auth()->guard('admin')->user()->id;
 
         return $data;

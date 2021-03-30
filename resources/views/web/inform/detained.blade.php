@@ -127,9 +127,6 @@
                                               type="danger"></x-form.form-text>
 
                         </div>
-                        {{--                         <div class="inputValue" style="display: none">--}}
-                        {{--                         <input type="text" placeholder="please specify" name="name" />--}}
-                        {{--                         </div> --}}
                     </div>
 
                     <div class="inputBox">
@@ -157,6 +154,7 @@
                         </div>
                     </div>
 
+
                     <div class="inputBox">
                         <div class="inputHeader">
                             <p>{{ __('forms.detained_reason_label') }}<span>*</span></p>
@@ -166,19 +164,9 @@
                                 value="{{old('reason_of_arrest')}}"
                                 type="text" placeholder="{{ __('forms.detained_reason_placeholder') }}"
                                 name="reason_of_arrest"/>
-{{--                            <select data-value="{{old('reason_of_arrest')}}" id="reason_of_arrest"--}}
-{{--                                    name="reason_of_arrest">--}}
-{{--                                <option value="" selected disabled>{{ __('ui.choose_reason_of_arrest') }}</option>--}}
-{{--                                <option value="Protest">{{ __('ui.protestor') }}</option>--}}
-{{--                                <option value="Bystand">{{ __('ui.bystander') }}</option>--}}
-{{--                                <option value="Other">{{ __('ui.others') }}</option>--}}
-{{--                            </select>--}}
                             <span class="text-danger">{{ $errors->first('reason_of_arrest') }}</span>
 
                         </div>
-                        {{--                        <div class="inputValue" style="display: none">--}}
-                        {{--                            <input type="text" placeholder="{{ __('ui.please_specify') }}" name="name" />--}}
-                        {{--                        </div>--}}
                     </div>
                 </div>
 
@@ -191,6 +179,16 @@
                             <input type="text" placeholder="{{ __('forms.prison_placeholder') }}" name="prison"
                                    autocomplete="off"/>
                             <span class="text-danger">{{ $errors->first('prison') }}</span>
+
+                        </div>
+                    </div>
+                    <div class="inputBox">
+                        <div class="inputHeader">
+                            <p>{{ __('forms.released_date') }}</p>
+                        </div>
+                        <div class="inputValue">
+                            <input type="date" id="arrested_date" name="released_date"/>
+                            <span class="text-danger">{{ $errors->first('released_date') }}</span>
 
                         </div>
                     </div>
@@ -262,10 +260,6 @@
                         </div>
                     </div>
                 </div>
-{{--                <div class="inputCheckbox">--}}
-{{--                    <input type="checkbox" name="terms" id="terms">--}}
-{{--                    <label for="terms" >Thank you for your information. Please note that we will verify and update as soon as we can.</label>--}}
-{{--                </div>--}}
 
             </div>
             <div class="submitButton">
@@ -277,18 +271,6 @@
 
 
 
-{{--    <script>--}}
-{{--        $(document).ready(function(){--}}
-{{--            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
-{{--            else $("#submit").prop( "disabled", true );--}}
-
-{{--            $('#terms').click(function(){--}}
-{{--                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
-{{--                else $("#submit").prop( "disabled", true );--}}
-{{--            });--}}
-
-{{--        })--}}
-{{--    </script>--}}
     @include('web.layout.success_msg')
 
 @endsection

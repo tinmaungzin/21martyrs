@@ -225,7 +225,7 @@
         </div>
 
             <div class="submitButton">
-                <input type="text" value="dead" name="status" hidden>
+                <input type="text" value="missing" name="status" hidden>
 
                 <button id="submit" type="submit">{{ __('forms.submit') }}</button>
             </div>

@@ -47,6 +47,7 @@ Route::prefix('admin')->group(function () {
         Route::get('published_posts', [PublishedPostsController::class, 'published_posts'])->name('list.published_posts');
         Route::get('published_posts/{post}', [PublishedPostsController::class, 'edit'])->name('edit.published_posts');
         Route::post('published_posts/{post}', [PublishedPostsController::class, 'update'])->name('update.published_posts');
+        Route::delete('published_posts/{post}', [PublishedPostsController::class, 'destroy'])->name('destroy.published_posts');
 
         Route::get('rejected_pending_posts', [RejectedPendingPostsController::class, 'rejected_pending_posts'])->name('list.rejected_pending_posts');
         Route::get('rejected_pending_posts/{pendingPost}/confirm', [RejectedPendingPostsController::class, 'rejected_pending_post_confirm_form'])->name('form.confirm.rejected_pending_post');

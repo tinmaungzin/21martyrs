@@ -69,7 +69,7 @@ return [
     'protestor' => '',
     'relationship_label' => 'How do you get the information?',
     'released' => 'Released Date',
-    'released_date' => '',
+    'released_date' => 'Released Date (if applicable)',
     'released_header' => 'Released Person\'s Information',
     'social' => 'Social Media',
     'state_label' => 'State/Region',

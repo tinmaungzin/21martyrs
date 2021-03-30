@@ -1,4 +1,4 @@
-<?php 
+<?php
 
 return [
     'about_us' => 'About Us',
@@ -15,5 +15,5 @@ return [
     'missing' => 'Missing',
     'released' => 'Released',
     'search' => 'Search Now',
-    'unknown' => 'N/A',
+    'unknown' => '-',
 ];

@@ -245,10 +245,6 @@
                     </div>
                 </div>
             </div>
-{{--                <div class="inputCheckbox">--}}
-{{--                    <input type="checkbox" name="terms" id="terms">--}}
-{{--                    <label for="terms" >Thank you for your information. Please note that we will verify and update as soon as we can.</label>--}}
-{{--                </div>--}}
         </div>
 
             <div class="submitButton">
@@ -259,18 +255,6 @@
         </div>
     </form>
 
-{{--    <script>--}}
-{{--        $(document).ready(function(){--}}
-{{--            if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
-{{--            else $("#submit").prop( "disabled", true );--}}
-
-{{--            $('#terms').click(function(){--}}
-{{--                if($("#terms").is(':checked')) $("#submit").prop( "disabled", false );--}}
-{{--                else $("#submit").prop( "disabled", true );--}}
-{{--            });--}}
-
-{{--        })--}}
-{{--    </script>--}}
     @include('web.layout.success_msg')
 
 
