@@ -42,8 +42,11 @@
 
 }
 
-.ComingArea img{
-    width: 35%;
+.ComingArea h1{
+    color: black;
+    background: #fff;
+    width: fit-content;
+    margin: auto;
 }
 
 .featured-item .thumb img {
