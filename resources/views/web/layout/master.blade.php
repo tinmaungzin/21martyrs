@@ -260,17 +260,11 @@
     //     });
     // });
 
-    window.onscroll = function() {myFunction()};
-
-var navbar = document.getElementById("nav");
-var sticky = navbar.offsetTop;
-
-function myFunction() {
-  if (window.pageYOffset >= sticky) {
-    navbar.classList.add("sticky")
-  } else {
-    navbar.classList.remove("sticky");
-  }
+    function scrollFunction() {
+  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+    document.getElementById("header").style.padding = "0px 0px 40px 0";
+    document.getElementById("logo").style.fontSize = "25px";
+  } 
 }
 
 </script>
