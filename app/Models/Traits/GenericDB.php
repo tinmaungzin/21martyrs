@@ -13,6 +13,6 @@ trait GenericDB
         if (config('database.default') == 'pgsql') {
             return $builder->where($col_name, 'ilike', "%" . $search_string . "%");
         }
-        return $builder->whereRaw("LOWER (`{$col_name}`) LIKE %{$search_string}%");
+        return $builder->whereRaw("LOWER (`{$col_name}`) LIKE '%{$search_string}%'");
     }
 }

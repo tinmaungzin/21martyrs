@@ -8,7 +8,7 @@ class PostFilter extends QueryFilter
 {
     use GenericDB;
 
-    public function name($name)
+    public function name($name): \Illuminate\Database\Eloquent\Builder
     {
 //        return $this->builder->where('name', 'like', '%' . $name . '%');
         return self::caseInsensitiveSearch($this->builder, 'name', $name);
