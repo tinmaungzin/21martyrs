@@ -485,6 +485,18 @@ section.featured-Cards {
   -o-transform: scale(1.1);
 }
 
+@media (max-width: 750px) {
+  .featured-Cards .featured-item {
+    transition: none;
+
+}
+  
+  .featured-Cards .featured-item:hover {
+    transform:none;
+
+}
+}
+
 @media (max-width: 992px) {
   .staticBox{
     margin-top: 100px !important;

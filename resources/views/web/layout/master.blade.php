@@ -68,9 +68,20 @@
 -->
 </head>
 
+<style>
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+
+}
+
+</style>
+
 <body>
 <!-- Header -->
-<div class="wrap">
+<div class="wrap " id="nav">
     <header id="header">
         <div class="container-fluid" style="padding: 0">
             {{-- <div class="row"> --}}
@@ -248,6 +259,19 @@
     //         size: false
     //     });
     // });
+
+    window.onscroll = function() {myFunction()};
+
+var navbar = document.getElementById("nav");
+var sticky = navbar.offsetTop;
+
+function myFunction() {
+  if (window.pageYOffset >= sticky) {
+    navbar.classList.add("sticky")
+  } else {
+    navbar.classList.remove("sticky");
+  }
+}
 
 </script>
 
