@@ -30,13 +30,13 @@
                             <div class="TopBox">
                                 <h4 class="titleText">{{ __('home.as_of_date', ['date' => Carbon\Carbon::now()->toFormattedDateString()]) }}</h4>
                                 <div class="TopText">
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->total_death}}+</h1>
                                     <h4>Total death</h4>
                                 </div>
                                 <div class="MiddleText">
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->headshot}}</h1>
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->gunshot}}</h1>
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->assault}}</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->headshot}}+</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->gunshot}}+</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->assault}}+</h1>
                                 </div>
                                 <div class="subMiddleText">
                                     <h4>Headshot</h4>
@@ -46,8 +46,8 @@
                             </div>
                             <div class="SubstaticBox">
                                 <div class="SubTitle">
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->abducted}}</h1>
-                                    <h1 class="count">{{is_null($stat) ? 0: $stat->released}}</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->abducted}}+</h1>
+                                    <h1 class="count">{{is_null($stat) ? 0: $stat->released}}+</h1>
                                 </div>
                                 <div class="SubText">
                                     <h4>Abducted</h4>
@@ -242,16 +242,16 @@
             fetchNames();
 
 
-            $('.count').each(function () {
-                let $this = $(this);
-                $({Counter: 0}).animate({Counter: $this.text()}, {
-                    duration: 1000,
-                    easing: 'swing',
-                    step: function () {
-                        $this.text(Math.ceil(this.Counter));
-                    }
-                });
-            });
+            // $('.count').each(function () {
+            //     let $this = $(this);
+            //     $({Counter: 0}).animate({Counter: $this.text()}, {
+            //         duration: 1000,
+            //         easing: 'swing',
+            //         step: function () {
+            //             $this.text(Math.ceil(this.Counter));
+            //         }
+            //     });
+            // });
 
 
         })
