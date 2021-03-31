@@ -69,12 +69,12 @@
             <div class="login-rightside">
                 <div style="margin-top: 12%;margin-bottom: 15%">
                     <div class="d-flex justify-content-center pt-4">
-                        <img src="{{asset('images/21martyrs.webp')}}"
+                        <img src="{{ asset('web/img/MM-Martyrs-500px.png') }}"
                              style="height: 80px;width: 80px;border-radius: 50%" alt="">
                     </div>
                     <div class="px-4 my-3 py-3">
                         <p class="font-weight-bold text-white text-center" style="font-size: 26px!important;"><span
-                                style="font-size: 28px!important;">21 Martyrs</span><br> Admin Panel</p>
+                                style="font-size: 28px!important;">MARTYRS 2021 MM</span><br> Admin Panel</p>
                     </div>
                 </div>
             </div>
