@@ -10,6 +10,14 @@ use Illuminate\Support\Str;
 class ImageModule
 {
 
+    public static function isImage($path): bool
+    {
+        if (is_file($path) && is_array(getimagesize($path))) {
+            return true;
+        }
+        return false;
+    }
+
     public static function uploadFromRequest(string $imageKey, string $name)
     {
         $path = request()->file($imageKey)->storePubliclyAs(self::prepare_folder(), self::normalize_path($name), config('filesystems.default'));

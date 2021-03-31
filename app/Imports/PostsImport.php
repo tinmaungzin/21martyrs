@@ -82,6 +82,9 @@ class PostsImport implements ToCollection, WithHeadingRow
                     continue;
                 }
                 $file = Arr::first($this->files, function ($file_path) use ($row) {
+                    if (!ImageModule::isImage($file_path)) {
+                        return false;
+                    }
                     $matchedStr = Str::of($file_path)->match('/\d+/');
                     return strval($row['no']) == $matchedStr;
                 });
