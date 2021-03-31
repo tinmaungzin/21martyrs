@@ -23,4 +23,5 @@ class ViewUtility
         $carbon = new Carbon($date, new DateTimeZone('Asia/Yangon'));
         return $carbon->format($format);
     }
+
 }

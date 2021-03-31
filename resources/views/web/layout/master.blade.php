@@ -173,9 +173,7 @@
                         <li>
                             <a href="#"><i class="fa fa-facebook"></i></a>
                             <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-linkedin"></i></a>
-                            <a href="#"><i class="fa fa-rss"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
                         </li>
                     </ul>
                     <p style="text-align: center; margin-top: 20px;">
@@ -187,7 +185,7 @@
             <div class="col-md-3">
                 <div class="contact-info">
                     <div class="footer-heading">
-                        <h3>{{ __('master.contact_information') }}</h3>
+                        <h3 style="text-align: center">{{ __('master.contact_information') }}</h3>
                     </div>
                     {{--                    <p>--}}
                     {{--                        Praesent iaculis gravida elementum. Proin fermentum neque--}}
@@ -264,7 +262,7 @@
   if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
     document.getElementById("header").style.padding = "0px 0px 40px 0";
     document.getElementById("logo").style.fontSize = "25px";
-  } 
+  }
 }
 
 </script>

@@ -22,6 +22,7 @@ class Stat extends Model
         'assault',
         'abducted',
         'released',
+        'date',
     ];
 
 }

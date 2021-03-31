@@ -61,7 +61,7 @@
                             </td>
                             <td class="padding-table-row">
                                 <div class="text-td text-capitalize">
-                                    {{$stat->created_at}}
+                                    {{$stat->date}}
                                 </div>
                             </td>
 

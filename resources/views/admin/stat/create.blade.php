@@ -60,6 +60,14 @@
                         <span class="text-danger">{{$errors->first('released')}}</span>
                     </div>
                 </div>
+                <div class="row mx-0 pt-3 mb-3" style="padding-left: 15px;">
+                    <div class="col-7">
+                        <label for="" class="label-form mb-3" style="font-size: 17px!important;">Date</label>
+                        <input type="date" class="input-form" style="border-radius: 6px;" name="date" value="{{old('date')}}"
+                               placeholder="Released">
+                        <span class="text-danger">{{$errors->first('date')}}</span>
+                    </div>
+                </div>
 
 
 
