@@ -16,7 +16,7 @@
                         <div class="banner-caption">
                             <div class="line-dec"></div>
                             <h2>{{ __('home.about_us') }}</h2>
-                            <span style="font-size: 18px">{{ __('home.about_us_long') }}</span>
+                            <span style="font-size: 19px;">{{ __('home.about_us_long') }}</span>
                             <div class="blue-button">
                                 <a class="scrollTo" data-scrollTo="popular"
 
