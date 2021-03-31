@@ -17,7 +17,7 @@
     @endif
     <meta property="og:description" content="{{__('ui.seo_description')}}">
     <meta property="og:image" content="{{asset('web/img/MM-Martyrs-Cover-withoutLogo.jpg')}}">
-    <meta property="og:title" content="21 Maryrs | Heroes of 21st Reveloution">
+    <meta property="og:title" content="Martyrs 21 | Myanmar Spring Revolution">
     <meta property="og:type" content="website"/>
     <meta property="og:url" content="{{url()->current()}}">
     <meta property="og:locale" content="{{$constants::LOCALE_MAP[App::getLocale()]['code']}}">
