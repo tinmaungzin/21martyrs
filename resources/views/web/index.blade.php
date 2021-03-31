@@ -28,7 +28,9 @@
 
                         <div class="staticBox">
                             <div class="TopBox">
-                                <h4 class="titleText">{{ __('home.as_of_date', ['date' => ViewUtility::displayDate($stat->date,'jS F Y')]) }}</h4>
+                                @if(!is_null($stat))
+                                    <h4 class="titleText">{{ __('home.as_of_date', ['date' => ViewUtility::displayDate($stat->date,'jS F Y')]) }}</h4>
+                                @endif
                                 <div class="TopText">
                                     <h1 class="count">{{is_null($stat) ? 0: $stat->total_death}}</h1>
                                     <h4>Total death</h4>
