@@ -55,7 +55,8 @@ class InformController extends Controller
             $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
             $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
         }
-        if($request->released_date != null) $data['status'] = 'released';
+
+        if(!is_null($request->released_date)) $data['status'] = 'released';
 
         $data['gender'] = strtolower($data['gender']);
         $data['publishing_status'] = 'None';
