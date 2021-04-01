@@ -2,6 +2,21 @@
 <html>
 
 <head>
+    @if(App::environment('production'))
+        {{--    <!-- Global site tag (gtag.js) - Google Analytics -->--}}
+        <script async src="https://www.googletagmanager.com/gtag/js?id=UA-193562495-1"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+
+            function gtag() {
+                dataLayer.push(arguments);
+            }
+
+            gtag('js', new Date());
+
+            gtag('config', 'UA-193562495-1');
+        </script>
+    @endif
     @inject("constants", "\App\Utility\Constants")
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
@@ -260,11 +275,11 @@
     // });
 
     function scrollFunction() {
-  if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-    document.getElementById("header").style.padding = "0px 0px 40px 0";
-    document.getElementById("logo").style.fontSize = "25px";
-  }
-}
+        if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+            document.getElementById("header").style.padding = "0px 0px 40px 0";
+            document.getElementById("logo").style.fontSize = "25px";
+        }
+    }
 
 
 </script>
