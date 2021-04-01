@@ -63,11 +63,11 @@
                         </div>
                         <div class="profileDetail">
                             <p class="DetailText">{{__('forms.occupation_label')}}:</p>
-                            <p>{{ViewUtility::displayNullableText($post->occupation)}}</p>
+                            <p>{{ViewUtility::displayNullableText(ucfirst($post->occupation) )}}</p>
                         </div>
                         <div class="profileDetail">
                             <p class="DetailText">{{__('forms.association')}}:</p>
-                            <p>{{ViewUtility::displayNullableText($post->organization_name)}}</p>
+                            <p>{{ViewUtility::displayNullableText(ucfirst($post->organization_name) )}}</p>
                         </div>
 
                         <div class="profileDetail">
@@ -106,13 +106,13 @@
                             <div class="profileDetail">
                                 <p class="DetailText">{{__('forms.detained_reason_label')}}
                                     :</p>
-                                <p>{{$post->reason_of_arrest}}</p>
+                                <p>{{ ucfirst($post->reason_of_arrest) }}</p>
                             </div>
                         @endif
                         @if($post->status == 'Dead')
                             <div class="profileDetail">
                                 <p class="DetailText">{{__('forms.dead_reason_label')}}:</p>
-                                <p>{{$post->reason_of_dead}}</p>
+                                <p>{{ ucfirst($post->reason_of_dead) }}</p>
                             </div>
                         @endif
 

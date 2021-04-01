@@ -47,7 +47,8 @@ class NewPendingPostsController extends Controller
 //        $data['reason_of_dead'] = $pendingPost->reason_of_dead;
 //        $data['reason_of_arrest'] = $pendingPost->reason_of_arrest;
         if($pendingPost['profile_url'] != '') $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
-        foreach(['name','comment', 'age', 'gender', 'occupation', 'organization_name', 'status',
+        if($pendingPost['status'] != '') $data['status'] = $pendingPost->getAttributes()['status'];
+        foreach(['name','comment', 'age', 'gender', 'occupation', 'organization_name',
                     'state_id', 'prison', 'detained_date' ,'reason_of_arrest','reason_of_dead','address','released_date'
                 ] as $field )
         {
