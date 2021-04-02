@@ -39,14 +39,14 @@
                     'articles.create',
                     'articles.edit'
                     ]) ? 'active-link': ''}}">
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Articles
+                <img src="{{ asset('images/article.png') }}" class="sidebar-img" alt=""> Articles
             </a>
 
             <a href="{{route('list.new_pending_posts')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
                     'list.new_pending_posts',
                     ]) ? 'active-link': ''}}">
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> New Pending Posts
+                <img src="{{ asset('images/pending_post.png') }}" class="sidebar-img" alt=""> New Pending Posts
             </a>
 
             <a href="{{route('list.suggested_edit_pending_posts')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px"
@@ -54,21 +54,21 @@
             {{ in_array($route, [
                     'list.suggested_edit_pending_posts'
                     ]) ? 'active-link': ''}}">
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Edit Pending Posts
+                <img src="{{ asset('images/edit_pending_post.png') }}" class="sidebar-img" alt=""> Edit Pending Posts
             </a>
 
             <a href="{{route('list.published_posts')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
                     'list.published_posts',
                     ]) ? 'active-link': ''}}">
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Published Posts
+                <img src="{{ asset('images/published_post.png') }}" class="sidebar-img" alt=""> Published Posts
             </a>
 
             <a href="{{route('list.rejected_pending_posts')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
                     'list.rejected_pending_posts',
                     ]) ? 'active-link': ''}}">
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Rejected Posts
+                <img src="{{ asset('images/rejected_post.png') }}" class="sidebar-img" alt=""> Rejected Posts
             </a>
 
             <a href="{{route('stats.index')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
@@ -76,148 +76,19 @@
                     'stats.index',
                     'stats.create',
                     ]) ? 'active-link': ''}}">
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Statistic
+                <img src="{{ asset('images/stat.png') }}" class="sidebar-img" alt=""> Statistic
             </a>
             <a href="{{route('feedback.index')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15
             {{ in_array($route, [
                     'feedback.index',
                     'feedback.show',
                     ]) ? 'active-link': ''}}">
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Feedback
+                <img src="{{ asset('images/feedback.png') }}" class="sidebar-img" alt=""> Feedback
             </a>
 
-            <a href="{{route('admin.logout')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15>
-                <img src="{{ asset('images/admin.png') }}" class="sidebar-img" alt=""> Logout
+            <a href="{{route('admin.logout')}}" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15">
+                <img src="{{ asset('images/logout.png') }}" class="sidebar-img" alt=""> Logout
             </a>
-
-
-            {{--            <button style="" class="fs15 btn-clear btn-collapse  text-left" type="button"--}}
-            {{--                    data-toggle="collapse" data-target="#cycle"--}}
-            {{--                    aria-expanded="false" aria-controls="cycle"--}}
-            {{--            >--}}
-            {{--                <img src="{{ asset('images/Cycle.png') }}" class="sidebar-img" alt=""> Motor Cycles--}}
-            {{--            </button>--}}
-            {{--            <div class="collapse multi-collapse" id="cycle">--}}
-            {{--                <a href="/brands" class="a-clear a-sidebar cycle--}}
-            {{--                    {{ $route === 'brands.index' ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                     Brands--}}
-            {{--                </a>--}}
-            {{--                <a href="/colors" class="a-clear a-sidebar cycle--}}
-            {{--                    {{ $route === 'colors.index' ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                     Colors--}}
-            {{--                </a>--}}
-            {{--                <a href="/types" class="a-clear a-sidebar cycle--}}
-            {{--                     {{ $route === 'types.index' ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                     Models--}}
-            {{--                </a>--}}
-
-            {{--                <a href="/serials" class="a-clear a-sidebar cycle--}}
-            {{--                {{ in_array($route, [--}}
-            {{--                    'serials.index',--}}
-            {{--                    'serials.create',--}}
-            {{--                    'serials.edit'--}}
-            {{--                    ]) ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                    Motor Cycles--}}
-            {{--                </a>--}}
-            {{--            </div>--}}
-
-            {{--            <button style="" class="fs15 btn-clear btn-collapse  text-left" type="button"--}}
-            {{--                    data-toggle="collapse" data-target="#item"--}}
-            {{--                    aria-expanded="false" aria-controls="item"--}}
-            {{--            >--}}
-            {{--                <img src="{{ asset('images/Cycle.png') }}" class="sidebar-img" alt=""> Items--}}
-            {{--            </button>--}}
-            {{--            <div class="collapse multi-collapse" id="item">--}}
-
-
-            {{--                <a href="/items" class="a-clear a-sidebar item--}}
-            {{--                {{ in_array($route, [--}}
-            {{--                    'items.index',--}}
-            {{--                    'items.create',--}}
-            {{--                    'items.edit'--}}
-            {{--                    ]) ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                    Items--}}
-            {{--                </a>--}}
-            {{--                <a href="/item_categories" class="a-clear a-sidebar item--}}
-            {{--                    {{ $route === 'item_categories.index' ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                    Item Categories--}}
-            {{--                </a>--}}
-            {{--            </div>--}}
-
-
-
-            {{--            <button style="" class="fs15 btn-clear btn-collapse text-left" type="button"--}}
-            {{--                    data-toggle="collapse" data-target="#branch"--}}
-            {{--                    aria-expanded="false" aria-controls="branch"--}}
-            {{--            >--}}
-            {{--                <img src="{{ asset('images/Branch.png') }}" class="sidebar-img" alt=""> Branches--}}
-            {{--            </button>--}}
-            {{--            <div class="collapse multi-collapse" id="branch">--}}
-            {{--                <a href="/branches" class="a-clear a-sidebar branch--}}
-            {{--                    {{ in_array($route, [--}}
-            {{--                'branches.index',--}}
-            {{--                'branches.create',--}}
-            {{--                'branches.edit'--}}
-            {{--                ]) ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                    Branches--}}
-            {{--                </a>--}}
-            {{--                <a href="/branchmanagers" class="a-clear a-sidebar branch--}}
-            {{--                    {{ in_array($route, [--}}
-            {{--                'branchmanagers.index',--}}
-            {{--                'branchmanagers.create',--}}
-            {{--                'branchmanagers.edit',--}}
-            {{--                ]) ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                    Branch Managers--}}
-            {{--                </a>--}}
-
-            {{--            </div>--}}
-
-            {{--            <button style="" class="fs15 btn-clear btn-collapse text-left" type="button"--}}
-            {{--                    data-toggle="collapse" data-target="#inventory"--}}
-            {{--                    aria-expanded="false" aria-controls="inventory"--}}
-            {{--            >--}}
-            {{--                <img src="{{ asset('images/Branch.png') }}" class="sidebar-img" alt=""> Inventories--}}
-            {{--            </button>--}}
-            {{--            <div class="collapse multi-collapse" id="inventory">--}}
-            {{--                <a href="/inventories" class="a-clear a-sidebar inventory--}}
-            {{--                    {{ $route === 'inventories.index' ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                    Inventories--}}
-            {{--                </a>--}}
-            {{--                <a href="/inventorymanagers" class="a-clear a-sidebar inventory--}}
-            {{--                    {{ $route === 'inventorymanager.index' ? 'active-link': ''}}" style="padding-left: 42px">--}}
-            {{--                    Inventory Managers--}}
-            {{--                </a>--}}
-
-            {{--            </div>--}}
-
-            {{--            <a href="/suppliers" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15--}}
-            {{--            {{ in_array($route, [--}}
-            {{--                'suppliers.index',--}}
-            {{--                'suppliers.create',--}}
-            {{--                'suppliers.edit'--}}
-            {{--                ]) ? 'active-link': ''}}">--}}
-            {{--                <img src="{{ asset('images/supplier.png') }}" class="sidebar-img" alt=""> Suppliers--}}
-            {{--            </a>--}}
-            {{--            <a href="/customers" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15--}}
-            {{--            {{ in_array($route, [--}}
-            {{--                'customers.index',--}}
-            {{--                'customers.create',--}}
-            {{--                'customers.edit'--}}
-            {{--                ]) ? 'active-link': ''}}">--}}
-            {{--                <img src="{{ asset('images/supplier.png') }}" class="sidebar-img" alt=""> Customers--}}
-            {{--            </a>--}}
-            {{--            <a href="/accounts" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15--}}
-            {{--            {{ in_array($route, [--}}
-            {{--                'accounts.index',--}}
-            {{--                'accounts.show',--}}
-            {{--                ]) ? 'active-link': ''}}">--}}
-            {{--                <img src="{{ asset('images/supplier.png') }}" class="sidebar-img" alt=""> Accounts--}}
-
-            {{--            </a>--}}
-            {{--            <a href="#" style="color:#1b1e21;padding: 9px 5px 12px 24px" class="a-clear d-block w-100 fs15--}}
-            {{--           ">--}}
-            {{--                <img src="{{ asset('images/icons8-receipt-dollar-32.png') }}" class="sidebar-img" alt=""> Invoice--}}
-            {{--            </a>--}}
 
         </div>
     </div>
