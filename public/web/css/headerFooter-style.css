@@ -326,9 +326,8 @@ p {
 
 .mobile .downarrow,
 .mobile .sub-menu .downarrow {
-
     position: absolute;
-    top: 42px;
+    top: 38%;
     right: 25px;
 }
 
