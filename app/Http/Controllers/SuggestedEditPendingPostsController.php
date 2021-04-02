@@ -20,41 +20,26 @@ class SuggestedEditPendingPostsController extends Controller
 
     public function suggested_edit_pending_post_confirm_form(PendingPost $pendingPost)
     {
-//        dd($pendingPost);
         $states = State::all();
         return view('admin.suggested_edit_pending_posts.edit',compact('pendingPost','states'));
 
     }
 
-    public function getPostData($pendingPost)
-    {
-
-        if($pendingPost['profile_url'] != '') $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
-        if($pendingPost['status'] != '') $data['status'] = $pendingPost->getAttributes()['status'];
-
-        foreach(['name','comment', 'age', 'gender', 'occupation', 'organization_name',
-                    'state_id', 'prison', 'detained_date' ,'reason_of_arrest','reason_of_dead','address','released_date'
-                ] as $field )
-        {
-            if($pendingPost[$field] != '') $data[$field] = $pendingPost[$field];
-        }
-        $data['admin_id'] = auth()->guard('admin')->user()->id;
-
-        return $data;
-    }
 
     public function handle_suggested_edit_pending_post(Request $request, PendingPost $pendingPost)
     {
 
-//        dd($request->is_confirm);
         if($request->is_confirm == 'true')
         {
+            $pendingPost->informant_name = null;
+            $pendingPost->informant_phone = null;
+            $pendingPost->informant_association_with_victim = null;
             $pendingPost->publishing_status = 'Confirmed';
             $pendingPost->save();
             DB::transaction(function() use($pendingPost)
             {
                 $post = Post::FindOrFail($pendingPost->post_id);
-                $post->update($this->getPostData($pendingPost));
+                $post->update(PendingPost::getPostData($pendingPost));
             });
             Session::flash('msg','Post updated successfully!');
         }

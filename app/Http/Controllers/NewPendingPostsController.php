@@ -30,43 +30,6 @@ class NewPendingPostsController extends Controller
 
     }
 
-    public function getPostData($pendingPost)
-    {
-//        $data['name'] = $pendingPost->name;
-//        $data['comment'] = $pendingPost->comment;
-//        $data['age'] = $pendingPost->age;
-//        $data['status'] = $pendingPost->status;
-//        $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
-//        $data['gender'] = $pendingPost->gender;
-//        $data['occupation'] = $pendingPost->occupation;
-//        $data['organization_name'] = $pendingPost->organization_name;
-//        $data['state_id'] = $pendingPost->state_id;
-//        $data['address'] = $pendingPost->address;
-//        $data['prison'] = $pendingPost->prison;
-//        $data['detained_date'] = $pendingPost->detained_date;
-//        $data['reason_of_dead'] = $pendingPost->reason_of_dead;
-//        $data['reason_of_arrest'] = $pendingPost->reason_of_arrest;
-        if($pendingPost['profile_url'] != '') $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
-        if($pendingPost['status'] != '') $data['status'] = $pendingPost->getAttributes()['status'];
-        foreach(['name','comment', 'age', 'gender', 'occupation', 'organization_name',
-                    'state_id', 'prison', 'detained_date' ,'reason_of_arrest','reason_of_dead','address','released_date'
-                ] as $field )
-        {
-            if($pendingPost[$field] != '') $data[$field] = $pendingPost[$field];
-        }
-        $data['admin_id'] = auth()->guard('admin')->user()->id;
-
-        return $data;
-    }
-
-    public function getImageData($post)
-    {
-        $image_data['url'] = $post->profile_url;
-        $image_data['post_id'] = $post->id;
-        $image_data['post_type'] = 'Post';
-
-        return $image_data;
-    }
 
     public function handle_new_pending_post(NewPendingPostConfirmRequest $request, PendingPost $pendingPost)
     {
@@ -86,8 +49,7 @@ class NewPendingPostsController extends Controller
             $pendingPost->save();
             DB::transaction(function() use($pendingPost)
             {
-                $post = Post::create($this->getPostData($pendingPost));
-//                Image::create($this->getImageData($post));
+                $post = Post::create(PendingPost::getPostData($pendingPost));
             });
 
 

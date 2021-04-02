@@ -7,6 +7,7 @@ use App\QueryFilter;
 use App\Utility\ImageModule;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 /**
  * @method static create(array $data)
@@ -86,6 +87,46 @@ class Post extends Model
     public function getOccupationAttribute($value)
     {
         return ucfirst($value);
+    }
+
+
+    public static function getDataForStatusChange($request,$post)
+    {
+        $data = $request->all();
+        $fields = ['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name',
+            'state_id', 'prison','address'];
+
+        if($data['status'] == 'Released') array_push($fields, 'reason_of_arrest','reason_of_dead','detained_date');
+        if($data['status'] == 'Dead') array_push($fields, 'reason_of_arrest');
+        if($data['status'] == 'Detained') array_push($fields, 'reason_of_dead');
+        if($data['status'] == 'Missing') array_push($fields, 'reason_of_arrest','reason_of_dead');
+
+        foreach($fields as $field )
+        {
+            if($post[$field] != '') $data[$field] = $post[$field];
+        }
+        if($post['profile_url'] != '') $data['profile_url'] = $post->getAttributes()['profile_url'];
+
+        $data['post_id'] = $post->id;
+        $data['publishing_status'] = 'None';
+        return $data;
+    }
+
+    public static function getDataForStoreEdit($request,$post)
+    {
+        $data = $request->except('photo');
+        if ($request->has('photo')) {
+            $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+            $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+        }
+        else
+        {
+            $data['profile_url'] = $post->getAttributes()['profile_url'];
+        }
+        $data['post_id'] = $post->id;
+        $data['publishing_status'] = 'None';
+
+        return $data;
     }
 
 }

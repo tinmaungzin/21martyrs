@@ -5,6 +5,7 @@ namespace App\Models;
 use App\Utility\ImageModule;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
+use Illuminate\Support\Str;
 
 class PendingPost extends Model
 {
@@ -75,5 +76,44 @@ class PendingPost extends Model
     public function getStatusAttribute($value)
     {
         return ucfirst($value);
+    }
+
+    public static function getPostData($pendingPost)
+    {
+        if($pendingPost['profile_url'] != '') $data['profile_url'] = $pendingPost->getAttributes()['profile_url'];
+        if($pendingPost['status'] != '') $data['status'] = $pendingPost->getAttributes()['status'];
+        foreach(['name','comment', 'age', 'gender', 'occupation', 'organization_name',
+                    'state_id', 'prison', 'detained_date' ,'reason_of_arrest','reason_of_dead','address','released_date'
+                ] as $field )
+        {
+            if($pendingPost[$field] != '') $data[$field] = $pendingPost[$field];
+        }
+        $data['admin_id'] = auth()->guard('admin')->user()->id;
+
+        return $data;
+    }
+
+
+    public static function getDataForStore($request)
+    {
+        $data = $request->except('photo');
+        if ($request->has('photo'))
+        {
+            $path = Str::uuid() . '-' . $request->file('photo')->getClientOriginalName();
+            $data['profile_url'] = ImageModule::uploadFromRequest('photo', $path);
+        }
+
+        if(!is_null($request->released_date)) $data['status'] = 'released';
+
+        $data['gender'] = strtolower($data['gender']);
+        $data['publishing_status'] = 'None';
+
+        return $data;
+    }
+
+
+    public function getDataForHandleSuggestedEdit($request,$pendingPost)
+    {
+
     }
 }
