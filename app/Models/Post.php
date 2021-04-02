@@ -96,10 +96,10 @@ class Post extends Model
         $fields = ['name','comment', 'age', 'profile_url', 'gender', 'occupation', 'organization_name',
             'state_id', 'prison','address'];
 
-        if($data['status'] == 'Released') array_push($fields, 'reason_of_arrest','reason_of_dead','detained_date');
-        if($data['status'] == 'Dead') array_push($fields, 'reason_of_arrest');
-        if($data['status'] == 'Detained') array_push($fields, 'reason_of_dead');
-        if($data['status'] == 'Missing') array_push($fields, 'reason_of_arrest','reason_of_dead');
+        if($data['status'] == 'released') array_push($fields, 'reason_of_arrest','reason_of_dead','detained_date');
+        if($data['status'] == 'dead') array_push($fields, 'reason_of_arrest');
+        if($data['status'] == 'detained') array_push($fields, 'reason_of_dead');
+        if($data['status'] == 'missing') array_push($fields, 'reason_of_arrest','reason_of_dead');
 
         foreach($fields as $field )
         {

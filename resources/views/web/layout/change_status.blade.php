@@ -16,25 +16,25 @@
                     @if($post->status == 'Detained')
                         <select class="form-control" id="status_edit"  name="status"  required>
                             <option value="">{{__('forms.status_title')}}</option>
-                            <option value="Dead">{{__('home.dead')}}</option>
-                            <option value="Missing">{{__('home.missing')}}</option>
-                            <option value="Released">{{__('home.released')}}</option>
+                            <option value="dead">{{__('home.dead')}}</option>
+                            <option value="missing">{{__('home.missing')}}</option>
+                            <option value="released">{{__('home.released')}}</option>
                         </select>
                     @endif
                     @if($post->status == 'Missing')
                         <select class="form-control" id="status_edit" name="status" required>
                             <option disabled selected>{{__('forms.status_title')}}</option>
-                            <option value="Dead">{{__('home.dead')}}</option>
-                            <option value="Detained">{{__('home.detained')}}</option>
-                            <option value="Released">{{__('home.released')}}</option>
+                            <option value="dead">{{__('home.dead')}}</option>
+                            <option value="detained">{{__('home.detained')}}</option>
+                            <option value="released">{{__('home.released')}}</option>
                         </select>
                     @endif
                     @if($post->status == 'Released')
                         <select class="form-control" id="status_edit" name="status" required>
                             <option disabled selected>{{__('forms.status_title')}}</option>
-                            <option value="Dead">{{__('home.dead')}}</option>
-                            <option value="Detained">{{__('home.detained')}}</option>
-                            <option value="Missing">{{__('home.missing')}}</option>
+                            <option value="dead">{{__('home.dead')}}</option>
+                            <option value="detained">{{__('home.detained')}}</option>
+                            <option value="missing">{{__('home.missing')}}</option>
                         </select>
                     @endif
                 </div>
@@ -78,7 +78,7 @@
     $(document).ready(function (){
         $('#status_edit').change(function (){
             $('#extension').empty();
-           if($('#status_edit').val() === 'Dead')
+           if($('#status_edit').val() === 'dead')
            {
                $('#extension').append(`
                <div class="form-group">
@@ -94,7 +94,7 @@
                 </div>
                `);
            }
-            if($('#status_edit').val() === 'Detained')
+            if($('#status_edit').val() === 'detained')
             {
                 $('#extension').append(`
                <div class="form-group">
@@ -110,7 +110,7 @@
                 </div>
                `);
             }
-            if($('#status_edit').val() === 'Released')
+            if($('#status_edit').val() === 'released')
             {
                 $('#extension').append(`
 
@@ -121,7 +121,7 @@
                 </div>
                `);
             }
-            if($('#status_edit').val() === 'Missing')
+            if($('#status_edit').val() === 'missing')
             {
                 $('#extension').append(`
 
