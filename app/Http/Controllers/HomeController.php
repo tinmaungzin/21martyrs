@@ -57,4 +57,9 @@ class HomeController extends Controller
 //        $names = Post::where('name', 'like', '%' . $request->name . '%')->get();
         return response()->json(array('success' => true, 'names' => $names), 200);
     }
+
+    public function privacyPolicy()
+    {
+        return view('web.policy');
+    }
 }

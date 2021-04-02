@@ -76,10 +76,7 @@
     {{--    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>--}}
 
     <script src="{{ asset('web/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }} "></script>
-    <!--
- Venue Template
- http://www.templatemo.com/tm-522-venue
--->
+    @yield('style')
 </head>
 
 <style>
@@ -166,7 +163,9 @@
 </div>
 <!-- Header -->
 
-@yield('content')
+<section>
+    @yield('content')
+</section>
 
 
 <!-- Footer -->
@@ -241,7 +240,6 @@
                             </div>
                             <div class="SendArea">
                                 <button type="submit" class="btn Message">Send Message</button>
-
                             </div>
                         </form>
                     </div>
@@ -254,10 +252,21 @@
 <!-- End footer -->
 
 <div class="sub-footer">
-    <p>
-        Copyright &copy; 2021 Martyrs Myanmar
-        {{--        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>--}}
-    </p>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <p>
+                Copyright &copy; 2021 Martyrs Myanmar
+                {{--        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>--}}
+            </p>
+        </div>
+        <div class="col-md-6 col-sm-12 policy-footer">
+            <p>
+                <a href="{{route('privacy_policy')}}">
+                    Privacy policy
+                </a>
+            </p>
+        </div>
+    </div>
 </div>
 
 

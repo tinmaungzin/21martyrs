@@ -72,6 +72,8 @@ Route::post('/fetch_names', [HomeController::class, 'fetchNames'])->name('fetch.
 Route::get('/experiences', [HomeController::class, 'articles'])->name('list.experiences');
 Route::get('/article/{article}', [HomeController::class, 'show_article'])->name('show.experience');
 Route::post('/feedback', [FeedbackController::class, 'store'])->name('feedback.store');
+Route::get('/privacy-policy', [HomeController::class, 'privacyPolicy'])->name('privacy_policy');
+
 
 Route::get('/profile/{post}', [HomeController::class, 'profile'])->name('profile');
 
@@ -90,7 +92,7 @@ Route::get('inform/edit_released/{post}', [InformController::class, 'edit_releas
 Route::post('inform', [InformController::class, 'store'])->name('store.inform');
 Route::post('inform/edit/{post}', [InformController::class, 'store_edit'])->name('edit.inform');
 
-Route::post('inform/change_status/{post}',[InformController::class,'change_status'])->name('change_status.inform');
+Route::post('inform/change_status/{post}', [InformController::class, 'change_status'])->name('change_status.inform');
 
 
 
