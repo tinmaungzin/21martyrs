@@ -76,10 +76,7 @@
     {{--    <script src="https://cdn.jsdelivr.net/gh/xcash/bootstrap-autocomplete@v2.3.7/dist/latest/bootstrap-autocomplete.min.js"></script>--}}
 
     <script src="{{ asset('web/js/vendor/modernizr-2.8.3-respond-1.4.2.min.js') }} "></script>
-    <!--
- Venue Template
- http://www.templatemo.com/tm-522-venue
--->
+    @yield('style')
 </head>
 
 <style>
@@ -166,7 +163,9 @@
 </div>
 <!-- Header -->
 
-@yield('content')
+<section>
+    @yield('content')
+</section>
 
 
 <!-- Footer -->
