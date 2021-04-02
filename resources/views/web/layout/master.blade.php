@@ -240,7 +240,6 @@
                             </div>
                             <div class="SendArea">
                                 <button type="submit" class="btn Message">Send Message</button>
-
                             </div>
                         </form>
                     </div>
@@ -253,10 +252,21 @@
 <!-- End footer -->
 
 <div class="sub-footer">
-    <p>
-        Copyright &copy; 2021 Martyrs Myanmar
-        {{--        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>--}}
-    </p>
+    <div class="row">
+        <div class="col-md-6 col-sm-12">
+            <p>
+                Copyright &copy; 2021 Martyrs Myanmar
+                {{--        <a rel="nofollow" href="http://www.templatemo.com">Template Mo</a>--}}
+            </p>
+        </div>
+        <div class="col-md-6 col-sm-12 policy-footer">
+            <p>
+                <a href="{{route('privacy_policy')}}">
+                    Privacy policy
+                </a>
+            </p>
+        </div>
+    </div>
 </div>
 
 

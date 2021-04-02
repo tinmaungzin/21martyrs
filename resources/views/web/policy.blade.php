@@ -13,8 +13,10 @@
             line-height: 2;
         }
 
-        li {
-            margin: 1rem 0;
+        .policy-list li {
+            font-size: var(--normal-font-size) !important;
+            margin: 1rem 2rem;
+            list-style: disc;
         }
     </style>
 @endsection
@@ -23,7 +25,7 @@
     <div class="container">
         <div class="row">
             <div class="col-md-12">
-                <h1>Privacy Policy for martyrs 21 myanmar</h1>
+                <h1>Privacy Policy for Martyrs 21 Myanmar</h1>
                 <p>At martyrs21mm, accessible from martyrs21mm.com, one of our main priorities is the privacy of our
                     visitors.
                     This
@@ -63,8 +65,8 @@
                 {{--                    name, address, email address, and telephone number.</p>--}}
                 <h2>How we use your information</h2>
                 <p>We use the information we collect in various ways, including to:</p>
-                <ul>
-                    <li>To confirm update you made t</li>
+                <ul class="policy-list">
+                    <li>Confirm update you provide us for heroes of 21st revolution.</li>
                     {{--                    <li>Improve, personalize, and expand our website</li>--}}
                     <li>Understand and analyze how you use our website</li>
                     {{--                    <li>Develop new products, services, features, and functionality</li>--}}
@@ -74,9 +76,11 @@
                     {{--                        promotional--}}
                     {{--                        purposes--}}
                     {{--                    </li>--}}
-                    <li>Send you emails</li>
+                    <li>Contact you via emails when you send us feedback.</li>
                     {{--                    <li>Find and prevent fraud</li>--}}
                 </ul>
+                <p><strong>Please note that information you provided us when informing deaths and detainees will be
+                        deleted automatically when we confirm or reject your information.</strong></p>
                 <h2>Log Files</h2>
                 <p>martyrs21mm follows a standard procedure of using log files. These files log visitors when they visit
                     websites.
@@ -105,28 +109,29 @@
                         href="https://www.privacypolicyonline.com/what-are-cookies/">"What Are Cookies" from Cookie
                         Consent</a>.
                 </p>
-                <h2>Advertising Partners Privacy Policies</h2>
-                <P>You may consult this list to find the Privacy Policy for each of the advertising partners of
-                    martyrs21mm.</p>
-                <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that
-                    are
-                    used in
-                    their respective advertisements and links that appear on martyrs21mm, which are sent directly to
-                    users'
-                    browser.
-                    They automatically receive your IP address when this occurs. These technologies are used to measure
-                    the
-                    effectiveness of their advertising campaigns and/or to personalize the advertising content that you
-                    see
-                    on
-                    websites that you visit.</p>
-                <p>Note that martyrs21mm has no access to or control over these cookies that are used by third-party
-                    advertisers.</p>
+                {{--                <h2>Advertising Partners Privacy Policies</h2>--}}
+                {{--                <P>You may consult this list to find the Privacy Policy for each of the advertising partners of--}}
+                {{--                    martyrs21mm.</p>--}}
+                {{--                <p>Third-party ad servers or ad networks uses technologies like cookies, JavaScript, or Web Beacons that--}}
+                {{--                    are--}}
+                {{--                    used in--}}
+                {{--                    their respective advertisements and links that appear on martyrs21mm, which are sent directly to--}}
+                {{--                    users'--}}
+                {{--                    browser.--}}
+                {{--                    They automatically receive your IP address when this occurs. These technologies are used to measure--}}
+                {{--                    the--}}
+                {{--                    effectiveness of their advertising campaigns and/or to personalize the advertising content that you--}}
+                {{--                    see--}}
+                {{--                    on--}}
+                {{--                    websites that you visit.</p>--}}
+                {{--                <p>Note that martyrs21mm has no access to or control over these cookies that are used by third-party--}}
+                {{--                    advertisers.</p>--}}
                 <h2>Third Party Privacy Policies</h2>
-                <p>martyrs21mm's Privacy Policy does not apply to other advertisers or websites. Thus, we are advising
+                <p>martyrs21mm's Privacy Policy does not apply to other websites or analytics services used on our
+                    website. Thus, we are advising
                     you
                     to
-                    consult the respective Privacy Policies of these third-party ad servers for more detailed
+                    consult the respective Privacy Policies of these third-party services for more detailed
                     information.
                     It
                     may
@@ -179,20 +184,20 @@
                     these
                     rights,
                     please contact us.</p>
-                <h2>Children's Information</h2>
-                <p>Another part of our priority is adding protection for children while using the internet. We encourage
-                    parents
-                    and
-                    guardians to observe, participate in, and/or monitor and guide their online activity.</p>
-                <p>martyrs21mm does not knowingly collect any Personal Identifiable Information from children under the
-                    age
-                    of
-                    13.
-                    If you think that your child provided this kind of information on our website, we strongly encourage
-                    you
-                    to
-                    contact us immediately and we will do our best efforts to promptly remove such information from our
-                    records.</p>
+                {{--                <h2>Children's Information</h2>--}}
+                {{--                <p>Another part of our priority is adding protection for children while using the internet. We encourage--}}
+                {{--                    parents--}}
+                {{--                    and--}}
+                {{--                    guardians to observe, participate in, and/or monitor and guide their online activity.</p>--}}
+                {{--                <p>martyrs21mm does not knowingly collect any Personal Identifiable Information from children under the--}}
+                {{--                    age--}}
+                {{--                    of--}}
+                {{--                    13.--}}
+                {{--                    If you think that your child provided this kind of information on our website, we strongly encourage--}}
+                {{--                    you--}}
+                {{--                    to--}}
+                {{--                    contact us immediately and we will do our best efforts to promptly remove such information from our--}}
+                {{--                    records.</p>--}}
             </div>
         </div>
     </div>
