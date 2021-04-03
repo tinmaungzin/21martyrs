@@ -15,5 +15,5 @@ task('custom:update_env', function () {
     set('env_string', $env_string);
 //    dd(get('env_string'));
     run("cd {{release_path}} && rm -f .env && echo \"$env_string\" > .env");
-    invoke("artisan:cache:clear");
+    invoke("artisan:config:clear");
 });
