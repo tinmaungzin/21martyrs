@@ -21,7 +21,7 @@ class ImageModule
     public static function uploadFromRequest(string $imageKey, string $name)
     {
         $path = request()->file($imageKey)->storePubliclyAs(self::prepare_folder(), self::normalize_path($name), config('filesystems.default'));
-        return self::normalize_path($path);
+        return $path;
     }
 
     private static function prepare_folder(): string
