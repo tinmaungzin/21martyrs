@@ -3,9 +3,9 @@ blade-directive: version
 version_source: git
 current:
   label: v
-  major: 1
+  major: 0
   minor: 0
-  patch: 0
+  patch: 1
   prerelease:
   buildmetadata:
   commit: 100001
