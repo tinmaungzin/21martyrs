@@ -25,7 +25,7 @@ class PostController extends Controller
             'status' => $request->input('status')
         ];
 
-        $posts = $this->repository->filter($filter)->paginate()->withPath($request->path());
+        $posts = $this->repository->filter($filter, ['state'])->paginate()->withPath($request->path());
         return new PostResource($posts);
     }
 }
