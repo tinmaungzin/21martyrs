@@ -14,16 +14,25 @@ class PostRepository implements BaseRepository
 {
     use GenericDB;
 
-    public function filter(array $filter, array $relationships = [])
+    /**
+     * @throws Exception
+     */
+    public function filter(array $filter, $offset, array $relationships = [])
     {
         try {
             if (empty($filter)) {
                 return $this->getAll();
             }
-            return Post::with($relationships)->name($filter['name'])->state($filter['state_id'])
-                ->status($filter['status'])->get();
+            $builder = Post::with($relationships)->name($filter['name'])->state($filter['state_id'])
+                ->status($filter['status'])
+                ->orderBy('created_at', 'desc');
+            if (!is_null($offset)) {
+                $builder = $builder->skip((int)$offset);
+            }
+            return $builder
+                ->get();
         } catch (Exception $exception) {
-            return Collection::empty();
+            throw $exception;
         }
     }
 

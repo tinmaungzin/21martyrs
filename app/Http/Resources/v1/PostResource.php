@@ -36,7 +36,9 @@ class PostResource extends ResourceCollection
     {
         return [
             'meta' => [
-                'version' => '1'
+                'version' => '1',
+                'current_offset' => $request->input('offset', 0)
+
             ]
         ];
     }

@@ -8,5 +8,5 @@ interface BaseRepository
 {
     public function getAll();
 
-    public function filter(array $filter, array $relationships);
+    public function filter(array $filter, $offset, array $relationships = []);
 }
