@@ -24,3 +24,7 @@ use Illuminate\Support\Facades\Route;
 Route::group(['prefix' => 'v1', 'namespace' => 'Api\v1'], function () {
     Route::get('/posts', [PostController::class, 'get'])->name('get_posts');
 });
+
+Route::get("/status", function () {
+    return response(['message' => "Server is online"], 200);
+});
